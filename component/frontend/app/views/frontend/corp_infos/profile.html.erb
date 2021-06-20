@@ -1,4 +1,49 @@
+<main data-barba="container" data-barba-namespace="home" class=" bg-primary">
+  <h1>Profile</h1>
 
-<h1>Profile</h1>
+  <button class="btn btn-primary" type="button" name="button">123</button>
 
-<button class="btn btn-primary" type="button" name="button">123</button>
+  <div class="row">
+    <div class="col-6">
+      <div class="slider">
+        <div><h3>1</h3></div>
+        <div><h3>2</h3></div>
+        <div><h3>3</h3></div>
+        <div><h3>4</h3></div>
+        <div><h3>5</h3></div>
+        <div><h3>6</h3></div>
+      </div>
+
+    </div>
+  </div>
+
+  <video
+      id="my-player"
+      class="video-js vjs-theme-city"
+      controls
+      preload="auto"
+      poster="//vjs.zencdn.net/v/oceans.png"
+      data-setup='{}'>
+    <source src="/videos/mad.mp4" type="video/mp4"></source>
+    <!-- <source src="//vjs.zencdn.net/v/oceans.webm" type="video/webm"></source>
+    <source src="//vjs.zencdn.net/v/oceans.ogv" type="video/ogg"></source> -->
+    <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a
+      web browser that
+      <a href="https://videojs.com/html5-video-support/" target="_blank">
+        supports HTML5 video
+      </a>
+    </p>
+  </video>
+
+  <video
+      id="auto-player"
+      class="video-js"
+      preload="auto"
+      muted
+      autoplay
+      data-setup="{}">
+    <source src="/videos/mad.mp4" type="video/mp4"></source>
+  </video>
+
+</main>
