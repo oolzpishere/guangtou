@@ -26,12 +26,13 @@ Things you may want to cover:
 
 dev local production:
 1.rails webpacker:compile
-2.RAILS_SERVE_STATIC_FILES=true rails s -e production
+2.RAILS_SERVE_STATIC_FILES=true rails s -e production -b 0.0.0.0
 
 # animate:
 https://github.com/animate-css/animate.css
+https://github.com/bfintal/Counter-Up2
 
-https://github.com/turbolinks/turbolinks/issues/293
+
 page animate:
 https://github.com/swup/swup
 https://github.com/barbajs/barba
@@ -45,5 +46,6 @@ webpacker image not load:
 https://github.com/rails/webpacker/issues/2144
 https://github.com/rails/webpacker/issues/2956
 
+https://github.com/turbolinks/turbolinks/issues/293
 y:
 bjUoQbSJDJs

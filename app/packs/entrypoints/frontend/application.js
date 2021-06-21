@@ -1,5 +1,7 @@
 import '../application'
 import './swipers'
+import './flips'
+
 
 import 'slick-carousel/slick/slick'
 
