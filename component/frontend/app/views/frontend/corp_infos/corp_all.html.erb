@@ -25,8 +25,10 @@
   </video> -->
   <%= render 'corp_links' %>
 
-  <div class="bottom position-absolute bottom-0 bg-secondary w-100" style="height: 150px;" >
-    <%# image_pack_tag 'media/images/corp-bottom.png' %>
+  <div class="bottom position-absolute" style="z-index: 1010; bottom: 60px; right: 60px;" >
+    <%= link_to(corp_all_path) do %>
+      <%= image_pack_tag 'media/images/corp/go-back.png' %>
+    <% end %>
   </div>
 
 </main>
