@@ -44,3 +44,6 @@ issues:
 webpacker image not load:
 https://github.com/rails/webpacker/issues/2144
 https://github.com/rails/webpacker/issues/2956
+
+y:
+bjUoQbSJDJs
