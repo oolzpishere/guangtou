@@ -1,0 +1,31 @@
+<div class="position-relative window-holder" style="background-image: url(<%= asset_pack_path 'media/images/home-bg.png'%>) " >
+
+  <!-- navs -->
+  <div class="row position-absolute top-50 start-50 translate-middle" style= "width:90%">
+    <div class="col text-center">
+      <%= link_to(corp_all_path, html_options = {}) do
+        image_pack_tag 'media/images/nav-corp.png', style: "width:700px"
+      end %>
+    </div>
+    <div class="col text-center">
+      <%= link_to("#", html_options = {}) do
+        image_pack_tag 'media/images/nav-businesses.png', style: "width:700px"
+      end %>
+    </div>
+    <div class="col text-center">
+      <%= link_to("#", html_options = {}) do
+        image_pack_tag 'media/images/nav-advantages.png', style: "width:700px"
+      end %>
+    </div>
+    <div class="col text-center">
+      <%= link_to("#", html_options = {}) do
+        image_pack_tag 'media/images/nav-party.png', style: "width:700px"
+      end %>
+    </div>
+  </div>
+
+  <div class="bottom position-absolute bottom-0 w-100">
+    <%= image_pack_tag 'media/images/corp-bottom.png', class: "w-100" %>
+  </div>
+
+</div>

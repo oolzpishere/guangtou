@@ -10,13 +10,20 @@
 
 </head>
 <body>
-<div class="row text-center">
-  <div class="col">
-    <%= link_to "profile", profile_path %>
-    <%= link_to "culture", culture_path %>
+  <div class="my-container container-fluid g-0">
+    <div class="main">
+      <div class="row g-0 text-center w-100 fixed-top ">
+        <%# asset_pack_path 'images/corp-top.png' %>
+        <%= image_pack_tag 'media/images/corp-top.png' %>
+
+      </div>
+
+      <%= yield %>
+
+
+    </div>
+
   </div>
-</div>
-<%= yield %>
 
 </body>
 </html>

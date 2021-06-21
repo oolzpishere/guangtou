@@ -1,4 +1,7 @@
+
 @import "bootstrap/dist/css/bootstrap.min";
+// @import "bootstrap/scss/bootstrap.scss";
+
 //
 // @import "packs/stylesheets/lib/mdb/emdb";
 
@@ -7,3 +10,9 @@
 // @import "@fortawesome/fontawesome-free/scss/solid";
 // @import "@fortawesome/fontawesome-free/scss/regular";
 // @import "@fortawesome/fontawesome-free/scss/brands";
+
+// @include media-breakpoint-up(xxl) {
+//   body {
+//     background-color: #000;
+//   }
+// }
