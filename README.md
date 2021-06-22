@@ -25,13 +25,15 @@ Things you may want to cover:
 # guangtou
 
 dev local production:
-1.rails webpacker:compile
-2.RAILS_SERVE_STATIC_FILES=true rails s -e production -b 0.0.0.0
+rails webpacker:compile
+RAILS_SERVE_STATIC_FILES=true rails s -e production -b 0.0.0.0
 
-# animate:
+## animate:
 https://github.com/animate-css/animate.css
 https://github.com/bfintal/Counter-Up2
 
+### animate-not-use:
+https://github.com/inorganik/countUp.js
 
 page animate:
 https://github.com/swup/swup

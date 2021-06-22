@@ -19,4 +19,24 @@ $(document).on("turbolinks:load", function() {
           },
         });
 
+    var corpLinksSwiper = new Swiper(".corp-links-swiper", {
+      // direction: "vertical",
+      // loop: true,
+      allowTouchMove: false,
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true
+      },
+      // cubeEffect: {
+      //   slideShadows: false,
+      // }
+    });
+
+    swiper.on('slideChange', function () {
+      // corpLinksSwiper.slideTo(swiper.realIndex, speed, runCallbacks)
+      corpLinksSwiper.slideTo(swiper.realIndex)
+      console.log(swiper.realIndex);
+    });
+
+
 })
