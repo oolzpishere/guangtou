@@ -1,6 +1,6 @@
 
-@import "bootstrap/dist/css/bootstrap.min";
-// @import "bootstrap/scss/bootstrap.scss";
+// @import "bootstrap/dist/css/bootstrap.min";
+@import "bootstrap/scss/bootstrap.scss";
 
 //
 // @import "packs/stylesheets/lib/mdb/emdb";
@@ -18,3 +18,10 @@
 // }
 
 body,input,select,textarea,button { font-family: 'Microsoft Yahei', 'Helvetica Neue', Helvetica, 'Lucida Grande', Arial, 'Hiragino Sans GB', 'WenQuanYi Micro Hei', STHeiti, SimSun, sans-serif;}
+
+.text-blue {
+  color: $blue;
+}
+.text-blue-500 {
+  color: $blue-500;
+}

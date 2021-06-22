@@ -35,19 +35,24 @@ https://github.com/bfintal/Counter-Up2
 ### animate-not-use:
 https://github.com/inorganik/countUp.js
 
-page animate:
+### page animate:
 https://github.com/swup/swup
 https://github.com/barbajs/barba
 
-video:
+### video:
 https://github.com/videojs/video.js
 https://github.com/videojs/themes
 
-issues:
+### tools:
+gradient-backgrounds generater:
+https://cssgradient.io/gradient-backgrounds/
+
+### issues:
 webpacker image not load:
 https://github.com/rails/webpacker/issues/2144
 https://github.com/rails/webpacker/issues/2956
 
 https://github.com/turbolinks/turbolinks/issues/293
+
 y:
 bjUoQbSJDJs
