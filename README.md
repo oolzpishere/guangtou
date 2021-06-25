@@ -40,19 +40,45 @@ https://github.com/swup/swup
 https://github.com/barbajs/barba
 
 ### video:
+--use:
+https://stackoverflow.com/questions/13384276/videojs-keep-controls-visible
+--not yet:
 https://github.com/videojs/video.js
 https://github.com/videojs/themes
+https://codepen.io/benjipott/pen/JELELN
 
 ### tools:
-gradient-backgrounds generater:
+--gradient-backgrounds generater:
 https://cssgradient.io/gradient-backgrounds/
+--box-shadow
+https://cssgenerator.org/box-shadow-css-generator.html
 
 ### issues:
-webpacker image not load:
+-webpacker image not load:
 https://github.com/rails/webpacker/issues/2144
 https://github.com/rails/webpacker/issues/2956
 
 https://github.com/turbolinks/turbolinks/issues/293
+--rbenv: For Ubuntu Desktop:
+In Ubuntu ~/.bash_profile is only sourced by bash when started in interactive login mode. That is typically only when you login at the console (Ctrl+Alt+F1..F6), or connecting via ssh. This issue is explained in detail here.
+
+$ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.profile
+
+--yarn in ubuntu desktop: after npm install -g yarn, yarn not found, relogin, then yarn could found.
+https://blog.csdn.net/qq_40132161/article/details/103697245
+
+--videojs: Note: Do not use both data-setup and an options object.
+<video data-setup='{"controls": true, "autoplay": false, "preload": "auto"}'...>
+Note: You must use single-quotes around the value of data-setup as it contains a JSON string which must use double quotes.
+
+Finally, if you're not using the data-setup attribute to trigger the player setup, you can pass in an object of player options as the second argument to the videojs function:
+
+videojs('my-player', {
+  controls: true,
+  autoplay: false,
+  preload: 'auto'
+});
+Note: Do not use both data-setup and an options object.
 
 ### server:
 https://askubuntu.com/questions/178970/i-need-to-reset-my-computers-ip-address-to-dhcp-from-static
@@ -64,6 +90,15 @@ https://askubuntu.com/questions/972169/ubuntu-17-10-and-later-dont-suspend-when-
 https://blog.csdn.net/wang1127248268/article/details/88037724
 https://www.mobibrw.com/2020/27398
 http://www.vassox.com/linux-general/ubuntu/disabling-ubuntu-suspend-power-management-features-from-the-command-line/
+#### ssh
+ssh to desktop
+https://linuxconfig.org/how-to-open-ssh-port-22-on-ubuntu-20-04-focal-fossa-linux
+
+atom snippets:
+https://flight-manual.atom.io/using-atom/sections/snippets/
+
+node install:
+https://github.com/nodesource/distributions/blob/master/README.md
 
 y:
 bjUoQbSJDJs

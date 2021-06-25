@@ -62,4 +62,36 @@ $(document).on("turbolinks:load", function() {
       flips.beginToCount();
     }
 
+  if ( $('.nnl-profile-video-img').length > 0 ) {
+    $('.nnl-profile-video-img').on('click', function(){
+      console.log('clicked')
+    })
+  }
+
+  // var player = videojs('nnl-video');
+
+  // player.on('touchstart', function(){
+  //   // this.controlBar.show();
+  //   // player.requestFullscreen();
+  //   // player.trigger('click');
+  //   // $('#nnl-video').click();
+  //   if (player.paused() === true) {
+  //     player.play();
+  //
+  //   } else {
+  //     player.pause();
+  //   }
+  //   // player.userActive(true);
+  // });
+
+  // $('.vjs-tech').on('touchstart', function(){
+  //   if (player.paused() === true) {
+  //     player.play();
+  //
+  //   } else {
+  //     player.pause();
+  //   }
+  // })
+
+
 })
