@@ -54,13 +54,19 @@ $(document).on("turbolinks:load", function() {
 
 
 
-  if ( $('.nnl-profile-video-img').length > 0 ) {
-    $('.nnl-profile-video-img').on('click', function(){
-      console.log('clicked')
+  if ( $('.nnl-profile-video-cover').length > 0 ) {
+    var nnl_player = videojs('nnl-video');
+
+    $('.nnl-profile-video-cover').on('click', function(){
+      $('#nnl-video-wrap').removeClass('d-none');
+      nnl_player.play();
+    })
+
+    $('.close-nnl-video').on('click', function(){
+      nnl_player.pause();
+      $('#nnl-video-wrap').addClass('d-none');
     })
   }
-
-  // var player = videojs('nnl-video');
 
   // player.on('touchstart', function(){
   //   // this.controlBar.show();

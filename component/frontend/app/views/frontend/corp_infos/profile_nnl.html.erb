@@ -2,26 +2,32 @@
   <div class="w-100" style="height: 220px;" >
   </div>
 
-  <div class="row g-0 m-auto position-relative" style="width:90%;">
-    <div class="position-absolute w-100 d-none" style="top:0; left:0;">
-      <video
-          id="nnl-video"
-          class="video-js my-vjs-skin w-100"
-          preload="auto"
-          enableTouchActivity
-          poster=<%= asset_pack_path 'media/images/corp/profile/profile_nnl/nnl_video_mask.png' %>
-          data-setup='{"controls": true}'>
-        <source src="/videos/mad.mp4" type="video/mp4"></source>
-        <p class="vjs-no-js">
-          To view this video please enable JavaScript, and consider upgrading to a
-          web browser that
-        </p>
-      </video>
+  <div id="nnl-video-wrap" class="position-absolute w-100 h-100 d-none video-bg-dark" style="top:0; left:0; z-index:10;">
+    <div class="row g-0 h-100 align-items-center justify-content-center position-relative">
+      <div class="position-relative" style="width:80%;">
+        <i class="bi bi-x-lg position-absolute close-nnl-video" style="font-size: 2rem; color: white; bottom: 0; left: -2em;"></i>
+        <video
+            id="nnl-video"
+            class="video-js my-vjs-skin w-100"
+            preload="auto"
+            enableTouchActivity
+            poster=<%= asset_pack_path 'media/images/corp/profile/profile_nnl/nnl_video_mask.png' %>
+            data-setup='{"controls": true}'>
+          <source src="/videos/mad.mp4" type="video/mp4"></source>
+          <p class="vjs-no-js">
+            To view this video please enable JavaScript, and consider upgrading to a
+            web browser that
+          </p>
+        </video>
+      </div>
     </div>
+  </div>
+
+  <div class="row g-0 m-auto position-relative" style="width:90%;">
 
     <div class="" style="width: 30%; ">
       <div class="">
-        <%= image_pack_tag 'media/images/corp/profile/profile_nnl/nnl_video_mask.png', class: "nnl-profile-video-img w-100" %>
+        <%= image_pack_tag 'media/images/corp/profile/profile_nnl/nnl_video_mask.png', class: "nnl-profile-video-cover w-100" %>
       </div>
       <!-- "inactivityTimeout": 0  -->
 

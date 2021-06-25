@@ -66,6 +66,7 @@ $ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.profile
 
 --yarn in ubuntu desktop: after npm install -g yarn, yarn not found, relogin, then yarn could found.
 https://blog.csdn.net/qq_40132161/article/details/103697245
+https://stackoverflow.com/questions/359788/how-to-execute-a-javascript-function-when-i-have-its-name-as-a-string
 
 --videojs: Note: Do not use both data-setup and an options object.
 videojs('my-player', {
