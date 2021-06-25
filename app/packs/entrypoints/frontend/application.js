@@ -12,8 +12,7 @@ import 'animejs/lib/anime.js'
 import videojs from  "video.js"
 // "main": "./dist/video.cjs.js",
 
-// import counterUp from 'counterup2'
-import {Flips} from "./flips"
+
 
 $(document).on("turbolinks:load", function() {
   var wHeight = window.innerHeight;
@@ -53,14 +52,7 @@ $(document).on("turbolinks:load", function() {
   // gsap.from(".my-show-down", { y: -600, duration: 1});
 
 
-  let tl = gsap.timeline(); //create the timeline
-  tl.from(".corp-index-swiper-title", {y: -900, duration: 1, ease: "elastic", }) //start sequencing
-    .from(".corp-index-swiper-num", {y: -900, duration: 1, onComplete: startCount })
 
-    function startCount() {
-      var flips = new Flips();
-      flips.beginToCount();
-    }
 
   if ( $('.nnl-profile-video-img').length > 0 ) {
     $('.nnl-profile-video-img').on('click', function(){

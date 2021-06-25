@@ -68,17 +68,14 @@ $ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.profile
 https://blog.csdn.net/qq_40132161/article/details/103697245
 
 --videojs: Note: Do not use both data-setup and an options object.
-<video data-setup='{"controls": true, "autoplay": false, "preload": "auto"}'...>
-Note: You must use single-quotes around the value of data-setup as it contains a JSON string which must use double quotes.
-
-Finally, if you're not using the data-setup attribute to trigger the player setup, you can pass in an object of player options as the second argument to the videojs function:
-
 videojs('my-player', {
   controls: true,
   autoplay: false,
   preload: 'auto'
 });
 Note: Do not use both data-setup and an options object.
+--
+https://stackoverflow.com/questions/359788/how-to-execute-a-javascript-function-when-i-have-its-name-as-a-string
 
 ### server:
 https://askubuntu.com/questions/178970/i-need-to-reset-my-computers-ip-address-to-dhcp-from-static

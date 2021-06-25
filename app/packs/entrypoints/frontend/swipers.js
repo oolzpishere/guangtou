@@ -1,6 +1,9 @@
 
 // import Swiper bundle with all modules installed
 import Swiper from 'swiper/bundle';
+import { gsap } from 'gsap/dist/gsap.js'
+// import counterUp from 'counterup2'
+import {Flips} from "./flips"
 
 $(document).on("turbolinks:load", function() {
 // document.addEventListener("DOMContentLoaded", function(event) {
@@ -32,11 +35,44 @@ $(document).on("turbolinks:load", function() {
       // }
     });
 
+    function startCount() {
+      var flips = new Flips();
+      flips.beginToCount();
+    }
+
+    var corp_all_swiper_tls = [
+      function(){
+        let corp_all_swiper1_tl = gsap.timeline(); //create the timeline
+        corp_all_swiper1_tl.from(".corp-index-swiper-title", {y: -600, duration: 1, ease: "elastic", })
+          .from(".corp-index-swiper-num", {y: -600, duration: 1, onComplete: startCount })
+      },
+      function(){},
+      function(){},
+      function(){}
+    ]
+
     swiper.on('slideChange', function () {
       // corpLinksSwiper.slideTo(swiper.realIndex, speed, runCallbacks)
       corpLinksSwiper.slideTo(swiper.realIndex)
       console.log(swiper.realIndex);
+      // animation have to call at current page.
+      corp_all_swiper_tls[swiper.realIndex]();
+
+
     });
+
+    // swiper.on('slideResetTransitionEnd', function () {
+    //   // corpLinksSwiper.slideTo(swiper.realIndex, speed, runCallbacks)
+    //
+    //   corp_all_swiper_tls[swiper.realIndex]()
+    // });
+
+
+
+
+
+
+
 
 
 })
