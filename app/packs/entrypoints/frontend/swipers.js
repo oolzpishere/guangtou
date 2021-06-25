@@ -10,55 +10,65 @@ $(document).on("turbolinks:load", function() {
   var wHeight = window.innerHeight;
   $('.window-holder').css("height", wHeight)
 
-  var swiper = new Swiper(".mySwiper", {
-          direction: "vertical",
-          loop: true,
-          pagination: {
-            el: ".swiper-pagination",
-            type: 'bullets',
-            clickable: true,
-            bulletClass: 'swiper-pagination-bullet my-swiper-pagination-bullet',
-            bulletActiveClass: 'swiper-pagination-bullet-active my-swiper-pagination-bullet-active',
-          },
-        });
 
-    var corpLinksSwiper = new Swiper(".corp-links-swiper", {
-      // direction: "vertical",
-      // loop: true,
-      allowTouchMove: false,
-      effect: 'fade',
-      fadeEffect: {
-        crossFade: true
-      },
-      // cubeEffect: {
-      //   slideShadows: false,
-      // }
-    });
 
-    function startCount() {
-      var flips = new Flips();
-      flips.beginToCount();
+    function startCount(target_item) {
+      let flips = new Flips();
+      flips.beginToCount(target_item);
+    }
+
+    var corp_all_swiper_tl = gsap.timeline(); //create the timeline
+    function my_clear_tl(tl) {
+      tl.seek('end');
+      tl.clear();
     }
 
     var corp_all_swiper_tls = [
       function(){
-        let corp_all_swiper1_tl = gsap.timeline(); //create the timeline
-        corp_all_swiper1_tl.from(".corp-index-swiper-title", {y: -600, duration: 1, ease: "elastic", })
-          .from(".corp-index-swiper-num", {y: -600, duration: 1, onComplete: startCount })
+        corp_all_swiper_tl.from(".corp-index-swiper-title", {y: -500, opacity: 0, duration: 1, ease: "elastic", })
+          .from(".corp-index-swiper-num", {y: -500, opacity: 0, duration: 1, onComplete: function(){startCount('.corp_all_counter')} })
       },
-      function(){},
-      function(){},
-      function(){}
+      function(){
+        corp_all_swiper_tl.from(".corp-index-swiper-title", {y: -500, opacity: 0, duration: 1, ease: "elastic", })
+          .from(".corp-index-swiper-num", {y: -500, opacity: 0, duration: 1, onComplete: function(){startCount('.corp_all_counter')} })
+      },
+      function(){
+        corp_all_swiper_tl.from(".title-slide-in", {y: -500, opacity: 0, duration: 1, ease: "elastic", })
+          .from(".flag-flip", {rotationX:-90, transformOrigin:"top", duration: 1 })
+
+      },
+      function(){
+        corp_all_swiper_tl.from(".title-slide-in", {y: -1200, opacity: 0, duration: 1, ease: "elastic", })
+      },
+      function(){
+        corp_all_swiper_tl.from(".title-slide-in", {y: -500, opacity: 0, duration: 1, ease: "elastic", })
+          .from(".flag-flip", {rotationX:-90, transformOrigin:"top", duration: 1 })
+      }
     ]
 
-    swiper.on('slideChange', function () {
-      // corpLinksSwiper.slideTo(swiper.realIndex, speed, runCallbacks)
-      corpLinksSwiper.slideTo(swiper.realIndex)
-      console.log(swiper.realIndex);
+    var corpAllSwiper = new Swiper(".corpAllSwiper", {
+            direction: "vertical",
+            loop: true,
+            pagination: {
+              el: ".swiper-pagination",
+              type: 'bullets',
+              clickable: true,
+              bulletClass: 'swiper-pagination-bullet my-swiper-pagination-bullet',
+              bulletActiveClass: 'swiper-pagination-bullet-active my-swiper-pagination-bullet-active',
+            },
+            on: {
+              init: function () {
+                corp_all_swiper_tls[0]();
+              },
+            }
+          });
+
+    corpAllSwiper.on('slideChange', function () {
+      // corpLinksSwiper.slideTo(swiper.realIndex)
+      console.log(corpAllSwiper.realIndex);
+      my_clear_tl(corp_all_swiper_tl)
       // animation have to call at current page.
-      corp_all_swiper_tls[swiper.realIndex]();
-
-
+      corp_all_swiper_tls[corpAllSwiper.realIndex]();
     });
 
     // swiper.on('slideResetTransitionEnd', function () {
@@ -66,11 +76,6 @@ $(document).on("turbolinks:load", function() {
     //
     //   corp_all_swiper_tls[swiper.realIndex]()
     // });
-
-
-
-
-
 
 
 

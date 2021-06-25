@@ -10,10 +10,10 @@ var Flips = function() {
   // this.beginToCount();
 }
 
-Flips.prototype.beginToCount = function(){
+Flips.prototype.beginToCount = function(target_item, duration_t = 700, delay_t = 2){
   // var _self = this;
-  if ($('.counter').length > 0) {
-    $( '.counter' ).each(function( index ) {
+  if ($( target_item ).length > 0) {
+    $( target_item ).each(function( index ) {
       counterUp( this, {
           duration: 700,
           delay: 2

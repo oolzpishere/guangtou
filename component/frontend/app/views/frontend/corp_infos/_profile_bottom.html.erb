@@ -1,12 +1,30 @@
-<div class="position-fixed w-100" style="bottom: 0; height: 450px; background: no-repeat center url(<%= asset_pack_path 'media/images/corp/profile/bottom-bg.png'%>) ">
-  <div class="position-relative">
-    <div class="bg-info" style="height: 160px; width: 45%;">
+<div class="position-fixed w-100" style="bottom: 0; height: 290px; z-index: 1000; background: no-repeat center url(<%= asset_pack_path 'media/images/corp/profile/bottom-bg.png'%>) ">
+  <div class="row h-100 g-0 position-relative">
+    <div class="col-auto " style="height: 150px; width: 1550px;">
       <%= render 'corp_bottom_links' %>
+      <div class="col mt-5 ms-5" style="">
+        <%= link_to(corp_all_path) do %>
+          <%= image_pack_tag 'media/images/corp/go-back.png' %>
+        <% end %>
+      </div>
+
 
     </div>
 
-    <div class=" w-100" style="height: 160px; ">
+    <div class="col text-white text-end " style="margin-top: 120px; margin-right: 3%; ">
+      <div class="row g-0">
+        <div class="col text-end me-3 mt-3" style="">
+          CORPORATE
+          <br>
+          INTRODUCTION
+        </div>
+
+        <div class="col-auto text-end" style="font-size: 5rem">
+          企业概况
+        </div>
+      </div>
 
     </div>
+
   </div>
 </div>

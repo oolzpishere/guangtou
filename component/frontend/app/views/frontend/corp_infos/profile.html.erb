@@ -1,21 +1,17 @@
 <main class="window-holder position-relative" style="background-color: #F2F2F2;"  >
-  <div class="w-100" style="height: 220px;" >
+  <div class="w-100" style="height: 22%;" >
   </div>
 
   <div class="row g-0 m-auto" style="width: 90%; ">
-    <div class="col" style="width: 50%; ">
+    <div class="col text-end" style="width: 50%; ">
       <%= link_to(profile_nnl_path, html_options = {}) do %>
-        <div class="w-100 bg-primary" style="height: 1000px;">
-
-        </div>
+        <%= image_pack_tag 'media/images/corp/profile/nnl-profile-bg.png' %>
       <% end %>
     </div>
 
     <div class="col" style="width: 50%;">
       <%= link_to(profile_gt_path, html_options = {}) do %>
-        <div class="w-100  bg-info" style="height: 1000px;">
-
-        </div>
+        <%= image_pack_tag 'media/images/corp/profile/gt-profile-bg.png' %>
       <% end %>
     </div>
   </div>

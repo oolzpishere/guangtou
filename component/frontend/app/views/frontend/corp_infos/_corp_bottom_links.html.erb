@@ -1,23 +1,18 @@
-<div class="">
 
-  <% corp_navs = [
-  {path: profile_path, img_path: 'media/images/corp/profile/profile-nav-btn.png'},
-  {path: "#", img_path: 'media/images/corp/profile/strategy-nav-btn.png'},
-  {path: culture_path, img_path: 'media/images/corp/profile/culture-nav-btn.png'},
-  {path: "#", img_path: 'media/images/corp/profile/gx-buss-nav-btn.png'},
-  ] %>
+<% corp_navs = [
+{path: profile_path, img_path: 'media/images/corp/profile/profile-nav-btn.png'},
+{path: "#", img_path: 'media/images/corp/profile/strategy-nav-btn.png'},
+{path: culture_path, img_path: 'media/images/corp/profile/culture-nav-btn.png'},
+{path: "#", img_path: 'media/images/corp/profile/gx-buss-nav-btn.png'},
+] %>
 
-  <div class="row g-0">
-    <% corp_navs.each do |corp_nav| %>
-      <div class="col-3 text-end">
-        <%= link_to(corp_nav[:path], html_options = {}) do %>
-          <%= image_pack_tag corp_nav[:img_path] %>
-        <% end %>
-      </div>
-    <% end %>
-
-
+<div class="row g-0 w-100 h-100 align-items-center">
+  <% corp_navs.each do |corp_nav| %>
+    <div class="col-3 text-center">
+      <%= link_to(corp_nav[:path], html_options = {}) do %>
+        <%= image_pack_tag corp_nav[:img_path], class: "shadow-dark-xxl", style: "width: 85%"%>
+      <% end %>
     </div>
-  </div>
+  <% end %>
 
 </div>
