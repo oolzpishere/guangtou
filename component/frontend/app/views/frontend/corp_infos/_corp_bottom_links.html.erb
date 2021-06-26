@@ -10,7 +10,7 @@
   <% corp_navs.each do |corp_nav| %>
     <div class="col-3 text-center">
       <%= link_to(corp_nav[:path], html_options = {}) do %>
-        <%= image_pack_tag corp_nav[:img_path], class: "shadow-dark-xxl", style: "width: 85%"%>
+        <%= image_pack_tag corp_nav[:img_path], class: "rounded-pill shadow-dark-xxl", style: "width: 85%"%>
       <% end %>
     </div>
   <% end %>

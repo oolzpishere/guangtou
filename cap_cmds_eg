@@ -1,0 +1,49 @@
+00:00 git:wrapper
+      01 mkdir -p /tmp
+      02 #<StringIO:0x00007fc7efbd5290> /tmp/git-ssh-1b0ff5c7b36abeab7950.sh
+      03 chmod 700 /tmp/git-ssh-1b0ff5c7b36abeab7950.sh
+00:00 git:check
+      01 git ls-remote https://github.com/oolzpishere/qianyan_new.git HEAD
+00:00 deploy:check:directories
+      01 mkdir -p /var/www/rails/qianyan_new/shared /var/www/rails/qianyan_new/releases
+00:00 deploy:check:linked_dirs
+      01 mkdir -p /var/www/rails/qianyan_new/shared/log /var/www/rails/qianyan_new/shared/tmp/pids /var/www/rails/qianyan_new/shared/tmp/cache /var/www/rails/qianyan_new/shared/tmp/sockets /var/www/rails/qianyan_new/shared/public/system /var/www/rails/qianyan…
+00:00 deploy:check:make_linked_dirs
+      01 mkdir -p /var/www/rails/qianyan_new/shared/config
+00:00 git:clone
+      The repository mirror is at /var/www/rails/qianyan_new/repo
+00:00 git:update
+      01 git remote set-url origin https://github.com/oolzpishere/qianyan_new.git
+      02 git remote update --prune
+00:00 git:create_release
+      01 mkdir -p /var/www/rails/qianyan_new/releases/20210626045030
+      02 git archive master | /usr/bin/env tar -x -f - -C /var/www/rails/qianyan_new/releases/20210626045030
+00:00 deploy:set_current_revision
+      01 echo "" > REVISION
+00:00 deploy:symlink:linked_files
+      01 mkdir -p /var/www/rails/qianyan_new/releases/20210626045030/config
+00:00 deploy:symlink:linked_dirs
+      01 mkdir -p /var/www/rails/qianyan_new/releases/20210626045030 /var/www/rails/qianyan_new/releases/20210626045030/tmp /var/www/rails/qianyan_new/releases/20210626045030/public
+00:00 bundler:config
+      01 /home/ubuntu/.rbenv/bin/rbenv exec bundle config --local deployment true
+      02 /home/ubuntu/.rbenv/bin/rbenv exec bundle config --local path /var/www/rails/qianyan_new/shared/bundle
+      03 /home/ubuntu/.rbenv/bin/rbenv exec bundle config --local without development:test
+00:00 bundler:install
+      The Gemfile's dependencies are satisfied, skipping installation
+00:00 deploy:assets:precompile
+      01 /home/ubuntu/.rbenv/bin/rbenv exec bundle exec rake assets:precompile
+00:00 deploy:assets:backup_manifest
+      01 mkdir -p /var/www/rails/qianyan_new/releases/20210626045030/assets_manifest_backup
+      02 cp  /var/www/rails/qianyan_new/releases/20210626045030/assets_manifest_backup
+00:00 deploy:cleanup_assets
+      01 /home/ubuntu/.rbenv/bin/rbenv exec bundle exec rake 'assets:clean[2]'
+00:00 deploy:migrate
+      [deploy:migrate] Checking changes in db
+      [deploy:migrate] Skip `deploy:migrate` (nothing changed in db)
+00:00 deploy:symlink:release
+      01 ln -s /var/www/rails/qianyan_new/releases/20210626045030 /var/www/rails/qianyan_new/releases/current
+      02 mv /var/www/rails/qianyan_new/releases/current /var/www/rails/qianyan_new
+00:00 deploy:log_revision
+      01 echo "Branch master (at ) deployed as release 20210626045030 by leeli" >> /var/www/rails/qianyan_new/revisions.log
+00:00 puma:restart
+      01 /bin/systemctl --user restart puma_qianyan_new_production

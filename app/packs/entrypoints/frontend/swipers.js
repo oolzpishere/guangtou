@@ -77,7 +77,7 @@ $(document).on("turbolinks:load", function() {
     //   corp_all_swiper_tls[swiper.realIndex]()
     // });
 
-    var corpAllSwiper = new Swiper(".partyIndexSwiper", {
+    var partyIndexSwiper = new Swiper(".partyIndexSwiper", {
             loop: true,
             pagination: {
               el: ".swiper-pagination",

@@ -55,7 +55,11 @@ $(document).on("turbolinks:load", function() {
 
 
   if ( $('.nnl-profile-video-cover').length > 0 ) {
-    var nnl_player = videojs('nnl-video');
+    var nnl_player = videojs('nnl-video', {
+      controls: true,
+      autoplay: false,
+      preload: 'auto'
+    });
 
     $('.nnl-profile-video-cover').on('click', function(){
       $('#nnl-video-wrap').removeClass('d-none');
@@ -67,9 +71,6 @@ $(document).on("turbolinks:load", function() {
       $('#nnl-video-wrap').addClass('d-none');
     })
   }
-
-
-
 
   // player.on('touchstart', function(){
   //   // this.controlBar.show();
@@ -94,5 +95,15 @@ $(document).on("turbolinks:load", function() {
   //   }
   // })
 
+
+})
+
+// teardown: fires before Turbolinks saves the current page to cache.
+$(document).on("turbolinks:before-cache", function() {
+  // dispose videojs, when leave page.
+  if ( $('.video-js').length > 0 ) {
+    // videojs('nnl-video').dispose();
+    videojs( document.querySelector('.video-js') ).dispose();
+  }
 
 })

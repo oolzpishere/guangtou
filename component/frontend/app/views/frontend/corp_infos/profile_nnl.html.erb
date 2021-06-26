@@ -6,13 +6,13 @@
     <div class="row g-0 h-100 align-items-center justify-content-center position-relative">
       <div class="position-relative" style="width:80%;">
         <i class="bi bi-x-lg position-absolute close-nnl-video" style="font-size: 2rem; color: white; bottom: 0; left: -2em;"></i>
+        <!-- data-setup='{"controls": true}'> -->
         <video
             id="nnl-video"
             class="video-js my-vjs-skin w-100"
-            preload="auto"
             enableTouchActivity
             poster=<%= asset_pack_path 'media/images/corp/profile/profile_nnl/nnl_video_mask.png' %>
-            data-setup='{"controls": true}'>
+            data-setup=''>
           <source src="/videos/mad.mp4" type="video/mp4"></source>
           <p class="vjs-no-js">
             To view this video please enable JavaScript, and consider upgrading to a
