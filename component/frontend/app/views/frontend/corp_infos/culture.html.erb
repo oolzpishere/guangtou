@@ -1,18 +1,21 @@
+<main class="window-holder position-relative" style=""  >
+  <!-- <div class="w-100" style="height: 22%;" >
+  </div> -->
 
-<h1>Culture</h1>
+  <div class="row g-0 m-auto w-100" style=" ">
+    <div class="col text-end" style="width: 50%; ">
+      <%= link_to(culture_gt_path, html_options = {}) do %>
+        <%= image_pack_tag 'media/images/corp/culture/gt-big-nav.png' %>
+      <% end %>
+    </div>
 
-<button class="btn btn-primary" type="button" name="button">321</button>
-
-<div class="row">
-  <div class="col-6">
-    <!-- <div class="slider">
-      <div><h3>1</h3></div>
-      <div><h3>2</h3></div>
-      <div><h3>3</h3></div>
-      <div><h3>4</h3></div>
-      <div><h3>5</h3></div>
-      <div><h3>6</h3></div>
-    </div> -->
-
+    <div class="col" style="width: 50%;">
+      <%= link_to(culture_xcl_path, html_options = {}) do %>
+        <%= image_pack_tag 'media/images/corp/culture/xcl-big-nav.png' %>
+      <% end %>
+    </div>
   </div>
-</div>
+
+  <%= render 'profile_bottom', return_path: corp_all_path %>
+
+</main>

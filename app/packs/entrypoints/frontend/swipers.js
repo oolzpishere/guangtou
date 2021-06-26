@@ -108,5 +108,48 @@ $(document).on("turbolinks:load", function() {
            }
         });
 
+  if ($('.cultureXclSwiper').length > 0) {
+    var thumbsSwiper = new Swiper(".cultureThumbsSwiper", {
+          // spaceBetween: 10,
+          slidesPerView: 4,
+          // freeMode: true,
+          // watchSlidesVisibility: true,
+          // watchSlidesProgress: true,
+        });
+
+    new Swiper(".cultureXclSwiper", {
+            loop: true,
+            autoplay: {
+               delay: 30000,
+             },
+            thumbs: {
+              swiper: thumbsSwiper
+            }
+          });
+  }
+
+  if ($('.cultureGtSwiper').length > 0) {
+    var thumbsSwiper = new Swiper(".cultureThumbsSwiper", {
+          // spaceBetween: 10,
+          slidesPerView: 3,
+          // freeMode: true,
+          // watchSlidesVisibility: true,
+          // watchSlidesProgress: true,
+        });
+
+    new Swiper(".cultureGtSwiper", {
+            loop: true,
+            autoplay: {
+               delay: 30000,
+             },
+            thumbs: {
+              swiper: thumbsSwiper
+            }
+          });
+  }
+
+
+
+
 
 })

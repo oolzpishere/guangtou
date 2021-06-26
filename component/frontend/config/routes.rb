@@ -10,6 +10,9 @@ Frontend::Engine.routes.draw do
   get '/profile_gt', to: 'corp_infos#profile_gt'
 
   get '/culture', to: 'corp_infos#culture'
+  get '/culture_gt', to: 'corp_infos#culture_gt'
+  get '/culture_xcl', to: 'corp_infos#culture_xcl'
+
 
   resources :parties
 
