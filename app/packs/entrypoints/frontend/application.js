@@ -72,6 +72,26 @@ $(document).on("turbolinks:load", function() {
     })
   }
 
+  if ( $('.gt-profile-video-cover').length > 0 ) {
+    var gt_player = videojs('gt-profile-video', {
+      controls: true,
+      autoplay: false,
+      preload: 'auto'
+    });
+
+    $('.gt-profile-video-cover').on('click', function(){
+      $('#gt-video-wrap').removeClass('d-none');
+      gt_player.play();
+    })
+
+    $('.close-nnl-video').on('click', function(){
+      gt_player.pause();
+      $('#gt-video-wrap').addClass('d-none');
+    })
+  }
+
+
+
   // player.on('touchstart', function(){
   //   // this.controlBar.show();
   //   // player.requestFullscreen();

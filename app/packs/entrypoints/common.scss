@@ -32,6 +32,11 @@ body,input,select,textarea,button { font-family: 'Microsoft Yahei', 'Helvetica N
   color: #003288;
 }
 
+.gt-border-primary{
+  border-color: #003288 !important;
+}
+
+
 .shadow-dark-xxl{
   box-shadow: 12px 10px 36px 10px rgba(0,0,0,0.3);
   -webkit-box-shadow: 12px 10px 36px 10px rgba(0,0,0,0.3);
@@ -40,4 +45,8 @@ body,input,select,textarea,button { font-family: 'Microsoft Yahei', 'Helvetica N
 
 .video-bg-dark{
   background-color: rgb(0, 0, 0, 0.9);
+}
+
+.text-indent-4rem{
+  text-indent: 4rem;
 }
