@@ -68,6 +68,9 @@ $(document).on("turbolinks:load", function() {
     })
   }
 
+
+
+
   // player.on('touchstart', function(){
   //   // this.controlBar.show();
   //   // player.requestFullscreen();

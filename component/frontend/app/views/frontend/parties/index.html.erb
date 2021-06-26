@@ -1,14 +1,93 @@
-<h1>Parties</h1>
 <div class="main">
-  <div class="row g-0">
+  <div class="row g-0 position-relative">
     <!-- left -->
       <!-- navs -->
-    <div class="" style="width: 20%;">
+    <div class="position-absolute h-100 bg-info" style="width: 20%;">
       <%# render 'party_links' %>
     </div>
     <div class="" style="width: 80%;">
 
     </div>
+
+    <!-- Slider main container -->
+    <div class="swiper-container partyIndexSwiper window-holder">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- swiper-slide1 -->
+        <div class="swiper-slide" style="background-image:url(<%= asset_pack_path 'media/images/party/swiper1.png'%>)" >
+          <div class="row g-0 justify-content-end" style="margin: 240px 430px 0 0;">
+            <div class="corp-index-swiper-title col-auto gt-text-primary fw-bold" style="font-size: 6.5rem">
+              团结 创新 严谨 开拓
+            </div>
+            <div class="col-12 corp-index-swiper-num" >
+              <div class="row g-0 justify-content-end text-white" style="margin-top: 20px; font-size: 5rem">
+                <div class="col-auto position-relative ms-5" >
+                  <!-- <div class="position-absolute corp_all_counter" style="left: 53px; top: -66px">60</div> -->
+                  <%= image_pack_tag 'media/images/corp/corp_all_swiper/60.png' %>
+                </div>
+                <div class="col-auto position-relative ms-5">
+                  <!-- <div class="position-absolute corp_all_counter" style="left: 86px; top: -66px">101</div> -->
+                  <%= image_pack_tag 'media/images/corp/corp_all_swiper/101.png' %>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+        <!-- swiper-slide2 -->
+        <div class="swiper-slide" style="background-image:url(<%= asset_pack_path 'media/images/party/swiper2.png'%>)" >
+          <div class="row g-0 justify-content-end" style="margin: 180px 260px 0 0;">
+            <div class="corp-index-swiper-title col-auto text-white fw-bold" style="font-size: 6.5rem">
+              团结 创新 严谨 开拓
+            </div>
+            <div class="col-12 corp-index-swiper-num" >
+              <div class="row g-0 justify-content-end text-white" style="margin-top: 20px; font-size: 5rem">
+                <div class="col-auto position-relative  ms-5">
+                  <!-- <div class="position-absolute corp_all_counter2" style="left: 60px; top: -66px">102</div> -->
+                  <%= image_pack_tag 'media/images/corp/corp_all_swiper/102.png' %>
+                </div>
+                <div class="col-auto position-relative  ms-5">
+                  <!-- <div class="position-absolute corp_all_counter2" style="left: 56px; top: -66px">10</div> -->
+                  <%= image_pack_tag 'media/images/corp/corp_all_swiper/10.png' %>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- swiper-slide3 -->
+        <div class="swiper-slide" style="background-image:url(<%= asset_pack_path 'media/images/party/swiper3.png'%>)">
+          <div class="row g-0 justify-content-end text-white" style="margin-top: 22%; margin-right: 5%;">
+            <div class="title-slide-in col-auto text-center fw-bold" style="font-size: 6.5rem; ">
+              领导关怀
+              <div class="w-100"></div>
+              <%= image_pack_tag 'media/images/corp/corp_all_swiper/leader-text.png', class: "flag-flip", style: "width:652px;" %>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- swiper-slide4 -->
+        <div class="swiper-slide" style="background-image:url(<%= asset_pack_path 'media/images/party/swiper4.png'%>)">
+          <div class="row g-0 justify-content-end text-white" style="margin-top: 35%;">
+            <div class="col-auto text-end fw-bold" style="font-size: 6.5rem; margin-right: 6%;">
+              <%= image_pack_tag 'media/images/corp/corp_all_swiper/global-flag.png', class: "title-slide-in", style: "width:1031px;" %>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+
+    </div>
+
 
   </div>
 

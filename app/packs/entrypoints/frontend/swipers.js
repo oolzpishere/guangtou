@@ -77,7 +77,21 @@ $(document).on("turbolinks:load", function() {
     //   corp_all_swiper_tls[swiper.realIndex]()
     // });
 
-
+    var corpAllSwiper = new Swiper(".partyIndexSwiper", {
+            loop: true,
+            pagination: {
+              el: ".swiper-pagination",
+              type: 'bullets',
+              clickable: true,
+              bulletClass: 'swiper-pagination-bullet my-swiper-pagination-bullet',
+              bulletActiveClass: 'swiper-pagination-bullet-active my-swiper-pagination-bullet-active',
+            },
+            on: {
+              init: function () {
+                // corp_all_swiper_tls[0]();
+              },
+            }
+          });
 
 
 })
