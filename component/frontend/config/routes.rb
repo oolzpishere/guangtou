@@ -15,6 +15,9 @@ Frontend::Engine.routes.draw do
 
   get '/strategy', to: 'corp_infos#strategy'
 
+  get '/sync', to: 'corp_infos#sync'
+
+
 
   resources :parties
 
