@@ -79,9 +79,8 @@ Note: Do not use both data-setup and an options object.
 https://stackoverflow.com/questions/359788/how-to-execute-a-javascript-function-when-i-have-its-name-as-a-string
 
 ### server:
-https://askubuntu.com/questions/178970/i-need-to-reset-my-computers-ip-address-to-dhcp-from-static
-https://www.howtogeek.com/howto/ubuntu/change-ubuntu-server-from-dhcp-to-a-static-ip-address/
 https://linuxhint.com/change-from-dhcp-to-static-ip-address-ubuntu/
+https://devtutorial.io/how-to-set-a-static-ip-address-in-ubuntu-server-20-04.html
 How to disable auto sleep in Ubuntu 18.04:
 https://askubuntu.com/questions/1062369/how-to-disable-auto-sleep-in-ubuntu-18-04
 https://askubuntu.com/questions/972169/ubuntu-17-10-and-later-dont-suspend-when-lid-is-closed-just-lock-screen
@@ -93,6 +92,10 @@ http://www.vassox.com/linux-general/ubuntu/disabling-ubuntu-suspend-power-manage
 - rbenv install ruby 2.7.2
 -issue: ruby-2.7.2/lib/rubygems/core_ext/kernel_require.rb:92:in `require': cannot load such file -- openssl (LoadError)
 fix: sudo apt-get install libssl-dev libreadline-dev
+
+-- old
+https://askubuntu.com/questions/178970/i-need-to-reset-my-computers-ip-address-to-dhcp-from-static
+https://www.howtogeek.com/howto/ubuntu/change-ubuntu-server-from-dhcp-to-a-static-ip-address/
 
 #### ssh
 ssh to desktop
