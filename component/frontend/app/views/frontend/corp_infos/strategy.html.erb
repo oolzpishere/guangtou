@@ -1,0 +1,83 @@
+<main class="window-holder position-relative" style="background-color: #90a6cd;"  >
+
+  <div id="strategy-video-wrap" class="position-absolute w-100 h-100 d-none video-bg-dark" style="top:0; left:0; z-index:10;">
+    <div class="row g-0 h-100 align-items-center justify-content-center position-relative">
+      <div class="col-auto position-relative" style="margin-top: -80px; ">
+        <i class="bi bi-x-lg position-absolute close-video" style="font-size: 2rem; color: white; bottom: 0; left: -2em;"></i>
+        <!-- data-setup='{"controls": true}'> -->
+        <video
+            id="strategy-video"
+            class="video-js my-vjs-skin"
+            width="1550"
+            enableTouchActivity
+            data-setup=''>
+          <source src="/videos/profile_gt.mp4" type="video/mp4"></source>
+          <p class="vjs-no-js">
+            To view this video please enable JavaScript, and consider upgrading to a
+            web browser that
+          </p>
+        </video>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-100" style="height: 18%;" >
+  </div>
+
+  <!-- align-items-center justify-content-center -->
+  <div class="row g-0 justify-content-center m-auto" style="width:90%; background: top center no-repeat url(<%= asset_pack_path 'media/images/corp/strategy/main-bg.png'%>)">
+    <div class="row g-0 text-center" >
+      <div class="w-100 mt-3"></div>
+      <div class="col-12 position-relative" style="line-height:1rem"  >
+        <%= image_pack_tag 'media/images/corp/strategy/title.png' %>
+        <div class="w-100"></div>
+        <%= image_pack_tag 'media/images/corp/strategy/title-underline.png' %>
+        <div class="w-100"></div>
+
+        <%= image_pack_tag 'media/images/corp/strategy/sub-title.png' %>
+        <div class="w-100 mt-3"></div>
+        <%= image_pack_tag 'media/images/corp/strategy/text.png' %>
+      </div>
+
+    </div>
+
+    <div class="w-100 mt-5"></div>
+    <!-- center -->
+    <div class="row g-0 text-center " style="width:1700px;">
+      <div class="col-4 h-100 d-flex align-items-center px-3">
+        <%= image_pack_tag 'media/images/corp/strategy/cover1.png', class: "w-100 " %>
+      </div>
+      <div class="col-4 h-100 px-3">
+        <%= image_pack_tag 'media/images/corp/strategy/cover2.png', class: "strategy-video-cover w-100"  %>
+      </div>
+      <div class="col-4 h-100 d-flex align-items-center px-3">
+        <%= image_pack_tag 'media/images/corp/strategy/cover3.png', class: "w-100"  %>
+      </div>
+    </div>
+
+    <div class="w-100 mt-4"></div>
+    <!-- bottom -->
+    <div class="row g-0 text-center" style="width:1000px;">
+      <div class="col-4">
+        <%= image_pack_tag 'media/images/corp/strategy/point1.png' %>
+      </div>
+      <div class="col-4 position-relative">
+        <%= image_pack_tag 'media/images/corp/strategy/tag-line.png', class: "position-absolute", style: "left:0; top:50%;
+transform:translate(0,-50%);" %>
+
+        <%= image_pack_tag 'media/images/corp/strategy/point2.png' %>
+
+        <%= image_pack_tag 'media/images/corp/strategy/tag-line.png', class: "position-absolute", style: "right:0; top:50%;
+transform:translate(0,-50%);" %>
+      </div>
+      <div class="col-4">
+        <%= image_pack_tag 'media/images/corp/strategy/point3.png' %>
+      </div>
+    </div>
+
+  </div>
+
+
+  <%= render 'profile_bottom', return_path: corp_all_path %>
+
+</main>
