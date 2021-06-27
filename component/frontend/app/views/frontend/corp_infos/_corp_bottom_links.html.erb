@@ -1,16 +1,12 @@
 
-<% corp_navs = [
-{path: profile_path, img_path: 'media/images/corp/profile/profile-nav-btn.png'},
-{path: strategy_path, img_path: 'media/images/corp/profile/strategy-nav-btn.png'},
-{path: culture_path, img_path: 'media/images/corp/profile/culture-nav-btn.png'},
-{path: "#", img_path: 'media/images/corp/profile/gx-buss-nav-btn.png'},
-] %>
 
 <div class="row g-0 w-100 h-100 align-items-center">
-  <% corp_navs.each do |corp_nav| %>
+  <% @corp_navs.each do |corp_nav| %>
     <div class="col-3 text-center">
       <%= link_to(corp_nav[:path], html_options = {}) do %>
-        <%= image_pack_tag corp_nav[:img_path], class: "rounded-pill shadow-dark-xxl", style: "width: 85%"%>
+        <% nav_class = "rounded-pill shadow-dark-xxl" %>
+        <% (nav_class += ' active') if corp_nav[:active] %>
+        <%= image_pack_tag corp_nav[:img_path], class: nav_class, style: "width: 85%"%>
       <% end %>
     </div>
   <% end %>
