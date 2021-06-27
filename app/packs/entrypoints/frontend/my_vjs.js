@@ -59,6 +59,12 @@ $(document).on("turbolinks:load", function() {
       })
     }
 
+    if ( $('#brand-video').length > 0 ) {
+      videojs('brand-video', {
+        controls: true,
+        autoplay: false,
+      });
+    }
 
 
     // player.on('touchstart', function(){

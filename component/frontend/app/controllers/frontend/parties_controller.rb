@@ -74,27 +74,27 @@ module Frontend
             active_img_path: 'media/images/party/navs/2.png',
             big_img_path: 'media/images/party/navs/002.png'
           },
-          {path: "#",
+          {path: parties_lead_path,
             img_path: 'media/images/party/navs/03.png',
             active_img_path: 'media/images/party/navs/3.png',
             big_img_path: 'media/images/party/navs/003.png'
           },
-          {path: "#",
+          {path: parties_society_path,
             img_path: 'media/images/party/navs/04.png',
             active_img_path: 'media/images/party/navs/4.png',
             big_img_path: 'media/images/party/navs/004.png'
           },
-          {path: "#",
+          {path: parties_service_path,
             img_path: 'media/images/party/navs/05.png',
             active_img_path: 'media/images/party/navs/5.png',
             big_img_path: 'media/images/party/navs/005.png'
           },
-          {path: "#",
+          {path: parties_honor_path,
             img_path: 'media/images/party/navs/06.png',
             active_img_path: 'media/images/party/navs/6.png',
             big_img_path: 'media/images/party/navs/006.png'
           },
-          {path: "#",
+          {path: parties_video_path,
             img_path: 'media/images/party/navs/07.png',
             active_img_path: 'media/images/party/navs/7.png',
             big_img_path: 'media/images/party/navs/007.png'

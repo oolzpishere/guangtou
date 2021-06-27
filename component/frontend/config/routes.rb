@@ -24,6 +24,11 @@ Frontend::Engine.routes.draw do
   get '/parties/brand', to: 'parties#brand'
   get '/parties/brand/detail', to: 'parties#brand_detail'
 
+  get '/parties/video', to: 'parties#video'
+  get '/parties/lead', to: 'parties#lead'
+  get '/parties/society', to: 'parties#society'
+  get '/parties/service', to: 'parties#service'
+  get '/parties/honor', to: 'parties#honor'
 
 
 
