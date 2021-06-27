@@ -19,6 +19,12 @@ Frontend::Engine.routes.draw do
 
 
 
-  resources :parties
+  get '/parties', to: 'parties#index'
+  get '/parties/profile', to: 'parties#profile'
+  get '/parties/brand', to: 'parties#brand'
+  get '/parties/brand/detail', to: 'parties#brand_detail'
+
+
+
 
 end

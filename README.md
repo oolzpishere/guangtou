@@ -88,6 +88,12 @@ https://askubuntu.com/questions/972169/ubuntu-17-10-and-later-dont-suspend-when-
 https://blog.csdn.net/wang1127248268/article/details/88037724
 https://www.mobibrw.com/2020/27398
 http://www.vassox.com/linux-general/ubuntu/disabling-ubuntu-suspend-power-management-features-from-the-command-line/
+
+--ubuntu server
+- rbenv install ruby 2.7.2
+-issue: ruby-2.7.2/lib/rubygems/core_ext/kernel_require.rb:92:in `require': cannot load such file -- openssl (LoadError)
+fix: sudo apt-get install libssl-dev libreadline-dev
+
 #### ssh
 ssh to desktop
 https://linuxconfig.org/how-to-open-ssh-port-22-on-ubuntu-20-04-focal-fossa-linux

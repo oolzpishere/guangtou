@@ -1,0 +1,35 @@
+<main class="window-holder position-relative" style="background: url(<%= asset_pack_path 'media/images/party/second-bg.png'%>) "  >
+
+  <%= render 'party_head' %>
+
+
+  <div class="row g-0">
+    <!-- render left navs -->
+    <%= render 'left_navs', return_path: parties_brand_path %>
+
+    <!-- right content -->
+    <div class="col" style="" >
+
+      <div class="row g-0 mx-auto" style="width:1830px; margin-top: 200px;">
+        <!-- main content -->
+        <div class="col-12 " style= "width:1830px; height: 990px; overflow:scroll; " >
+          <!-- 1812 × 984 -->
+          <%= image_pack_tag 'media/images/party/brand/14.png', style: "width:1810px; height: 984px;" %>
+          <%= image_pack_tag 'media/images/party/brand/58.png', style: "width:1810px; height: 984px;" %>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+  <%# render 'profile_bottom', return_path: corp_all_path %>
+
+</main>
