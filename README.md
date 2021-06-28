@@ -93,6 +93,11 @@ http://www.vassox.com/linux-general/ubuntu/disabling-ubuntu-suspend-power-manage
 -issue: ruby-2.7.2/lib/rubygems/core_ext/kernel_require.rb:92:in `require': cannot load such file -- openssl (LoadError)
 fix: sudo apt-get install libssl-dev libreadline-dev
 
+--install psql
+https://stackoverflow.com/questions/16973018/createuser-could-not-connect-to-database-postgres-fatal-role-tom-does-not-e
+--ubuntu ssh-permission-denied-publickey
+https://askubuntu.com/questions/311558/ssh-permission-denied-publickey
+
 -- old
 https://askubuntu.com/questions/178970/i-need-to-reset-my-computers-ip-address-to-dhcp-from-static
 https://www.howtogeek.com/howto/ubuntu/change-ubuntu-server-from-dhcp-to-a-static-ip-address/
