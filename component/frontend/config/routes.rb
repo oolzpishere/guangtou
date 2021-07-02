@@ -30,6 +30,12 @@ Frontend::Engine.routes.draw do
   get '/parties/service', to: 'parties#service'
   get '/parties/honor', to: 'parties#honor'
 
+  # resources :businesses
+  get '/businesses', to: 'businesses#index'
+  get '/businesses/space', to: 'businesses#space'
+
+  # resources :advantages
+  get '/advantages', to: 'advantages#index'
 
 
 end

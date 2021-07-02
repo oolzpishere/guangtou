@@ -2,6 +2,8 @@ import '../application'
 import './swipers'
 import './flips'
 import './my_vjs'
+// import './shortcuts'
+
 
 
 import 'slick-carousel/slick/slick'
@@ -50,6 +52,15 @@ $(document).on("turbolinks:load", function() {
   // gsap.from(".my-show-up", {rotation: 27, x: 100, duration: 1});
   // gsap.from(".my-show-down", { y: -600, duration: 1});
 
+  // $('.page-transition').addClass('animate__animated animate__fadeIn');
 
+})
+
+// teardown: fires before Turbolinks saves the current page to cache.
+$(document).on("turbolinks:before-cache", function() {
+
+  // if ( $('.page-transition').length > 0 ) {
+  //   $('.page-transition').removeClass('animate__animated animate__fadeIn');
+  // }
 
 })

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Business</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= javascript_pack_tag 'frontend/application' %>
+  <%= stylesheet_pack_tag 'frontend/application' %>
+
+</head>
+<body>
+  <div class="my-container container-fluid g-0">
+    <div class="main">
+
+
+      <%= yield %>
+
+      <%# render 'party_bottom' %>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

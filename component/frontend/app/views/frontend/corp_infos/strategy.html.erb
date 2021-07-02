@@ -44,7 +44,26 @@
     <div class="w-100 mt-5"></div>
     <!-- center -->
     <div class="row g-0 text-center " style="width:1700px;">
-      <div class="col-4 h-100 d-flex align-items-center px-3">
+      <!-- Swiper -->
+      <div class="swiper-container strategySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide position-relative  d-flex align-items-center">
+            <%= image_pack_tag 'media/images/corp/strategy/cover1.png', class: "w-100 " %>
+          </div>
+          <div class="swiper-slide position-relative d-flex align-items-center" style="">
+            <%= image_pack_tag 'media/images/corp/strategy/cover2.png', class: "strategy-video-cover w-100"   %>
+          </div>
+          <div class="swiper-slide position-relative d-flex align-items-center">
+
+            <%= image_pack_tag 'media/images/corp/strategy/cover3.png', class: "w-100"  %>
+
+          </div>
+
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+      <!-- <div class="col-4 h-100 d-flex align-items-center px-3">
         <%= image_pack_tag 'media/images/corp/strategy/cover1.png', class: "w-100 " %>
       </div>
       <div class="col-4 h-100 px-3">
@@ -52,7 +71,7 @@
       </div>
       <div class="col-4 h-100 d-flex align-items-center px-3">
         <%= image_pack_tag 'media/images/corp/strategy/cover3.png', class: "w-100"  %>
-      </div>
+      </div> -->
     </div>
 
     <div class="w-100 mt-4"></div>

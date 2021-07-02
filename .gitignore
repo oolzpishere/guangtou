@@ -41,3 +41,7 @@ yarn-debug.log*
 
 /public/videos
 /app/packs/images
+
+ER_README.md
+/app/packs/images
+config/local_server

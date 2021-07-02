@@ -10,7 +10,8 @@
 
 </head>
 <body>
-  <div class="my-container container-fluid g-0">
+
+  <div id='<%= request.path.gsub('/', '_') %>' class="my-container container-fluid g-0">
     <div class="main">
       <div class="row g-0 text-center w-100 fixed-top ">
         <%# asset_pack_path 'images/corp-top.png' %>
@@ -19,7 +20,6 @@
       </div>
 
       <%= yield %>
-
 
     </div>
 

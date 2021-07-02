@@ -23,7 +23,7 @@
 .cultureThumbsSwiper{
   .active-tag{
     top:0;
-    left:0; 
+    left:0;
     opacity: 0;
   }
 }
@@ -34,4 +34,13 @@
       opacity: 1 !important;
     }
   }
+}
+
+.strategySwiper{
+  // .swiper-wrapper{
+  // }
+  .swiper-slide {
+    width: 33%;
+  }
+
 }

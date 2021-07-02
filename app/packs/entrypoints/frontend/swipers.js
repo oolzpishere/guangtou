@@ -148,6 +148,33 @@ $(document).on("turbolinks:load", function() {
           });
   }
 
+  if ($('.strategySwiper').length > 0) {
+    new Swiper(".strategySwiper", {
+            loop: true,
+            slidesPerView: "auto",
+            centeredSlides: true,
+            spaceBetween: '0.3%',
+            initialSlide: 1,
+          });
+  }
+
+  if ($('.space-main-swiper').length > 0) {
+    new Swiper(".space-main-swiper", {
+            loop: true,
+            pagination: {
+              el: ".swiper-pagination",
+              type: 'bullets',
+              clickable: true,
+              bulletClass: 'swiper-pagination-bullet my-swiper-pagination-bullet',
+              bulletActiveClass: 'swiper-pagination-bullet-active my-swiper-pagination-bullet-active',
+            },
+          });
+
+  }
+
+
+
+
 
 
 

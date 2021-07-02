@@ -16,6 +16,8 @@
 // @import '@videojs/themes/dist/forest/index.css';
 // // Sea
 // @import '@videojs/themes/dist/sea/index.css';
+@import "animate.css/animate.css";
+
 @import './my_vjs';
 
 
@@ -34,6 +36,7 @@
     // $font-size-base: 2rem;
   }
 }
+
 
 .scroll-icon{
   width: 30px;
@@ -66,4 +69,54 @@
     transform: rotateY(720deg) rotateZ(-45deg) translate(-20px, 20px);
     opacity: 0;
   }
+}
+
+.product_list .pt1 .product_con .boll .list_boll{
+  width:8px;
+  height:8px;
+  border:2px solid #fff;
+  display:block;border-radius:50%;
+  box-shadow: 0px 0px 14px 3px #e60012;
+  position:relative;-webkit-animation: bordershow 3s infinite;
+  -moz-animation: bordershow 3s infinite;
+  animation: bordershow 3s infinite;cursor:pointer;
+}
+
+.product_list .pt1 .product_con .boll .list_boll:after,.product_list .pt1 .product_con .boll .list_boll:before{
+  content:"";
+  width:20px;
+  height:20px;
+  background:#fff;
+  background:rgba(255,255,255,0.5);
+  box-shadow: 0px 0px 4px rgba(255,255,255,0.5);
+  display:block;
+  border-radius:50%;
+  position:absolute;
+  top:-6px;
+  left:-6px;
+}
+
+.product_list .pt1 .product_con .boll .list_boll:after{
+  -webkit-animation: boderM 3s infinite;
+  -moz-animation: boderM 3s infinite;
+  animation: boderM 3s infinite;
+}
+
+.product_list .pt1 .product_con .boll .list_boll:before{
+  -webkit-animation: boderM 3s .75s infinite;
+  -moz-animation: boderM 3s .75s infinite;
+  animation: boderM 3s .75s infinite;
+}
+
+@keyframes bordershow {
+    0% {box-shadow: 0px 0px 0px 0px #e60012;}
+    50% {box-shadow: 0px 0px 14px 4px #e60012;}
+    100% {box-shadow: 0px 0px 0px 0px #e60012;}
+}
+
+@keyframes boderM {
+	0% {-webkit-transform: scale(1);-moz-transform: scale(1);-ms-transform: scale(1);-o-transform: scale(1);transform: scale(1);opacity: 0}
+	20% {opacity: 1}
+	75% {-webkit-transform: scale(2);-moz-transform: scale(2);-ms-transform: scale(2);-o-transform: scale(2);transform: scale(2);opacity: 0}
+	100% {opacity: 0}
 }
