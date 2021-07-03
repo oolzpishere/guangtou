@@ -1,25 +1,12 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Advantages</h1>
+<div class="window-holder position-relative bg-info">
+  <h1>Advantages</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div class="row g-0 position-relative">
 
-  <tbody>
-    <% @advantages.each do |advantage| %>
-      <tr>
-        <td><%= link_to 'Show', advantage %></td>
-        <td><%= link_to 'Edit', edit_advantage_path(advantage) %></td>
-        <td><%= link_to 'Destroy', advantage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
 
-<%= link_to 'New Advantage', new_advantage_path %>
+  </div>
+
+
+</div>

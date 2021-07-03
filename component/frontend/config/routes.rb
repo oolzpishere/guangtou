@@ -33,6 +33,8 @@ Frontend::Engine.routes.draw do
   # resources :businesses
   get '/businesses', to: 'businesses#index'
   get '/businesses/space', to: 'businesses#space'
+  get '/businesses/space_details', to: 'businesses#space_details'
+
 
   # resources :advantages
   get '/advantages', to: 'advantages#index'

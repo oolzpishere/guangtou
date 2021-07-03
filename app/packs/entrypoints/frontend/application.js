@@ -11,6 +11,9 @@ import 'slick-carousel/slick/slick'
 // import barba from '@barba/core'
 import { gsap } from 'gsap/dist/gsap.js'
 import 'animejs/lib/anime.js'
+import Chart from 'chart.js/auto';
+
+
 
 
 
@@ -53,6 +56,7 @@ $(document).on("turbolinks:load", function() {
   // gsap.from(".my-show-down", { y: -600, duration: 1});
 
   // $('.page-transition').addClass('animate__animated animate__fadeIn');
+
 
 })
 

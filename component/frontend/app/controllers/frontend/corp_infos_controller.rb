@@ -10,44 +10,6 @@ module Frontend
       # @corp_infos = CorpInfo.all
     end
 
-    # GET /corp_infos/1
-    def show
-    end
-
-    # GET /corp_infos/new
-    def new
-      @corp_info = CorpInfo.new
-    end
-
-    # GET /corp_infos/1/edit
-    def edit
-    end
-
-    # POST /corp_infos
-    def create
-      @corp_info = CorpInfo.new(corp_info_params)
-
-      if @corp_info.save
-        redirect_to @corp_info, notice: 'Corp info was successfully created.'
-      else
-        render :new
-      end
-    end
-
-    # PATCH/PUT /corp_infos/1
-    def update
-      if @corp_info.update(corp_info_params)
-        redirect_to @corp_info, notice: 'Corp info was successfully updated.'
-      else
-        render :edit
-      end
-    end
-
-    # DELETE /corp_infos/1
-    def destroy
-      @corp_info.destroy
-      redirect_to corp_infos_url, notice: 'Corp info was successfully destroyed.'
-    end
 
     private
       # Use callbacks to share common setup or constraints between actions.

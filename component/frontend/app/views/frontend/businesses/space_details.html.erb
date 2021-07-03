@@ -1,78 +1,109 @@
-<div class=" position-relative bg-info">
+<div class="window-holder position-relative " style="background: url(<%= asset_pack_path 'media/images/businesses/space/detail-bg.png'%>) ">
 
-  <div class=" row g-0 position-relative">
-  </div>
+  <div class=" row g-0 position-relative" >
+    <!-- left -->
+    <div class=""  style="width:50%;">
+      <div class="w-100" style="height: 300px;"></div>
+      <div class="business-components-container">
+        <div class="plane-components business-components position-relative d-none">
+          <%= image_pack_tag 'media/images/businesses/space/details/plane1.png', class: 'component-info d-none', style: '' %>
+          <%= image_pack_tag 'media/images/businesses/space/details/plane2.png', class: 'component-info d-none', style: '' %>
 
-  <!-- Slider main container -->
-  <div class="window-holder swiper-container space-main-swiper">
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
-      <!-- Slides -->
-      <div class="swiper-slide product_list">
-        Slide 1
-        <div class="pt1">
-          <div class="product_con">
-            <div class="pic">
-                <!-- <img src="/upload/images/2019/06/22/01a8c919943845ffba8d66c3384d619a.png" alt=""> -->
+          <div class="component-btns position-absolute">
+            <div class="row g-0">
+              <div class="component-btn col position-relative" data-type="plane" data-id="1">
+                <%= image_pack_tag 'media/images/businesses/space/component_btns/5.png', class: 'component-btn-img', style: '' %>
+                <%= image_pack_tag 'media/images/businesses/space/component_btns/1-active.png', class: 'component-btn-active-img d-none', style: '' %>
+              </div>
+              <div class="component-btn col position-relative" data-type="plane" data-id="2">
+                <%= image_pack_tag 'media/images/businesses/space/component_btns/2.png', class: 'component-btn-img', style: '' %>
+              </div>
             </div>
-            <div class="boll">
-                <ul>
-                    <li class="b1" style="left: 62.5%; top: 36%;" data-id="8931">
-                        <i class="list_boll"></i>
 
-                            <div class="list_box transition05" style="top:-1200%; left:-700%;">
-                                <h3 class="list_title">机身蒙皮</h3>
-                            </div>
-                    </li>
-                    <li class="b1" style="left: 58.5%; top: 33%;" data-id="8932">
-                        <i class="list_boll"></i>
-                            <div class="list_box transition05" style="top:-1200%; left:-700%;">
-                                <h3 class="list_title">机身加强框</h3>
-                            </div>
-                    </li>
+          </div>
+        </div>
 
-                    <li class="b1" style="left: 56.5%; top: 36%;" data-id="8933">
-                        <i class="list_boll"></i>
-                            <div class="list_box transition05" style="top:-1200%; left:-700%;">
-                                <h3 class="list_title">航空座椅</h3>
-                            </div>
-                    </li>
+        <div class="aerospace-components business-components position-relative d-none">
+          <%= image_pack_tag 'media/images/businesses/space/details/aerospace1.png', class: 'component-info d-none', style: '' %>
+          <%= image_pack_tag 'media/images/businesses/space/details/aerospace2.png', class: 'component-info d-none', style: '' %>
 
-                    <li class="b1" style="left: 47.5%; top: 29%;" data-id="8934">
-                        <i class="list_boll"></i>
-                            <div class="list_box transition05" style="top:-1200%; left:-700%;">
-                                <h3 class="list_title">航空集装箱</h3>
-                            </div>
-                    </li>
+          <div class="component-btns position-absolute">
+            <div class="row g-0">
+              <div class="component-btn col position-relative" data-type="aerospace" data-id="1">
+                <%= image_pack_tag 'media/images/businesses/space/component_btns/5.png', class: 'component-btn-img', style: '' %>
+                <%= image_pack_tag 'media/images/businesses/space/component_btns/1-active.png', class: 'component-btn-active-img d-none', style: '' %>
+              </div>
+              <div class="component-btn col position-relative" data-type="aerospace" data-id="2">
+                <%= image_pack_tag 'media/images/businesses/space/component_btns/2.png', class: 'component-btn-img', style: '' %>
+              </div>
+            </div>
 
-                    <li class="b1" style="left: 66.5%; top: 43%;" data-id="8926">
-                        <i class="list_boll"></i>
-                            <div class="list_box transition05" style="top:-1200%; left:-700%;">
-                                <h3 class="list_title">机翼壁板</h3>
-                            </div>
-                    </li>
-                </ul>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <!-- right -->
+    <!-- Slider main container -->
+    <div class=" swiper-container space-details-swiper businesses-details-swiper" style="width:50%;">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <!-- product_list -->
+        <div class="swiper-slide plane-slide">
+          <div class="w-100" style="height: 400px;"></div>
+          <!-- product container -->
+          <div class="position-relative" style="width: 1060px; height: 415px; background: no-repeat left top url(<%= asset_pack_path 'media/images/businesses/space/plane60.png'%>) " >
+            <div class="plane-title position-absolute" data-type='plane' data-id='1' style="left:130px; top:-50px;" >
+              <div class="position-relative">
+                <%= image_pack_tag 'media/images/businesses/space/plane-title1.png', class: 'position-absolute', style: 'left: 0; top:0;' %>
+                <%= image_pack_tag 'media/images/businesses/space/plane-title1-active.png', class: 'title1-active-img title-active-img position-absolute d-none', style: 'left: 0; top:0;' %>
+
+                <div class="arrow-container animate__animated animate__fadeInDown" style="top: 140px; left: 50px;">
+                  <div class="position-relative">
+                    <div class="arrow-2">
+                    </div>
+                    <div class="arrow-1 animate__animated animate__infinite zoomIn"></div>
+                  </div>
+                </div>
+
+              </div>
+
             </div>
 
           </div>
 
         </div>
+        <div class="swiper-slide">
+          Slide 2
+        </div>
+
       </div>
-      <div class="swiper-slide">Slide 2</div>
-      <div class="swiper-slide">Slide 3</div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+      <!-- position absolute, bottom center, a little bit right. -->
+      <div class="title-pagination position-absolute" style="z-index: 1020; left: 50px; bottom: 50px;">
+        <!-- title 0, data-id="0", on click main swiper move to data-id -->
+        <div class="row g-0">
+          <div class="col business-swiper-tag position-relative" data-id="1" >
+            <%= image_pack_tag 'media/images/businesses/space/plane-tag.png' %>
+            <%= image_pack_tag 'media/images/businesses/space/plane-tag-active.png', class: 'active-img position-absolute d-none', style: "top:0; left:0;" %>
+          </div>
+          <div class="col business-swiper-tag ms-5 position-relative" data-id="2" >
+            <%= image_pack_tag 'media/images/businesses/space/aerospace-tag.png' %>
+            <%= image_pack_tag 'media/images/businesses/space/aerospace-tag-active.png', class: 'active-img position-absolute d-none', style: "top:0; left:0;" %>
+          </div>
+        </div>
+
+      </div>
+
 
     </div>
-    <!-- If we need pagination -->
-    <div class="swiper-pagination"></div>
-    <!-- position absolute, bottom center, a little bit right. -->
-    <div class="title-pagination position-absolute" style="z-index: 1020;">
-      <!-- title 0, data-id="0", on click main swiper move to data-id -->
-      <!-- title 1 -->
-
-    </div>
-
 
   </div>
+
+
 
 
 
