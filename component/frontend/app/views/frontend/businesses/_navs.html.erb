@@ -1,0 +1,16 @@
+<div class="position-absolute" style="bottom: 50px; bleft:50px; width: 90%;">
+
+  <div class="row g-0 w-100 align-items-center">
+    <% @business_navs.each do |nav| %>
+      <div class="col-4 text-center my-2">
+        <%= link_to(nav[:path], html_options = {}) do %>
+          <% nav_class = "" %>
+          <% (nav_class += ' active') if nav[:active] %>
+          <%= image_pack_tag nav[:img_path], class: nav_class, style: "width: 85%"%>
+        <% end %>
+      </div>
+    <% end %>
+
+  </div>
+
+</div>

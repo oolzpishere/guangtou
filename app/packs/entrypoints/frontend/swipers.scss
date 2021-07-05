@@ -65,6 +65,9 @@
   }
 
   .component-btn{
+    .component-btn-img{
+      display: block;
+    }
     .component-btn-img-active{
       display: none;
     }

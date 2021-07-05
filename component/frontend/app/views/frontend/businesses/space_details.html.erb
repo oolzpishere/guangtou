@@ -2,20 +2,21 @@
 
   <div class=" row g-0 position-relative" >
     <!-- left -->
-    <div class=""  style="width:50%;">
+    <div class="position-relative"  style="width:50%;">
       <div class="w-100" style="height: 300px;"></div>
+      <!-- # TODO: add position-absolute, move to right a bit -->
       <div class="business-components-container">
         <div class="plane-components business-components position-relative active">
           <%= image_pack_tag 'media/images/businesses/space/details/plane1.png', class: 'component-info active', style: '' %>
           <%= image_pack_tag 'media/images/businesses/space/details/plane2.png', class: 'component-info', style: '' %>
 
-          <div class="component-btns position-absolute">
-            <div class="row g-0">
-              <div class="component-btn col position-relative active" data-type="plane" data-id="1">
+          <div class="component-btns position-absolute" style="bottom: 50px;left: 50px;">
+            <div class="row g-0 position-relative">
+              <div class="component-btn col position-relative active mx-1" data-type="plane" data-id="1">
                 <%= image_pack_tag 'media/images/businesses/space/component_btns/5.png', class: 'component-btn-img', style: '' %>
                 <%= image_pack_tag 'media/images/businesses/space/component_btns/1-active.png', class: 'component-btn-img-active', style: '' %>
               </div>
-              <div class="component-btn col position-relative" data-type="plane" data-id="2">
+              <div class="component-btn col position-relative mx-1" data-type="plane" data-id="2">
                 <%= image_pack_tag 'media/images/businesses/space/component_btns/2.png', class: 'component-btn-img', style: '' %>
                 <%= image_pack_tag 'media/images/businesses/space/component_btns/2-active.png', class: 'component-btn-img-active', style: '' %>
               </div>
@@ -44,6 +45,9 @@
         </div>
 
       </div>
+
+      <%# render 'navs', return_path: parties_path %>
+      <%= render 'navs' %>
 
     </div>
     <!-- right -->
