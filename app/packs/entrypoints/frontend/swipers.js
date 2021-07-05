@@ -5,6 +5,7 @@ import { gsap } from 'gsap/dist/gsap.js'
 // import counterUp from 'counterup2'
 import {Flips} from "./flips"
 import {BusinessDetails} from "./business_details"
+import {BusinessDetailsSwiper} from "./business_details_swiper"
 
 
 $(document).on("turbolinks:load", function() {
@@ -174,48 +175,11 @@ $(document).on("turbolinks:load", function() {
 
   }
 
-  if ($('.space-details-swiper').length > 0) {
+  if ($('.businesses-details-swiper').length > 0) {
     var swiperHeight = ( wHeight - $('.business-bottom').innerHeight() )
-    $(".space-details-swiper").css('height', swiperHeight)
+    $(".businesses-details-swiper").css('height', swiperHeight)
 
-    var detailsSwiper = new Swiper(".space-details-swiper", {
-            loop: true,
-            pagination: {
-              el: ".swiper-pagination",
-              type: 'bullets',
-              clickable: true,
-              bulletClass: 'swiper-pagination-bullet my-swiper-pagination-bullet',
-              bulletActiveClass: 'swiper-pagination-bullet-active my-swiper-pagination-bullet-active',
-            },
-            on: {
-              init: function () {
-                $('.business-swiper-tag').eq( 0 ).addClass('active')
-              },
-            }
-          });
-
-    detailsSwiper.on('slideChange', function () {
-      console.log(detailsSwiper.realIndex);
-      $('.business-swiper-tag').removeClass('active')
-      $('.business-swiper-tag').eq( detailsSwiper.realIndex ).addClass('active')
-    });
-
-    $('.business-swiper-tag').on('click', function(){
-      let id = $(this).data('id')
-      detailsSwiper.slideTo(id)
-    });
-
-    var businessDetails = new BusinessDetails();
-
-    $('.plane-title').on('click', function(){
-      let id = $(this).data('id')
-      let type = $(this).data('type')
-      businessDetails.hideAllComponents();
-      businessDetails.showComponent(type, id);
-
-    })
-    // typeof val === 'undefined'
-
+    new BusinessDetailsSwiper(Swiper)
 
   }
 
@@ -223,8 +187,45 @@ $(document).on("turbolinks:load", function() {
 
 
 
-
-
-
-
 })
+
+
+
+
+    // var detailsSwiper = new Swiper(".businesses-details-swiper", {
+    //         loop: true,
+    //         pagination: {
+    //           el: ".swiper-pagination",
+    //           type: 'bullets',
+    //           clickable: true,
+    //           bulletClass: 'swiper-pagination-bullet my-swiper-pagination-bullet',
+    //           bulletActiveClass: 'swiper-pagination-bullet-active my-swiper-pagination-bullet-active',
+    //         },
+    //         on: {
+    //           init: function () {
+    //             $('.business-swiper-tag').eq( 0 ).addClass('active')
+    //           },
+    //         }
+    //       });
+    //
+    // detailsSwiper.on('slideChange', function () {
+    //   $('.business-swiper-tag').removeClass('active')
+    //   $('.business-swiper-tag').eq( detailsSwiper.realIndex ).addClass('active')
+    // });
+    //
+    // $('.business-swiper-tag').on('click', function(){
+    //   let id = $(this).data('id')
+    //   detailsSwiper.slideTo(id)
+    // });
+    //
+    // var businessDetails = new BusinessDetails();
+    //
+    // $('.component-point-container').on('click', function(){
+    //   let humanId = $(this).data('id')
+    //   let type = $(this).data('type')
+    //   // businessDetails.hideAllComponents();
+    //   // businessDetails.showComponent(type, id);
+    //   businessDetails.setComponentActive(type, humanId);
+    //
+    // })
+    // // typeof val === 'undefined'

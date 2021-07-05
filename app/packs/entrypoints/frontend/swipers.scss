@@ -50,3 +50,48 @@
     display: block !important;
   }
 }
+
+.business-components.active{
+  display: block;
+}
+.business-components{
+  display: none;
+
+  .component-info{
+    display: none;
+  }
+  .component-info.active{
+    display: block;
+  }
+
+  .component-btn{
+    .component-btn-img-active{
+      display: none;
+    }
+  }
+  .component-btn.active{
+    .component-btn-img{
+      display: none;
+    }
+    .component-btn-img-active{
+      display: block;
+    }
+  }
+}
+
+.component-point-container{
+  .title-img{
+    display: block;
+  }
+  .title-img-active{
+    display: none;
+  }
+}
+.component-point-container.active{
+  .title-img{
+    display: none;
+  }
+  .title-img-active{
+    display: block;
+  }
+}
