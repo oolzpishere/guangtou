@@ -137,16 +137,6 @@ $(document).on("turbolinks:load", function() {
           });
   }
 
-  if ($('.strategySwiper').length > 0) {
-    new Swiper(".strategySwiper", {
-            loop: true,
-            slidesPerView: "auto",
-            centeredSlides: true,
-            spaceBetween: '0.3%',
-            initialSlide: 1,
-          });
-  }
-
   if ($('.space-main-swiper').length > 0) {
     new Swiper(".space-main-swiper", {
             loop: true,

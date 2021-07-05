@@ -1,4 +1,4 @@
-<main class="window-holder position-relative" style="background-color: #90a6cd;"  >
+<main class="window-holder position-relative" style="background: url(<%= asset_pack_path 'media/images/corp/strategy/bg.png'%>)"  >
 
   <div id="strategy-video-wrap" class="position-absolute w-100 h-100 d-none video-bg-dark" style="top:0; left:0; z-index:10;">
     <div class="row g-0 h-100 align-items-center justify-content-center position-relative">
@@ -30,53 +30,30 @@
       <div class="w-100 mt-3"></div>
       <div class="col-12 position-relative" style="line-height:1rem"  >
         <%= image_pack_tag 'media/images/corp/strategy/title.png' %>
-        <div class="w-100"></div>
-        <%= image_pack_tag 'media/images/corp/strategy/title-underline.png' %>
-        <div class="w-100"></div>
-
-        <%= image_pack_tag 'media/images/corp/strategy/sub-title.png' %>
         <div class="w-100 mt-3"></div>
         <%= image_pack_tag 'media/images/corp/strategy/text.png' %>
       </div>
 
     </div>
 
-    <div class="w-100 mt-5"></div>
+    <div class="w-100 mt-3"></div>
     <!-- center -->
-    <div class="row g-0 text-center " style="width:1700px;">
-      <!-- Swiper -->
-      <div class="swiper-container strategySwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide position-relative  d-flex align-items-center">
-            <%= image_pack_tag 'media/images/corp/strategy/cover1.png', class: "w-100 " %>
-          </div>
-          <div class="swiper-slide position-relative d-flex align-items-center" style="">
-            <%= image_pack_tag 'media/images/corp/strategy/cover2.png', class: "strategy-video-cover w-100"   %>
-          </div>
-          <div class="swiper-slide position-relative d-flex align-items-center">
-
-            <%= image_pack_tag 'media/images/corp/strategy/cover3.png', class: "w-100"  %>
-
-          </div>
-
-        </div>
-        <div class="swiper-pagination"></div>
+    <div class="row g-0 text-center " style="width:1900px;">
+      <div class="col-4 gx-5 align-items-center d-flex">
+        <%= image_pack_tag 'media/images/corp/strategy/cover1.png', class: "w-100 my-auto" %>
+      </div>
+      <div class="col-4 gx-5 align-items-center d-flex">
+        <%= image_pack_tag 'media/images/corp/strategy/cover2.png', class: "strategy-video-cover w-100  my-auto"   %>
+      </div>
+      <div class="col-4 gx-5 align-items-center d-flex">
+        <%= image_pack_tag 'media/images/corp/strategy/cover3.png', class: "w-100  my-auto"  %>
       </div>
 
-      <!-- <div class="col-4 h-100 d-flex align-items-center px-3">
-        <%= image_pack_tag 'media/images/corp/strategy/cover1.png', class: "w-100 " %>
-      </div>
-      <div class="col-4 h-100 px-3">
-        <%= image_pack_tag 'media/images/corp/strategy/cover2.png', class: "strategy-video-cover w-100"  %>
-      </div>
-      <div class="col-4 h-100 d-flex align-items-center px-3">
-        <%= image_pack_tag 'media/images/corp/strategy/cover3.png', class: "w-100"  %>
-      </div> -->
     </div>
 
     <div class="w-100 mt-4"></div>
     <!-- bottom -->
-    <div class="row g-0 text-center" style="width:1000px;">
+    <div class="row g-0 text-center w-100" style="">
       <div class="col-4">
         <%= image_pack_tag 'media/images/corp/strategy/point1.png' %>
       </div>
