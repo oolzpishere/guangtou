@@ -5,41 +5,57 @@ import videojs from  "video.js"
 
 $(document).on("turbolinks:load", function() {
 
-    if ( $('.nnl-profile-video-cover').length > 0 ) {
+  if ( $('#nnl-video').length > 0 ) {
       var nnl_player = videojs('nnl-video', {
         controls: true,
         autoplay: false,
         preload: 'auto'
       });
+  }
 
-      $('.nnl-profile-video-cover').on('click', function(){
-        $('#nnl-video-wrap').removeClass('d-none');
-        nnl_player.play();
-      })
-
-      $('.close-nnl-video').on('click', function(){
-        nnl_player.pause();
-        $('#nnl-video-wrap').addClass('d-none');
-      })
-    }
-
-    if ( $('.gt-profile-video-cover').length > 0 ) {
-      var gt_player = videojs('gt-profile-video', {
+  if ( $('#gt-profile-video').length > 0 ) {
+      var nnl_player = videojs('gt-profile-video', {
         controls: true,
         autoplay: false,
         preload: 'auto'
       });
+  }
 
-      $('.gt-profile-video-cover').on('click', function(){
-        $('#gt-video-wrap').removeClass('d-none');
-        gt_player.play();
-      })
+    // if ( $('.nnl-profile-video-cover').length > 0 ) {
+    //   var nnl_player = videojs('nnl-video', {
+    //     controls: true,
+    //     autoplay: false,
+    //     preload: 'auto'
+    //   });
+    //
+    //   $('.nnl-profile-video-cover').on('click', function(){
+    //     $('#nnl-video-wrap').removeClass('d-none');
+    //     nnl_player.play();
+    //   })
+    //
+    //   $('.close-nnl-video').on('click', function(){
+    //     nnl_player.pause();
+    //     $('#nnl-video-wrap').addClass('d-none');
+    //   })
+    // }
 
-      $('.close-nnl-video').on('click', function(){
-        gt_player.pause();
-        $('#gt-video-wrap').addClass('d-none');
-      })
-    }
+    // if ( $('.gt-profile-video-cover').length > 0 ) {
+    //   var gt_player = videojs('gt-profile-video', {
+    //     controls: true,
+    //     autoplay: false,
+    //     preload: 'auto'
+    //   });
+    //
+    //   $('.gt-profile-video-cover').on('click', function(){
+    //     $('#gt-video-wrap').removeClass('d-none');
+    //     gt_player.play();
+    //   })
+    //
+    //   $('.close-nnl-video').on('click', function(){
+    //     gt_player.pause();
+    //     $('#gt-video-wrap').addClass('d-none');
+    //   })
+    // }
 
     if ( $('.strategy-video-cover').length > 0 ) {
       var strategy_player = videojs('strategy-video', {

@@ -97,20 +97,6 @@ $(document).on("turbolinks:load", function() {
         });
 
 
-  new Swiper(".profile-swiper", {
-          loop: true,
-          pagination: {
-            el: ".swiper-pagination",
-            type: 'bullets',
-            clickable: true,
-            bulletClass: 'swiper-pagination-bullet my-swiper-pagination-bullet',
-            bulletActiveClass: 'swiper-pagination-bullet-active my-swiper-pagination-bullet-active',
-          },
-          autoplay: {
-             delay: 15000,
-           }
-        });
-
   if ($('.cultureXclSwiper').length > 0) {
     var thumbsSwiper = new Swiper(".cultureThumbsSwiper", {
           // spaceBetween: 10,

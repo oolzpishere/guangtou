@@ -2,63 +2,14 @@
   <div class="w-100" style="height: 250px;" >
   </div>
 
-  <div id="gt-video-wrap" class="position-absolute w-100 h-100 d-none video-bg-dark" style="top:0; left:0; z-index:10;">
-    <div class="row g-0 h-100 align-items-center justify-content-center position-relative">
-      <div class="col-auto position-relative" style="margin-top: -80px; ">
-        <i class="bi bi-x-lg position-absolute close-nnl-video" style="font-size: 2rem; color: white; bottom: 0; left: -2em;"></i>
-        <!-- data-setup='{"controls": true}'> -->
-        <video
-            id="gt-profile-video"
-            class="video-js my-vjs-skin"
-            width="1550"
-            enableTouchActivity
-            poster=<%= asset_pack_path 'media/images/corp/profile/profile_gt/gt-video-mask.png' %>
-            data-setup=''>
-          <source src="/videos/profile_gt.mp4" type="video/mp4"></source>
-          <p class="vjs-no-js">
-            To view this video please enable JavaScript, and consider upgrading to a
-            web browser that
-          </p>
-        </video>
-      </div>
-    </div>
-  </div>
-
   <div class="row g-0 m-auto position-relative" style="width:95%;">
 
-    <div class="shadow-dark-xxl mt-5" style="width: 80%;">
-      <div class="row mx-auto mt-5" style="width: 90%; height: 750px;">
-        <!-- left swiper -->
-        <div class="col-5">
-          <!-- Slider main container -->
-          <div class="swiper-container profile-swiper">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-              <!-- swiper-slide1 -->
-              <div class="swiper-slide" style="" >
-                <%= image_pack_tag 'media/images/corp/profile/profile_gt/gt-profile-swiper1.png' %>
-              </div>
-
-              <!-- swiper-slide2 -->
-              <div class="swiper-slide" style="" >
-                <%= image_pack_tag 'media/images/corp/profile/profile_gt/gt-profile-swiper2.png' %>
-              </div>
-
-              <!-- swiper-slide3 -->
-              <div class="swiper-slide" style="">
-                <%= image_pack_tag 'media/images/corp/profile/profile_gt/gt-profile-swiper3.png' %>
-              </div>
-
-            </div>
-            <!-- If we need pagination -->
-            <div class="swiper-pagination" style=""></div>
-          </div>
-
-        </div>
-        <!--  -->
-        <div class="col-7">
-          <%= image_pack_tag 'media/images/corp/profile/profile_gt/gt-profile-title.png', class: "w-100" %>
-          <div class="col mt-3 p-3 border border-3 gt-border-primary text-indent-4rem" style="height: 550px; overflow:scroll;" >
+    <div class="shadow-dark-xxl mx-auto mt-5 " style="width: 95%;">
+      <div class="row mx-auto mt-5" style="width: 95%; height: 750px;">
+        <!-- left -->
+        <div class="col-4">
+          <%= image_pack_tag 'media/images/corp/profile/profile_gt/gt-profile-title.png', class: "", style: "width:90%;" %>
+          <div class="col mt-3 p-3 border border-3 text-indent-4rem" style="height: 550px; overflow:scroll;" >
             <p style="">
               广西投资集团有限公司（以下简称“广投集团”）成立于1988年，注册资本100亿元人民币，作为自治区本级国有资本投资公司，在充分参与市场竞争的同时，承担着自治区战略性重大投资任务，推动传统产业转型升级，培育发展新兴产业，引领全区产业高质量发展，是广西首家世界500强本土企业和广西首家营业收入超千亿元企业，位居中国企业500强第124位，广西百强企业第1位。连续十七届中国—东盟博览会战略合作伙伴，连续六年获AAA 主体信用评级，获穆迪、惠誉两大国际评级机构自治区内企业最高主体评级，获评第五届自治区主席质量奖。
             </p>
@@ -73,18 +24,29 @@
           </div>
         </div>
 
+        <!-- right -->
+        <div class="col-8">
+          <video
+              id="gt-profile-video"
+              class="video-js my-vjs-skin"
+              width="1450"
+              height="670"
+              enableTouchActivity
+              poster=<%= asset_pack_path 'media/images/corp/profile/profile_gt/gt-video-mask.png' %>
+              data-setup=''>
+            <source src="/videos/profile_gt.mp4" type="video/mp4"></source>
+            <p class="vjs-no-js">
+              To view this video please enable JavaScript, and consider upgrading to a
+              web browser that
+            </p>
+          </video>
+
+        </div>
+
 
       </div>
     </div>
 
-
-    <div class="" style="width: 20%; z-index: 1;">
-      <div class="shadow-dark-xxl">
-        <%= image_pack_tag 'media/images/corp/profile/profile_gt/gt-video-mask.png', class: "gt-profile-video-cover w-100" %>
-      </div>
-      <!-- "inactivityTimeout": 0  -->
-
-    </div>
 
   </div>
 

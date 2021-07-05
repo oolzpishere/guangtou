@@ -1,0 +1,48 @@
+<main class="window-holder position-relative" style="background-color: #F2F2F2;" >
+  <div class="w-100" style="height: 250px;" >
+  </div>
+
+  <div class="row g-0 m-auto position-relative" style="width:95%;">
+
+    <div class="shadow-dark-xxl mt-5 mx-auto" style="width: 95%;">
+      <div class="row mx-auto mt-5" style="width: 95%; height: 750px;">
+        <div class="col-4">
+          <%= image_pack_tag 'media/images/corp/profile/profile_xcl/xcl-profile-title.png', class: "", style: "width:90%;" %>
+          <div class="col mt-3 p-3 border border-3 text-indent-4rem" style="height: 550px; overflow:scroll;" >
+            <p style="">
+              广西广投新材料集团有限公司（以下简称“广投新材料集团”）成立于2019年，注册资金14.5亿元，资产总额150多亿元，是广投集团旗下高端铝新材料专业化二级平台公司，经营范围涵盖航空航天、交通运输、半导体、电子及电子元器件等领域，肩负着将区域资源优势转化为产业高质量发展优势的历史使命。
+            </p>
+            <p style="">
+              广投新材料集团拥有博士后科研工作站、国家高新技术企业、国家技术创新示范企业等32个平台载体，集聚了两国院士、一大批行业高层次领军人才及百余名博硕士在内的高水平研发、管理、支撑团队，坚持以新发展理念为指引，着眼于国家重大战略需求，以打造百年企业为目标，实现核心关键技术及材料自主可控，助力中国制造业由大变强。
+            </p>
+          </div>
+        </div>
+        <!-- right  -->
+        <div class="col-8">
+          <video
+              id="nnl-video"
+              class="video-js my-vjs-skin"
+              width="1450"
+              height="670"
+              enableTouchActivity
+              poster=<%= asset_pack_path 'media/images/corp/profile/profile_xcl/nnl-video-mask.png' %>
+              data-setup=''>
+            <source src="/videos/profile_xcl.mp4" type="video/mp4"></source>
+            <p class="vjs-no-js">
+              To view this video please enable JavaScript, and consider upgrading to a
+              web browser that
+            </p>
+          </video>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="shortcuts_container position-absolute" style="left:0;bottom:0;z-index:2222;">
+
+  </div>
+
+  <%= render 'profile_bottom', return_path: profile_path %>
+
+</main>
