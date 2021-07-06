@@ -38,17 +38,6 @@ BusinessDetails.prototype.hideElements = function( elements ){
   elements.addClass('d-none')
 }
 
-BusinessDetails.prototype.showTypeComponent = function( typeComponents, realIndex ){
-  typeComponents.removeClass('d-none');
-  typeComponents.children('.component-info').eq(realIndex).removeClass('d-none');
-}
-
-BusinessDetails.prototype.componentBtnActive = function( typeComponents, realIndex ){
-  var _self = this;
-  _self.removeActive( $('.component-btns').find('.component-btn') )
-  typeComponents.children('.component-btns').find('.component-btn').eq(realIndex).addClass('active');
-}
-
 BusinessDetails.prototype.setComponentActive = function(type, humanId){
   var _self = this;
   let realIndex = humanId - 1

@@ -2,7 +2,7 @@
 
   <div class=" row g-0 position-relative" >
     <!-- left -->
-    <div class="position-relative"  style="width:50%;">
+    <div class="position-relative"  style="width:47%;">
       <div class="w-100" style="height: 300px;"></div>
       <!-- # TODO: add position-absolute, move to right a bit -->
       <div class="business-components-container">
@@ -52,7 +52,7 @@
     </div>
     <!-- right -->
     <!-- Slider main container -->
-    <div class="swiper-container businesses-details-swiper space-details-swiper" style="width:50%;">
+    <div class="swiper-container businesses-details-swiper space-details-swiper" style="width:53%; background-color: rgba(0,0,0,0.6); ">
       <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
         <!-- Slides -->
@@ -60,20 +60,20 @@
         <div class="swiper-slide plane-slide">
           <div class="w-100" style="height: 400px;"></div>
           <!-- product container -->
-          <div class="position-relative" style="width: 1060px; height: 415px; background: no-repeat left top url(<%= asset_pack_path 'media/images/businesses/space/plane60.png'%>) " >
+          <div class="position-relative mx-auto" style="width: 1060px; height: 415px; background: no-repeat left top url(<%= asset_pack_path 'media/images/businesses/space/plane60.png'%>) " >
             <!-- point 1 -->
             <% points = [
-              { container_style: "left:130px; top:-50px;", arrow_container_style: "top: 140px; left: 50px;" },
-              { container_style: "left:500px; top:0px;", arrow_container_style: "top: 155px; left: -50px;" }
+              { container_style: "left:280px; top:10px;", arrow_container_style: "top: 140px; left: 50px;" },
+              { container_style: "left:560px; top:15px;", arrow_container_style: "top: 155px; left: -50px;" }
             ] %>
             <% points.each_with_index do |point, i| %>
               <% humanId = i += 1 %>
               <div class="component-point-container position-absolute" data-type='plane' data-id=<%= humanId %> style='<%= point[:container_style] %>' >
                 <div class="position-relative">
-                  <%= image_pack_tag "media/images/businesses/space/titles/plane-title#{humanId}.png", class: 'title-img position-absolute', style: 'left: 0; top:0;' %>
-                  <%= image_pack_tag "media/images/businesses/space/titles/plane-title-active#{humanId}.png", class: 'title-img-active position-absolute', 'data-id': humanId, style: 'left: 0; top:0;' %>
+                  <%= image_pack_tag "media/images/businesses/space/titles/plane-title#{humanId}.png", class: 'title-img ', style: 'left: 0; top:0;' %>
+                  <%= image_pack_tag "media/images/businesses/space/titles/plane-title-active#{humanId}.png", class: 'title-img-active ', 'data-id': humanId, style: 'left: 0; top:0;' %>
 
-                  <div class="arrow-container animate__animated animate__fadeInDown" style='<%= point[:arrow_container_style] %>' >
+                  <div class="arrow-container animate__animated animate__fadeIn" style='<%= point[:arrow_container_style] %>' >
                     <div class="position-relative">
                       <div class="arrow-2">
                       </div>

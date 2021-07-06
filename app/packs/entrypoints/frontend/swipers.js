@@ -28,8 +28,9 @@ $(document).on("turbolinks:load", function() {
 
   var corp_all_swiper_tls = [
     function(){
-      corp_all_swiper_tl.from(".corp-index-swiper-title", {y: -500, opacity: 0, duration: 1, ease: "elastic", })
-        .from(".corp-index-swiper-num", {y: -500, opacity: 0, duration: 1, onComplete: function(){startCount('.corp_all_counter')} })
+      //  ease: "elastic"
+      corp_all_swiper_tl.from(".corp-index-swiper-title", { opacity: 0, duration: 1 });
+      corp_all_swiper_tl.from(".corp-index-swiper-num", { opacity: 0, duration: 1, onComplete: function(){startCount('.corp_all_counter')} })
     },
     function(){
       corp_all_swiper_tl.from(".corp-index-swiper-title", {y: -500, opacity: 0, duration: 1, ease: "elastic", })
@@ -98,6 +99,9 @@ $(document).on("turbolinks:load", function() {
 
 
   if ($('.space-main-swiper').length > 0) {
+    var swiperHeight = ( wHeight - $('.business-bottom').innerHeight() )
+    $(".space-main-swiper").css('height', swiperHeight)
+
     new Swiper(".space-main-swiper", {
             loop: true,
             pagination: {
@@ -115,11 +119,20 @@ $(document).on("turbolinks:load", function() {
     var swiperHeight = ( wHeight - $('.business-bottom').innerHeight() )
     $(".businesses-details-swiper").css('height', swiperHeight)
 
-    new BusinessDetailsSwiper(Swiper)
+    // set init status
+    let url = new URL( window.location.href );
+
+    new BusinessDetailsSwiper(Swiper, url.searchParams)
+
+
+    // var slide = url.searchParams.get("slide");
+    
+    // console.log( url.searchParams);
+
+
+
 
   }
-
-
 
 
 

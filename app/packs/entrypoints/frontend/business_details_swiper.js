@@ -2,14 +2,16 @@ import {BusinessDetails} from "./business_details"
 
 export { BusinessDetailsSwiper };
 
-var BusinessDetailsSwiper = function(Swiper) {
+var BusinessDetailsSwiper = function(Swiper, searchParams) {
+  this.initSearchParams(searchParams)
+  this.initComponentPoint()
   this.detailsSwiper = this.initSwiper(Swiper);
   this.initActions()
-
 }
 
 BusinessDetailsSwiper.prototype.initSwiper = function( Swiper ){
   var _self = this;
+
   var detailsSwiper = new Swiper(".businesses-details-swiper", {
           loop: true,
           pagination: {
@@ -19,10 +21,14 @@ BusinessDetailsSwiper.prototype.initSwiper = function( Swiper ){
             bulletClass: 'swiper-pagination-bullet my-swiper-pagination-bullet',
             bulletActiveClass: 'swiper-pagination-bullet-active my-swiper-pagination-bullet-active',
           },
+          initialSlide: _self.slide,
           on: {
             init: function () {
-              $('.business-swiper-tag').eq( 0 ).addClass('active')
+              $('.business-swiper-tag').eq( _self.slide ).addClass('active');
+              _self.setPointToIntState()
             },
+            afterInit: function() {
+            }
           }
         });
   return detailsSwiper
@@ -40,8 +46,11 @@ BusinessDetailsSwiper.prototype.initActions = function( ){
     _self.detailsSwiper.slideTo(id)
   });
 
-  var businessDetails = new BusinessDetails( _self );
+}
 
+BusinessDetailsSwiper.prototype.initComponentPoint = function( ){
+  var _self = this;
+  var businessDetails = new BusinessDetails( _self );
   $('.component-point-container').on('click', function(){
     let humanId = $(this).data('id')
     let type = $(this).data('type')
@@ -50,7 +59,19 @@ BusinessDetailsSwiper.prototype.initActions = function( ){
 
     businessDetails.setComponentActive(type, humanId);
   })
+}
 
+BusinessDetailsSwiper.prototype.initSearchParams = function( searchParams ){
+  var _self = this;
+  _self.slide = 0
+  _self.id = 0
+  if ( searchParams.has('slide') ) {
+    _self.slide = Number( searchParams.get("slide") );
+  }
+
+  if ( searchParams.has('id') ) {
+    _self.id = Number( searchParams.get("id") );
+  }
 }
 
 BusinessDetailsSwiper.prototype.setSwiperPointActive = function( type, humanId ){
@@ -58,6 +79,12 @@ BusinessDetailsSwiper.prototype.setSwiperPointActive = function( type, humanId )
   $('.' + type + '-slide').find('.component-point-container').removeClass('active')
   $('.' + type + '-slide').find('.component-point-container').eq(realIndex).addClass('active')
 }
+
+BusinessDetailsSwiper.prototype.setPointToIntState = function( ){
+  var _self = this;
+  $(".businesses-details-swiper").find('.swiper-slide-active').find(`.component-point-container[data-id='${_self.id}']`).click();
+}
+
 
 //   if ( _self.componentsContainer.length > 0) {
 //

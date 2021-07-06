@@ -1,80 +1,123 @@
-<div class=" position-relative bg-info">
+<div class=" position-relative bg-info window-holder" style="background: url(<%= asset_pack_path 'media/images/businesses/space/detail-bg.png'%>) " >
 
   <div class=" row g-0 position-relative">
-  </div>
 
-  <!-- Slider main container -->
-  <div class="window-holder swiper-container space-main-swiper">
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
-      <!-- Slides -->
-      <div class="swiper-slide product_list">
-        Slide 1
-        <div class="pt1">
-          <div class="product_con">
-            <div class="pic">
-                <!-- <img src="/upload/images/2019/06/22/01a8c919943845ffba8d66c3384d619a.png" alt=""> -->
-            </div>
-            <div class="boll">
-                <ul>
-                    <li class="b1" style="left: 62.5%; top: 36%;" data-id="8931">
-                        <i class="list_boll"></i>
+    <!-- Slider main container -->
+    <div class="swiper-container space-main-swiper" style=" background-color: rgba(0,0,0,0.6); ">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide ">
+          <div class="w-100" style="height: 300px;"></div>
+          <!-- product container -->
+          <div class=" mx-auto position-relative"  style="width: 1779px; height: 697px; background: no-repeat left top url(<%= asset_pack_path 'media/images/businesses/space/plane.png'%>) " >
+            <!-- point 1 -->
+            <% points = [
+              { container_style: "left:530px; top:140px;", arrow_container_style: "top: 140px; left: 50px;" },
+              { container_style: "left:910px; top:150px;", arrow_container_style: "top: 155px; left: -50px;" }
+            ] %>
+            <% points.each_with_index do |point, i| %>
+              <% humanId = i += 1 %>
+              <div class="component-point-container position-absolute" data-type='plane' data-id=<%= humanId %> style='<%= point[:container_style] %>' >
+                <div class="position-relative">
+                  <%= image_pack_tag "media/images/businesses/space/titles/plane-title#{humanId}.png", class: 'title-img ', style: 'left: 0; top:0;' %>
+                  <%= image_pack_tag "media/images/businesses/space/titles/plane-title-active#{humanId}.png", class: 'title-img-active ', 'data-id': humanId, style: 'left: 0; top:0;' %>
 
-                            <div class="list_box transition05" style="top:-1200%; left:-700%;">
-                                <h3 class="list_title">机身蒙皮</h3>
-                            </div>
-                    </li>
-                    <li class="b1" style="left: 58.5%; top: 33%;" data-id="8932">
-                        <i class="list_boll"></i>
-                            <div class="list_box transition05" style="top:-1200%; left:-700%;">
-                                <h3 class="list_title">机身加强框</h3>
-                            </div>
-                    </li>
+                  <%= link_to( "#{businesses_space_details_path}?slide=0&id=#{humanId}" ) do %>
+                    <div class="arrow-container animate__animated animate__fadeInDown" style='<%= point[:arrow_container_style] %>' >
+                      <div class="position-relative">
+                        <div class="arrow-2">
+                        </div>
+                        <div class="arrow-1 animate__animated animate__infinite zoomIn"></div>
+                      </div>
+                    </div>
+                  <% end %>
 
-                    <li class="b1" style="left: 56.5%; top: 36%;" data-id="8933">
-                        <i class="list_boll"></i>
-                            <div class="list_box transition05" style="top:-1200%; left:-700%;">
-                                <h3 class="list_title">航空座椅</h3>
-                            </div>
-                    </li>
-
-                    <li class="b1" style="left: 47.5%; top: 29%;" data-id="8934">
-                        <i class="list_boll"></i>
-                            <div class="list_box transition05" style="top:-1200%; left:-700%;">
-                                <h3 class="list_title">航空集装箱</h3>
-                            </div>
-                    </li>
-
-                    <li class="b1" style="left: 66.5%; top: 43%;" data-id="8926">
-                        <i class="list_boll"></i>
-                            <div class="list_box transition05" style="top:-1200%; left:-700%;">
-                                <h3 class="list_title">机翼壁板</h3>
-                            </div>
-                    </li>
-                </ul>
-            </div>
-
+                </div>
+              </div>
+            <% end %>
           </div>
 
         </div>
+
+        <div class="swiper-slide">
+          Slide 2
+        </div>
+
+
       </div>
-      <div class="swiper-slide">Slide 2</div>
-      <div class="swiper-slide">Slide 3</div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+      <!-- position absolute, bottom center, a little bit right. -->
+      <div class="title-pagination position-absolute" style="z-index: 1020;">
+        <!-- title 0, data-id="0", on click main swiper move to data-id -->
+        <!-- title 1 -->
+
+      </div>
 
     </div>
-    <!-- If we need pagination -->
-    <div class="swiper-pagination"></div>
-    <!-- position absolute, bottom center, a little bit right. -->
-    <div class="title-pagination position-absolute" style="z-index: 1020;">
-      <!-- title 0, data-id="0", on click main swiper move to data-id -->
-      <!-- title 1 -->
 
+    <div class="position-relative"  style="width:47%;">
+      <%# render 'navs', return_path: parties_path %>
+      <%= render 'navs' %>
     </div>
-
 
   </div>
+
+
 
 
 
 
 </div>
+
+
+
+
+<!-- <div class="pt1">
+  <div class="product_con">
+    <div class="pic">
+
+    </div>
+    <div class="boll">
+        <ul>
+            <li class="b1" style="left: 62.5%; top: 36%;" data-id="8931">
+                <i class="list_boll"></i>
+
+                    <div class="list_box transition05" style="top:-1200%; left:-700%;">
+                        <h3 class="list_title">机身蒙皮</h3>
+                    </div>
+            </li>
+            <li class="b1" style="left: 58.5%; top: 33%;" data-id="8932">
+                <i class="list_boll"></i>
+                    <div class="list_box transition05" style="top:-1200%; left:-700%;">
+                        <h3 class="list_title">机身加强框</h3>
+                    </div>
+            </li>
+
+            <li class="b1" style="left: 56.5%; top: 36%;" data-id="8933">
+                <i class="list_boll"></i>
+                    <div class="list_box transition05" style="top:-1200%; left:-700%;">
+                        <h3 class="list_title">航空座椅</h3>
+                    </div>
+            </li>
+
+            <li class="b1" style="left: 47.5%; top: 29%;" data-id="8934">
+                <i class="list_boll"></i>
+                    <div class="list_box transition05" style="top:-1200%; left:-700%;">
+                        <h3 class="list_title">航空集装箱</h3>
+                    </div>
+            </li>
+
+            <li class="b1" style="left: 66.5%; top: 43%;" data-id="8926">
+                <i class="list_boll"></i>
+                    <div class="list_box transition05" style="top:-1200%; left:-700%;">
+                        <h3 class="list_title">机翼壁板</h3>
+                    </div>
+            </li>
+        </ul>
+    </div>
+
+  </div>
+
+</div> -->
