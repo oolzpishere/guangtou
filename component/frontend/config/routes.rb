@@ -41,6 +41,9 @@ Frontend::Engine.routes.draw do
   # resources :advantages
   get '/advantages', to: 'advantages#index'
   get '/advantages/team', to: 'advantages#team'
+  get '/advantages/innovation_result', to: 'advantages#innovation_result'
+  get '/advantages/innovation_tl', to: 'advantages#innovation_tl'
+
 
 
 

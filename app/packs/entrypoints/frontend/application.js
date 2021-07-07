@@ -11,6 +11,8 @@ import 'jquery.scrollto'
 import './swipers'
 import './flips'
 import './my_vjs'
+import './tl_scroll'
+
 // import './shortcuts'
 
 
@@ -55,75 +57,7 @@ $(document).on("turbolinks:load", function() {
   // gsap.from(".my-show-down", { y: -600, duration: 1});
 
   // $('.page-transition').addClass('animate__animated animate__fadeIn');
-  if ( $('.team-page').length > 0 ) {
-    var tlCountDownTimer;
-    timelineScrollToBottom();
-    tlCircleCounter();
-    $('.timeline-container').on('click', function(){
-      $(this).stop();
-      // refresh tl status
-      $('.timeline-container').removeClass('touch-bottom');
-      $('.timeline-container').removeClass('scrolling');
-      refreshTlCountDownTimer();
-    })
-  }
 
-  function timelineScrollToBottom(){
-    $('.timeline-container').scrollTo("max", 10000, {
-      fail: function(){
-        console.log('fail: stop');
-        setTlStopStatus()
-        refreshTlCountDownTimer();
-      },
-      done: function(){
-        console.log('done: touch-bottom');
-        $('.timeline-container').addClass('touch-bottom');
-        setTlStopStatus()
-        refreshTlCountDownTimer();
-      },
-      always: function(){
-      }
-    })
-  }
-
-  // tl == timeline
-  function tlCircleCounter(){
-    tlCountDownTimer = setTimeout( function() {
-      if ( $('.timeline-container').hasClass('scrolling') ) {
-        // skip
-        console.log('tl scrolling');
-        tlCircleCounter();
-      } else if ( $('.timeline-container').hasClass('touch-bottom') ) {
-        console.log('tl touch-bottom');
-        // scroll to top and remove class touch-bottom
-        // only place to scrollToTop
-        $('.timeline-container').removeClass('touch-bottom')
-        setTlScrollingStatus();
-        $('.timeline-container').scrollTo("0", 1000, {
-          always: function(){
-            setTlStopStatus();
-            refreshTlCountDownTimer();
-          }
-        })
-      } else {
-        console.log('tl begin scroll');
-        timelineScrollToBottom();
-      }
-    }, 15000);
-  }
-
-  function refreshTlCountDownTimer() {
-    clearTimeout(tlCountDownTimer);
-    tlCircleCounter()
-  }
-
-  function setTlStopStatus() {
-    $('.timeline-container').removeClass('scrolling');
-  }
-
-  function setTlScrollingStatus() {
-    $('.timeline-container').addClass('scrolling');
-  }
 
 
 })
@@ -136,47 +70,3 @@ $(document).on("turbolinks:before-cache", function() {
   // }
 
 })
-
-//
-//
-// if ( $('.team-page').length > 0 ) {
-//
-//   timelineScrollToBottom()
-//   $('.timeline-container').on('click', function(){
-//     $(this).stop();
-//     clearTimeout(countDownTimer);
-//     countDown();
-//   })
-// }
-//
-// var countDownTimer;
-// function timelineScrollToBottom(){
-//   $('.timeline-container').scrollTo("max", 10000, {
-//     fail: function(){
-//       console.log('fail, stop');
-//       countDown()
-//     },
-//     done: function(){
-//       // wait 30s then scroll to top
-//       $('.timeline-container').addClass('touch-bottom')
-//       $('.timeline-container').click();
-//     },
-//     always: function(){
-//     }
-//   })
-// }
-//
-// function countDown(){
-//   console.log('begin count down');
-//   countDownTimer = setTimeout( function() {
-//     if ( $('.timeline-container').hasClass('touch-bottom') ) {
-//       // scroll to top and remove class touch-bottom
-//       // only place to scrollToTop
-//       $('.timeline-container').scrollTo("0", 1000)
-//       $('.timeline-container').removeClass('touch-bottom')
-//       countDown()
-//     } else {
-//       timelineScrollToBottom();
-//     }
-//   }, 15000);
-// }

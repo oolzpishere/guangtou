@@ -1,12 +1,34 @@
 
-<div class="window-holder position-relative bg-info">
-  <h1>Advantages</h1>
+<div class="window-holder position-relative" style="background: url(<%= asset_pack_path 'media/images/advantages/bg.png'%>) ">
 
   <div class="row g-0 position-relative">
+    <div class="w-100" style="margin-top: 370px;"></div>
+    <div class="col-6">
+      <%= link_to( advantages_team_path, html_options = {}) do %>
+        <%= image_pack_tag 'media/images/advantages/team-nav.png' %>
+      <% end %>
+    </div>
 
+    <div class="col-6">
+      <%= link_to( advantages_team_path, html_options = {}) do %>
+        <%= image_pack_tag 'media/images/advantages/equipment-nav.png' %>
+      <% end %>
+    </div>
 
+    <div class="col-6 offset-3">
+      <%= link_to( advantages_innovation_tl_path, html_options = {}) do %>
+        <%= image_pack_tag 'media/images/advantages/innovation-nav.png' %>
+      <% end %>
+    </div>
 
   </div>
 
 
+</div>
+
+<!-- bottom -->
+<div class="business-bottom position-fixed w-100" style="bottom: 0; height: 210px; z-index: 1000; background: no-repeat center url(<%= asset_pack_path 'media/images/advantages/bottom-bg.png'%>) ">
+  <div class="row h-100 g-0 position-relative">
+
+  </div>
 </div>

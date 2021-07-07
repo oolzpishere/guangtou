@@ -12,11 +12,12 @@
 <body>
   <div class="my-container container-fluid g-0">
     <div class="main">
-
+      <%= render 'advantage_header' %>
 
       <%= yield %>
-
-      <%# render 'party_bottom' %>
+      <% if request.path != advantages_path %>
+        <%= render 'advantage_bottom' %>
+      <% end %>
 
     </div>
 
