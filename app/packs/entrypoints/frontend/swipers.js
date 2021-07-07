@@ -123,17 +123,18 @@ $(document).on("turbolinks:load", function() {
     let url = new URL( window.location.href );
 
     new BusinessDetailsSwiper(Swiper, url.searchParams)
-
-
-    // var slide = url.searchParams.get("slide");
-    
-    // console.log( url.searchParams);
-
-
-
-
   }
 
+
+
+  if ($('.industry-hezhou-swiper').length > 0) {
+
+    new Swiper(".industry-hezhou-swiper", {
+            loop: true,
+
+          });
+
+  }
 
 
 })

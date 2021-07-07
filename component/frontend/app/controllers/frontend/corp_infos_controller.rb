@@ -27,7 +27,7 @@ module Frontend
           {path: profile_path, img_path: 'media/images/corp/profile/profile-nav-btn.png', active_img_path: 'media/images/corp/profile/profile-nav-btn-active.png'},
           {path: strategy_path, img_path: 'media/images/corp/profile/strategy-nav-btn.png', active_img_path: 'media/images/corp/profile/strategy-nav-btn-active.png'},
           {path: culture_path, img_path: 'media/images/corp/profile/culture-nav-btn.png', active_img_path: 'media/images/corp/profile/culture-nav-btn-active.png'},
-          {path: sync_path, img_path: 'media/images/corp/profile/gx-buss-nav-btn.png', active_img_path: 'media/images/corp/profile/gx-buss-nav-btn-active.png'},
+          {path: industry_path, img_path: 'media/images/corp/profile/gx-buss-nav-btn.png', active_img_path: 'media/images/corp/profile/gx-buss-nav-btn-active.png'},
         ]
         @corp_navs.each do |hash|
           if request.path.match(hash[:path])

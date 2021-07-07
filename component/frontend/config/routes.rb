@@ -15,7 +15,9 @@ Frontend::Engine.routes.draw do
 
   get '/strategy', to: 'corp_infos#strategy'
 
-  get '/sync', to: 'corp_infos#sync'
+  get '/industry', to: 'corp_infos#industry'
+  get '/industry_liuzhou', to: 'corp_infos#industry_liuzhou'
+  get '/industry_hezhou', to: 'corp_infos#industry_hezhou'
 
 
 
@@ -38,6 +40,8 @@ Frontend::Engine.routes.draw do
 
   # resources :advantages
   get '/advantages', to: 'advantages#index'
+  get '/advantages/team', to: 'advantages#team'
+
 
 
 end

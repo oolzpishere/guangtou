@@ -1,5 +1,7 @@
 
 import videojs from  "video.js"
+// import "videojs-background/lib/videojs-Background.js"
+
 // "main": "./dist/video.cjs.js",
 
 
@@ -21,90 +23,51 @@ $(document).on("turbolinks:load", function() {
       });
   }
 
-    // if ( $('.nnl-profile-video-cover').length > 0 ) {
-    //   var nnl_player = videojs('nnl-video', {
-    //     controls: true,
-    //     autoplay: false,
-    //     preload: 'auto'
-    //   });
-    //
-    //   $('.nnl-profile-video-cover').on('click', function(){
-    //     $('#nnl-video-wrap').removeClass('d-none');
-    //     nnl_player.play();
-    //   })
-    //
-    //   $('.close-nnl-video').on('click', function(){
-    //     nnl_player.pause();
-    //     $('#nnl-video-wrap').addClass('d-none');
-    //   })
-    // }
+  if ( $('.strategy-video-cover').length > 0 ) {
+    var strategy_player = videojs('strategy-video', {
+      controls: true,
+      autoplay: false,
+      preload: 'auto'
+    });
 
-    // if ( $('.gt-profile-video-cover').length > 0 ) {
-    //   var gt_player = videojs('gt-profile-video', {
-    //     controls: true,
-    //     autoplay: false,
-    //     preload: 'auto'
-    //   });
-    //
-    //   $('.gt-profile-video-cover').on('click', function(){
-    //     $('#gt-video-wrap').removeClass('d-none');
-    //     gt_player.play();
-    //   })
-    //
-    //   $('.close-nnl-video').on('click', function(){
-    //     gt_player.pause();
-    //     $('#gt-video-wrap').addClass('d-none');
-    //   })
-    // }
+    $('.strategy-video-cover').on('click', function(){
+      $('#strategy-video-wrap').removeClass('d-none');
+      strategy_player.play();
+    })
 
-    if ( $('.strategy-video-cover').length > 0 ) {
-      var strategy_player = videojs('strategy-video', {
-        controls: true,
-        autoplay: false,
-        preload: 'auto'
-      });
+    $('.close-video').on('click', function(){
+      strategy_player.pause();
+      $('#strategy-video-wrap').addClass('d-none');
+    })
+  }
 
-      $('.strategy-video-cover').on('click', function(){
-        $('#strategy-video-wrap').removeClass('d-none');
-        strategy_player.play();
-      })
+  if ( $('#brand-video').length > 0 ) {
+    videojs('brand-video', {
+      controls: true,
+      autoplay: false,
+    });
+  }
 
-      $('.close-video').on('click', function(){
-        strategy_player.pause();
-        $('#strategy-video-wrap').addClass('d-none');
-      })
-    }
+  if ( $('#industry-liuzhou-video').length > 0 ) {
+    videojs('industry-liuzhou-video', {
+      // controls: false,
+      autoplay: true,
+      muted: true,
+    })
 
-    if ( $('#brand-video').length > 0 ) {
-      videojs('brand-video', {
-        controls: true,
-        autoplay: false,
-      });
-    }
+  }
+
+  if ( $('#industry-hezhou-video').length > 0 ) {
+    videojs('industry-hezhou-video', {
+      // controls: false,
+      autoplay: true,
+      muted: true,
+    })
+
+  }
 
 
-    // player.on('touchstart', function(){
-    //   // this.controlBar.show();
-    //   // player.requestFullscreen();
-    //   // player.trigger('click');
-    //   // $('#nnl-video').click();
-    //   if (player.paused() === true) {
-    //     player.play();
-    //
-    //   } else {
-    //     player.pause();
-    //   }
-    //   // player.userActive(true);
-    // });
 
-    // $('.vjs-tech').on('touchstart', function(){
-    //   if (player.paused() === true) {
-    //     player.play();
-    //
-    //   } else {
-    //     player.pause();
-    //   }
-    // })
 
 });
 
@@ -118,3 +81,65 @@ $(document).on("turbolinks:before-cache", function() {
   }
 
 })
+
+
+
+// player.on('touchstart', function(){
+//   // this.controlBar.show();
+//   // player.requestFullscreen();
+//   // player.trigger('click');
+//   // $('#nnl-video').click();
+//   if (player.paused() === true) {
+//     player.play();
+//
+//   } else {
+//     player.pause();
+//   }
+//   // player.userActive(true);
+// });
+
+// $('.vjs-tech').on('touchstart', function(){
+//   if (player.paused() === true) {
+//     player.play();
+//
+//   } else {
+//     player.pause();
+//   }
+// })
+
+
+// if ( $('.nnl-profile-video-cover').length > 0 ) {
+//   var nnl_player = videojs('nnl-video', {
+//     controls: true,
+//     autoplay: false,
+//     preload: 'auto'
+//   });
+//
+//   $('.nnl-profile-video-cover').on('click', function(){
+//     $('#nnl-video-wrap').removeClass('d-none');
+//     nnl_player.play();
+//   })
+//
+//   $('.close-nnl-video').on('click', function(){
+//     nnl_player.pause();
+//     $('#nnl-video-wrap').addClass('d-none');
+//   })
+// }
+
+// if ( $('.gt-profile-video-cover').length > 0 ) {
+//   var gt_player = videojs('gt-profile-video', {
+//     controls: true,
+//     autoplay: false,
+//     preload: 'auto'
+//   });
+//
+//   $('.gt-profile-video-cover').on('click', function(){
+//     $('#gt-video-wrap').removeClass('d-none');
+//     gt_player.play();
+//   })
+//
+//   $('.close-nnl-video').on('click', function(){
+//     gt_player.pause();
+//     $('#gt-video-wrap').addClass('d-none');
+//   })
+// }

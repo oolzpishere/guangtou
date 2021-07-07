@@ -1,0 +1,44 @@
+<main class="window-holder position-relative"   >
+  <!-- video container -->
+  <div class="position-absolute " style="z-index: 0;">
+    <div class="position-relative " style="width: 2560px; height: 1440px; background: rgba(0,0,0, 0.3); overflow: hidden;">
+      <!-- mask -->
+      <div class="position-absolute w-100 h-100" style="z-index: 1; background: rgba(0,0,0, 0.3); ">
+      </div>
+      <video id="industry-liuzhou-video"
+               class="video-js vjs-default-skin industry-bg-video"
+               style=""
+
+               loop >
+        <p>
+          Your browser doesn't support video. Please <a href="http://browsehappy.com/">upgrade your browser</a> to see the example.
+        </p>
+        <source src="/videos/liuzhou.mp4" type="video/mp4">
+        <!-- <source src="http://vjs.zencdn.net/v/oceans.webm" type="video/webm"> -->
+      </video>
+    </div>
+  </div>
+
+  <div class="w-100" style="height: 22%;" ></div>
+
+  <!-- align-items-center justify-content-center -->
+  <div class="row g-0 justify-content-center m-auto position-relative" style="width:93%; ">
+    <!-- left -->
+    <div class="col">
+      <div class="w-100" style="height: 180px;" ></div>
+      <%= image_pack_tag "media/images/corp/industry/liuzhou/sub-title.png", class: '', style: '' %>
+      <div class="w-100" style="" ></div>
+      <%= image_pack_tag "media/images/corp/industry/liuzhou/text.png", class: '', style: 'margin-left: 80px;' %>
+    </div>
+
+    <!-- right -->
+    <div class="col text-end">
+      <%= image_pack_tag "media/images/corp/industry/liuzhou/title.png", class: '', style: '' %>
+    </div>
+
+  </div>
+
+
+  <%= render 'profile_bottom', return_path: corp_all_path %>
+
+</main>

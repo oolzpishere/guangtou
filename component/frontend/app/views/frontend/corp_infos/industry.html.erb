@@ -1,0 +1,50 @@
+<main class="window-holder position-relative" style=""  >
+
+  <div class="w-100" style="height: 18%;" >
+  </div>
+
+  <!-- align-items-center justify-content-center -->
+  <div class="row g-0 justify-content-center m-auto" style="width:95%; ">
+    <!-- left -->
+    <div class=""  style="width:75%; ">
+      <div class="map-container position-relative" style="width: 1595px; height: 796px; background-image: url(<%= asset_pack_path 'media/images/corp/industry/map-bg.png'%>) ">
+
+        <% points = [
+          { img_name: "baise", container_style: "left:280px; top:10px;", arrow_container_style: "top: 140px; left: 50px;" },
+          { img_name: "nanning", container_style: "left:560px; top:15px;", arrow_container_style: "top: 155px; left: -50px;" }
+        ] %>
+        <% points.each_with_index do |point, i| %>
+          <% humanId = i += 1 %>
+          <div class="component-point-container position-absolute" data-type='plane' data-id=<%= humanId %> style='<%= point[:container_style] %>' >
+            <div class="position-relative">
+              <%= image_pack_tag "media/images/corp/industry/detail_windows/#{point[:img_name]}.png", class: 'detail-img ', style: 'left: 0; top:0;' %>
+              <%# image_pack_tag "media/images/businesses/space/titles/plane-title-active#{humanId}.png", class: 'title-img-active ', 'data-id': humanId, style: 'left: 0; top:0;' %>
+
+              <%# circle %>
+              <div class="container animate__animated animate__fadeIn" style='<%= point[:arrow_container_style] %>' >
+
+              </div>
+
+            </div>
+          </div>
+        <% end %>
+
+
+      </div>
+
+
+    </div>
+
+    <!-- right -->
+    <div class=""  style="width:25%; ">
+      <%= image_pack_tag 'media/images/corp/industry/chain1.png', class: "w-100" %>
+      <%= image_pack_tag 'media/images/corp/industry/chain2.png', class: "w-100" %>
+
+    </div>
+
+  </div>
+
+
+  <%= render 'profile_bottom', return_path: corp_all_path %>
+
+</main>
