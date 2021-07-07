@@ -33,20 +33,20 @@ $(document).on("turbolinks:load", function() {
       corp_all_swiper_tl.from(".corp-index-swiper-num", { opacity: 0, duration: 1, onComplete: function(){startCount('.corp_all_counter')} })
     },
     function(){
-      corp_all_swiper_tl.from(".corp-index-swiper-title", {y: -500, opacity: 0, duration: 1, ease: "elastic", })
-        .from(".corp-index-swiper-num", {y: -500, opacity: 0, duration: 1, onComplete: function(){startCount('.corp_all_counter')} })
+      corp_all_swiper_tl.from(".corp-index-swiper-title", {opacity: 0, duration: 1})
+        .from(".corp-index-swiper-num", {opacity: 0, duration: 1, onComplete: function(){startCount('.corp_all_counter')} })
     },
     function(){
-      corp_all_swiper_tl.from(".title-slide-in", {y: -500, opacity: 0, duration: 1, ease: "elastic", })
-        .from(".flag-flip", {rotationX:-90, transformOrigin:"top", duration: 1 })
+      corp_all_swiper_tl.from(".title-slide-in", { opacity: 0, duration: 1})
+        .from(".flag-flip", {opacity: 0, duration: 1 })
 
     },
     function(){
-      corp_all_swiper_tl.from(".title-slide-in", {y: -1200, opacity: 0, duration: 1, ease: "elastic", })
+      corp_all_swiper_tl.from(".title-slide-in", { opacity: 0, duration: 1 })
     },
     function(){
-      corp_all_swiper_tl.from(".title-slide-in", {y: -500, opacity: 0, duration: 1, ease: "elastic", })
-        .from(".flag-flip", {rotationX:-90, transformOrigin:"top", duration: 1 })
+      corp_all_swiper_tl.from(".title-slide-in", { opacity: 0, duration: 1 })
+        .from(".flag-flip", { opacity: 0, duration: 1 })
     }
   ]
 
