@@ -19,6 +19,9 @@ $(document).on("turbolinks:load", function() {
       refreshTlCountDownTimer();
       resetTlStatus()
 
+      $('.tl-tag').removeClass('active')
+      $(this).addClass('active')
+      
       let humanId = Number( $(this).data('id') )
       let target = $('.tl-data').eq( humanId - 1)
       $('.timeline-container').scrollTo(target, 1000)

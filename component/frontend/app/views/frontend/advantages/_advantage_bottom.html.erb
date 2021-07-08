@@ -3,5 +3,13 @@
 
     <%= render 'navs' %>
 
+    <div class="col ms-5" style="margin-top:220px;">
+      <% if !@return_path.blank? %>
+        <%= link_to( @return_path ) do %>
+          <%= image_pack_tag 'media/images/corp/go-back.png' %>
+        <% end %>
+      <% end %>
+    </div>
+
   </div>
 </div>

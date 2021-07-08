@@ -125,14 +125,28 @@ $(document).on("turbolinks:load", function() {
     new BusinessDetailsSwiper(Swiper, url.searchParams)
   }
 
-
-
   if ($('.industry-hezhou-swiper').length > 0) {
-
     new Swiper(".industry-hezhou-swiper", {
             loop: true,
-
           });
+  }
+
+  if ( $('.talents-swiper').length > 0 ) {
+    var talentsSwiper = new Swiper(".talents-swiper", {
+            slidesPerView: "auto",
+            freeMode: true,
+            // loop: true,
+          });
+
+    $('.talent-slide-with-detail').find('.talent-img').on('click', function(){
+      var $slide = $(this).parents('.talent-slide-with-detail')
+      if ( $slide.hasClass('expanded') ) {
+        $slide.removeClass('expanded');
+      } else {
+        $slide.addClass('expanded');
+      }
+      talentsSwiper.update();
+    })
 
   }
 

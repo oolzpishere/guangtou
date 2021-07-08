@@ -72,3 +72,37 @@
   left:0 ;
   // overflow:hidden;z-index:-998;
 }
+
+
+.tl-tag{
+  .tl-tag-img{
+    display: block;
+  }
+  .tl-tag-img-active{
+    display: none;
+  }
+}
+.tl-tag.active{
+  .tl-tag-img{
+    display: none;
+  }
+  .tl-tag-img-active{
+    display: block;
+  }
+}
+
+.talents-swiper{
+  .talent-slide{
+    width: 535px;
+    height: 880px;
+    .talent-detail{
+      display: none;
+    }
+  }
+  .swiper-slide.expanded{
+    width: 1790px;
+    .talent-detail{
+      display: block;
+    }
+  }
+}
