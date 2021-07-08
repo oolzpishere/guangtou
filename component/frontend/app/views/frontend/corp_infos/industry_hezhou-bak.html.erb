@@ -1,0 +1,74 @@
+<main class="position-relative w-100 h-100">
+
+  <!-- Slider main container -->
+  <div class="swiper-container industry-hezhou-swiper window-holder">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide">
+        <div class="w-100" style="height: 22%;" ></div>
+
+        Slide 1
+      </div>
+      <div class="swiper-slide">
+        <!-- bg video container -->
+        <div class="position-absolute " style="z-index: 0;">
+          <div class="position-relative " style="width: 2560px; height: 1440px; background: rgba(0,0,0, 0.3); overflow: hidden;">
+            <div class="position-absolute w-100 h-100" style="z-index: 1; background: rgba(0,0,0, 0.3); ">
+            </div>
+            <video id="industry-hezhou-video"
+                     class="video-js vjs-default-skin industry-bg-video"
+                     style=""
+                     loop >
+              <source src="/videos/liuzhou.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <!-- front -->
+        <div class="position-relative w-100 h-100" style="z-index:1;">
+          <div class="w-100" style="height: 22%;" ></div>
+
+          Slide 2
+        </div>
+
+      </div>
+
+      <div class="swiper-slide">
+        <div class="w-100" style="height: 22%;" ></div>
+
+        Slide 3
+      </div>
+
+      <div class="swiper-slide">
+        <div class="w-100" style="height: 22%;" ></div>
+
+        Slide 4
+      </div>
+
+    </div>
+
+    <!-- If we need navigation buttons -->
+    <!-- <div class="swiper-button-prev"></div> -->
+    <!-- <div class="swiper-button-next"></div> -->
+
+  </div>
+
+  <!-- swiper pagination  -->
+  <div class="position-absolute" style="top: 600px; left: 80px; width: 600px; z-index: 1020;" >
+    <div class="row g-0">
+      <div class="col industry-hezhou-swiper-tag position-relative" data-id="1" >
+        <%= image_pack_tag 'media/images/businesses/space/plane-tag.png' %>
+        <%= image_pack_tag 'media/images/businesses/space/plane-tag-active.png', class: 'active-img position-absolute d-none', style: "top:0; left:0;" %>
+      </div>
+      <div class="col industry-hezhou-swiper-tag ms-5 position-relative" data-id="2" >
+        <%= image_pack_tag 'media/images/businesses/space/aerospace-tag.png' %>
+        <%= image_pack_tag 'media/images/businesses/space/aerospace-tag-active.png', class: 'active-img position-absolute d-none', style: "top:0; left:0;" %>
+      </div>
+    </div>
+  </div>
+
+
+
+  <%= render 'profile_bottom', return_path: corp_infos_industry_path %>
+
+</main>

@@ -126,9 +126,24 @@ $(document).on("turbolinks:load", function() {
   }
 
   if ($('.industry-hezhou-swiper').length > 0) {
-    new Swiper(".industry-hezhou-swiper", {
+    var industryHezhouSwiper = new Swiper(".industry-hezhou-swiper", {
             loop: true,
+            on: {
+              init: function () {
+                $('.industry-hezhou-swiper-tag').eq(0).addClass('active')
+              }
+            }
           });
+
+    $('.industry-hezhou-swiper-tag').on('click', function(){
+      let humanId = $(this).data('id')
+      industryHezhouSwiper.slideTo(humanId)
+    })
+
+    industryHezhouSwiper.on('slideChange', function () {
+      $('.industry-hezhou-swiper-tag').removeClass('active')
+      $('.industry-hezhou-swiper-tag').eq( industryHezhouSwiper.realIndex ).addClass('active')
+    });
   }
 
   if ( $('.talents-swiper').length > 0 ) {

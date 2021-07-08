@@ -106,3 +106,48 @@
     }
   }
 }
+
+.industry-point-container{
+  .detail-img-container{
+    display: none;
+  }
+  .point-container {
+    .point-img{
+      display: block;
+    }
+    .point-img-active{
+      display: none;
+    }
+  }
+}
+
+.industry-point-container.active{
+  .detail-img-container{
+    display: block;
+  }
+  .point-container{
+    .point-img{
+      display: none;
+    }
+    .point-img-active{
+      display: block;
+    }
+  }
+}
+
+.show-all-point-container{
+  .point-img{
+    display: block;
+  }
+  .point-img-active{
+    display: none;
+  }
+}
+.show-all-point-container.active{
+  .point-img{
+    display: none;
+  }
+  .point-img-active{
+    display: block;
+  }
+}

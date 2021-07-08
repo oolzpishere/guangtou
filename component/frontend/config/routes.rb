@@ -1,6 +1,6 @@
 Frontend::Engine.routes.draw do
 
-  resources :corp_infos
+  # resources :corp_infos
   get '/home', to: 'corp_infos#home'
 
   get '/corp_all', to: 'corp_infos#corp_all'
@@ -15,9 +15,9 @@ Frontend::Engine.routes.draw do
 
   get '/strategy', to: 'corp_infos#strategy'
 
-  get '/industry', to: 'corp_infos#industry'
-  get '/industry_liuzhou', to: 'corp_infos#industry_liuzhou'
-  get '/industry_hezhou', to: 'corp_infos#industry_hezhou'
+  get '/corp_infos/industry', to: 'corp_infos#industry'
+  get '/corp_infos/industry_liuzhou', to: 'corp_infos#industry_liuzhou'
+  get '/corp_infos/industry_hezhou', to: 'corp_infos#industry_hezhou'
 
 
 
@@ -44,8 +44,6 @@ Frontend::Engine.routes.draw do
   get '/advantages/innovation_result', to: 'advantages#innovation_result'
   get '/advantages/innovation_tl', to: 'advantages#innovation_tl'
   get '/advantages/equipment', to: 'advantages#equipment'
-
-
 
 
 end

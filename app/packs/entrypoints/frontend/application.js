@@ -58,6 +58,29 @@ $(document).on("turbolinks:load", function() {
 
   // $('.page-transition').addClass('animate__animated animate__fadeIn');
 
+  if ( $('.industry-index-page').length > 0 ) {
+    $('.point-container').on('click', function(){
+      var item = $(this).parents('.industry-point-container')
+      if (item.hasClass('active')) {
+        item.removeClass('active')
+      } else {
+        item.addClass('active')
+      }
+
+    })
+
+    $('.show-all-point-container').on('click', function(){
+      var item = $(this)
+      if (item.hasClass('active')) {
+        item.removeClass('active')
+        $('.industry-point-container').removeClass('active')
+      } else {
+        item.addClass('active')
+        $('.industry-point-container').addClass('active')
+      }
+    })
+  }
+
 
 
 })

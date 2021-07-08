@@ -69,3 +69,20 @@
     display: block;
   }
 }
+
+.industry-hezhou-swiper-tag{
+  .img{
+    display: block;
+  }
+  .img-active{
+    display: none;
+  }
+}
+.industry-hezhou-swiper-tag.active{
+  .img{
+    display: none;
+  }
+  .img-active{
+    display: block;
+  }
+}

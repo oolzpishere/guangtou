@@ -1,4 +1,4 @@
-<main class="window-holder position-relative" style=""  >
+<main class="industry-index-page window-holder position-relative" style=""  >
 
   <div class="w-100" style="height: 18%;" >
   </div>
@@ -6,30 +6,40 @@
   <!-- align-items-center justify-content-center -->
   <div class="row g-0 justify-content-center m-auto" style="width:95%; ">
     <!-- left -->
-    <div class=""  style="width:75%; ">
+    <div class=""  style="width:73%; ">
       <div class="map-container position-relative" style="width: 1595px; height: 796px; background-image: url(<%= asset_pack_path 'media/images/corp/industry/map-bg.png'%>) ">
 
         <% points = [
-          { img_name: "baise", container_style: "left:280px; top:10px;", arrow_container_style: "top: 140px; left: 50px;" },
-          { img_name: "nanning", container_style: "left:560px; top:15px;", arrow_container_style: "top: 155px; left: -50px;" }
+          { img_name: "baise", path: "#", container_style: "top: 0px; left: 110px; ", arrow_container_style: "top: 436px; left: 110px;" },
+          { img_name: "nanning", path: "#", container_style: "top: 615px; left: 150px; ", arrow_container_style: "top: -80px; left: 308px;" },
+          { img_name: "laibin", path: "#", container_style: "top: 525px; left: 580px; ", arrow_container_style: "top: -90px; left: 0px;" },
+          { img_name: "liuzhou", path: corp_infos_industry_liuzhou_path, container_style: "top: 0px; left: 680px; ", arrow_container_style: "top: 290px; left: -100px;" },
+          { img_name: "hezhou", path: corp_infos_industry_hezhou_path, container_style: "top: 410px; left: 930px; ", arrow_container_style: "top: -80px; left: -100px;" },
+          { img_name: "xinjiang", path: "#", container_style: "top: 150px; left: 1350px; ", arrow_container_style: "top: -100px; left: 0px;" },
         ] %>
         <% points.each_with_index do |point, i| %>
           <% humanId = i += 1 %>
-          <div class="component-point-container position-absolute" data-type='plane' data-id=<%= humanId %> style='<%= point[:container_style] %>' >
+          <div class="industry-point-container position-absolute" data-type='plane' data-id=<%= humanId %> style='<%= point[:container_style] %>' >
             <div class="position-relative">
-              <%= image_pack_tag "media/images/corp/industry/detail_windows/#{point[:img_name]}.png", class: 'detail-img ', style: 'left: 0; top:0;' %>
-              <%# image_pack_tag "media/images/businesses/space/titles/plane-title-active#{humanId}.png", class: 'title-img-active ', 'data-id': humanId, style: 'left: 0; top:0;' %>
+              <div class="detail-img-container">
+                <%= link_to( point[:path] ) do %>
+                  <%= image_pack_tag "media/images/corp/industry/detail_windows/#{point[:img_name]}.png", class: 'detail-img '%>
+                <% end %>
+              </div>
 
-              <%# circle %>
-              <div class="container animate__animated animate__fadeIn" style='<%= point[:arrow_container_style] %>' >
-
+              <div class="point-container position-absolute" style='<%= point[:arrow_container_style] %>' data-id=<%= humanId %> >
+                <%= image_pack_tag "media/images/corp/industry/points/#{point[:img_name]}.png", class: 'point-img'%>
+                <%= image_pack_tag "media/images/corp/industry/points/#{point[:img_name]}-active.png", class: 'point-img-active'%>
               </div>
 
             </div>
           </div>
         <% end %>
 
-
+        <div class="show-all-point-container position-absolute" style="bottom: -20px; left: -10px;">
+          <%= image_pack_tag "media/images/corp/industry/points/all-show.png", class: 'point-img'%>
+          <%= image_pack_tag "media/images/corp/industry/points/all-hide.png", class: 'point-img-active'%>
+        </div>
       </div>
 
 
@@ -37,8 +47,9 @@
 
     <!-- right -->
     <div class=""  style="width:25%; ">
+      <div class="w-100" style="height: 180px;"></div>
       <%= image_pack_tag 'media/images/corp/industry/chain1.png', class: "w-100" %>
-      <%= image_pack_tag 'media/images/corp/industry/chain2.png', class: "w-100" %>
+      <%= image_pack_tag 'media/images/corp/industry/chain2.png', class: "w-100 mt-5" %>
 
     </div>
 
