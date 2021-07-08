@@ -146,6 +146,30 @@ $(document).on("turbolinks:load", function() {
     });
   }
 
+  if ($('.industry-nanning-swiper').length > 0) {
+    var industryNanningSwiper = new Swiper(".industry-nanning-swiper", {
+            // loop: true,
+            on: {
+              init: function () {
+                $('.industry-nanning-swiper-tag').eq(0).addClass('active')
+              }
+            }
+          });
+
+    $('.industry-nanning-swiper-tag').on('click', function(){
+      let humanId = $(this).data('id')
+      console.log('clicked'+humanId)
+      console.log( industryNanningSwiper )
+
+      industryNanningSwiper.slideToLoop(humanId - 1)
+    })
+
+    industryNanningSwiper.on('slideChange', function () {
+      $('.industry-nanning-swiper-tag').removeClass('active')
+      $('.industry-nanning-swiper-tag').eq( industryNanningSwiper.realIndex ).addClass('active')
+    });
+  }
+
   if ( $('.talents-swiper').length > 0 ) {
     var talentsSwiper = new Swiper(".talents-swiper", {
             slidesPerView: "auto",

@@ -66,6 +66,21 @@ $(document).on("turbolinks:load", function() {
 
   }
 
+  if ( $('#industry-nanning-nnl-video').length > 0 ) {
+    videojs('industry-nanning-nnl-video', {
+      autoplay: true,
+      muted: true
+    })
+
+    videojs('industry-nanning-guomao-video', {
+      autoplay: true,
+      muted: true
+    })
+
+  }
+
+
+
 
 
 
@@ -77,7 +92,11 @@ $(document).on("turbolinks:before-cache", function() {
   // dispose videojs, when leave page.
   if ( $('.video-js').length > 0 ) {
     // videojs('nnl-video').dispose();
-    videojs( document.querySelector('.video-js') ).dispose();
+    var videos = document.querySelectorAll(".video-js");
+    videos.forEach(function(video) {
+      videojs( video ).dispose();
+    });
+
   }
 
 })

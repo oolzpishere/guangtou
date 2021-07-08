@@ -86,3 +86,20 @@
     display: block;
   }
 }
+
+.industry-nanning-swiper-tag{
+  .img{
+    display: block;
+  }
+  .img-active{
+    display: none;
+  }
+}
+.industry-nanning-swiper-tag.active{
+  .img{
+    display: none;
+  }
+  .img-active{
+    display: block;
+  }
+}
