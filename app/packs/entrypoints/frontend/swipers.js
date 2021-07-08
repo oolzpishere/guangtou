@@ -150,6 +150,31 @@ $(document).on("turbolinks:load", function() {
 
   }
 
+  if ( $('.equipment-swiper').length > 0 ) {
+    var equipmentTl = gsap.timeline();
+    var equipmentSwiper = new Swiper(".equipment-swiper", {
+            loop: true,
+            on: {
+              init: function () {
+                setSlideIn( $('.swiper-slide-active') )
+              }
+            }
+          });
+    // setSlideIn( $('.swiper-slide').not('.swiper-slide-duplicate').eq(0) )
+
+    function setSlideIn( slide ){
+      // $('.swiper-slide-active').find('.slide-in-left')
+      equipmentTl.from( slide.find('.slide-in-left'), { x: -600, opacity: 0, duration: 1, delay: 0.2 });
+      equipmentTl.from( slide.find('.slide-in-right'), { x: 600, opacity: 0, duration: 1 });
+    }
+
+    equipmentSwiper.on('slideChangeTransitionStart', function () {
+      my_clear_tl(equipmentTl)
+      // equipmentSwiper.realIndex
+      setSlideIn( $('.swiper-slide-active') )
+    });
+  }
+
 
 })
 

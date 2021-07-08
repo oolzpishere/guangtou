@@ -43,6 +43,7 @@ Frontend::Engine.routes.draw do
   get '/advantages/team', to: 'advantages#team'
   get '/advantages/innovation_result', to: 'advantages#innovation_result'
   get '/advantages/innovation_tl', to: 'advantages#innovation_tl'
+  get '/advantages/equipment', to: 'advantages#equipment'
 
 
 
