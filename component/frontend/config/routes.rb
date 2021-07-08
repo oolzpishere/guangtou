@@ -19,6 +19,8 @@ Frontend::Engine.routes.draw do
   get '/corp_infos/industry_liuzhou', to: 'corp_infos#industry_liuzhou'
   get '/corp_infos/industry_hezhou', to: 'corp_infos#industry_hezhou'
   get '/corp_infos/industry_nanning', to: 'corp_infos#industry_nanning'
+  get '/corp_infos/industry_laibin', to: 'corp_infos#industry_laibin'
+  get '/corp_infos/industry_xinjiang', to: 'corp_infos#industry_xinjiang'
 
 
   get '/parties', to: 'parties#index'
