@@ -1,6 +1,7 @@
 Frontend::Engine.routes.draw do
 
   # resources :corp_infos
+  root to: 'corp_infos#home'
   get '/home', to: 'corp_infos#home'
 
   get '/corp_all', to: 'corp_infos#corp_all'

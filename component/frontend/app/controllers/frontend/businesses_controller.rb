@@ -4,13 +4,18 @@ module Frontend
   class BusinessesController < ApplicationController
     # before_action :set_business, only: [:show, :edit, :update, :destroy]
     before_action :set_business_navs
+    before_action :set_default_return_path
 
     layout 'frontend/business_application'
 
 
     # GET /businesses
     def index
+      @return_path = home_path
+    end
 
+    def space_details
+      @return_path = businesses_space_path
     end
 
 
@@ -41,5 +46,17 @@ module Frontend
           end
         end
       end
+
+      def set_default_return_path
+        # parent_paths = [businesses_space_path]
+        # parent_paths.each do |parent_path|
+        #   if request.path.match( parent_path )
+        #     @return_path = parent_path
+        #   end
+        # end
+
+        @return_path ||= businesses_path
+      end
+
   end
 end
