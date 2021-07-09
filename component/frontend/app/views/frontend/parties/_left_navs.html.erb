@@ -1,53 +1,41 @@
-<div class="" style="width:25%; z-index: 1020;">
+<div class="" style=" z-index: 1020;">
 
   <div class="row g-0 " style="">
     <!-- top image -->
-    <div class="col text-end" style="margin-top:30px;">
+    <div class="col text-center" style="margin-top:50px;">
       <%= image_pack_tag @active_party_nav[:big_img_path] %>
     </div>
 
   </div>
 
-
   <!-- navs -->
-  <div class="row g-0 ">
-    <!-- go back -->
-    <div class="position-relative" style="width:10%; bottom: -30px;">
-      <div class="position-absolute"  style="left:20px; bottom: -30px; z-index: 1020;">
-        <%= link_to( return_path, html_options = {}) do %>
-          <%= image_pack_tag 'media/images/party/navs/back.png', class: '', style: ""%>
+  <div class="row g-0 mt-4">
+
+    <!-- two video navs -->
+    <div class="row g-0 justify-content-center">
+      <div class="col-auto mx-2">
+        <%= link_to( '#', html_options = {}) do %>
+          <%= image_pack_tag 'media/images/party/navs/gt-video-nav.png', class: "", style: ""%>
         <% end %>
       </div>
-
-    </div>
-
-    <div class="" style="width:40%;">
-      <div class="row g-0 ps-3">
-        <% @party_navs[0..5].each do |party_nav| %>
-          <div class="col-12">
-            <%= link_to(party_nav[:path], html_options = {}) do %>
-              <% nav_class = "" %>
-              <% (nav_class += ' active') if party_nav[:active] %>
-              <%= image_pack_tag party_nav[:img_path], class: nav_class, style: ""%>
-            <% end %>
-          </div>
+      <div class="col-auto mx-2">
+        <%= link_to( '#', html_options = {}) do %>
+          <%= image_pack_tag 'media/images/party/navs/xcl-video-nav.png', class: "", style: ""%>
         <% end %>
       </div>
     </div>
-    <div class="" style="width:50%;">
-      <div class="row h-100 g-0 align-items-end justify-content-center">
-        <div class="col-auto">
-          <% video_nav = @party_navs[6] %>
-          <%= link_to(video_nav[:path], html_options = {}) do %>
+
+    <div class="row mx-auto mt-5" style="width:95%;">
+      <% @party_navs[0..5].each do |party_nav| %>
+        <div class="col-4">
+          <%= link_to(party_nav[:path], html_options = {}) do %>
             <% nav_class = "" %>
-            <% (nav_class += ' active') if video_nav[:active] %>
-            <%= image_pack_tag video_nav[:img_path], class: nav_class, style: ""%>
+            <% (nav_class += ' active') if party_nav[:active] %>
+            <%= image_pack_tag party_nav[:img_path], class: nav_class, style: ""%>
           <% end %>
         </div>
-      </div>
-
+      <% end %>
     </div>
-
   </div>
 
 </div>

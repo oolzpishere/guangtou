@@ -2,26 +2,31 @@
   <div class="row g-0 position-relative">
 
     <!-- left -->
-    <div class="position-absolute text-center" style="width: 40%; left:50px; top: 50px; z-index:2;">
-      <%# render 'party_links' %>
-      <%= image_pack_tag 'media/images/party/nav-top.png' %>
-      <div class="w-100 mt-5"></div>
-
-      <% video_nav = @party_navs[6] %>
-      <%= link_to(video_nav[:path], html_options = {}) do %>
-        <%= image_pack_tag 'media/images/party/play-video-btn.png', class: "", style: ""%>
-      <% end %>
-
-      <div class="w-100 mt-5"></div>
+    <div class="position-absolute text-center" style="width: 32%; top: 190px; left:80px;  z-index:2;">
 
       <div class="row g-0">
-        <% (1..6).each do |i| %>
-          <div class="col-4 text-center">
-            <%= link_to(@party_navs[i-1][:path], html_options = {}) do %>
-              <%= image_pack_tag "media/images/party/index-nav#{i}.png" %>
-            <% end %>
-          </div>
-        <% end %>
+        <div class="col-6">
+          <%= link_to( '#', html_options = {}) do %>
+            <%= image_pack_tag 'media/images/party/index-gt.png', class: "", style: ""%>
+          <% end %>
+        </div>
+
+        <div class="col-6">
+          <%= image_pack_tag 'media/images/party/nav-top.png' %>
+        </div>
+        <div class="w-100 mt-5"></div>
+        <div class="col-6">
+          <%= link_to( '#', html_options = {}) do %>
+            <%= image_pack_tag 'media/images/party/index-xcl.png', class: "", style: ""%>
+          <% end %>
+        </div>
+
+        <div class="col-6">
+          <%= link_to( parties_profile_path, html_options = {}) do %>
+            <%= image_pack_tag 'media/images/party/index-brand.png', class: "", style: ""%>
+          <% end %>
+        </div>
+
       </div>
 
     </div>
