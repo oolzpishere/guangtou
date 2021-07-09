@@ -12,6 +12,7 @@ module Frontend
     # GET /parties
     def index
       # @parties = Party.all
+      @return_path = home_path
     end
 
     def profile

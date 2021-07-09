@@ -3,8 +3,8 @@
     <div class="col-auto " style="height: 150px; width: 1550px;">
       <%= render 'corp_bottom_links' %>
       <div class="col mt-5 ms-5" style="">
-        <% if !return_path.blank? %>
-          <%= link_to( return_path ) do %>
+        <% if @return_path %>
+          <%= link_to( @return_path ) do %>
             <%= image_pack_tag 'media/images/corp/go-back.png' %>
           <% end %>
         <% end %>

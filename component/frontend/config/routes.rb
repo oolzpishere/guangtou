@@ -6,15 +6,15 @@ Frontend::Engine.routes.draw do
 
   get '/corp_all', to: 'corp_infos#corp_all'
 
-  get '/profile', to: 'corp_infos#profile'
-  get '/profile/profile_xcl', to: 'corp_infos#profile_xcl'
-  get '/profile/profile_gt', to: 'corp_infos#profile_gt'
+  get '/corp_infos/profile', to: 'corp_infos#profile'
+  get '/corp_infos/profile/profile_xcl', to: 'corp_infos#profile_xcl'
+  get '/corp_infos/profile/profile_gt', to: 'corp_infos#profile_gt'
 
-  get '/culture', to: 'corp_infos#culture'
-  get '/culture_gt', to: 'corp_infos#culture_gt'
-  get '/culture_xcl', to: 'corp_infos#culture_xcl'
+  get '/corp_infos/culture', to: 'corp_infos#culture'
+  get '/corp_infos/culture_gt', to: 'corp_infos#culture_gt'
+  get '/corp_infos/culture_xcl', to: 'corp_infos#culture_xcl'
 
-  get '/strategy', to: 'corp_infos#strategy'
+  get '/corp_infos/strategy', to: 'corp_infos#strategy'
 
   get '/corp_infos/industry', to: 'corp_infos#industry'
   get '/corp_infos/industry_liuzhou', to: 'corp_infos#industry_liuzhou'

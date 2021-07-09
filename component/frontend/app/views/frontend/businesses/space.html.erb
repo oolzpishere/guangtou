@@ -18,15 +18,18 @@
           <div class=" mx-auto position-relative"  style="width: 1779px; height: 697px; background: no-repeat left top url(<%= asset_pack_path 'media/images/businesses/space/plane.png'%>) " >
             <!-- point 1 -->
             <% points = [
-              { container_style: "left:530px; top:140px;", arrow_container_style: "top: 140px; left: 50px;" },
-              { container_style: "left:910px; top:150px;", arrow_container_style: "top: 155px; left: -50px;" }
+              { container_style: "top:140px; left:530px;", arrow_container_style: "top: 140px; left: 50px;" },
+              { container_style: "top:150px; left:910px;", arrow_container_style: "top: 155px; left: -50px;" },
+              { container_style: "top:265px; left:1030px;", arrow_container_style: "top: 80px; left: -50px;" },
+              { container_style: "top:410px; left:650px; ", arrow_container_style: "top: -60px; left: 165px;" },
+              { container_style: "top:470px; left:1110px; ", arrow_container_style: "top: -60px; left: -50px;" },
             ] %>
             <% points.each_with_index do |point, i| %>
               <% humanId = i += 1 %>
               <div class="component-point-container position-absolute" data-type='plane' data-id=<%= humanId %> style='<%= point[:container_style] %>' >
                 <div class="position-relative">
                   <%= image_pack_tag "media/images/businesses/space/titles/plane-title#{humanId}.png", class: 'title-img ', style: 'left: 0; top:0;' %>
-                  <%= image_pack_tag "media/images/businesses/space/titles/plane-title-active#{humanId}.png", class: 'title-img-active ', 'data-id': humanId, style: 'left: 0; top:0;' %>
+                  <%= image_pack_tag "media/images/businesses/space/titles/plane-title#{humanId}-active.png", class: 'title-img-active ', 'data-id': humanId, style: 'left: 0; top:0;' %>
 
                   <%= link_to( "#{businesses_space_details_path}?slide=0&id=#{humanId}" ) do %>
                     <div class="arrow-container animate__animated animate__fadeInDown" style='<%= point[:arrow_container_style] %>' >
@@ -64,7 +67,7 @@
 
     <div class="position-relative"  style="width:47%;">
       <%# render 'navs', return_path: parties_path %>
-      
+
     </div>
 
   </div>

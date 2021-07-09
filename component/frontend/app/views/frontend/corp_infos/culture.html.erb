@@ -4,18 +4,18 @@
 
   <div class="row g-0 m-auto w-100" style=" ">
     <div class="col text-end" style="width: 50%; ">
-      <%= link_to(culture_gt_path, html_options = {}) do %>
-        <%= image_pack_tag 'media/images/corp/culture/gt-big-nav.png' %>
+      <%= link_to(corp_infos_culture_gt_path, html_options = {}) do %>
+        <%= image_pack_tag 'media/images/corp/culture/gt-big-nav.jpg' %>
       <% end %>
     </div>
 
     <div class="col" style="width: 50%;">
-      <%= link_to(culture_xcl_path, html_options = {}) do %>
-        <%= image_pack_tag 'media/images/corp/culture/xcl-big-nav.png' %>
+      <%= link_to(corp_infos_culture_xcl_path, html_options = {}) do %>
+        <%= image_pack_tag 'media/images/corp/culture/xcl-big-nav.jpg' %>
       <% end %>
     </div>
   </div>
 
-  <%= render 'profile_bottom', return_path: corp_all_path %>
+  <%= render 'profile_bottom' %>
 
 </main>
