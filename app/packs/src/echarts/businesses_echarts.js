@@ -463,6 +463,11 @@ $(document).on("turbolinks:load", function() {
                 areaColor: '#0099CC',
   						}
   					},
+            label: { // 高亮的时候不显示标签
+              emphasis: {
+                show: false
+              }
+            },
   					regions: [
               { // 选中的区域
     						name: 'China',
