@@ -7,15 +7,18 @@ import { gsap } from 'gsap/dist/gsap.js'
 import 'animejs/lib/anime.js'
 import Chart from 'chart.js/auto';
 import 'jquery.scrollto'
+import * as echarts from 'echarts'
+import 'src/echarts/world'
+
 
 import './swipers'
 import './flips'
 import './my_vjs'
 import './tl_scroll'
+import 'src/echarts/businesses_echarts'
+
 
 // import './shortcuts'
-
-
 
 
 
@@ -80,6 +83,9 @@ $(document).on("turbolinks:load", function() {
       }
     })
   }
+
+
+
 
 
 
