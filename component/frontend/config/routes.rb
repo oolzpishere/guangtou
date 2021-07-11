@@ -43,6 +43,9 @@ Frontend::Engine.routes.draw do
   get '/businesses/car/details', to: 'businesses#car_details'
   get '/businesses/ship', to: 'businesses#ship'
   get '/businesses/ship/details', to: 'businesses#ship_details'
+  get '/businesses/train', to: 'businesses#train'
+  get '/businesses/train/details', to: 'businesses#train_details'
+
 
 
   # resources :advantages
