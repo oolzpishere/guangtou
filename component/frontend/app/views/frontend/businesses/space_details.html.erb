@@ -1,44 +1,52 @@
-<div class="window-holder position-relative " style="background: url(<%= asset_pack_path 'media/images/businesses/space/detail-bg.png'%>) ">
+<% slide_type = ['plane', 'aerospace'] %>
+<div class="window-holder position-relative " style="" >
+  <div class="business-detail-bg-img w-100 h-100 position-absolute">
+    <%= image_pack_tag 'media/images/businesses/space/detail-bg1.png', class: '', style: '' %>
+    <%= image_pack_tag 'media/images/businesses/space/detail-bg2.png', class: '', style: '' %>
+  </div>
 
   <div class=" row g-0 position-relative" >
     <!-- left -->
-    <div class="position-relative animate__animated animate__fadeInLeft"  style="width:47%;">
+    <div class="position-relative animate__animated animate__fadeInLeft"  style="width:47%; z-index: 2;">
       <div class="w-100" style="height: 300px;"></div>
-      <!-- # TODO: add position-absolute, move to right a bit -->
-      <div class="business-components-container">
-        <div class="plane-components business-components position-relative active">
-          <%= image_pack_tag 'media/images/businesses/space/details/plane1.png', class: 'component-info active', style: '' %>
-          <%= image_pack_tag 'media/images/businesses/space/details/plane2.png', class: 'component-info', style: '' %>
 
-          <div class="component-btns position-absolute" style="bottom: 50px;left: 50px;">
+      <div class="business-components-container">
+        <!-- plane-components -->
+        <div class="plane-components business-components position-relative" style="width: 1200px; height: 587px; ">
+          <div class="position-absolute" style="left: 90px;" >
+            <% (1..5).each do |i| %>
+              <%= image_pack_tag "media/images/businesses/space/details/plane#{i}.png", class: 'component-info ', style: '' %>
+            <% end %>
+          </div>
+
+          <div class="component-btns position-absolute" style="top: 510px;left: 140px;">
             <div class="row g-0 position-relative">
-              <div class="component-btn col position-relative active mx-1" data-type="plane" data-id="1">
-                <%= image_pack_tag 'media/images/businesses/space/component_btns/5.png', class: 'component-btn-img', style: '' %>
-                <%= image_pack_tag 'media/images/businesses/space/component_btns/1-active.png', class: 'component-btn-img-active', style: '' %>
-              </div>
-              <div class="component-btn col position-relative mx-1" data-type="plane" data-id="2">
-                <%= image_pack_tag 'media/images/businesses/space/component_btns/2.png', class: 'component-btn-img', style: '' %>
-                <%= image_pack_tag 'media/images/businesses/space/component_btns/2-active.png', class: 'component-btn-img-active', style: '' %>
-              </div>
+              <% (1..5).each do |i| %>
+                <div class="component-btn col position-relative active mx-1" data-type="plane" data-id=<%= i %> >
+                  <%= image_pack_tag "media/images/businesses/component_btns/#{i}.png", class: 'component-btn-img', style: '' %>
+                  <%= image_pack_tag "media/images/businesses/component_btns/#{i}-active.png", class: 'component-btn-img-active', style: '' %>
+                </div>
+              <% end %>
             </div>
 
           </div>
         </div>
+        <!-- aerospace-components -->
+        <div class="aerospace-components business-components position-relative" style="width: 1200px; height: 587px; ">
+          <div class="position-absolute" style="left: 90px;" >
+            <% (1..4).each do |i| %>
+              <%= image_pack_tag "media/images/businesses/aerospace/details/aerospace#{i}.png", class: 'component-info', style: '' %>
+            <% end %>
+          </div>
 
-        <div class="aerospace-components business-components position-relative">
-          <%= image_pack_tag 'media/images/businesses/space/details/aerospace1.png', class: 'component-info', style: '' %>
-          <%= image_pack_tag 'media/images/businesses/space/details/aerospace2.png', class: 'component-info', style: '' %>
-
-          <div class="component-btns position-absolute">
+          <div class="component-btns position-absolute"  style="top: 510px;left: 140px;">
             <div class="row g-0">
-              <div class="component-btn col position-relative" data-type="aerospace" data-id="1">
-                <%= image_pack_tag 'media/images/businesses/space/component_btns/5.png', class: 'component-btn-img', style: '' %>
-                <%= image_pack_tag 'media/images/businesses/space/component_btns/1-active.png', class: 'component-btn-img-active d-none', style: '' %>
-              </div>
-              <div class="component-btn col position-relative" data-type="aerospace" data-id="2">
-                <%= image_pack_tag 'media/images/businesses/space/component_btns/2.png', class: 'component-btn-img', style: '' %>
-                <%= image_pack_tag 'media/images/businesses/space/component_btns/2-active.png', class: 'component-btn-img-active d-none', style: '' %>
-              </div>
+              <% (1..4).each do |i| %>
+                <div class="component-btn col position-relative active mx-1" data-type="aerospace" data-id=<%= i %> >
+                  <%= image_pack_tag "media/images/businesses/component_btns/#{i}.png", class: 'component-btn-img', style: '' %>
+                  <%= image_pack_tag "media/images/businesses/component_btns/#{i}-active.png", class: 'component-btn-img-active', style: '' %>
+                </div>
+              <% end %>
             </div>
 
           </div>
@@ -46,18 +54,15 @@
 
       </div>
 
-      <%# render 'navs', return_path: parties_path %>
-      <%# render 'navs' %>
-
     </div>
     <!-- right -->
     <!-- Slider main container -->
     <div class="swiper-container businesses-details-swiper space-details-swiper animate__animated animate__fadeInRight" style="width:53%; background-color: rgba(0,0,0,0.6); ">
       <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
-        <!-- Slides -->
+        <!-- Slide1 plane-slide -->
         <!-- product_list -->
-        <div class="swiper-slide plane-slide">
+        <%= tag.div class: "swiper-slide #{slide_type[0]}-slide", data: {type: slide_type[0]} do %>
           <div class="w-100" style="height: 400px;"></div>
           <!-- product container -->
           <div class="position-relative mx-auto" style="width: 1060px; height: 415px; background: no-repeat left top url(<%= asset_pack_path 'media/images/businesses/space/plane60.png'%>) " >
@@ -71,7 +76,7 @@
             ] %>
             <% points.each_with_index do |point, i| %>
               <% humanId = i += 1 %>
-              <div class="component-point-container position-absolute" data-type='plane' data-id=<%= humanId %> style='<%= point[:container_style] %>' >
+              <div class="component-point-container position-absolute" data-type=<%= slide_type[0] %> data-id=<%= humanId %> style='<%= point[:container_style] %>' >
                 <div class="position-relative">
                   <%= image_pack_tag "media/images/businesses/space/titles/plane-title#{humanId}.png", class: 'title-img ', style: 'left: 0; top:0;' %>
                   <%= image_pack_tag "media/images/businesses/space/titles/plane-title#{humanId}-active.png", class: 'title-img-active ', 'data-id': humanId, style: 'left: 0; top:0;' %>
@@ -88,13 +93,40 @@
               </div>
             <% end %>
           </div>
+        <% end %>
 
-        </div>
+        <!-- Slide 2 aerospace-slide -->
+        <%= tag.div class: "swiper-slide #{slide_type[1]}-slide", data: {type: slide_type[1]} do %>
+          <div class="w-100" style="height: 360px;"></div>
+          <!-- product container -->
+          <div class="position-relative mx-auto" style="width:768px; height: 678px; background: no-repeat left top url(<%= asset_pack_path 'media/images/businesses/aerospace/aerospace80.png'%>) " >
+            <!-- point 1 -->
+            <% points = [
+              { container_style: "top:90px; left:-180px; z-index: 1;", arrow_container_style: "top: -50px; left: 250px;" },
+              { container_style: "top:120px; left:-80px;", arrow_container_style: "top: -55px; left: 250px;" },
+              { container_style: "top:500px; left:100px;", arrow_container_style: "top: -40px; left: 350px;" },
+              { container_style: "top:110px; left:310px; ", arrow_container_style: "top: 120px; left: -10px;" },
+            ] %>
+            <% points.each_with_index do |point, i| %>
+              <% humanId = i += 1 %>
+              <div class="component-point-container position-absolute" data-type=<%= slide_type[1] %> data-id=<%= humanId %> style='<%= point[:container_style] %>' >
+                <div class="position-relative">
+                  <%= image_pack_tag "media/images/businesses/aerospace/titles/#{humanId}.png", class: 'title-img ', style: 'left: 0; top:0;' %>
+                  <%= image_pack_tag "media/images/businesses/aerospace/titles/#{humanId}-active.png", class: 'title-img-active ', 'data-id': humanId, style: 'left: 0; top:0;' %>
 
-        <!-- Slide 2 -->
-        <div class="swiper-slide">
-          Slide 2
-        </div>
+                  <div class="arrow-container animate__animated animate__fadeIn" style='<%= point[:arrow_container_style] %>' >
+                    <div class="position-relative">
+                      <div class="arrow-2">
+                      </div>
+                      <div class="arrow-1 animate__animated animate__infinite zoomIn"></div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
 
       </div>
       <!-- If we need pagination -->

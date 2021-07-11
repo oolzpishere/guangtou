@@ -102,7 +102,7 @@ $(document).on("turbolinks:load", function() {
     var swiperHeight = ( wHeight - $('.business-bottom').innerHeight() )
     $(".space-main-swiper").css('height', swiperHeight)
 
-    new Swiper(".space-main-swiper", {
+    var spaceMainSwiper = new Swiper(".space-main-swiper", {
             loop: true,
             pagination: {
               el: ".swiper-pagination",
@@ -111,8 +111,43 @@ $(document).on("turbolinks:load", function() {
               bulletClass: 'swiper-pagination-bullet my-swiper-pagination-bullet',
               bulletActiveClass: 'swiper-pagination-bullet-active my-swiper-pagination-bullet-active',
             },
+            on: {
+              init: function () {
+                $('.business-detail-bg-img img').eq( 0 ).addClass('active')
+              },
+            }
           });
 
+    spaceMainSwiper.on('slideChange', function () {
+      $('.business-detail-bg-img img').removeClass('active')
+      $('.business-detail-bg-img img').eq( spaceMainSwiper.realIndex ).addClass('active')
+    });
+  }
+
+  if ($('.businesses-main-swiper').length > 0) {
+    var swiperHeight = ( wHeight - $('.business-bottom').innerHeight() )
+    $(".businesses-main-swiper").css('height', swiperHeight)
+
+    var businessesMainSwiper = new Swiper(".businesses-main-swiper", {
+            loop: true,
+            pagination: {
+              el: ".swiper-pagination",
+              type: 'bullets',
+              clickable: true,
+              bulletClass: 'swiper-pagination-bullet my-swiper-pagination-bullet',
+              bulletActiveClass: 'swiper-pagination-bullet-active my-swiper-pagination-bullet-active',
+            },
+            on: {
+              init: function () {
+                $('.business-detail-bg-img img').eq( 0 ).addClass('active')
+              },
+            }
+          });
+
+    businessesMainSwiper.on('slideChange', function () {
+      $('.business-detail-bg-img img').removeClass('active')
+      $('.business-detail-bg-img img').eq( businessesMainSwiper.realIndex ).addClass('active')
+    });
   }
 
   if ($('.businesses-details-swiper').length > 0) {

@@ -33,7 +33,7 @@ module Frontend
       def set_business_navs
         @business_navs = [
           {path: businesses_space_path, img_path: 'media/images/businesses/navs/1.jpg', active_img_path: 'media/images/businesses/navs/01.jpg'},
-          {path: "#", img_path: 'media/images/businesses/navs/2.jpg', active_img_path: 'media/images/businesses/navs/02.jpg'},
+          {path: businesses_car_path, img_path: 'media/images/businesses/navs/2.jpg', active_img_path: 'media/images/businesses/navs/02.jpg'},
           {path: "#", img_path: 'media/images/businesses/navs/3.jpg', active_img_path: 'media/images/businesses/navs/03.jpg'},
           {path: "#", img_path: 'media/images/businesses/navs/4.jpg', active_img_path: 'media/images/businesses/navs/04.jpg'},
           {path: "#", img_path: 'media/images/businesses/navs/5.jpg', active_img_path: 'media/images/businesses/navs/05.jpg'},

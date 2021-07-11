@@ -151,3 +151,12 @@
     display: block;
   }
 }
+
+.business-detail-bg-img{
+  img{
+    display: none;
+  }
+  img.active{
+    display: block;
+  }
+}
