@@ -1,0 +1,104 @@
+<% slide_type = ['ship'] %>
+<div class="window-holder position-relative " style="" >
+  <div class="business-detail-bg-img w-100 h-100 position-absolute">
+    <%= image_pack_tag 'media/images/businesses/ship/main-bg-ship.png', class: '', style: '' %>
+  </div>
+
+  <div class=" row g-0 position-relative" >
+    <!-- left -->
+    <div class="position-relative animate__animated animate__fadeInLeft"  style="width:47%; z-index: 2;">
+      <div class="w-100" style="height: 300px;"></div>
+
+      <div class="business-components-container">
+        <!-- ship-components -->
+        <div class="ship-components business-components position-relative" style="width: 1200px; height: 587px; ">
+          <% ship_num_range = (1..4) %>
+          <div class="position-absolute" style="left: 90px;" >
+            <% ship_num_range.each do |i| %>
+              <%= image_pack_tag "media/images/businesses/ship/ship/details/#{i}.png", class: 'component-info ', style: '' %>
+            <% end %>
+          </div>
+
+          <div class="component-btns position-absolute" style="top: 510px;left: 140px;">
+            <div class="row g-0 position-relative">
+              <% ship_num_range.each do |i| %>
+                <div class="component-btn col position-relative active mx-1" data-type=<%= slide_type[0] %> data-id=<%= i %> >
+                  <%= image_pack_tag "media/images/businesses/component_btns/#{i}.png", class: 'component-btn-img', style: '' %>
+                  <%= image_pack_tag "media/images/businesses/component_btns/#{i}-active.png", class: 'component-btn-img-active', style: '' %>
+                </div>
+              <% end %>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <!-- right -->
+    <!-- Slider main container -->
+    <div class="swiper-container businesses-details-swiper car-details-swiper animate__animated animate__fadeInRight" style="width:53%; background-color: rgba(0,0,0,0.6); ">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slide1 ship-slide -->
+        <!-- product_list -->
+        <%= tag.div class: "swiper-slide #{slide_type[0]}-slide", data: {type: slide_type[0]} do %>
+          <div class="w-100" style="height: 420px;"></div>
+          <!-- product container -->
+          <div class="position-relative mx-auto" style="width: 1170px; height: 576px; background: no-repeat left top url(<%= asset_pack_path 'media/images/businesses/ship/ship/ship-croped80.png'%>) " >
+            <!-- point 1 -->
+            <% points = [
+              { container_style: "top:-60px; left:40px;", arrow_container_style: "top: 270px; left: 390px;" },
+              { container_style: "top:-60px; left:350px;", arrow_container_style: "top: 220px; left: 250px;" },
+              { container_style: "top:100px; left:480px;", arrow_container_style: "top: -50px; left: 400px;" },
+              { container_style: "top:150px; left:800px; ", arrow_container_style: "top: -60px; left: 185px;" },
+            ] %>
+            <% points.each_with_index do |point, i| %>
+              <% humanId = i += 1 %>
+              <div class="component-point-container position-absolute" data-type=<%= slide_type[0] %> data-id=<%= humanId %> style='<%= point[:container_style] %>' >
+                <div class="position-relative">
+                  <%= image_pack_tag "media/images/businesses/ship/ship/titles/#{humanId}.png", class: 'title-img ', style: 'left: 0; top:0;' %>
+                  <%= image_pack_tag "media/images/businesses/ship/ship/titles/#{humanId}-active.png", class: 'title-img-active ', 'data-id': humanId, style: 'left: 0; top:0;' %>
+
+                  <div class="arrow-container animate__animated animate__fadeIn" style='<%= point[:arrow_container_style] %>' >
+                    <div class="position-relative">
+                      <div class="arrow-2">
+                      </div>
+                      <div class="arrow-1 animate__animated animate__infinite zoomIn"></div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+
+
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+      <!-- position absolute, bottom center, a little bit right. -->
+      <div class="title-pagination position-absolute" style="z-index: 1020; left: 50px; bottom: 50px;">
+        <!-- title 0, data-id="0", on click main swiper move to data-id -->
+        <div class="row g-0">
+          <div class="col business-swiper-tag position-relative" data-id="1" >
+            <%= image_pack_tag 'media/images/businesses/ship/1-tag.png' %>
+            <%= image_pack_tag 'media/images/businesses/ship/1-tag-active.png', class: 'active-img position-absolute d-none', style: "top:0; left:0;" %>
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+</div>

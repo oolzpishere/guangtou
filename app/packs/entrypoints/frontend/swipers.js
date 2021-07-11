@@ -129,7 +129,7 @@ $(document).on("turbolinks:load", function() {
     $(".businesses-main-swiper").css('height', swiperHeight)
 
     var businessesMainSwiper = new Swiper(".businesses-main-swiper", {
-            loop: true,
+            // loop: true,
             pagination: {
               el: ".swiper-pagination",
               type: 'bullets',
