@@ -45,6 +45,9 @@ Frontend::Engine.routes.draw do
   get '/businesses/ship/details', to: 'businesses#ship_details'
   get '/businesses/train', to: 'businesses#train'
   get '/businesses/train/details', to: 'businesses#train_details'
+  get '/businesses/electronic', to: 'businesses#electronic'
+  get '/businesses/electronic/details', to: 'businesses#electronic_details'
+
 
 
 
