@@ -21,17 +21,17 @@
           <div class=" position-relative"  style="width: 2006px; height: 643px; margin-left: 500px; background: no-repeat left top url(<%= asset_pack_path 'media/images/businesses/ship/ship.png'%>) " >
             <!-- point 1 -->
             <% points = [
-              { container_style: "top:90px; left:500px;", arrow_container_style: "top: 170px; left: 270px;" },
-              { container_style: "top:-10px; left:750px;", arrow_container_style: "top: 220px; left: 190px;" },
-              { container_style: "top:-30px; left:1100px;", arrow_container_style: "top: 120px; left: 60px;" },
-              { container_style: "top:0px; left:1520px; ", arrow_container_style: "top: 220px; left: 50px;" },
+              { container_style: "top:0px; left:540px;", arrow_container_style: "top: 270px; left: 390px;" },
+              { container_style: "top:-20px; left:910px;", arrow_container_style: "top: 220px; left: 250px;" },
+              { container_style: "top:120px; left:1090px;", arrow_container_style: "top: -50px; left: 400px;" },
+              { container_style: "top:170px; left:1430px; ", arrow_container_style: "top: -60px; left: 185px;" },
             ] %>
             <% points.each_with_index do |point, i| %>
               <% humanId = i += 1 %>
               <div class="component-point-container position-absolute" data-type='family' data-id=<%= humanId %> style='<%= point[:container_style] %>' >
                 <div class="position-relative">
-                  <%= image_pack_tag "media/images/businesses/car/family/titles/#{humanId}.png", class: 'title-img ', style: 'left: 0; top:0;' %>
-                  <%= image_pack_tag "media/images/businesses/car/family/titles/#{humanId}-active.png", class: 'title-img-active ', 'data-id': humanId, style: 'left: 0; top:0;' %>
+                  <%= image_pack_tag "media/images/businesses/ship/ship/titles/#{humanId}.png", class: 'title-img ', style: 'left: 0; top:0;' %>
+                  <%= image_pack_tag "media/images/businesses/ship/ship/titles/#{humanId}-active.png", class: 'title-img-active ', 'data-id': humanId, style: 'left: 0; top:0;' %>
 
                   <%= link_to( "#{businesses_ship_details_path}?slide=0&id=#{humanId}" ) do %>
                     <div class="arrow-container animate__animated animate__fadeInDown" style='<%= point[:arrow_container_style] %>' >
