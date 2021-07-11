@@ -13,11 +13,11 @@
       <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
         <!-- Slides family car slide -->
-        <div class="swiper-slide ">
+        <div class="swiper-slide position-relative">
           <div class="w-100" style="height: 300px;"></div>
           <!-- text intro -->
-          <div class="">
-
+          <div class="position-absolute" style="top:400px; right: 80px;">
+            <%= image_pack_tag 'media/images/businesses/car/text.png', class: '', style: '' %>
           </div>
 
           <!-- product container -->
@@ -58,31 +58,115 @@
           </div>
 
         </div>
-        <!-- slide 2 aerospace-slide -->
+        <!-- slide 2 oil-truck-slide -->
         <div class="swiper-slide position-relative">
           <div class="w-100" style="height: 300px;"></div>
           <!-- text intro -->
-          <div class="">
-
+          <div class="position-absolute" style="top:400px; right: 80px;">
+            <%= image_pack_tag 'media/images/businesses/car/text.png', class: '', style: '' %>
           </div>
 
           <!-- product container -->
-          <div class=" mx-auto position-relative"  style="width: 959px; height: 846px; background: no-repeat left top url(<%= asset_pack_path 'media/images/businesses/aerospace/aerospace-rotated.png'%>) " >
+          <div class=" position-relative"  style="width: 1979px; height: 634px; background: no-repeat left top url(<%= asset_pack_path 'media/images/businesses/car/oil_truck/oil-truck.png'%>) " >
             <!-- point 1 -->
             <% points = [
-            { container_style: "top:200px; left:-240px; z-index: 1;", arrow_container_style: "top: -50px; left: 250px;" },
-            { container_style: "top:200px; left:-100px;", arrow_container_style: "top: -55px; left: 250px;" },
-            { container_style: "top:580px; left:230px;", arrow_container_style: "top: -40px; left: 350px;" },
-            { container_style: "top:180px; left:350px; ", arrow_container_style: "top: 120px; left: -10px;" },
+              { container_style: "top:20px; left:480px;", arrow_container_style: "top: 330px; left: 270px;" },
+              { container_style: "top:30px; left:780px;", arrow_container_style: "top: 330px; left: 110px;" },
+              { container_style: "top:370px; left:1100px;", arrow_container_style: "top: -50px; left: 70px;" },
+              { container_style: "top:20px; left:1520px;", arrow_container_style: "top: 250px; left: 80px;" },
+              { container_style: "top:400px; left:1530px;", arrow_container_style: "top: -50px; left: 80px;" },
             ] %>
             <% points.each_with_index do |point, i| %>
               <% humanId = i += 1 %>
-              <div class="component-point-container position-absolute" data-type='aerospace' data-id=<%= humanId %> style='<%= point[:container_style] %>' >
+              <div class="component-point-container position-absolute" data-type='oil-truck' data-id=<%= humanId %> style='<%= point[:container_style] %>' >
                 <div class="position-relative">
-                  <%= image_pack_tag "media/images/businesses/aerospace/titles/#{humanId}.png", class: 'title-img ', style: 'left: 0; top:0;' %>
-                  <%= image_pack_tag "media/images/businesses/aerospace/titles/#{humanId}-active.png", class: 'title-img-active ', 'data-id': humanId, style: 'left: 0; top:0;' %>
+                  <%= image_pack_tag "media/images/businesses/car/oil_truck/titles/#{humanId}.png", class: 'title-img ', style: 'left: 0; top:0;' %>
+                  <%= image_pack_tag "media/images/businesses/car/oil_truck/titles/#{humanId}-active.png", class: 'title-img-active ', 'data-id': humanId, style: 'left: 0; top:0;' %>
 
-                  <%= link_to( "#{businesses_space_details_path}?slide=1&id=#{humanId}" ) do %>
+                  <%= link_to( "#{businesses_car_details_path}?slide=1&id=#{humanId}" ) do %>
+                    <div class="arrow-container animate__animated animate__fadeInDown" style='<%= point[:arrow_container_style] %>' >
+                      <div class="position-relative">
+                        <div class="arrow-2">
+                        </div>
+                        <div class="arrow-1 animate__animated animate__infinite zoomIn"></div>
+                      </div>
+                    </div>
+                  <% end %>
+
+                </div>
+              </div>
+            <% end %>
+          </div>
+
+        </div>
+
+        <!-- slide 3 bus-slide -->
+        <div class="swiper-slide position-relative">
+          <div class="w-100" style="height: 300px;"></div>
+          <!-- text intro -->
+          <div class="position-absolute" style="top:400px; right: 80px;">
+            <%= image_pack_tag 'media/images/businesses/car/text.png', class: '', style: '' %>
+          </div>
+
+          <!-- product container -->
+          <div class=" position-relative"  style="width: 1870px; height: 599px; margin-left: 160px; background: no-repeat left top url(<%= asset_pack_path 'media/images/businesses/car/bus/bus.png'%>) " >
+            <!-- point 1 -->
+            <% points = [
+              { container_style: "top:10px; left:390px;", arrow_container_style: "top: 320px; left: 350px;" },
+              { container_style: "top:-90px; left:740px;", arrow_container_style: "top: 130px; left: 190px;" },
+              { container_style: "top:-30px; left:1120px;", arrow_container_style: "top: 290px; left: 0px;" },
+              { container_style: "top:440px; left:1150px;", arrow_container_style: "top: -50px; left: 20px;" },
+              { container_style: "top:410px; left:1280px;", arrow_container_style: "top: -30px; left: -50px;" },
+            ] %>
+            <% points.each_with_index do |point, i| %>
+              <% humanId = i += 1 %>
+              <div class="component-point-container position-absolute" data-type='bus' data-id=<%= humanId %> style='<%= point[:container_style] %>' >
+                <div class="position-relative">
+                  <%= image_pack_tag "media/images/businesses/car/bus/titles/#{humanId}.png", class: 'title-img ', style: 'left: 0; top:0;' %>
+                  <%= image_pack_tag "media/images/businesses/car/bus/titles/#{humanId}-active.png", class: 'title-img-active ', 'data-id': humanId, style: 'left: 0; top:0;' %>
+
+                  <%= link_to( "#{businesses_car_details_path}?slide=2&id=#{humanId}" ) do %>
+                    <div class="arrow-container animate__animated animate__fadeInDown" style='<%= point[:arrow_container_style] %>' >
+                      <div class="position-relative">
+                        <div class="arrow-2">
+                        </div>
+                        <div class="arrow-1 animate__animated animate__infinite zoomIn"></div>
+                      </div>
+                    </div>
+                  <% end %>
+
+                </div>
+              </div>
+            <% end %>
+          </div>
+
+        </div>
+
+        <!-- slide 4 truck-slide -->
+        <div class="swiper-slide position-relative">
+          <div class="w-100" style="height: 300px;"></div>
+          <!-- text intro -->
+          <div class="position-absolute" style="top:400px; right: 80px;">
+            <%= image_pack_tag 'media/images/businesses/car/text.png', class: '', style: '' %>
+          </div>
+
+          <!-- product container -->
+          <div class=" position-relative"  style="width: 1929px; height: 618px; margin-left: 80px; background: no-repeat left top url(<%= asset_pack_path 'media/images/businesses/car/truck/truck.png'%>) " >
+            <!-- point 1 -->
+            <% points = [
+              { container_style: "top:10px; left:450px;", arrow_container_style: "top: 420px; left: 95px;" },
+              { container_style: "top:-70px; left:860px;", arrow_container_style: "top: 100px; left: 200px;" },
+              { container_style: "top:-40px; left:1180px;", arrow_container_style: "top: 240px; left: 10px;" },
+              { container_style: "top:440px; left:1170px;", arrow_container_style: "top: -50px; left: -50px;" },
+            ] %>
+            <% points.each_with_index do |point, i| %>
+              <% humanId = i += 1 %>
+              <div class="component-point-container position-absolute" data-type='truck' data-id=<%= humanId %> style='<%= point[:container_style] %>' >
+                <div class="position-relative">
+                  <%= image_pack_tag "media/images/businesses/car/truck/titles/#{humanId}.png", class: 'title-img ', style: 'left: 0; top:0;' %>
+                  <%= image_pack_tag "media/images/businesses/car/truck/titles/#{humanId}-active.png", class: 'title-img-active ', 'data-id': humanId, style: 'left: 0; top:0;' %>
+
+                  <%= link_to( "#{businesses_car_details_path}?slide=3&id=#{humanId}" ) do %>
                     <div class="arrow-container animate__animated animate__fadeInDown" style='<%= point[:arrow_container_style] %>' >
                       <div class="position-relative">
                         <div class="arrow-2">
