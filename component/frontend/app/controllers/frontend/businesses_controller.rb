@@ -18,6 +18,27 @@ module Frontend
       @return_path = businesses_space_path
     end
 
+    def car_details
+      @return_path = businesses_car_path
+    end
+
+    def ship_details
+      @return_path = businesses_ship_path
+    end
+
+    def train_details
+      @return_path = businesses_train_path
+    end
+
+    def electronic_details
+      @return_path = businesses_electronic_path
+    end
+
+    # def capacitor_details
+    #   @return_path = businesses_capacitor_path
+    # end
+
+
 
     private
       # Use callbacks to share common setup or constraints between actions.

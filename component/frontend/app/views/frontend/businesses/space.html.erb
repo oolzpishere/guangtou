@@ -7,7 +7,7 @@
   <div class=" row g-0 position-relative">
 
     <!-- Slider main container -->
-    <div class="swiper-container space-main-swiper position-relative" style=" background-color: rgba(0,0,0,0.6); ">
+    <div class="swiper-container businesses-main-swiper position-relative" style=" background-color: rgba(0,0,0,0.6); ">
       <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
         <!-- Slides -->
@@ -95,12 +95,21 @@
 
       </div>
       <!-- If we need pagination -->
-      <div class="swiper-pagination"></div>
+      <!-- <div class="swiper-pagination"></div> -->
       <!-- position absolute, bottom center, a little bit right. -->
-      <div class="title-pagination position-absolute" style="z-index: 1020;">
+      <div class="title-pagination position-absolute" style="z-index: 1020; left: 1250px; bottom: 70px;">
         <!-- title 0, data-id="0", on click main swiper move to data-id -->
         <!-- title 1 -->
-
+        <div class="row g-0">
+          <div class="col business-swiper-tag position-relative" data-id="1" >
+            <%= image_pack_tag 'media/images/businesses/space/plane-tag.png' %>
+            <%= image_pack_tag 'media/images/businesses/space/plane-tag-active.png', class: 'active-img position-absolute d-none', style: "top:0; left:0;" %>
+          </div>
+          <div class="col business-swiper-tag ms-5 position-relative" data-id="2" >
+            <%= image_pack_tag 'media/images/businesses/space/aerospace-tag.png' %>
+            <%= image_pack_tag 'media/images/businesses/space/aerospace-tag-active.png', class: 'active-img position-absolute d-none', style: "top:0; left:0;" %>
+          </div>
+        </div>
       </div>
 
     </div>

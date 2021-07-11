@@ -22,7 +22,7 @@
             <!-- point 1 -->
             <% points = [
               { container_style: "top:0px; left:540px;", arrow_container_style: "top: 270px; left: 390px;" },
-              { container_style: "top:-20px; left:910px;", arrow_container_style: "top: 220px; left: 250px;" },
+              { container_style: "top:-20px; left:910px;", arrow_container_style: "top: 220px; left: 250px; z-index:1;" },
               { container_style: "top:120px; left:1090px;", arrow_container_style: "top: -50px; left: 400px;" },
               { container_style: "top:170px; left:1430px; ", arrow_container_style: "top: -60px; left: 185px;" },
             ] %>
@@ -53,12 +53,18 @@
 
       </div>
       <!-- If we need pagination -->
-      <div class="swiper-pagination"></div>
+      <!-- <div class="swiper-pagination"></div> -->
       <!-- position absolute, bottom center, a little bit right. -->
-      <div class="title-pagination position-absolute" style="z-index: 1020;">
+      <div class="title-pagination position-absolute" style="z-index: 1020;  left: 1250px; bottom: 70px;">
         <!-- title 0, data-id="0", on click main swiper move to data-id -->
         <!-- title 1 -->
+        <div class="row g-0">
+          <div class="col business-swiper-tag position-relative" data-id="1" >
+            <%= image_pack_tag 'media/images/businesses/ship/1-tag.png' %>
+            <%= image_pack_tag 'media/images/businesses/ship/1-tag-active.png', class: 'active-img position-absolute d-none', style: "top:0; left:0;" %>
+          </div>
 
+        </div>
       </div>
 
     </div>

@@ -6,6 +6,10 @@ module Frontend
     before_action :set_corp_navs
     before_action :set_default_return_path
 
+    def corp_all
+      @return_path = home_path
+    end
+
     def profile_xcl
       @return_path = corp_infos_profile_path
 
