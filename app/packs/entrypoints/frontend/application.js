@@ -127,8 +127,13 @@ $(document).on("turbolinks:load", function() {
   });
 
   if ($('.mfadeInLeft').length > 0) {
-    animateCSS('.mfadeInLeft', 'fadeInLeft');
-    animateCSS('.mfadeInRight', 'fadeInRight');
+    // animateCSS('.mfadeInLeft', 'fadeInLeft');
+    // animateCSS('.mfadeInRight', 'fadeInRight');
+     // ease: "elastic"
+    gsap.from('.mfadeInLeft', {x: -500, opacity: 0, duration: 1, delay: 0.2} )
+    gsap.from('.mfadeInRight', {x: 500, opacity: 0, duration: 1, delay: 0.2} )
+
+    // $('.mfadeInLeft')
   }
 
 
