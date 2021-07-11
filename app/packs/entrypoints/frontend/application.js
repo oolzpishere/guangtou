@@ -16,6 +16,7 @@ import './flips'
 import './my_vjs'
 import './tl_scroll'
 import 'src/echarts/businesses_echarts'
+import {Flips} from "./flips"
 
 
 // import './shortcuts'
@@ -85,8 +86,26 @@ $(document).on("turbolinks:load", function() {
   }
 
 
+  if ( $('.culture-left').length > 0 ) {
+    // delay: 0.2
+    var left_tl = gsap.timeline({ });
+    var right_tl = gsap.timeline({ });
 
+    $('.culture-left img').each(function( index ) {
+      var _self = $( this )
+      left_tl.from( _self, { y: -500,opacity: 0 }, ">");
+    });
 
+    $('.culture-right img').each(function( index ) {
+      var _self = $( this )
+      right_tl.from( _self, {y: -500, opacity: 0 }, ">");
+    });
+  }
+
+  if ( $('.mcount-up').length > 0 ) {
+    let flips = new Flips();
+    flips.beginToCount( $('.mcount-up'));
+  }
 
 
 })
