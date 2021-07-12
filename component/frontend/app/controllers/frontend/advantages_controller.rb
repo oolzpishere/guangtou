@@ -12,6 +12,8 @@ module Frontend
     # GET /advantages
     def index
       # @advantages = Advantage.all
+      @return_path = home_path
+
     end
 
     private

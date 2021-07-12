@@ -30,5 +30,13 @@
 <div class="business-bottom position-fixed w-100" style="bottom: 0; height: 210px; z-index: 1000; background: no-repeat center url(<%= asset_pack_path 'media/images/advantages/index-bottom-bg.png'%>) ">
   <div class="row h-100 g-0 position-relative">
 
+    <div class="col ms-5" style="margin-top:80px;">
+      <% if !@return_path.blank? %>
+        <%= link_to( @return_path ) do %>
+          <%= image_pack_tag 'media/images/corp/go-back.png' %>
+        <% end %>
+      <% end %>
+    </div>
+
   </div>
 </div>
