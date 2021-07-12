@@ -15,29 +15,28 @@ module Frontend
     end
 
     def space_details
-      @return_path = businesses_space_path
+
     end
 
     def car_details
-      @return_path = businesses_car_path
+
     end
 
     def ship_details
-      @return_path = businesses_ship_path
+
     end
 
     def train_details
-      @return_path = businesses_train_path
+
     end
 
     def electronic_details
-      @return_path = businesses_electronic_path
+
     end
 
     # def capacitor_details
-    #   @return_path = businesses_capacitor_path
-    # end
 
+    # end
 
 
     private
@@ -75,8 +74,10 @@ module Frontend
         #     @return_path = parent_path
         #   end
         # end
-
-        @return_path ||= businesses_path
+        path_arr_splited = request.path.split('/')
+        path_arr_splited.pop
+        @return_path ||= path_arr_splited.join('/')
+        # @return_path ||= businesses_path
       end
 
   end

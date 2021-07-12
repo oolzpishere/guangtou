@@ -9,10 +9,17 @@
 .my-swiper-pagination-bullet{
   width: 40px;
   height: 40px;
+  margin-left: 10px !important;
+  margin-right: 10px !important;
+  background: center no-repeat url('../../images/buttons/circle.png');
+  opacity: 1;
 }
 
 .my-swiper-pagination-bullet-active{
-
+  width: 40px;
+  height: 40px;
+  background: center no-repeat url('../../images/buttons/circle-horizontal-active.png');
+  background-color: transparent;
 }
 
 

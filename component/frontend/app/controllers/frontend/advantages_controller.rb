@@ -42,7 +42,10 @@ module Frontend
       end
 
       def set_default_return_path
-        @return_path = advantages_path
+        path_arr_splited = request.path.split('/')
+        path_arr_splited.pop
+        @return_path ||= path_arr_splited.join('/')
+        # @return_path = advantages_path
       end
 
   end

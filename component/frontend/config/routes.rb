@@ -4,24 +4,25 @@ Frontend::Engine.routes.draw do
   root to: 'corp_infos#home'
   get '/home', to: 'corp_infos#home'
 
-  get '/corp_all', to: 'corp_infos#corp_all'
+  # get '/corp_all', to: 'corp_infos#corp_all'
+  get '/corp_infos', to: 'corp_infos#index'
 
   get '/corp_infos/profile', to: 'corp_infos#profile'
   get '/corp_infos/profile/profile_xcl', to: 'corp_infos#profile_xcl'
   get '/corp_infos/profile/profile_gt', to: 'corp_infos#profile_gt'
 
   get '/corp_infos/culture', to: 'corp_infos#culture'
-  get '/corp_infos/culture_gt', to: 'corp_infos#culture_gt'
-  get '/corp_infos/culture_xcl', to: 'corp_infos#culture_xcl'
+  get '/corp_infos/culture/gt', to: 'corp_infos#culture_gt'
+  get '/corp_infos/culture/xcl', to: 'corp_infos#culture_xcl'
 
   get '/corp_infos/strategy', to: 'corp_infos#strategy'
 
   get '/corp_infos/industry', to: 'corp_infos#industry'
-  get '/corp_infos/industry_liuzhou', to: 'corp_infos#industry_liuzhou'
-  get '/corp_infos/industry_hezhou', to: 'corp_infos#industry_hezhou'
-  get '/corp_infos/industry_nanning', to: 'corp_infos#industry_nanning'
-  get '/corp_infos/industry_laibin', to: 'corp_infos#industry_laibin'
-  get '/corp_infos/industry_xinjiang', to: 'corp_infos#industry_xinjiang'
+  get '/corp_infos/industry/liuzhou', to: 'corp_infos#industry_liuzhou'
+  get '/corp_infos/industry/hezhou', to: 'corp_infos#industry_hezhou'
+  get '/corp_infos/industry/nanning', to: 'corp_infos#industry_nanning'
+  get '/corp_infos/industry/laibin', to: 'corp_infos#industry_laibin'
+  get '/corp_infos/industry/xinjiang', to: 'corp_infos#industry_xinjiang'
 
 
   get '/parties', to: 'parties#index'
@@ -48,8 +49,6 @@ Frontend::Engine.routes.draw do
   get '/businesses/electronic', to: 'businesses#electronic'
   get '/businesses/electronic/details', to: 'businesses#electronic_details'
   get '/businesses/capacitor', to: 'businesses#capacitor'
-  
-
 
 
   # resources :advantages

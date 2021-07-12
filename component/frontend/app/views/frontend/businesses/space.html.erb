@@ -33,7 +33,7 @@
               <div class="component-point-container position-absolute" data-type='plane' data-id=<%= humanId %> style='<%= point[:container_style] %>' >
                 <div class="position-relative">
                   <%= image_pack_tag "media/images/businesses/space/titles/plane-title#{humanId}.png", class: 'title-img ', style: 'left: 0; top:0;' %>
-                  <%= image_pack_tag "media/images/businesses/space/titles/plane-title#{humanId}-active.png", class: 'title-img-active ', 'data-id': humanId, style: 'left: 0; top:0;' %>
+                  <%= image_pack_tag "media/images/businesses/space/titles/#{humanId}-active.png", class: 'title-img-active ', 'data-id': humanId, style: 'left: 0; top:0;' %>
 
                   <%= link_to( "#{businesses_space_details_path}?slide=0&id=#{humanId}" ) do %>
                     <div class="arrow-container animate__animated animate__fadeInDown" style='<%= point[:arrow_container_style] %>' >

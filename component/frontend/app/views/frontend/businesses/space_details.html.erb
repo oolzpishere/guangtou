@@ -79,7 +79,7 @@
               <div class="component-point-container position-absolute" data-type=<%= slide_type[0] %> data-id=<%= humanId %> style='<%= point[:container_style] %>' >
                 <div class="position-relative">
                   <%= image_pack_tag "media/images/businesses/space/titles/plane-title#{humanId}.png", class: 'title-img ', style: 'left: 0; top:0;' %>
-                  <%= image_pack_tag "media/images/businesses/space/titles/plane-title#{humanId}-active.png", class: 'title-img-active ', 'data-id': humanId, style: 'left: 0; top:0;' %>
+                  <%= image_pack_tag "media/images/businesses/space/titles/#{humanId}-active.png", class: 'title-img-active ', 'data-id': humanId, style: 'left: 0; top:0;' %>
 
                   <div class="arrow-container animate__animated animate__fadeIn" style='<%= point[:arrow_container_style] %>' >
                     <div class="position-relative">
@@ -130,7 +130,12 @@
 
       </div>
       <!-- If we need pagination -->
-      <div class="swiper-pagination"></div>
+      <div class="swiper-pagination">
+        <div class="my-swiper-pagination-bullet">
+          <%= image_pack_tag 'media/images/businesses/space/plane-tag.png' %>
+        </div>
+
+      </div>
       <!-- position absolute, bottom center, a little bit right. -->
       <div class="title-pagination position-absolute" style="z-index: 1020; left: 50px; bottom: 50px;">
         <!-- title 0, data-id="0", on click main swiper move to data-id -->

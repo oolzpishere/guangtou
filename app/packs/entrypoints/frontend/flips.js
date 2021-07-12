@@ -15,7 +15,7 @@ Flips.prototype.beginToCount = function(target_item, duration_t = 700, delay_t =
   if ($( target_item ).length > 0) {
     $( target_item ).each(function( index ) {
       counterUp( this, {
-          duration: 700,
+          duration: duration_t,
           delay: 2
       } )
     })

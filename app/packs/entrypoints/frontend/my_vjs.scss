@@ -31,7 +31,7 @@ $center-big-play-button: true; // true default
   /* The base font size controls the size of everything, not just text.
      All dimensions use em-based sizes so that the scale along with the font size.
      Try increasing it to 15px and see what happens. */
-  font-size: 20px;
+  font-size: 30px;
 
   /* The main font color changes the ICON COLORS as well as the text */
   color: $primary-foreground-color;
@@ -82,11 +82,23 @@ $center-big-play-button: true; // true default
    width: 100%;
  }
 
- .vjs-picture-in-picture-control{
-   display: none;
- }
-}
+ // .vjs-picture-in-picture-control{
+ //   display: none;
+ // }
 
+ // .vjs-volume-control{
+ //   width: 100px !important;
+ //   height: 20px !important;
+ //   opacity:1 !important;
+ // }
+
+
+}
+// add big-play-button when paused
+// or https://stackoverflow.com/a/45357082/6256690
+// .vjs-has-started.vjs-paused .vjs-big-play-button {
+//   display: block !important;
+// }
 
 
 // .my-vjs-skin.vjs-user-inactive .vjs-control-bar {

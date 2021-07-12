@@ -6,46 +6,48 @@ module Frontend
     before_action :set_corp_navs
     before_action :set_default_return_path
 
-    def corp_all
+    def index
       @return_path = home_path
     end
 
+    # def corp_all
+    #
+    # end
+
     def profile_xcl
-      @return_path = corp_infos_profile_path
 
     end
 
     def profile_gt
-      @return_path = corp_infos_profile_path
 
     end
 
     def culture_xcl
-      @return_path = corp_infos_culture_path
+
     end
 
     def culture_gt
-      @return_path = corp_infos_culture_path
+
     end
 
     def industry_liuzhou
-      @return_path = corp_infos_industry_path
+
     end
 
     def industry_hezhou
-      @return_path = corp_infos_industry_path
+
     end
 
     def industry_nanning
-      @return_path = corp_infos_industry_path
+
     end
 
     def industry_laibin
-      @return_path = corp_infos_industry_path
+
     end
 
     def industry_xinjiang
-      @return_path = corp_infos_industry_path
+
     end
 
     private
@@ -75,7 +77,9 @@ module Frontend
       end
 
       def set_default_return_path
-        @return_path ||= corp_all_path
+        path_arr_splited = request.path.split('/')
+        path_arr_splited.pop
+        @return_path ||= path_arr_splited.join('/')
       end
 
   end

@@ -16,11 +16,11 @@ module Frontend
     end
 
     def profile
-      @return_path = parties_path
+
     end
 
     def brand_detail
-      @return_path = parties_brand_path
+
     end
 
     private
@@ -82,7 +82,10 @@ module Frontend
       end
 
       def set_default_return_path
-        @return_path ||= parties_profile_path
+        path_arr_splited = request.path.split('/')
+        path_arr_splited.pop
+        @return_path ||= path_arr_splited.join('/')
+        # @return_path ||= parties_profile_path
       end
 
   end

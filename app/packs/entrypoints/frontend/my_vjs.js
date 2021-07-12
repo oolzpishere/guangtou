@@ -27,7 +27,13 @@ $(document).on("turbolinks:load", function() {
     var strategy_player = videojs('strategy-video', {
       controls: true,
       autoplay: false,
-      preload: 'auto'
+      preload: 'auto',
+      controlBar: {
+        'pictureInPictureToggle': false,
+        volumePanel: {
+          inline: true
+        }
+      }
     });
 
     $('.strategy-video-cover').on('click', function(){
@@ -39,6 +45,20 @@ $(document).on("turbolinks:load", function() {
       strategy_player.pause();
       $('#strategy-video-wrap').addClass('d-none');
     })
+
+    // strategy_player.bigPlayButton.show();
+    // strategy_player.bigPlayButton.show();
+
+    // strategy_player.on('pause', function() {
+    //   this.bigPlayButton.show();
+    //   console.log('pause');
+    //   // Now the issue is that we need to hide it again if we start playing
+    //   // So every time we do this, we can create a one-time listener for play events.
+    //   strategy_player.one('play', function() {
+    //     this.bigPlayButton.hide();
+    //   });
+    // });
+
   }
 
   if ( $('#brand-video').length > 0 ) {
