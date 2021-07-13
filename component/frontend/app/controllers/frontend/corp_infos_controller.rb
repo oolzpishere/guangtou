@@ -5,6 +5,8 @@ module Frontend
     before_action :set_corp_info, only: [:show, :edit, :update, :destroy]
     before_action :set_corp_navs
     before_action :set_default_return_path
+    before_action :set_page_class
+
 
     def index
       @return_path = home_path
@@ -82,5 +84,9 @@ module Frontend
         @return_path ||= path_arr_splited.join('/')
       end
 
+      def set_page_class
+        @page_class = request.path.split('/').slice(1..-1).join('-')
+      end
+      
   end
 end

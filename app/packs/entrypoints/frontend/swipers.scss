@@ -21,7 +21,34 @@
   background: center no-repeat url('../../images/buttons/circle-horizontal-active.png');
   background-color: transparent;
 }
+.swiper-pagination-vertical{
+  .my-swiper-pagination-bullet-active{
+    background: center no-repeat url('../../images/buttons/circle-vertical-active.png');
+  }
+}
 
+#corp_infos{
+  .swiper-pagination{
+    top: 450px;
+  }
+}
+
+
+.businesses-main-swiper{
+  .title-img {
+    display: none !important;
+  }
+  .title-img-active {
+    display: none !important;
+  }
+}
+
+.business-swiper-pagination{
+  width: auto !important;
+  left: auto !important;
+  right: 50px;
+  bottom: 50px !important;
+}
 
 .business-swiper-tag.active{
   .active-img{
@@ -109,20 +136,4 @@
   .img-active{
     display: block;
   }
-}
-
-.businesses-main-swiper{
-  .title-img {
-    display: none !important;
-  }
-  .title-img-active {
-    display: none !important;
-  }
-}
-
-.business-swiper-pagination{
-  width: auto !important;
-  left: auto !important;
-  right: 50px;
-  bottom: 50px !important;
 }
