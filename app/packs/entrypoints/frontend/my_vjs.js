@@ -36,28 +36,26 @@ $(document).on("turbolinks:load", function() {
       }
     });
 
+    var mButton = videojs.getComponent('closeButton');
+    var button = new mButton(strategy_player, {
+
+    });
+    button.addClass('my-video-close-btn')
+
+    // debugger;
+    strategy_player.controlBar.el().prepend( button.el() )
+    // .childNodes[0]
+    // strategy_player.controlBar.el().addChild( button);
+
     $('.strategy-video-cover').on('click', function(){
       $('#strategy-video-wrap').removeClass('d-none');
       strategy_player.play();
     })
 
-    $('.close-video').on('click', function(){
+    $('.my-video-close-btn').on('click touchstart mouseenter', function(){
       strategy_player.pause();
       $('#strategy-video-wrap').addClass('d-none');
     })
-
-    // strategy_player.bigPlayButton.show();
-    // strategy_player.bigPlayButton.show();
-
-    // strategy_player.on('pause', function() {
-    //   this.bigPlayButton.show();
-    //   console.log('pause');
-    //   // Now the issue is that we need to hide it again if we start playing
-    //   // So every time we do this, we can create a one-time listener for play events.
-    //   strategy_player.one('play', function() {
-    //     this.bigPlayButton.hide();
-    //   });
-    // });
 
   }
 
@@ -98,11 +96,6 @@ $(document).on("turbolinks:load", function() {
     })
 
   }
-
-
-
-
-
 
 });
 
@@ -181,4 +174,38 @@ $(document).on("turbolinks:before-cache", function() {
 //     gt_player.pause();
 //     $('#gt-video-wrap').addClass('d-none');
 //   })
+// }
+
+// strategy_player.on('pause', function() {
+//   this.bigPlayButton.show();
+//   console.log('pause');
+//   // Now the issue is that we need to hide it again if we start playing
+//   // So every time we do this, we can create a one-time listener for play events.
+//   strategy_player.one('play', function() {
+//     this.bigPlayButton.hide();
+//   });
+// });
+
+// $('.my-close-btn').on('click touchstart mouseenter', function(){
+//   console.log('on Clicked2');
+//   videojs.log('Clicked');
+//
+// })
+
+// button.on('click touchstart mouseenter', function(){
+//   console.log('on Clicked');
+//   videojs.log('Clicked');
+//
+// })
+// button.trigger('click ');
+
+
+
+// strategy_player.bigPlayButton.show();
+// strategy_player.bigPlayButton.show();
+
+// clickHandler: function(event) {
+//   // videojs.log('Clicked');
+//   console.log('Clicked');
+//
 // }

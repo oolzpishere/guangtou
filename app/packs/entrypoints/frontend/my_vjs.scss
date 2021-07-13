@@ -78,20 +78,24 @@ $center-big-play-button: true; // true default
    }
  }
 
- .vjs-poster{
+  .vjs-poster{
    width: 100%;
- }
+  }
 
- // .vjs-picture-in-picture-control{
- //   display: none;
- // }
+  // .vjs-picture-in-picture-control{
+  //   display: none;
+  // }
 
- // .vjs-volume-control{
- //   width: 100px !important;
- //   height: 20px !important;
- //   opacity:1 !important;
- // }
+  // .vjs-volume-control{
+  //   width: 100px !important;
+  //   height: 20px !important;
+  //   opacity:1 !important;
+  // }
 
+  .my-video-close-btn {
+    position: relative !important;
+    top: 0px !important;
+  }
 
 }
 // add big-play-button when paused
