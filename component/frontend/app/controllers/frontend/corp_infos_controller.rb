@@ -2,8 +2,10 @@ require_dependency "frontend/application_controller"
 
 module Frontend
   class CorpInfosController < ApplicationController
-    before_action :set_corp_info, only: [:show, :edit, :update, :destroy]
+    # before_action :set_corp_info, only: [:show, :edit, :update, :destroy]
     before_action :set_corp_navs
+
+    layout 'frontend/corp_info_application'
 
 
     def index
@@ -52,9 +54,9 @@ module Frontend
 
     private
       # Use callbacks to share common setup or constraints between actions.
-      def set_corp_info
-        @corp_info = CorpInfo.find(params[:id])
-      end
+      # def set_corp_info
+      #   @corp_info = CorpInfo.find(params[:id])
+      # end
 
       # Only allow a list of trusted parameters through.
       def corp_info_params
