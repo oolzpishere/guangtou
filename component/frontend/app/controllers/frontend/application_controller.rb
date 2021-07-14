@@ -1,4 +1,18 @@
 module Frontend
   class ApplicationController < ActionController::Base
+    before_action :set_default_return_path
+    before_action :set_page_class
+
+    def set_page_class
+      @page_class = request.path.split('/').slice(1..-1).join('-')
+    end
+
+    def set_default_return_path
+      path_arr_splited = request.path.split('/')
+      path_arr_splited.pop
+      @return_path ||= path_arr_splited.join('/')
+      # @return_path ||= businesses_path
+    end
+
   end
 end

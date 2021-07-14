@@ -4,9 +4,6 @@ module Frontend
   class PartiesController < ApplicationController
     # before_action :set_party, only: [:show, :edit, :update, :destroy]
     before_action :set_party_navs
-    before_action :set_default_return_path
-    before_action :set_page_class
-
 
 
     layout 'frontend/party_application'
@@ -83,16 +80,7 @@ module Frontend
         end
       end
 
-      def set_default_return_path
-        path_arr_splited = request.path.split('/')
-        path_arr_splited.pop
-        @return_path ||= path_arr_splited.join('/')
-        # @return_path ||= parties_profile_path
-      end
 
-      def set_page_class
-        @page_class = request.path.split('/').slice(1..-1).join('-')
-      end
-      
+
   end
 end
