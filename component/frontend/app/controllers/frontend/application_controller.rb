@@ -4,7 +4,9 @@ module Frontend
     before_action :set_page_class
 
     def set_page_class
-      @page_class = request.path.split('/').slice(1..-1).join('-')
+      if request.path != root_path
+        @page_class = request.path.split('/').slice(1..-1).join('-')
+      end
     end
 
     def set_default_return_path

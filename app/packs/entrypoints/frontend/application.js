@@ -4,7 +4,7 @@ import 'slick-carousel/slick/slick'
 
 // import barba from '@barba/core'
 import { gsap } from 'gsap/dist/gsap.js'
-import 'animejs/lib/anime.js'
+
 import Chart from 'chart.js/auto';
 import 'jquery.scrollto'
 import * as echarts from 'echarts'
@@ -17,7 +17,13 @@ import './my_vjs'
 import './tl_scroll'
 import 'src/echarts/businesses_echarts'
 import {Flips} from "./flips"
+import "src/my_anime_css.js"
 
+// import 'src/corp_infos/industry/nanning'
+// if (document.querySelectorAll("#corp_infos-industry-nanning").length) {
+//   import('src/corp_infos/industry/nanning') // webpack will load this JS async
+//
+// }
 
 // import './shortcuts'
 
@@ -108,34 +114,13 @@ $(document).on("turbolinks:load", function() {
   }
 
 
-  const animateCSS = (element, animation, prefix = 'animate__') =>
-  // We create a Promise and return it
-  new Promise((resolve, reject) => {
-    const animationName = `${prefix}${animation}`;
-    const node = document.querySelector(element);
-
-    node.classList.add(`${prefix}animated`, animationName);
-
-    // When the animation ends, we clean the classes and resolve the Promise
-    function handleAnimationEnd(event) {
-      event.stopPropagation();
-      node.classList.remove(`${prefix}animated`, animationName);
-      resolve('Animation ended');
-    }
-
-    node.addEventListener('animationend', handleAnimationEnd, {once: true});
-  });
-
   if ($('.mfadeInLeft').length > 0) {
-    // animateCSS('.mfadeInLeft', 'fadeInLeft');
-    // animateCSS('.mfadeInRight', 'fadeInRight');
+
      // ease: "elastic"
     gsap.from('.mfadeInLeft', {x: -500, opacity: 0, duration: 1, delay: 0.2} )
     gsap.from('.mfadeInRight', {x: 500, opacity: 0, duration: 1, delay: 0.2} )
 
-    // $('.mfadeInLeft')
   }
-
 
 
 })
@@ -148,3 +133,29 @@ $(document).on("turbolinks:before-cache", function() {
   // }
 
 })
+
+// import myImageUrl from 'images/businesses/space/plane.png'
+
+// const canvas = document.getElementById('map');
+// const ctx = canvas.getContext('2d');
+//
+// const image = new Image(60, 45); // Using optional size for image
+// image.onload = drawImageActualSize; // Draw when image has loaded
+//
+// // Load an image of intrinsic size 300x227 in CSS pixels
+// image.src = myImageUrl;
+//
+// function drawImageActualSize() {
+//   // Use the intrinsic size of image in CSS pixels for the canvas element
+//   canvas.width = this.naturalWidth;
+//   canvas.height = this.naturalHeight;
+//
+//   // Will draw the image as 300x227, ignoring the custom size of 60x45
+//   // given in the constructor
+//   ctx.drawImage(this, 0, 0);
+//
+//   // To use the custom size we'll have to specify the scale parameters
+//   // using the element's width and height properties - lets draw one
+//   // on top in the corner:
+//   ctx.drawImage(this, 0, 0, this.width, this.height);
+// }
