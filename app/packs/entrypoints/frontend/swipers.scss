@@ -27,6 +27,33 @@
   }
 }
 
+
+.my-swiper-navigation-container{
+  $swiper-navigation-size: 98px;
+  width: 300px;
+  height: 100px;
+  position: absolute;
+  left: 60px;
+  bottom: 340px;
+  z-index: 1022;
+  display: flex;
+  justify-content: space-around;
+
+  .my-swiper-button-prev{
+    width: $swiper-navigation-size;
+    height: $swiper-navigation-size;
+    background: center no-repeat url('../../images/buttons/swiper-left-btn.png');
+  }
+  .my-swiper-button-next{
+    width: $swiper-navigation-size;
+    height: $swiper-navigation-size;
+    background: center no-repeat url('../../images/buttons/swiper-right-btn.png');
+  }
+  .swiper-button-disabled{
+    opacity: 0.5;
+  }
+}
+
 #corp_infos{
   .swiper-pagination{
     top: 450px;

@@ -137,6 +137,10 @@ $(document).on("turbolinks:load", function() {
               bulletClass: 'swiper-pagination-bullet my-swiper-pagination-bullet',
               bulletActiveClass: 'swiper-pagination-bullet-active my-swiper-pagination-bullet-active',
             },
+            navigation: {
+              nextEl: '.my-swiper-button-next',
+              prevEl: '.my-swiper-button-prev',
+            },
             on: {
               init: function () {
                 $('.business-detail-bg-img img').eq( 0 ).addClass('active')
