@@ -1,0 +1,175 @@
+@import './my_arrows.scss';
+
+// https://stackoverflow.com/questions/13176746/css-keyframe-animation-cpu-usage-is-high-should-it-be-this-way
+// Yes, this is normal because you have several infinite-loop animations on the page. The CPU is therefore continually doing work while these elements are rendered. There is a "magic" property that will significantly cut-down the CPU usage and that is:
+// * {
+//   -webkit-transform: translateZ(0);
+//   -moz-transform: translateZ(0);
+//   -ms-transform: translateZ(0);
+//   -o-transform: translateZ(0);
+//   transform: translateZ(0);
+//   transform: rotateZ(360deg);
+//   backface-visibility: hidden;
+//   perspective: 1000;
+// }
+
+
+@keyframes sdb06 {
+  0% {
+    transform: rotateY(0) rotateZ(-45deg) translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotateY(720deg) rotateZ(-45deg) translate(-20px, 20px);
+    opacity: 0;
+  }
+}
+
+.product_list .pt1 .product_con .boll .list_boll{
+  width:8px;
+  height:8px;
+  border:2px solid #fff;
+  display:block;border-radius:50%;
+  box-shadow: 0px 0px 14px 3px #e60012;
+  position:relative;-webkit-animation: bordershow 3s infinite;
+  -moz-animation: bordershow 3s infinite;
+  animation: bordershow 3s infinite;cursor:pointer;
+}
+
+.product_list .pt1 .product_con .boll .list_boll:after,.product_list .pt1 .product_con .boll .list_boll:before{
+  content:"";
+  width:20px;
+  height:20px;
+  background:#fff;
+  background:rgba(255,255,255,0.5);
+  box-shadow: 0px 0px 4px rgba(255,255,255,0.5);
+  display:block;
+  border-radius:50%;
+  position:absolute;
+  top:-6px;
+  left:-6px;
+}
+
+.product_list .pt1 .product_con .boll .list_boll:after{
+  -webkit-animation: boderM 3s infinite;
+  -moz-animation: boderM 3s infinite;
+  animation: boderM 3s infinite;
+}
+
+.product_list .pt1 .product_con .boll .list_boll:before{
+  -webkit-animation: boderM 3s .75s infinite;
+  -moz-animation: boderM 3s .75s infinite;
+  animation: boderM 3s .75s infinite;
+}
+
+@keyframes bordershow {
+    0% {box-shadow: 0px 0px 0px 0px #e60012;}
+    50% {box-shadow: 0px 0px 14px 4px #e60012;}
+    100% {box-shadow: 0px 0px 0px 0px #e60012;}
+}
+
+@keyframes boderM {
+	0% {-webkit-transform: scale(1);-moz-transform: scale(1);-ms-transform: scale(1);-o-transform: scale(1);transform: scale(1);opacity: 0}
+	20% {opacity: 1}
+	75% {-webkit-transform: scale(2);-moz-transform: scale(2);-ms-transform: scale(2);-o-transform: scale(2);transform: scale(2);opacity: 0}
+	100% {opacity: 0}
+}
+//
+// zoomIn
+//
+.arrow-container{
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  position: absolute;
+  // bottom: 25px;
+  // left: 0;
+  // right: 0;
+}
+
+.arrow-1{
+  width: 80px;
+  height: 80px;
+  background: #00BCD4;
+  opacity: 0.5;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.arrow-2{
+  width: 40px;
+  height: 40px;
+  background: #00BCD4;
+  border-radius: 50%;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1;
+  display: table;
+}
+
+.arrow-2:before{
+  width: 32px;
+  height: 32px;
+  content: "";
+  border: 2px solid #006064;
+  border-radius: 50%;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+}
+
+.arrow-2 i.fa{
+  font-size: 30px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  color: #006064;
+}
+
+/* Custom Animate.css */
+
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
+@-webkit-keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.4, .4, .4);
+            transform: scale3d(.4, .4, .4);
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.4, .4, .4);
+            transform: scale3d(.4, .4, .4);
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.zoomIn {
+  -webkit-animation-name: zoomIn;
+          animation-name: zoomIn;
+}
