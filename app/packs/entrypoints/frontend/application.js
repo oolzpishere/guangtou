@@ -9,6 +9,7 @@ import Chart from 'chart.js/auto';
 import 'jquery.scrollto'
 import * as echarts from 'echarts'
 import 'src/echarts/world'
+import 'jquery.scrollto'
 
 
 import './swipers'
@@ -121,6 +122,11 @@ $(document).on("turbolinks:load", function() {
     gsap.from('.mfadeInRight', {x: 500, opacity: 0, duration: 1, delay: 0.2} )
 
   }
+
+  $('.scroll-down-half').on('click', function(){
+    var step = $('.scroll-down-content').height() / 2;
+    $('.scroll-down-content').scrollTo("+=" + step + "px", 500)
+  })
 
 
 })
