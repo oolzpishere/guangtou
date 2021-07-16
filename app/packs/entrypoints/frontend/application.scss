@@ -135,21 +135,12 @@
   }
 }
 
-.show-all-point-container{
-  .point-img{
-    display: block;
-  }
-  .point-img-active{
-    display: none;
-  }
+.industry-detail-img-container{
+  display: none;
 }
-.show-all-point-container.active{
-  .point-img{
-    display: none;
-  }
-  .point-img-active{
-    display: block;
-  }
+
+.industry-detail-img-container.active{
+  display: block;
 }
 
 .business-detail-bg-img{

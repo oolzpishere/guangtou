@@ -10,23 +10,48 @@
       <div class="map-container position-relative" style="width: 1595px; height: 796px; background-image: url(<%= asset_pack_path 'media/images/corp/industry/map-bg.png'%>) ">
 
         <% points = [
-          { img_name: "baise", path: "#", container_style: "top: 0px; left: 110px; ", arrow_container_style: "top: 436px; left: 110px;" },
-          { img_name: "nanning", path: corp_infos_industry_nanning_path, container_style: "top: 615px; left: 150px; ", arrow_container_style: "top: -80px; left: 308px;" },
-          { img_name: "laibin", path: corp_infos_industry_laibin_path, container_style: "top: 525px; left: 580px; ", arrow_container_style: "top: -90px; left: 0px;" },
-          { img_name: "liuzhou", path: corp_infos_industry_liuzhou_path, container_style: "top: 0px; left: 680px; ", arrow_container_style: "top: 290px; left: -100px;" },
-          { img_name: "hezhou", path: corp_infos_industry_hezhou_path, container_style: "top: 410px; left: 930px; ", arrow_container_style: "top: -80px; left: -100px;" },
-          { img_name: "xinjiang", path: corp_infos_industry_xinjiang_path, container_style: "top: 150px; left: 1350px; ", arrow_container_style: "top: -100px; left: 0px;" },
+          { img_name: "baise", path: "#",
+            container_style: "top: 0px; left: 110px; ",
+            arrow_container_style: "top: 436px; left: 110px;",
+            detail_img_container_style: "z-index:0; top: 480px; left: 328px;",
+            detail_img_link_style: "z-index:0; top: 15px; left: 655px;"
+          },
+          { img_name: "nanning", path: corp_infos_industry_nanning_path,
+            container_style: "top: 615px; left: 150px; ",
+            arrow_container_style: "top: -80px; left: 308px;",
+            detail_img_container_style: "z-index:0; top: 480px; left: 578px;",
+            detail_img_link_style: "z-index:0; top: 15px; left: 420px;"
+          },
+          { img_name: "laibin", path: corp_infos_industry_laibin_path,
+            container_style: "top: 525px; left: 580px; ",
+            arrow_container_style: "top: -90px; left: 0px;",
+            detail_img_container_style: "z-index:0; top: 470px; left: 688px;",
+            detail_img_link_style: "z-index:0; top: 15px; left: 325px;"
+          },
+          { img_name: "liuzhou", path: corp_infos_industry_liuzhou_path,
+            container_style: "top: 0px; left: 680px; ",
+            arrow_container_style: "top: 290px; left: -100px;",
+            detail_img_container_style: "z-index:0; top: 380px; left: 688px;",
+            detail_img_link_style: "z-index:0; top: 80px; left: 325px;"
+          },
+          { img_name: "hezhou", path: corp_infos_industry_hezhou_path,
+            container_style: "top: 410px; left: 930px; ",
+            arrow_container_style: "top: -80px; left: -100px;",
+            detail_img_container_style: "z-index:0; top: 430px; left: 920px;",
+            detail_img_link_style: "z-index:0; top: 45px; left: 100px;"
+          },
+          { img_name: "xinjiang", path: corp_infos_industry_xinjiang_path,
+            container_style: "top: 150px; left: 1350px; ",
+            arrow_container_style: "top: -100px; left: 0px;",
+            detail_img_container_style: "z-index:0; top: 160px; left: 1010px;",
+            detail_img_link_style: "z-index:0; top: 300px; left: 15px;"
+          },
         ] %>
+
         <% points.each_with_index do |point, i| %>
           <% humanId = i += 1 %>
-          <div class="industry-point-container position-absolute" data-type='plane' data-id=<%= humanId %> style='<%= point[:container_style] %>' >
+          <div class="industry-point-container position-absolute" data-id=<%= humanId %> style='<%= point[:container_style] %>' >
             <div class="position-relative">
-              <div class="detail-img-container">
-                <%= link_to( point[:path] ) do %>
-                  <%= image_pack_tag "media/images/corp/industry/detail_windows/#{point[:img_name]}.png", class: 'detail-img '%>
-                <% end %>
-              </div>
-
               <div class="point-container position-absolute" style='<%= point[:arrow_container_style] %>' data-id=<%= humanId %> >
                 <%= image_pack_tag "media/images/corp/industry/points/#{point[:img_name]}.png", class: 'point-img'%>
                 <%= image_pack_tag "media/images/corp/industry/points/#{point[:img_name]}-active.png", class: 'point-img-active'%>
@@ -34,12 +59,18 @@
 
             </div>
           </div>
+
+
+          <div class="industry-detail-img-container position-absolute" data-id=<%= humanId %> style='<%= point[:detail_img_container_style] %>' >
+            <%= image_pack_tag "media/images/corp/industry/detail_windows/#{point[:img_name]}-bg.png", class: "" %>
+            <%= link_to( point[:path] ) do %>
+              <%= image_pack_tag "media/images/corp/industry/detail_windows/#{point[:img_name]}.png", class: "position-absolute", style: point[:detail_img_link_style] %>
+            <% end %>
+          </div>
+
         <% end %>
 
-        <div class="show-all-point-container position-absolute" style="bottom: -20px; left: -10px;">
-          <%= image_pack_tag "media/images/corp/industry/points/all-show.png", class: 'point-img'%>
-          <%= image_pack_tag "media/images/corp/industry/points/all-hide.png", class: 'point-img-active'%>
-        </div>
+
       </div>
 
 

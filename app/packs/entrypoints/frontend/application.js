@@ -72,25 +72,26 @@ $(document).on("turbolinks:load", function() {
   if ( $('.industry-index-page').length > 0 ) {
     $('.point-container').on('click', function(){
       var item = $(this).parents('.industry-point-container')
-      if (item.hasClass('active')) {
-        item.removeClass('active')
-      } else {
-        item.addClass('active')
-      }
+      var id = $(this).data('id')
+      // var detail_img = $(this)
+
+      $('.industry-point-container').removeClass('active')
+      $('.industry-detail-img-container').removeClass('active')
+
+      item.addClass('active')
+      filterItemsById( $('.industry-detail-img-container'), id).addClass('active')
 
     })
 
-    $('.show-all-point-container').on('click', function(){
-      var item = $(this)
-      if (item.hasClass('active')) {
-        item.removeClass('active')
-        $('.industry-point-container').removeClass('active')
-      } else {
-        item.addClass('active')
-        $('.industry-point-container').addClass('active')
-      }
-    })
   }
+
+  function filterItemsById( items, id ){
+    var item = items.filter(function() {
+      return $(this).data("id") == id;
+    });
+    return item
+  }
+
 
 
   if ( $('.culture-left').length > 0 ) {
