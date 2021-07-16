@@ -2,75 +2,69 @@
 
   <div id="strategy-video-wrap" class="position-absolute w-100 h-100 d-none video-bg-dark" style="top:0; left:0; z-index:10;">
     <div class="row g-0 h-100 align-items-center justify-content-center position-relative">
-      <div class="col-auto position-relative" style="margin-top: -80px; ">
-        <!-- <i class="bi bi-x-lg position-absolute close-video" style="font-size: 2rem; color: white; bottom: 0; left: -2em;"></i> -->
-        <!-- data-setup='{"controls": true}'> -->
-        <!-- vjs-show-big-play-button-on-pause -->
-        <video
-            id="strategy-video"
-            class="video-js my-vjs-skin "
-            width="1550"
-            enableTouchActivity
-            data-setup=''>
-          <source src="/videos/strategy.mp4" type="video/mp4"></source>
-          <p class="vjs-no-js">
-            To view this video please enable JavaScript, and consider upgrading to a
-            web browser that
-          </p>
-        </video>
+      <!-- video container -->
+      <div class="col-auto position-relative" style="margin-top: -80px; width:2390px; height: 913px; background: top center no-repeat url(<%= asset_pack_path 'media/images/corp/strategy/main-bg.png'%>); background-size: cover;">
+        <div class="row g-0">
+          <div class="col text-center">
+            <%= image_pack_tag 'media/images/corp/strategy/video/title.png', style: 'margin-top: 50px;' %>
+            <%= image_pack_tag 'media/images/corp/strategy/video/text.png', style: 'margin-top: 30px;' %>
+
+          </div>
+          <!-- <i class="bi bi-x-lg position-absolute close-video" style="font-size: 2rem; color: white; bottom: 0; left: -2em;"></i> -->
+          <div class="col-auto">
+            <video
+                id="strategy-video"
+                class="video-js my-vjs-skin "
+                width="1350"
+                height='913'
+                enableTouchActivity
+                data-setup=''>
+              <source src="/videos/strategy.mp4" type="video/mp4"></source>
+              <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider upgrading to a
+                web browser that
+              </p>
+            </video>
+          </div>
+
+        </div>
+
       </div>
     </div>
   </div>
 
-  <div class="w-100" style="height: 18%;" >
+  <div class="w-100" style="height: 240px;" >
   </div>
 
   <!-- align-items-center justify-content-center -->
-  <div class="row g-0 justify-content-center m-auto" style="width:90%; background: top center no-repeat url(<%= asset_pack_path 'media/images/corp/strategy/main-bg.png'%>)">
+  <div class="row g-0 justify-content-center m-auto" style="width:2390px; height: 913px; background: top center no-repeat url(<%= asset_pack_path 'media/images/corp/strategy/main-bg.png'%>); background-size: cover;">
     <div class="row g-0 text-center" >
       <div class="w-100 mt-3"></div>
-      <div class="col-12 position-relative" style="line-height:1rem"  >
+      <div class="col-12 position-relative" style="margin-top: 30px;"  >
         <%= image_pack_tag 'media/images/corp/strategy/title.png' %>
-        <div class="w-100 mt-3"></div>
-        <%= image_pack_tag 'media/images/corp/strategy/text.png' %>
       </div>
 
     </div>
 
-    <div class="w-100 mt-3"></div>
+    <div class="w-100" style="height: 70px;"></div>
     <!-- center -->
-    <div class="row g-0 text-center " style="width:1900px;">
-      <div class="col-4 gx-5 align-items-center d-flex">
-        <%= image_pack_tag 'media/images/corp/strategy/cover1.png', class: "w-100 my-auto" %>
+    <div class="row g-0 text-center " style="">
+      <div class="col ">
+        <%= link_to( corp_infos_strategy_gt_path, html_options = {}) do %>
+          <%= image_pack_tag 'media/images/corp/strategy/cover1.png', class: "w-100" %>
+        <% end %>
       </div>
-      <div class="col-4 gx-5 align-items-center d-flex">
-        <%= image_pack_tag 'media/images/corp/strategy/cover2.png', class: "strategy-video-cover w-100  my-auto"   %>
+      <div class="col-auto ">
+        <%= image_pack_tag 'media/images/corp/strategy/cover2.png', class: "strategy-video-cover w-100"   %>
       </div>
-      <div class="col-4 gx-5 align-items-center d-flex">
-        <%= image_pack_tag 'media/images/corp/strategy/cover3.png', class: "w-100  my-auto"  %>
+      <div class="col ">
+        <%= link_to( corp_infos_strategy_xcl_path, html_options = {}) do %>
+          <%= image_pack_tag 'media/images/corp/strategy/cover3.png', class: "w-100"  %>
+        <% end %>
       </div>
 
     </div>
 
-    <div class="w-100 mt-4"></div>
-    <!-- bottom -->
-    <div class="row g-0 text-center w-100" style="">
-      <div class="col-4">
-        <%= image_pack_tag 'media/images/corp/strategy/point1.png' %>
-      </div>
-      <div class="col-4 position-relative">
-        <%= image_pack_tag 'media/images/corp/strategy/tag-line.png', class: "position-absolute", style: "left:0; top:50%;
-transform:translate(0,-50%);" %>
-
-        <%= image_pack_tag 'media/images/corp/strategy/point2.png' %>
-
-        <%= image_pack_tag 'media/images/corp/strategy/tag-line.png', class: "position-absolute", style: "right:0; top:50%;
-transform:translate(0,-50%);" %>
-      </div>
-      <div class="col-4">
-        <%= image_pack_tag 'media/images/corp/strategy/point3.png' %>
-      </div>
-    </div>
 
   </div>
 
@@ -78,3 +72,5 @@ transform:translate(0,-50%);" %>
   <%= render 'profile_bottom' %>
 
 </main>
+
+<!-- data-setup='{"controls": true}'> -->

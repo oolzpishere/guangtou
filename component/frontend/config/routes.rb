@@ -16,6 +16,9 @@ Frontend::Engine.routes.draw do
   get '/corp_infos/culture/xcl', to: 'corp_infos#culture_xcl'
 
   get '/corp_infos/strategy', to: 'corp_infos#strategy'
+  get '/corp_infos/strategy/gt', to: 'corp_infos#strategy_gt'
+  get '/corp_infos/strategy/xcl', to: 'corp_infos#strategy_xcl'
+
 
   get '/corp_infos/industry', to: 'corp_infos#industry'
   get '/corp_infos/industry/liuzhou', to: 'corp_infos#industry_liuzhou'
