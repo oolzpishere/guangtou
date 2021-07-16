@@ -33,8 +33,6 @@
   width: 300px;
   height: 100px;
   position: absolute;
-  left: 60px;
-  bottom: 340px;
   z-index: 1022;
   display: flex;
   justify-content: space-around;
@@ -51,6 +49,21 @@
   }
   .swiper-button-disabled{
     opacity: 0.5;
+  }
+}
+.businesses-main-swiper{
+  .my-swiper-navigation-container{
+    left: 60px;
+    bottom: 340px;
+
+  }
+}
+
+.equipment-swiper{
+  .my-swiper-navigation-container{
+    left: 60px;
+    bottom: 320px;
+    z-index: 1066;
   }
 }
 

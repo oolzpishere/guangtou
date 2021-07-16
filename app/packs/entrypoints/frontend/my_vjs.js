@@ -86,6 +86,15 @@ $(document).on("turbolinks:load", function() {
 
   }
 
+  if ( $('#industry-laibin-video').length > 0 ) {
+    videojs('industry-laibin-video', {
+      // controls: false,
+      autoplay: true,
+      muted: true,
+    })
+
+  }
+
   if ( $('#industry-nanning-nnl-video').length > 0 ) {
     videojs('industry-nanning-nnl-video', {
       autoplay: true,

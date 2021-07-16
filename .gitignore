@@ -45,3 +45,4 @@ yarn-debug.log*
 ER_README.md
 /app/packs/images
 config/local_server
+local_deploy.rb

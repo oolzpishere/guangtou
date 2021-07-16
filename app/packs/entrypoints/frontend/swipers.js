@@ -241,6 +241,10 @@ $(document).on("turbolinks:load", function() {
     var equipmentTl = gsap.timeline();
     var equipmentSwiper = new Swiper(".equipment-swiper", {
             loop: true,
+            navigation: {
+              nextEl: '.my-swiper-button-next',
+              prevEl: '.my-swiper-button-prev',
+            },
             on: {
               init: function () {
                 setSlideIn( $('.swiper-slide-active') )
