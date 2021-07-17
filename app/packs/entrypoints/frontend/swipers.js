@@ -20,60 +20,70 @@ $(document).on("turbolinks:load", function() {
     flips.beginToCount(target_item);
   }
 
-  var corp_all_swiper_tl = gsap.timeline(); //create the timeline
-  function my_clear_tl(tl) {
-    tl.seek('end');
-    tl.clear();
+  if ( $('#corp_infos-page').length ) {
+    var corp_all_swiper_tl = gsap.timeline(); //create the timeline
+    function my_clear_tl(tl) {
+      tl.seek('end');
+      tl.clear();
+    }
+
+    var corp_all_swiper_tls = [
+      function(){
+        //  ease: "elastic"
+        corp_all_swiper_tl.from(".corp-index-swiper-title", { opacity: 0, duration: 1 });
+        corp_all_swiper_tl.from(".corp-index-swiper-num", { opacity: 0, duration: 1, onComplete: function(){startCount('.corp_all_counter')} })
+      },
+      function(){
+        corp_all_swiper_tl.from(".corp-index-swiper-title", {opacity: 0, duration: 1})
+          .from(".corp-index-swiper-num", {opacity: 0, duration: 1, onComplete: function(){startCount('.corp_all_counter')} })
+      },
+      function(){
+        corp_all_swiper_tl.from(".title-slide-in", { opacity: 0, duration: 1})
+          .from(".flag-flip", {opacity: 0, duration: 1 })
+
+      },
+      function(){
+        corp_all_swiper_tl.from(".title-slide-in", { opacity: 0, duration: 1 })
+      },
+      function(){
+        corp_all_swiper_tl.from(".title-slide-in", { opacity: 0, duration: 1 })
+          .from(".flag-flip", { opacity: 0, duration: 1 })
+      }
+    ]
+
+
+    var corpAllSwiper = new Swiper(".corpAllSwiper", {
+            direction: "vertical",
+            loop: true,
+            pagination: {
+              el: ".swiper-pagination",
+              type: 'bullets',
+              clickable: true,
+              bulletClass: 'swiper-pagination-bullet my-swiper-pagination-bullet',
+              bulletActiveClass: 'swiper-pagination-bullet-active my-swiper-pagination-bullet-active',
+            },
+            navigation: {
+              nextEl: '.my-swiper-button-next',
+              prevEl: '.my-swiper-button-prev',
+            },
+            on: {
+              init: function () {
+                corp_all_swiper_tls[0]();
+              },
+            }
+          });
+
+      corpAllSwiper.on('slideChange', function () {
+        // corpLinksSwiper.slideTo(swiper.realIndex)
+        console.log(corpAllSwiper.realIndex);
+        my_clear_tl(corp_all_swiper_tl)
+        // animation have to call at current page.
+        corp_all_swiper_tls[corpAllSwiper.realIndex]();
+      });
   }
 
-  var corp_all_swiper_tls = [
-    function(){
-      //  ease: "elastic"
-      corp_all_swiper_tl.from(".corp-index-swiper-title", { opacity: 0, duration: 1 });
-      corp_all_swiper_tl.from(".corp-index-swiper-num", { opacity: 0, duration: 1, onComplete: function(){startCount('.corp_all_counter')} })
-    },
-    function(){
-      corp_all_swiper_tl.from(".corp-index-swiper-title", {opacity: 0, duration: 1})
-        .from(".corp-index-swiper-num", {opacity: 0, duration: 1, onComplete: function(){startCount('.corp_all_counter')} })
-    },
-    function(){
-      corp_all_swiper_tl.from(".title-slide-in", { opacity: 0, duration: 1})
-        .from(".flag-flip", {opacity: 0, duration: 1 })
 
-    },
-    function(){
-      corp_all_swiper_tl.from(".title-slide-in", { opacity: 0, duration: 1 })
-    },
-    function(){
-      corp_all_swiper_tl.from(".title-slide-in", { opacity: 0, duration: 1 })
-        .from(".flag-flip", { opacity: 0, duration: 1 })
-    }
-  ]
 
-  var corpAllSwiper = new Swiper(".corpAllSwiper", {
-          direction: "vertical",
-          loop: true,
-          pagination: {
-            el: ".swiper-pagination",
-            type: 'bullets',
-            clickable: true,
-            bulletClass: 'swiper-pagination-bullet my-swiper-pagination-bullet',
-            bulletActiveClass: 'swiper-pagination-bullet-active my-swiper-pagination-bullet-active',
-          },
-          on: {
-            init: function () {
-              corp_all_swiper_tls[0]();
-            },
-          }
-        });
-
-  corpAllSwiper.on('slideChange', function () {
-    // corpLinksSwiper.slideTo(swiper.realIndex)
-    console.log(corpAllSwiper.realIndex);
-    my_clear_tl(corp_all_swiper_tl)
-    // animation have to call at current page.
-    corp_all_swiper_tls[corpAllSwiper.realIndex]();
-  });
 
   // swiper.on('slideResetTransitionEnd', function () {
   //   // corpLinksSwiper.slideTo(swiper.realIndex, speed, runCallbacks)
@@ -222,6 +232,10 @@ $(document).on("turbolinks:load", function() {
     var talentsSwiper = new Swiper(".talents-swiper", {
             slidesPerView: "auto",
             freeMode: true,
+            navigation: {
+              nextEl: '.my-swiper-button-next',
+              prevEl: '.my-swiper-button-prev',
+            },
             // loop: true,
           });
 

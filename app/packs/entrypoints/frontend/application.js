@@ -33,25 +33,11 @@ import "src/my_anime_css.js"
 $(document).on("turbolinks:load", function() {
   // disable right click except home-page.
   if ( $('#home-page').length == 0 ) {
-    document.addEventListener('contextmenu', event => event.preventDefault());
+    // document.addEventListener('contextmenu', event => event.preventDefault());
   }
 
   var wHeight = window.innerHeight;
   console.log(wHeight)
-// document.addEventListener("DOMContentLoaded", function(event) {
-
-  // $(".slider").slick({
-  //   infinite: true,
-  //   slidesToShow: 3,
-  //   slidesToScroll: 3,
-  //   dots: true,
-  //   arrows: true,
-  // });
-
-  // var auto_player = videojs('auto-video', {
-  //   autoplay: 'muted',
-  //   loop: true
-  // });
 
   setWrapToFullHeight();
   // window.addEventListener('resize', setWindowSize);

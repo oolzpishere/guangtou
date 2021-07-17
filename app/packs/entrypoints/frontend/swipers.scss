@@ -59,11 +59,34 @@
   }
 }
 
+#advantages-team-page{
+  .my-swiper-navigation-container{
+    left: 50%;
+    bottom: -70px;
+    margin-left: -150px;
+    z-index: 1066;
+  }
+}
+
 .equipment-swiper{
   .my-swiper-navigation-container{
     left: 60px;
     bottom: 320px;
     z-index: 1066;
+  }
+}
+
+#corp_infos-page{
+  .my-swiper-navigation-container{
+    left: 60px;
+    bottom: 320px;
+    z-index: 1066;
+    .my-swiper-button-prev{
+      background: center no-repeat url('../../images/buttons/swiper-up-btn.png');
+    }
+    .my-swiper-button-next{
+      background: center no-repeat url('../../images/buttons/swiper-down-btn.png');
+    }
   }
 }
 
