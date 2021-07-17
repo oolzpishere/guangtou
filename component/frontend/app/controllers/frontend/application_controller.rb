@@ -6,6 +6,8 @@ module Frontend
     def set_page_class
       if request.path != root_path
         @page_class = request.path.split('/').slice(1..-1).join('-')
+      elsif request.path == '/'
+        @page_class = 'home'
       end
     end
 
