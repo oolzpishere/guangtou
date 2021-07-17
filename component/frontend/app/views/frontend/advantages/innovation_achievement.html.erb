@@ -1,0 +1,36 @@
+<div class="innovation-result-page window-holder position-relative" style="">
+
+  <div class="row g-0 position-relative ">
+    <!-- main left -->
+    <%= render 'innovation_left' %>
+
+    <!-- main right -->
+    <div class="" style="width: 70%; ">
+
+      <div class="row g-0" style='margin-top: 300px; width: 1750px; overflow: scroll;'>
+
+        <div class="d-flex">
+          <div class="">
+            <%= image_pack_tag 'media/images/advantages/innovation/achievement/1.png', class: '' %>
+          </div>
+          <div class="">
+            <%= image_pack_tag 'media/images/advantages/innovation/achievement/2.png', class: '' %>
+          </div>
+          <div class="">
+            <%= image_pack_tag 'media/images/advantages/innovation/achievement/3.png', class: '' %>
+          </div>
+        </div>
+
+      </div>
+
+      <div class=" mt-1 " style="margin-left: 90px;">
+        <%= link_to( advantages_innovation_tl_path, html_options = {}) do %>
+          <%= image_pack_tag 'media/images/advantages/innovation/achievement/tl-nav.png' %>
+        <% end %>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
