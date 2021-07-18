@@ -54,21 +54,30 @@
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
               <!-- Slides, talents with detail -->
-              <% (1..11).each do |i| %>
+              <% (1..4).each do |i| %>
                 <div class="swiper-slide talent-slide talent-slide-with-detail text-center " style="">
                   <!-- .expanded -->
                   <!-- img: width: 515px; height: 559px; -->
                   <div class="row g-0 align-items-center h-100">
                     <div class="col ">
                       <%= image_pack_tag "media/images/advantages/team/talents/#{i}.png", class: "talent-img" %>
-
-                      <%= image_pack_tag "media/images/advantages/team/talents/0#{i}.png", class: 'talent-detail mx-auto mt-2' %>
-
                     </div>
-
-
+                    <div class="col">
+                      <%= image_pack_tag "media/images/advantages/team/talents/0#{i}.png", class: 'talent-detail' %>
+                    </div>
                   </div>
 
+                </div>
+              <% end %>
+
+              <!-- Slides, talents  -->
+              <% (5..13).each do |i| %>
+                <div class="swiper-slide talent-slide text-center" style="">
+                  <div class="row g-0 align-items-center h-100">
+                    <div class="col ">
+                      <%= image_pack_tag "media/images/advantages/team/talents/#{i}.png" %>
+                    </div>
+                  </div>
                 </div>
               <% end %>
 

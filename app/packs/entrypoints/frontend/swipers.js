@@ -14,7 +14,6 @@ $(document).on("turbolinks:load", function() {
   $('.window-holder').css("height", wHeight)
 
 
-
   function startCount(target_item) {
     let flips = new Flips();
     flips.beginToCount(target_item);
@@ -233,6 +232,9 @@ $(document).on("turbolinks:load", function() {
     var talentsSwiper = new Swiper(".talents-swiper", {
             slidesPerView: "auto",
             freeMode: true,
+            autoplay: {
+              delay: 15000,
+            },
             navigation: {
               nextEl: '.my-swiper-button-next',
               prevEl: '.my-swiper-button-prev',
@@ -249,6 +251,26 @@ $(document).on("turbolinks:load", function() {
       }
       talentsSwiper.update();
     })
+
+    var talentsSwiperAutoplayTimeout;
+    talentsSwiper.on('sliderMove', function(){
+      talentsSwiperRealCountDown()
+    })
+
+    talentsSwiper.on('slideChange', function(){
+      talentsSwiperRealCountDown()
+    })
+
+    function talentsSwiperRealCountDown(){
+      // console.log('first:' + talentsSwiper.autoplay.running)
+      talentsSwiper.autoplay.stop();
+
+      clearTimeout(talentsSwiperAutoplayTimeout)
+      // 15 + 15 second to slide next.
+      talentsSwiperAutoplayTimeout = setTimeout( function() {
+        talentsSwiper.autoplay.start();
+      }, 15000);
+    }
 
   }
 
