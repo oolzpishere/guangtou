@@ -20,6 +20,9 @@ import 'src/echarts/businesses_echarts'
 import {Flips} from "./flips"
 import "src/my_anime_css.js"
 
+import "src/advantages/equipment.js"
+
+
 // import 'src/corp_infos/industry/nanning'
 // if (document.querySelectorAll("#corp_infos-industry-nanning").length) {
 //   import('src/corp_infos/industry/nanning') // webpack will load this JS async
