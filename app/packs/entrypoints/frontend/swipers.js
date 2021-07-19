@@ -7,9 +7,13 @@ import {Flips} from "./flips"
 import {BusinessDetails} from "./business_details"
 import {BusinessDetailsSwiper} from "./business_details_swiper"
 
+import { MyHelpers } from 'src/my_helpers.js'
+
 
 $(document).on("turbolinks:load", function() {
 // document.addEventListener("DOMContentLoaded", function(event) {
+  var myHelpers = new MyHelpers();
+
   var wHeight = window.innerHeight;
   $('.window-holder').css("height", wHeight)
 
@@ -17,11 +21,6 @@ $(document).on("turbolinks:load", function() {
   function startCount(target_item) {
     let flips = new Flips();
     flips.beginToCount(target_item);
-  }
-
-  function my_clear_tl(tl) {
-    tl.seek('end');
-    tl.clear();
   }
 
   if ( $('#corp_infos-page').length ) {
@@ -76,7 +75,9 @@ $(document).on("turbolinks:load", function() {
       corpAllSwiper.on('slideChange', function () {
         // corpLinksSwiper.slideTo(swiper.realIndex)
         console.log(corpAllSwiper.realIndex);
-        my_clear_tl(corp_all_swiper_tl)
+        // my_clear_tl(corp_all_swiper_tl)
+
+        myHelpers.myClearTl(corp_all_swiper_tl)
         // animation have to call at current page.
         corp_all_swiper_tls[corpAllSwiper.realIndex]();
       });

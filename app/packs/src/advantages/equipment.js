@@ -2,6 +2,9 @@ import videojs from  "video.js"
 import Swiper from 'swiper/bundle';
 import { gsap } from 'gsap/dist/gsap.js'
 
+import { MyHelpers } from 'src/my_helpers.js'
+
+
 $(document).on("turbolinks:load", function() {
 
   if ( $('#advantages-equipment-page').length ) {
@@ -16,7 +19,7 @@ $(document).on("turbolinks:load", function() {
     var equipment2_video = videojs('equipment2-video', {
       // autoplay: true,
       muted: true,
-      // preload: 'true'
+      // preload: 'metadata'
     });
     players.push(equipment2_video)
 
@@ -80,7 +83,8 @@ $(document).on("turbolinks:load", function() {
     }
 
     equipmentSwiper.on('slideChangeTransitionStart', function () {
-      my_clear_tl(equipmentTl)
+      var myHelpers = new MyHelpers();
+      myHelpers.myClearTl(equipmentTl)
       // equipmentSwiper.realIndex
       pauseAllVideos()
       setSlideIn( $('.swiper-slide-active'), equipmentSwiper.realIndex  )
@@ -96,10 +100,6 @@ $(document).on("turbolinks:load", function() {
       });
     }
 
-    function my_clear_tl(tl) {
-      tl.seek('end');
-      tl.clear();
-    }
 
 
   }
