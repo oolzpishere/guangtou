@@ -59,7 +59,7 @@ module Frontend
           {path: businesses_ship_path, img_path: 'media/images/businesses/navs/3.jpg', active_img_path: 'media/images/businesses/navs/03.jpg'},
           {path: businesses_train_path, img_path: 'media/images/businesses/navs/4.jpg', active_img_path: 'media/images/businesses/navs/04.jpg'},
           {path: businesses_electronic_path, img_path: 'media/images/businesses/navs/5.jpg', active_img_path: 'media/images/businesses/navs/05.jpg'},
-          {path: businesses_capacitor_path, img_path: 'media/images/businesses/navs/6.jpg', active_img_path: 'media/images/businesses/navs/06.jpg'},
+          # {path: businesses_capacitor_path, img_path: 'media/images/businesses/navs/6.jpg', active_img_path: 'media/images/businesses/navs/06.jpg'},
         ]
         @business_navs.each do |hash|
           if request.path.match(hash[:path])
