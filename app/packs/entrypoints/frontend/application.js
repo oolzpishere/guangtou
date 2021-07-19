@@ -21,6 +21,8 @@ import {Flips} from "./flips"
 import "src/my_anime_css.js"
 
 import "src/advantages/equipment.js"
+import {MyTl} from "src/my_tl.js"
+
 
 
 // import 'src/corp_infos/industry/nanning'
@@ -122,6 +124,16 @@ $(document).on("turbolinks:load", function() {
     var step = $('.scroll-down-content').height() / 2;
     $('.scroll-down-content').scrollTo("+=" + step + "px", 500)
   })
+
+  if ( $('#corp_infos-strategy-gt-page').length ) {
+    var myTl = new MyTl();
+    myTl.addMovements();
+  }
+
+  if ( $('#corp_infos-strategy-xcl-page').length ) {
+    var myTl = new MyTl();
+    myTl.addMovements();
+  }
 
 
 })
