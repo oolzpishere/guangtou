@@ -2,6 +2,37 @@
 
   <%= render 'party_head' %>
 
+  <!-- swiper position container -->
+  <div class="float-swiper-container position-absolute w-100 h-100 video-bg-dark" style="top:0; left:0; z-index:1066; opacity: 0;">
+    <div class="position-relative">
+
+      <!-- Slider main container -->
+      <div class="swiper-container parties-brand-swiper position-relative" style="width: 1200px; height: 800px; margin-top: 200px;">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide bg-info">Slide 1</div>
+          <div class="swiper-slide">Slide 2</div>
+          <div class="swiper-slide">Slide 3</div>
+
+        </div>
+
+
+
+        <!-- If we need pagination -->
+        <div class="swiper-pagination business-swiper-pagination">
+          <div class="my-swiper-pagination-bullet">
+          </div>
+        </div>
+      </div>
+
+      <div class="my-swiper-navigation-container" style="top:100px; ">
+        <div class="my-swiper-button-prev"></div>
+        <div class="my-swiper-button-next"></div>
+      </div>
+
+    </div>
+  </div>
 
   <div class="row g-0">
     <!-- render left navs -->
@@ -20,7 +51,7 @@
 
         <!-- right content -->
         <div class="col-7 " style="">
-          <%= link_to(parties_brand_detail_path, html_options = {}) do %>
+          <%= link_to(parties_brand_detail_path,  html_options = { class: "parties_brand_detail" }) do %>
             <%= image_pack_tag 'media/images/party/brand/icons.png', class: "w-100" %>
           <% end %>
         </div>

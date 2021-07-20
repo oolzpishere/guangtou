@@ -275,7 +275,45 @@ $(document).on("turbolinks:load", function() {
 
   }
 
+  if ( $('.parties-brand-swiper').length ) {
+    var partiesBrandSwiper = new Swiper(".parties-brand-swiper", {
+            // loop: true,
+            slidesPerView: 1,
+            pagination: {
+              el: ".swiper-pagination",
+              type: 'bullets',
+              clickable: true,
+              bulletClass: 'swiper-pagination-bullet my-swiper-pagination-bullet',
+              bulletActiveClass: 'swiper-pagination-bullet-active my-swiper-pagination-bullet-active',
+            },
+            navigation: {
+              nextEl: '.my-swiper-button-next',
+              prevEl: '.my-swiper-button-prev',
+            },
+            on: {
+              init: function () {
+                $('.float-swiper-container').addClass('d-none')
+                $('.float-swiper-container').css({'opacity': 1})
+              }
+            }
+          });
 
+    $('.parties-brand-swiper, .my-swiper-button-next, .my-swiper-button-prev').on('click', function(event){
+      event.stopPropagation();
+    })
+
+    // $('.parties_brand_detail').on('click', function(event){
+    //   event.preventDefault();
+    //   $('.float-swiper-container').removeClass('d-none')
+    // })
+    //
+    // $('.float-swiper-container').on('click', function(event){
+    //   event.stopPropagation();
+    //   $('.float-swiper-container').addClass('d-none')
+    // })
+
+
+  }
 
 
 })
