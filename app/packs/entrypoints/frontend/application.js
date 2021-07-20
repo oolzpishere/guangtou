@@ -38,10 +38,12 @@ import {MyTl} from "src/my_tl.js"
 $(document).on("turbolinks:load", function() {
   // disable right click except home-page.
   if ( $('#home-page').length == 0 ) {
-    document.addEventListener('contextmenu', event => event.preventDefault());
+    // document.addEventListener('contextmenu', event => event.preventDefault());
   }
 
   var wHeight = window.innerHeight;
+  var wWidth = window.innerWidth;
+
   console.log(wHeight)
 
   setWrapToFullHeight();
@@ -58,6 +60,7 @@ $(document).on("turbolinks:load", function() {
 
   if ( $('.window-holder').length > 0 ) {
     $('.window-holder').css("height", wHeight)
+    $('.window-holder').css("width", wWidth)
   }
 
   // gsap.from(".my-show-up", {rotation: 27, x: 100, duration: 1});
