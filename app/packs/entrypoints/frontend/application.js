@@ -108,7 +108,7 @@ $(document).on("turbolinks:load", function() {
 
   if ( $('.mcount-up').length > 0 ) {
     let flips = new Flips();
-    flips.beginToCount( $('.mcount-up'), 200);
+    flips.beginToCount( $('.mcount-up'), 150);
   }
 
 
