@@ -201,3 +201,9 @@
     display: block;
   }
 }
+
+.swiper-tag.active{
+  .active-img{
+    display: block !important;
+  }
+}

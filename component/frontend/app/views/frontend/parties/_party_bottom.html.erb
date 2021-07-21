@@ -1,11 +1,11 @@
-<div class="position-fixed w-100" style="bottom: 0; height: 413px; z-index: 1000; background: no-repeat center url(<%= bottom_bg_path %>) ">
+<div class="position-fixed w-100" style="bottom: 0; height: 211px; z-index: 1000; background: no-repeat center url(<%= bottom_bg_path %>) ">
   <div class="row h-100 g-0 position-relative">
 
     <!-- go back -->
     <% if @return_path %>
-      <div class="position-absolute"  style="top: -30px; left:20px; z-index: 1020;">
+      <div class="position-absolute"  style="top: 70px; left:20px; z-index: 1020;">
         <%= link_to( @return_path, html_options = {}) do %>
-          <%= image_pack_tag 'media/images/party/navs/back.png', class: '', style: ""%>
+          <%= image_pack_tag 'media/images/party/go-back.png', class: '', style: ""%>
         <% end %>
       </div>
     <% end %>

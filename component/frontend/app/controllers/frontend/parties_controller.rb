@@ -3,7 +3,7 @@ require_dependency "frontend/application_controller"
 module Frontend
   class PartiesController < ApplicationController
     # before_action :set_party, only: [:show, :edit, :update, :destroy]
-    before_action :set_party_navs
+    before_action :set_party_navs, except: [:navigator]
 
 
     layout 'frontend/party_application'

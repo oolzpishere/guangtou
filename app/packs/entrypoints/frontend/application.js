@@ -22,6 +22,8 @@ import "src/my_anime_css.js"
 
 import "src/advantages/equipment.js"
 import "src/parties/index.js"
+import "src/parties/navigator.js"
+
 
 import {MyTl} from "src/my_tl.js"
 

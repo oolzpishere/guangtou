@@ -75,7 +75,7 @@
 </div>
 
 <!-- index bottom -->
-<div class="position-fixed w-100" style="bottom: 0; height: 413px; z-index: 1000; background: no-repeat center url(<%= asset_pack_path 'media/images/party/bottom-bg.png' %>) ">
+<div class="position-fixed w-100" style="bottom: 0; height: 413px; z-index: 1000; background: no-repeat center url(<%= asset_pack_path 'media/images/party/index-bottom-bg.png' %>) ">
   <div class="row h-100 g-0 position-relative justify-content-center">
 
     <div class="col-auto mx-3" style="margin-top: -50px">
@@ -91,7 +91,7 @@
     </div>
 
     <div class="col-auto mx-3" style="margin-top: -50px">
-      <%= link_to( parties_profile_path, html_options = {}) do %>
+      <%= link_to( parties_navigator_path, html_options = {}) do %>
         <%= image_pack_tag 'media/images/party/index-lead-nav.png', class: "", style: ""%>
       <% end %>
     </div>

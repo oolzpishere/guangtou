@@ -1,37 +1,53 @@
-<main class="window-holder position-relative" style="background: url(<%= asset_pack_path 'media/images/party/second-bg.png'%>) "  >
+<main class="window-holder position-relative" style="background: url(<%= asset_pack_path 'media/images/corp/strategy/bg.png'%>) "  >
 
-  <%= render 'party_head' %>
+  <%= render 'party_header' %>
 
+  <div class="w-100" style="height: 220px;"></div>
 
-  <div class="row g-0">
+  <div class="row g-0" >
     <!-- render left navs -->
-    <div class="col-auto" style="width:30%;">
-      <%= render 'left_navs' %>
+    <div class="col-auto" style="width:40%;">
+      <%= render 'new_left_navs' %>
     </div>
 
 
     <!-- right content -->
-    <div class="col" style="width:70%;" >
+    <div class="col" style="width:60%;" >
 
-      <div class="row g-0 mx-auto" style="width:100%; margin-top: 200px;">
-        <!-- main content -->
-        <div class="col-12 text-center position-relative" style="width: 1820px; height: 990px; overflow-y:scroll;" >
+      <!-- Slider main container -->
+      <div class="swiper-container parties-navigator-swiper">
+        <div class="w-100" style="height: 180px;"></div>
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides 1 -->
+          <div class="swiper-slide">
+            <%= image_pack_tag 'media/images/party/navigator/local.png', class: '', style: ""%>
+
+          </div>
+
+          <!-- Slides 2 -->
+          <div class="swiper-slide">
+            <%= image_pack_tag 'media/images/party/navigator/local.png', class: '', style: ""%>
 
 
-          <!-- first page -->
-          <%= image_pack_tag 'media/images/party/lead/page1-title.png', class: "" %>
-          <%= image_pack_tag 'media/images/party/lead/page1-img.png', class: "my-5" %>
-
-          <!-- second page -->
-          <%= image_pack_tag 'media/images/party/lead/page2-title.png', class: "mt-5" %>
-          <%= image_pack_tag 'media/images/party/lead/page2-img.png', class: "mt-5" %>
-
-          <!-- <div class="scroll-icon position-absolute" style="left: 50%; transform:translate(-50%,0); bottom:0;">
-            <span></span>
-          </div> -->
-
+          </div>
         </div>
 
+        <!-- position absolute, bottom center, a little bit right. -->
+        <div class="title-pagination position-absolute" style="z-index: 1020; left: 50px; top: 70px;">
+          <!-- title 0, data-id="0", on click main swiper move to data-id -->
+          <!-- title 1 -->
+          <div class="row g-0">
+            <div class="col swiper-tag position-relative" data-id="1" >
+              <%= image_pack_tag 'media/images/party/navigator/group-party.png' %>
+              <%= image_pack_tag 'media/images/party/navigator/group-party-active.png', class: 'active-img position-absolute d-none', style: "top:0; left:0;" %>
+            </div>
+            <div class="col swiper-tag ms-5 position-relative" data-id="2" >
+              <%= image_pack_tag 'media/images/party/navigator/corp-party.png' %>
+              <%= image_pack_tag 'media/images/party/navigator/corp-party-active.png', class: 'active-img position-absolute d-none', style: "top:0; left:0;" %>
+            </div>
+          </div>
+        </div>
 
       </div>
 

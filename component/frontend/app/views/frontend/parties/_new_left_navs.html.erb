@@ -1,0 +1,39 @@
+<div class="" style=" z-index: 1020;">
+
+  <!-- navs -->
+  <div class="row g-0 mt-4 justify-content-center">
+
+    <div class="col-auto  mt-5">
+      <%= image_pack_tag 'media/images/party/navigator/title.png', class: "", style: ""%>
+    </div>
+
+    <div class="col-auto mt-4">
+      <%= link_to( "#", html_options = {}) do %>
+        <%= image_pack_tag 'media/images/party/navigator/xcl-nav.png', class: "", style: ""%>
+      <% end %>
+    </div>
+
+    <div class="col-auto">
+      <%= link_to( parties_profile_path, html_options = {}) do %>
+        <%= image_pack_tag 'media/images/party/navigator/nnl-nav.png', class: "", style: ""%>
+      <% end %>
+    </div>
+
+    <!-- two video navs -->
+    <div class="row g-0 justify-content-center  mt-5">
+      <div class="col-auto mx-2">
+        <%= link_to( parties_video_path, html_options = {}) do %>
+          <%= image_pack_tag 'media/images/party/navigator/xcl-video-nav.png', class: "", style: ""%>
+        <% end %>
+      </div>
+      <div class="col-auto mx-2">
+        <%= link_to( parties_video_path, html_options = {}) do %>
+          <%= image_pack_tag 'media/images/party/navigator/nnl-video-nav.png', class: "", style: ""%>
+        <% end %>
+      </div>
+    </div>
+
+
+  </div>
+
+</div>
