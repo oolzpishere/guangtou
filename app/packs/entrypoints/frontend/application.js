@@ -21,6 +21,8 @@ import {Flips} from "./flips"
 import "src/my_anime_css.js"
 
 import "src/advantages/equipment.js"
+import "src/parties/index.js"
+
 import {MyTl} from "src/my_tl.js"
 
 
@@ -46,22 +48,23 @@ $(document).on("turbolinks:load", function() {
 
   console.log(wHeight)
 
-  setWrapToFullHeight();
-  // window.addEventListener('resize', setWindowSize);
-  $(window).on('resize', setWrapToFullHeight)
-
-  function setWrapToFullHeight() {
-    // wWidth = window.innerWidth;
-    wHeight = window.innerHeight;
-    if ( $('.body-wrap').height() < wHeight ) {
-      $('.body-wrap').height(wHeight);
-    }
-  }
-
   if ( $('.window-holder').length > 0 ) {
     $('.window-holder').css("height", wHeight)
     $('.window-holder').css("width", wWidth)
   }
+
+  // setWrapToFullHeight();
+  // // window.addEventListener('resize', setWindowSize);
+  // $(window).on('resize', setWrapToFullHeight)
+  //
+  // function setWrapToFullHeight() {
+  //   // wWidth = window.innerWidth;
+  //   wHeight = window.innerHeight;
+  //   if ( $('.body-wrap').height() < wHeight ) {
+  //     $('.body-wrap').height(wHeight);
+  //   }
+  // }
+
 
   // gsap.from(".my-show-up", {rotation: 27, x: 100, duration: 1});
   // gsap.from(".my-show-down", { y: -600, duration: 1});

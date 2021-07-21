@@ -1,57 +1,64 @@
+<div class="row g-0 text-end w-100 fixed-top ">
+  <div class="col" style="">
+    <%= image_pack_tag 'media/images/businesses/head.png' %>
+  </div>
+</div>
+
+
 <div class="main position-relative">
   <div class="row g-0 position-relative">
 
-    <!-- left -->
-    <div class="position-absolute text-center" style="width: 32%; top: 190px; left:80px;  z-index:2;">
-
-      <div class="row g-0">
-        <div class="col-6">
-          <%= link_to( parties_video_path, html_options = {}) do %>
-            <%= image_pack_tag 'media/images/party/index-gt.png', class: "", style: ""%>
-          <% end %>
-        </div>
-
-        <div class="col-6">
-          <%= image_pack_tag 'media/images/party/nav-top.png' %>
-        </div>
-        <div class="w-100 mt-5"></div>
-        <div class="col-6">
-          <%= link_to( parties_video_path, html_options = {}) do %>
-            <%= image_pack_tag 'media/images/party/index-xcl.png', class: "", style: ""%>
-          <% end %>
-        </div>
-
-        <div class="col-6">
-          <%= link_to( parties_profile_path, html_options = {}) do %>
-            <%= image_pack_tag 'media/images/party/index-brand.png', class: "", style: ""%>
-          <% end %>
-        </div>
-
-      </div>
-
-    </div>
 
     <!-- Slider main container -->
     <div class="swiper-container partyIndexSwiper window-holder">
       <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
         <!-- swiper-slide1 -->
-        <div class="swiper-slide" style="background-image:url(<%= asset_pack_path 'media/images/party/swiper1.png'%>)" >
-          
+        <div class="swiper-slide" style="" >
+
+          <!-- Slide 1 bg video container -->
+          <div class="position-absolute " style="z-index: 0;">
+            <div class="position-relative " style="width: 2560px; height: 1440px; overflow: hidden;">
+              <video id="parties-bg-video1"
+                       class="video-js vjs-default-skin industry-bg-video"
+                       style=""
+                       loop >
+                <source src="/videos/parties/index_swiper/1.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+
         </div>
 
         <!-- swiper-slide2 -->
-        <div class="swiper-slide" style="background-image:url(<%= asset_pack_path 'media/images/party/swiper2.png'%>)" >
+        <div class="swiper-slide" style="" >
+          <!-- Slide 2 bg video container -->
+          <div class="position-absolute " style="z-index: 0;">
+            <div class="position-relative " style="width: 2560px; height: 1440px; overflow: hidden;">
+              <video id="parties-bg-video2"
+                       class="video-js vjs-default-skin industry-bg-video"
+                       style=""
+                       loop >
+                <source src="/videos/parties/index_swiper/2.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
 
         </div>
 
         <!-- swiper-slide3 -->
-        <div class="swiper-slide" style="background-image:url(<%= asset_pack_path 'media/images/party/swiper3.png'%>)">
-
-        </div>
-
-        <!-- swiper-slide4 -->
-        <div class="swiper-slide" style="background-image:url(<%= asset_pack_path 'media/images/party/swiper4.png'%>)">
+        <div class="swiper-slide" style="">
+          <!-- Slide 3 bg video container -->
+          <div class="position-absolute " style="z-index: 0;">
+            <div class="position-relative " style="width: 2560px; height: 1440px; overflow: hidden;">
+              <video id="parties-bg-video3"
+                       class="video-js vjs-default-skin industry-bg-video"
+                       style=""
+                       loop >
+                <source src="/videos/parties/index_swiper/3.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
 
         </div>
 
@@ -61,8 +68,42 @@
     </div>
 
     <!-- If we need pagination -->
-    <div class="swiper-pagination" style="z-index: 1060; bottom: 200px;"></div>
+    <div class="swiper-pagination" style="width: auto;z-index: 1060; bottom: 250px; right: 150px;"></div>
   </div>
 
 
+</div>
+
+<!-- index bottom -->
+<div class="position-fixed w-100" style="bottom: 0; height: 413px; z-index: 1000; background: no-repeat center url(<%= asset_pack_path 'media/images/party/bottom-bg.png' %>) ">
+  <div class="row h-100 g-0 position-relative justify-content-center">
+
+    <div class="col-auto mx-3" style="margin-top: -50px">
+      <%= link_to( parties_video_path, html_options = {}) do %>
+        <%= image_pack_tag 'media/images/party/index-xcl-video-nav.png', class: "", style: ""%>
+      <% end %>
+    </div>
+
+    <div class="col-auto mx-3" style="margin-top: -50px">
+      <%= link_to( parties_video_path, html_options = {}) do %>
+        <%= image_pack_tag 'media/images/party/index-nnl-video-nav.png', class: "", style: ""%>
+      <% end %>
+    </div>
+
+    <div class="col-auto mx-3" style="margin-top: -50px">
+      <%= link_to( parties_profile_path, html_options = {}) do %>
+        <%= image_pack_tag 'media/images/party/index-lead-nav.png', class: "", style: ""%>
+      <% end %>
+    </div>
+
+    <!-- go back -->
+    <% if @return_path %>
+      <div class="position-absolute"  style="top: 230px; left:20px; z-index: 1020; width: auto">
+        <%= link_to( @return_path, html_options = {}) do %>
+          <%= image_pack_tag 'media/images/party/navs/back.png', class: '', style: ""%>
+        <% end %>
+      </div>
+    <% end %>
+
+  </div>
 </div>
