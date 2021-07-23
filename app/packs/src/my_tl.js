@@ -6,55 +6,32 @@ var MyTl = function( options = {'firstDelay': 0.2} ) {
   this.tl = gsap.timeline();
   this.tl.delay( options['firstDelay'] )
 
-  this.sequenceArray = [];
-  this.sortSequence();
-
+  this.sequenceDivs = new SequenceDivs
 }
 
-// MyTl.prototype.findSequence = function() {
-//   // find sequence
-//   $('.my-sequence')
-// };
-
-MyTl.prototype.sortSequence = function() {
-  var _self = this;
-  _self.sequenceArray = $('.my-sequence').toArray()
-
-  // sort array
-  _self.sequenceArray.sort( (a, b) => $(a).data('sequence-id') - $(b).data('sequence-id') );
-};
 
 MyTl.prototype.addMovements = function() {
   var _self = this;
 
-  _self.sequenceArray.forEach( (item, i) => {
-    // debugger;
-    var addMovementFunc = _self.movementFuncs()[ $(item).data('movement') ]
-    addMovementFunc( _self, item, $(item).data('sequence-id') )
+  _self.sequenceDivs.sequenceArray.forEach( (sequenceDiv, i) => {
+    let opts = _self.movementOpts()[ sequenceDiv.movement ]
+    var animation_opts = $.extend({}, { duration: sequenceDiv.duration }, opts);
+    _self.addTlFrom( _self, sequenceDiv, animation_opts)
   });
 
 }
 
-MyTl.prototype.movementFuncs = function() {
+MyTl.prototype.movementOpts = function() {
   var _self = this;
   return {
-    slideInLeft:  _self.slideInLeft,
-    slideInRight:  _self.slideInRight,
-    fadeIn: _self.fadeIn,
+    slideInLeft:  { x: -600, opacity: 0 },
+    slideInRight: { x: 600, opacity: 0 },
+    fadeIn: { opacity: 0 },
   }
 }
 
-
-MyTl.prototype.slideInLeft = function( _self, item, i) {
-  _self.tl.from( item, { x: -600, opacity: 0, duration: _self.getItemDuration(item) }, _self.getLabel(i) );
-}
-
-MyTl.prototype.slideInRight = function( _self, item, i) {
-  _self.tl.from( item, { x: 600, opacity: 0, duration: _self.getItemDuration(item)   }, _self.getLabel(i) );
-}
-
-MyTl.prototype.fadeIn = function( _self, item, i) {
-  _self.tl.from( item, { opacity: 0, duration: _self.getItemDuration(item) }, _self.getLabel(i) );
+MyTl.prototype.addTlFrom = function( _self, sequenceDiv, animation_opts) {
+  _self.tl.from( sequenceDiv.el, animation_opts, sequenceDiv.label );
 }
 
 MyTl.prototype.myClearTl = function(tl) {
@@ -62,16 +39,66 @@ MyTl.prototype.myClearTl = function(tl) {
   tl.clear();
 };
 
-MyTl.prototype.getLabel = function(i) {
-  var lable = 'sequence' + i
-  return lable
-};
 
-MyTl.prototype.getItemDuration = function(item) {
-  // add data-duration='5' at item, specify item duration.
-  var duration = 1;
-  if ( $(item).data('duration') ) {
-    duration = $(item).data('duration')
+
+
+class SequenceDivs {
+  constructor() {
+    this.sequenceArray = [];
+    this.initSequenceArray()
+    this.sortSequence();
   }
-  return duration
-};
+
+  initSequenceArray() {
+    var _self = this;
+    $('.my-sequence').each(function( index ) {
+      _self.sequenceArray.push( new SequenceDiv( this ) );
+    });
+  }
+
+  sortSequence() {
+    var _self = this;
+    // sort array
+    _self.sequenceArray.sort( (a, b) => a.sequenceId - b.sequenceId );
+  }
+
+}
+
+class SequenceDiv {
+  constructor( item ) {
+    this.defaultDuration = 1
+
+    this.el = item
+    this.$item = $(item)
+    this.movement = this.$item.data('movement')
+    this.sequenceId = this.$item.data('sequence-id')
+    this.label = this.getLabel()
+    this.duration = this.getItemDuration()
+  }
+
+  getLabel() {
+    var label = 'sequence' + this.$item.data('sequence-id')
+    // var label = 'sequence' + $(item).data('sequence-id')
+    return label
+  };
+
+  getItemDuration() {
+    var _self = this
+    // add data-duration='5' at item, specify item duration.
+    if ( _self.$item.data('duration') ) {
+      _self.defaultDuration = _self.$item.data('duration')
+    }
+    return _self.defaultDuration
+  };
+
+
+}
+
+ // var _proto = SequenceDivs.prototype;
+// _self.sequenceArray = $('.my-sequence').toArray()
+
+
+// MyTl.prototype.findSequence = function() {
+//   // find sequence
+//   $('.my-sequence')
+// };

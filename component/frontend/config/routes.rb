@@ -40,6 +40,10 @@ Frontend::Engine.routes.draw do
   get '/parties/society', to: 'parties#society'
   get '/parties/service', to: 'parties#service'
   get '/parties/honor', to: 'parties#honor'
+  get '/parties/navigator/xcl_pilot', to: 'parties#navigator_xcl_pilot'
+  get '/parties/navigator/xcl_fortress', to: 'parties#navigator_xcl_fortress'
+  get '/parties/navigator/xcl_pioneer', to: 'parties#navigator_xcl_pioneer'
+  get '/parties/navigator/xcl_excellence', to: 'parties#navigator_xcl_excellence'
 
   # resources :businesses
   get '/businesses', to: 'businesses#index'
