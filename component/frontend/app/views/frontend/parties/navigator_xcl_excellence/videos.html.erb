@@ -1,0 +1,38 @@
+<main class="window-holder position-relative" style="background: url(<%= asset_pack_path 'media/images/corp/strategy/bg.png'%>) "  >
+
+  <div class="w-100" style="height:290px;"></div>
+  <div class="row g-0 mx-auto" style="width: 95%; margin-left: 0; ">
+
+    <div class="col-12">
+      <%= image_pack_tag 'media/images/party/xcl/excellence/videos/title.png', class: "" %>
+
+    </div>
+
+    <div class="row g-0 mt-4" style="">
+      <% (1..5).each do |i| %>
+        <div class="col text-center">
+          <%= image_pack_tag "media/images/party/xcl/excellence/videos/#{i}.png", class: "" %>
+          <%= image_pack_tag "media/images/party/xcl/excellence/videos/0#{i}.png", class: "mt-2" %>
+        </div>
+      <% end %>
+
+    </div>
+
+    <div class="row g-0 mt-4" style="">
+      <% (6..10).each do |i| %>
+        <div class="col text-center">
+          <%= image_pack_tag "media/images/party/xcl/excellence/videos/#{i}.png", class: "" %>
+          <%= image_pack_tag "media/images/party/xcl/excellence/videos/0#{i}.png", class: "mt-2" %>
+        </div>
+      <% end %>
+
+    </div>
+
+
+  </div>
+
+
+
+
+
+</main>

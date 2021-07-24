@@ -1,0 +1,114 @@
+<main class="window-holder position-relative" style="background: url(<%= asset_pack_path 'media/images/corp/strategy/bg.png'%>) "  >
+
+  <div class="w-100" style="height:290px;"></div>
+  <div class="row g-0" style="width: 90%; margin-left: 8%; ">
+
+    <div class="col-12">
+      <%= image_pack_tag 'media/images/party/xcl/excellence/talents/title.png', class: "" %>
+
+    </div>
+
+    <div class="row g-0 " style="margin-top: -30px;">
+      <!-- Slider main container -->
+      <div class="swiper-container talents-swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides, talents with detail -->
+          <% (1..1).each do |i| %>
+            <div class="swiper-slide talent-slide talent-slide-with-detail text-center " style="">
+              <!-- .expanded -->
+              <!-- img: width: 515px; height: 559px; -->
+              <div class="row g-0 align-items-center h-100">
+                <div class="col position-relative">
+                  <%= image_pack_tag "media/images/party/xcl/excellence/talents/#{i}.png", class: "talent-img" %>
+                  <%= image_pack_tag "media/images/party/xcl/excellence/talents/more.png", class: "talent-img position-absolute", style: 'top: 510px; left: 50%; margin-left: -81px;' %>
+                </div>
+                <div class="col talent-detail">
+                  <%= image_pack_tag "media/images/party/xcl/excellence/talents/0#{i}.png", class: '' %>
+                </div>
+
+              </div>
+
+            </div>
+          <% end %>
+
+          <!-- Slides, talents  -->
+          <% (2..2).each do |i| %>
+            <div class="swiper-slide talent-slide text-center" style="">
+              <div class="row g-0 align-items-center h-100">
+                <div class="col ">
+                  <%= image_pack_tag "media/images/party/xcl/excellence/talents/#{i}.png" %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+
+          <% (3..3).each do |i| %>
+            <div class="swiper-slide talent-slide talent-slide-with-detail text-center " style="">
+              <!-- .expanded -->
+              <!-- img: width: 515px; height: 559px; -->
+              <div class="row g-0 align-items-center h-100">
+                <div class="col position-relative">
+                  <%= image_pack_tag "media/images/party/xcl/excellence/talents/#{i}.png", class: "talent-img" %>
+                  <%= image_pack_tag "media/images/party/xcl/excellence/talents/more.png", class: "talent-img position-absolute", style: 'top: 510px; left: 50%; margin-left: -81px;' %>
+                </div>
+                <div class="col talent-detail">
+                  <%= image_pack_tag "media/images/party/xcl/excellence/talents/0#{i}.png", class: '' %>
+                </div>
+
+              </div>
+
+            </div>
+          <% end %>
+
+          <% (4..4).each do |i| %>
+            <div class="swiper-slide talent-slide text-center" style="">
+              <div class="row g-0 align-items-center h-100">
+                <div class="col ">
+                  <%= image_pack_tag "media/images/party/xcl/excellence/talents/#{i}.png" %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+
+          <% (5..5).each do |i| %>
+            <div class="swiper-slide talent-slide talent-slide-with-detail text-center " style="">
+              <!-- .expanded -->
+              <!-- img: width: 515px; height: 559px; -->
+              <div class="row g-0 align-items-center h-100">
+                <div class="col position-relative">
+                  <%= image_pack_tag "media/images/party/xcl/excellence/talents/#{i}.png", class: "talent-img" %>
+                  <%= image_pack_tag "media/images/party/xcl/excellence/talents/more.png", class: "talent-img position-absolute", style: 'top: 510px; left: 50%; margin-left: -81px;' %>
+                </div>
+                <div class="col talent-detail">
+                  <%= image_pack_tag "media/images/party/xcl/excellence/talents/0#{i}.png", class: '' %>
+                </div>
+
+              </div>
+
+            </div>
+          <% end %>
+
+          <% (6..6).each do |i| %>
+            <div class="swiper-slide talent-slide text-center" style="">
+              <div class="row g-0 align-items-center h-100">
+                <div class="col ">
+                  <%= image_pack_tag "media/images/party/xcl/excellence/talents/#{i}.png" %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+
+
+</main>

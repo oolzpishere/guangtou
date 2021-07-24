@@ -44,6 +44,10 @@ Frontend::Engine.routes.draw do
   get '/parties/navigator/xcl_fortress', to: 'parties#navigator_xcl_fortress'
   get '/parties/navigator/xcl_pioneer', to: 'parties#navigator_xcl_pioneer'
   get '/parties/navigator/xcl_excellence', to: 'parties#navigator_xcl_excellence'
+  get '/parties/navigator/xcl_excellence/talents', to: 'parties#navigator_xcl_excellence_talents'
+  get '/parties/navigator/xcl_excellence/honors', to: 'parties#navigator_xcl_excellence_honors'
+  get '/parties/navigator/xcl_excellence/videos', to: 'parties#navigator_xcl_excellence_videos'
+  get '/parties/navigator/xcl_alliance', to: 'parties#navigator_xcl_alliance'
 
   # resources :businesses
   get '/businesses', to: 'businesses#index'

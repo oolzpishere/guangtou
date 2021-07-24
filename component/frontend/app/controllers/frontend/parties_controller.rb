@@ -23,6 +23,19 @@ module Frontend
 
     end
 
+    def navigator_xcl_excellence_talents
+      render 'frontend/parties/navigator_xcl_excellence/talents'
+    end
+
+    def navigator_xcl_excellence_honors
+      render 'frontend/parties/navigator_xcl_excellence/honors'
+    end
+
+    def navigator_xcl_excellence_videos
+      render 'frontend/parties/navigator_xcl_excellence/videos'
+    end
+
+
     private
       # Use callbacks to share common setup or constraints between actions.
       def set_party
@@ -103,7 +116,7 @@ module Frontend
             active_img_path: 'media/images/party/xcl/navs/4-active.png',
             big_img_path: 'media/images/party/navs/title/4.png'
           },
-          {path: parties_service_path,
+          {path: parties_navigator_xcl_alliance_path,
             img_path: 'media/images/party/xcl/navs/5.png',
             active_img_path: 'media/images/party/xcl/navs/5-active.png',
             big_img_path: 'media/images/party/navs/title/5.png'
