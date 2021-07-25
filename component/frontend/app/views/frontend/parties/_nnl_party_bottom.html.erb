@@ -1,0 +1,33 @@
+<div class="position-fixed w-100" style="bottom: 0; height: 211px; z-index: 1000; background: no-repeat center url(<%= asset_pack_path 'media/images/party/xcl/bottom-bg.png'  %>) ">
+  <div class="row h-100 g-0 position-relative">
+
+    <div class="row" style="margin-left: 280px; margin-top: -30px;">
+
+      <% @party_navs.each do |nav| %>
+        <div class="col-auto text-center my-2">
+          <%= link_to(nav[:path], html_options = {}) do %>
+            <% nav_class = "" %>
+            <% (nav_class += ' active') if nav[:active] %>
+            <%= image_pack_tag nav[:img_path], class: nav_class, style: ""%>
+          <% end %>
+        </div>
+      <% end %>
+
+      <div class="col-auto" style="margin-left: 80px;">
+        <%= image_pack_tag 'media/images/party/nnl/bottom-title.png', class: '', style: ""%>
+      </div>
+
+    </div>
+
+
+    <!-- go back -->
+    <% if @return_path %>
+      <div class="position-absolute"  style="top: 70px; left:20px; z-index: 1020; width: auto;">
+        <%= link_to( @return_path, html_options = {}) do %>
+          <%= image_pack_tag 'media/images/party/go-back.png', class: '', style: ""%>
+        <% end %>
+      </div>
+    <% end %>
+
+  </div>
+</div>

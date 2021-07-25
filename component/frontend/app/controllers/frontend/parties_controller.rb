@@ -49,41 +49,27 @@ module Frontend
 
       def set_party_navs
         @party_navs = [
-          {path: parties_profile_path,
-            img_path: 'media/images/party/navs/1.png',
-            active_img_path: 'media/images/party/navs/01.png',
-            big_img_path: 'media/images/party/navs/title/1.png'
+          {path: parties_navigator_nnl_lead_path,
+            img_path: 'media/images/party/nnl/navs/1.png',
+            active_img_path: 'media/images/party/nnl/navs/1-active.png',
           },
-          {path: parties_brand_path,
-            img_path: 'media/images/party/navs/2.png',
-            active_img_path: 'media/images/party/navs/02.png',
-            big_img_path: 'media/images/party/navs/title/2.png'
+          {path: parties_navigator_nnl_brand_path,
+            img_path: 'media/images/party/nnl/navs/2.png',
+            active_img_path: 'media/images/party/nnl/navs/2-active.png',
           },
-          {path: parties_lead_path,
-            img_path: 'media/images/party/navs/3.png',
-            active_img_path: 'media/images/party/navs/03.png',
-            big_img_path: 'media/images/party/navs/title/3.png'
+          {path: parties_navigator_nnl_lead_path,
+            img_path: 'media/images/party/nnl/navs/3.png',
+            active_img_path: 'media/images/party/nnl/navs/3-active.png',
           },
           {path: parties_society_path,
-            img_path: 'media/images/party/navs/4.png',
-            active_img_path: 'media/images/party/navs/04.png',
-            big_img_path: 'media/images/party/navs/title/4.png'
+            img_path: 'media/images/party/nnl/navs/4.png',
+            active_img_path: 'media/images/party/nnl/navs/4-active.png',
           },
           {path: parties_service_path,
-            img_path: 'media/images/party/navs/5.png',
-            active_img_path: 'media/images/party/navs/05.png',
-            big_img_path: 'media/images/party/navs/title/5.png'
+            img_path: 'media/images/party/nnl/navs/5.png',
+            active_img_path: 'media/images/party/nnl/navs/5-active.png',
           },
-          {path: parties_honor_path,
-            img_path: 'media/images/party/navs/6.png',
-            active_img_path: 'media/images/party/navs/06.png',
-            big_img_path: 'media/images/party/navs/title/6.png'
-          },
-          {path: parties_video_path,
-            img_path: 'media/images/party/navs/07.png',
-            active_img_path: 'media/images/party/navs/7.png',
-            big_img_path: 'media/images/party/navs/007.png'
-          }
+
         ]
         @party_navs.each do |hash|
           if request.path.match(hash[:path])

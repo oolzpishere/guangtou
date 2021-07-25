@@ -31,12 +31,12 @@ Frontend::Engine.routes.draw do
   get '/parties', to: 'parties#index'
   get '/parties/navigator', to: 'parties#navigator'
 
-  get '/parties/profile', to: 'parties#profile'
-  get '/parties/brand', to: 'parties#brand'
+  get '/parties/navigator/nnl_profile', to: 'parties#navigator_nnl_profile'
+  get '/parties/navigator/nnl_brand', to: 'parties#navigator_nnl_brand'
   get '/parties/brand/detail', to: 'parties#brand_detail'
 
   get '/parties/video', to: 'parties#video'
-  get '/parties/lead', to: 'parties#lead'
+  get '/parties/navigator/nnl_lead', to: 'parties#navigator_nnl_lead'
   get '/parties/society', to: 'parties#society'
   get '/parties/service', to: 'parties#service'
   get '/parties/honor', to: 'parties#honor'

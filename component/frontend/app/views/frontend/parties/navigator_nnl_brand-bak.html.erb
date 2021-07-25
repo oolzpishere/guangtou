@@ -1,6 +1,5 @@
 <main class="window-holder position-relative" style="background: url(<%= asset_pack_path 'media/images/party/second-bg.png'%>) "  >
 
-  <%= render 'party_head' %>
 
   <!-- swiper position container -->
   <div class="float-swiper-container position-absolute w-100 h-100 video-bg-dark" style="top:0; left:0; z-index:1066; opacity: 0;">
@@ -16,8 +15,6 @@
           <div class="swiper-slide">Slide 3</div>
 
         </div>
-
-
 
         <!-- If we need pagination -->
         <div class="swiper-pagination business-swiper-pagination">
@@ -37,7 +34,7 @@
   <div class="row g-0">
     <!-- render left navs -->
     <div class="col-auto" style="width:30%;">
-      <%= render 'left_navs' %>
+      <%# render 'left_navs' %>
     </div>
 
     <!-- right content -->
@@ -64,9 +61,5 @@
 
 
 
-
-
-
-  <%# render 'profile_bottom', return_path: corp_all_path %>
 
 </main>

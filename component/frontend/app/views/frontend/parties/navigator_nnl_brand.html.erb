@@ -1,0 +1,89 @@
+<main class="window-holder position-relative" style="background: url(<%= asset_pack_path 'media/images/corp/strategy/bg.png'%>) "  >
+
+  <div class="w-100" style="height: 290px;"></div>
+
+  <div class="row g-0">
+    <!-- left content -->
+    <div class="col-auto" style="width:40%;">
+
+      <div class="row " style="width:900px; margin-top: 0px; margin-left: 80px;">
+        <div class="col-12 " style="">
+          <div class="row g-0">
+            <% (1..4).each do |i| %>
+              <div class="col-3 text-center">
+                <%= image_pack_tag "media/images/party/nnl/brand/btns/#{i}.png", class: "swiper-tag", data: {id: i} %>
+              </div>
+            <% end %>
+          </div>
+
+        </div>
+
+        <div class="col-12 text-center" style="">
+          <%= image_pack_tag 'media/images/party/nnl/brand/btns/center-btn.png', class: "swiper-tag", data: {id: 0} %>
+        </div>
+
+        <div class="col-12 " style="">
+          <div class="row g-0">
+            <% (5..8).each do |i| %>
+              <div class="col-3 text-center">
+                <%= image_pack_tag "media/images/party/nnl/brand/btns/#{i}.png", class: "swiper-tag", data: {id: i} %>
+              </div>
+            <% end %>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- right content -->
+    <div class="col" style="width: 60%; " >
+      <!-- Slider main container -->
+      <div class="swiper-container navigator-nnl-brand-swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide ps-5" style=" ">
+            <%= image_pack_tag "media/images/party/nnl/brand/title.png", class: "" %>
+            <%= image_pack_tag "media/images/party/nnl/brand/text.png", class: "mt-4" %>
+
+            <div class="row g-0" style="width: 92%;margin-top: 80px;">
+              <div class="col">
+                <%= image_pack_tag "media/images/party/nnl/brand/nav-1.png", class: "" %>
+              </div>
+              <div class="col">
+                <%= image_pack_tag "media/images/party/nnl/brand/nav-2.png", class: "" %>
+              </div>
+              <div class="col">
+                <%= image_pack_tag "media/images/party/nnl/brand/nav-3.png", class: "" %>
+              </div>
+            </div>
+
+          </div>
+
+          <% (1..8).each do |i| %>
+            <div class="swiper-slide">
+              <%= image_pack_tag "media/images/party/nnl/brand/#{i}.png", class: "" %>
+            </div>
+          <% end %>
+
+
+        </div>
+        <!-- If we need pagination -->
+        <!-- <div class="swiper-pagination"></div> -->
+
+        <!-- If we need navigation buttons -->
+        <!-- <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div> -->
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+
+</main>

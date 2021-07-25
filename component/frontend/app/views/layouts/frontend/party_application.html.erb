@@ -19,6 +19,8 @@
 
       <% if request.path.match('navigator/xcl') %>
         <%= render 'xcl_party_bottom'%>
+      <% elsif request.path.match('navigator/nnl') %>
+        <%= render 'nnl_party_bottom'%>
       <% elsif request.path != parties_path %>
         <% bottom_bg_path = (asset_pack_path 'media/images/party/bottom-bg.png') %>
         <%= render 'party_bottom', bottom_bg_path: bottom_bg_path %>
