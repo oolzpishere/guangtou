@@ -158,6 +158,15 @@ a{
   display: block;
 }
 
+#parties-navigator-page{
+  .local-detail-container{
+    display: none;
+  }
+  .local-detail-container.active{
+    display: block;
+  }
+}
+
 .business-detail-bg-img{
   img{
     display: none;

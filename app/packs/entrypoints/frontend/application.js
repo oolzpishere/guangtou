@@ -73,7 +73,7 @@ $(document).on("turbolinks:load", function() {
 
   // $('.page-transition').addClass('animate__animated animate__fadeIn');
 
-  if ( $('.industry-index-page').length > 0 ) {
+  if ( $('.industry-index-page').length ) {
     $('.point-container').on('click', function(){
       var item = $(this).parents('.industry-point-container')
       var id = $(this).data('id')
@@ -88,6 +88,33 @@ $(document).on("turbolinks:load", function() {
     })
 
   }
+
+  if ( $('#parties-navigator-page').length ) {
+    $('.point-container').on('click', function(){
+      var item = $(this).parents('.industry-point-container')
+      var id = $(this).data('id')
+      // var detail_img = $(this)
+
+      $('.industry-point-container').removeClass('active')
+      $('.industry-detail-img-container').removeClass('active')
+
+      item.addClass('active')
+      filterItemsById( $('.industry-detail-img-container'), id).addClass('active')
+
+    })
+
+    $('.detail-tag').on('click', function(){
+      $('.local-detail-container').removeClass('active')
+      var id = $(this).data('id')
+      filterItemsById( $('.local-detail-container'), id).addClass('active')
+    })
+
+    $('.local-detail-container').on('click', function(){
+      $('.local-detail-container').removeClass('active')
+    })
+
+  }
+
 
   function filterItemsById( items, id ){
     var item = items.filter(function() {

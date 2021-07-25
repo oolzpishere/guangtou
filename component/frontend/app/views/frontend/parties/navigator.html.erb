@@ -6,13 +6,13 @@
 
   <div class="row g-0" >
     <!-- render left navs -->
-    <div class="col-auto" style="width:40%;">
+    <div class="col-auto" style="width:35%;">
       <%= render 'navigator_left_navs' %>
     </div>
 
 
     <!-- right content -->
-    <div class="col" style="width:60%;" >
+    <div class="col" style="width:65%;" >
 
       <!-- Slider main container -->
       <div class="swiper-container parties-navigator-swiper">
@@ -20,15 +20,76 @@
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
           <!-- Slides 1 -->
-          <div class="swiper-slide">
-            <%= image_pack_tag 'media/images/party/navigator/local.png', class: '', style: ""%>
+          <div class="swiper-slide position-relative">
+            <%= image_pack_tag 'media/images/party/navigator/group.png', class: '', style: ""%>
 
           </div>
 
           <!-- Slides 2 -->
           <div class="swiper-slide">
-            <%= image_pack_tag 'media/images/party/navigator/local.png', class: '', style: ""%>
+            <div class="" style="width: 1550px; height:785px; background: right no-repeat url(<%= asset_pack_path 'media/images/party/navigator/local/map-bg.png'%>)">
+              <% points = [
+                { img_name: "nanning", path: corp_infos_industry_nanning_path,
+                  container_style: "top: 615px; left: 680px; z-index:1;",
+                  arrow_container_style: "top: -80px; left: 358px;",
+                  detail_img_container_style: "top: 430px; left: 30px; z-index:0;",
+                  detail_img_link_style: "bottom: 20px; left: 20px; width: 590px; height: 320px;"
+                },
+                { img_name: "laibin", path: corp_infos_industry_laibin_path,
+                  container_style: "top: 525px; left: 1130px; z-index:1;",
+                  arrow_container_style: "top: -90px; left: 0px;",
+                  detail_img_container_style: " top: 420px; left: 28px; z-index:0;",
+                  detail_img_link_style: "bottom: 20px; left: 20px; width: 590px; height: 320px;"
+                },
+                { img_name: "liuzhou", path: corp_infos_industry_liuzhou_path,
+                  container_style: "top: 10px; left: 1260px; z-index:1;",
+                  arrow_container_style: "top: 290px; left: -100px;",
+                  detail_img_container_style: " top: 390px; left: 48px; z-index:0;",
+                  detail_img_link_style: "bottom: 20px; left: 20px; width: 590px; height: 320px;"
+                },
+                { img_name: "hezhou", path: corp_infos_industry_hezhou_path,
+                  container_style: "top: 420px; left: 1510px; z-index:1;",
+                  arrow_container_style: "top: -80px; left: -100px;",
+                  detail_img_container_style: " top: 430px; left: 60px; z-index:0;",
+                  detail_img_link_style: "bottom: 20px; left: 20px; width: 590px; height: 320px;"
+                },
+                { img_name: "xinjiang", path: corp_infos_industry_xinjiang_path,
+                  container_style: "top: 180px; left: 310px; z-index:1;",
+                  arrow_container_style: "top: -100px; left: 0px;",
+                  detail_img_container_style: "top: 190px; left: 40px; z-index:0; ",
+                  detail_img_link_style: "bottom: 20px; left: 20px; width: 590px; height: 320px;"
+                },
+              ] %>
 
+              <% points.each_with_index do |point, i| %>
+                <% humanId = i += 1 %>
+                <div class="industry-point-container position-absolute" data-id=<%= humanId %> style='<%= point[:container_style] %>' >
+                  <div class="position-relative">
+                    <div class="point-container position-absolute" style='<%= point[:arrow_container_style] %>' data-id=<%= humanId %> >
+                      <%= image_pack_tag "media/images/party/navigator/local/points/#{point[:img_name]}.png", class: 'point-img'%>
+                      <%= image_pack_tag "media/images/party/navigator/local/points/#{point[:img_name]}-active.png", class: 'point-img-active'%>
+                    </div>
+
+                  </div>
+                </div>
+
+
+                <div class="industry-detail-img-container position-absolute" data-id=<%= humanId %> style='<%= point[:detail_img_container_style] %>' >
+                  <%= image_pack_tag "media/images/party/navigator/local/detail_windows/#{point[:img_name]}-bg.png", class: "" %>
+                  <%= tag.div class: "position-absolute detail-tag", style: point[:detail_img_link_style], data: {id: humanId} %>
+                </div>
+
+              <% end %>
+
+
+            </div>
+
+            <% points.each_with_index do |point, i| %>
+              <% humanId = i += 1 %>
+              <div class="local-detail-container position-absolute w-100 h-100"  data-id=<%= humanId %> style="z-index: 9; top:0px; left:0;" >
+                <%= image_pack_tag "media/images/party/navigator/local/detail_contents/#{point[:img_name]}.png", class: "" %>
+              </div>
+            <% end %>
 
           </div>
         </div>
