@@ -37,9 +37,9 @@ Frontend::Engine.routes.draw do
 
   get '/parties/video', to: 'parties#video'
   get '/parties/navigator/nnl_lead', to: 'parties#navigator_nnl_lead'
-  get '/parties/society', to: 'parties#society'
-  get '/parties/service', to: 'parties#service'
-  get '/parties/honor', to: 'parties#honor'
+  get '/parties/navigator/nnl_society', to: 'parties#navigator_nnl_society'
+  get '/parties/navigator/nnl_service', to: 'parties#navigator_nnl_service'
+  get '/parties/navigator/nnl_honor', to: 'parties#navigator_nnl_honor'
   get '/parties/navigator/xcl_pilot', to: 'parties#navigator_xcl_pilot'
   get '/parties/navigator/xcl_fortress', to: 'parties#navigator_xcl_fortress'
   get '/parties/navigator/xcl_pioneer', to: 'parties#navigator_xcl_pioneer'
