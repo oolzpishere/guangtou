@@ -7,44 +7,33 @@
   <div class="row g-0 justify-content-center m-auto" style="width:95%; ">
     <!-- left -->
     <div class=""  style="width:73%; ">
-      <div class="map-container position-relative" style="width: 1595px; height: 796px; background-image: url(<%= asset_pack_path 'media/images/corp/industry/map-bg.png'%>) ">
+      <div class="map-container position-relative" style="width: 1550px; height: 796px; margin-left: 50px; background: right no-repeat url(<%= asset_pack_path 'media/images/corp/industry/map-bg.jpg'%>) ">
 
         <% points = [
-          { img_name: "baise", path: "#",
-            container_style: "top: 0px; left: 110px; ",
-            arrow_container_style: "top: 436px; left: 110px;",
-            detail_img_container_style: "z-index:0; top: 480px; left: 328px;",
-            detail_img_link_style: "z-index:0; top: 15px; left: 655px;"
-          },
           { img_name: "nanning", path: corp_infos_industry_nanning_path,
-            container_style: "top: 615px; left: 150px; ",
-            arrow_container_style: "top: -80px; left: 308px;",
-            detail_img_container_style: "z-index:0; top: 480px; left: 578px;",
-            detail_img_link_style: "z-index:0; top: 15px; left: 420px;"
+            container_style: "top: 615px; left: 690px; z-index:1;",
+            arrow_container_style: "top: -80px; left: 358px;",
+            detail_img_link_style: "bottom: 20px; left: 20px;"
           },
           { img_name: "laibin", path: corp_infos_industry_laibin_path,
-            container_style: "top: 525px; left: 580px; ",
+            container_style: "top: 525px; left: 1140px; z-index:1;",
             arrow_container_style: "top: -90px; left: 0px;",
-            detail_img_container_style: "z-index:0; top: 470px; left: 688px;",
-            detail_img_link_style: "z-index:0; top: 15px; left: 325px;"
+            detail_img_link_style: "bottom: 20px; left: 20px;"
           },
           { img_name: "liuzhou", path: corp_infos_industry_liuzhou_path,
-            container_style: "top: 0px; left: 680px; ",
-            arrow_container_style: "top: 290px; left: -100px;",
-            detail_img_container_style: "z-index:0; top: 380px; left: 688px;",
-            detail_img_link_style: "z-index:0; top: 80px; left: 325px;"
+            container_style: "top: 10px; left: 1260px; z-index:1;",
+            arrow_container_style: "top: 300px; left: -100px;",
+            detail_img_link_style: "bottom: 20px; left: 20px;"
           },
           { img_name: "hezhou", path: corp_infos_industry_hezhou_path,
-            container_style: "top: 410px; left: 930px; ",
+            container_style: "top: 420px; left: 1510px; z-index:1;",
             arrow_container_style: "top: -80px; left: -100px;",
-            detail_img_container_style: "z-index:0; top: 430px; left: 920px;",
-            detail_img_link_style: "z-index:0; top: 45px; left: 100px;"
+            detail_img_link_style: "bottom: 20px; left: 20px;"
           },
           { img_name: "xinjiang", path: corp_infos_industry_xinjiang_path,
-            container_style: "top: 150px; left: 1350px; ",
+            container_style: "top: 130px; left: 260px; z-index:1;",
             arrow_container_style: "top: -100px; left: 0px;",
-            detail_img_container_style: "z-index:0; top: 160px; left: 1010px;",
-            detail_img_link_style: "z-index:0; top: 300px; left: 15px;"
+            detail_img_link_style: "bottom: 20px; left: 20px;"
           },
         ] %>
 
@@ -61,14 +50,78 @@
           </div>
 
 
-          <div class="industry-detail-img-container position-absolute" data-id=<%= humanId %> style='<%= point[:detail_img_container_style] %>' >
-            <%= image_pack_tag "media/images/corp/industry/detail_windows/#{point[:img_name]}-bg.png", class: "" %>
-            <%= link_to( point[:path] ) do %>
-              <%= image_pack_tag "media/images/corp/industry/detail_windows/#{point[:img_name]}.png", class: "position-absolute", style: point[:detail_img_link_style] %>
-            <% end %>
-          </div>
-
         <% end %>
+        <!-- window 1 nanning -->
+        <div class="industry-detail-img-container position-absolute" data-id=1 style="top: 430px; left: -50px; width: 1092px; height: 377px; z-index:0; background: url(<%= asset_pack_path 'media/images/corp/industry/detail_windows/nanning-bg.png'%>)" >
+          <div class="row g-0 align-content-center" style="width: 730px; height:370px;">
+            <div class="col-12 text-center" >
+              <%= link_to( points[0][:path] ) do %>
+                <%= image_pack_tag "media/images/corp/industry/detail_windows/tags/nanning-tag1.png", class: "", style: points[0][:detail_img_link_style] %>
+              <% end %>
+            </div>
+
+            <div class="col-12 text-center mt-4">
+              <%= link_to( points[0][:path] ) do %>
+                <%= image_pack_tag "media/images/corp/industry/detail_windows/tags/nanning-tag2.png", class: "", style: points[0][:detail_img_link_style] %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <!-- window 2 laibin  -->
+        <div class="industry-detail-img-container position-absolute" data-id=2 style="top: 430px; left: -40px; width: 1180px; height: 377px; z-index:0; background: url(<%= asset_pack_path 'media/images/corp/industry/detail_windows/laibin-bg.png'%>)" >
+          <div class="row g-0 align-content-center" style="width: 730px; height:370px;">
+            <div class="col-12 text-center" >
+              <%= link_to( points[1][:path] ) do %>
+                <%= image_pack_tag "media/images/corp/industry/detail_windows/tags/laibin-tag1.png", class: "", style: points[1][:detail_img_link_style] %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <!-- window 3 liuzhou  -->
+        <div class="industry-detail-img-container position-absolute" data-id=3 style="top: 390px; left: -50px; width: 1216px; height: 414px; z-index:0; background: url(<%= asset_pack_path 'media/images/corp/industry/detail_windows/liuzhou-bg.png'%>)" >
+          <div class="row g-0 align-content-center" style="width: 730px; height:370px; margin-top: 50px;">
+            <div class="col-12 text-center" >
+              <%= link_to( points[2][:path] ) do %>
+                <%= image_pack_tag "media/images/corp/industry/detail_windows/tags/liuzhou-tag1.png", class: "", style: points[2][:detail_img_link_style] %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <!-- window 4 hezhou  -->
+        <div class="industry-detail-img-container position-absolute" data-id=4 style="top: 410px; left: -50px; width: 1456px; height: 389px; z-index:0; background: url(<%= asset_pack_path 'media/images/corp/industry/detail_windows/hezhou-bg.png'%>)" >
+          <div class="row g-0 align-content-center" style="width: 730px; height:370px; margin-top: 30px;">
+            <div class="col-12 text-center" >
+              <%= link_to( points[3][:path] ) do %>
+                <%= image_pack_tag "media/images/corp/industry/detail_windows/tags/hezhou-tag1.png", class: "", style: points[3][:detail_img_link_style] %>
+              <% end %>
+            </div>
+            <div class="col-12 text-center mt-3" >
+              <%= link_to( points[3][:path] ) do %>
+                <%= image_pack_tag "media/images/corp/industry/detail_windows/tags/hezhou-tag2.png", class: "", style: points[3][:detail_img_link_style] %>
+              <% end %>
+            </div>
+            <div class="col-12 text-center mt-3" >
+              <%= link_to( points[3][:path] ) do %>
+                <%= image_pack_tag "media/images/corp/industry/detail_windows/tags/hezhou-tag3.png", class: "", style: points[3][:detail_img_link_style] %>
+              <% end %>
+            </div>
+            <div class="col-12 text-center mt-3" >
+              <%= link_to( points[3][:path] ) do %>
+                <%= image_pack_tag "media/images/corp/industry/detail_windows/tags/hezhou-tag4.png", class: "", style: points[3][:detail_img_link_style] %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <!-- window 5 xinjiang  -->
+        <div class="industry-detail-img-container position-absolute" data-id=5 style="top: 140px; left: -80px; width: 734px; height: 649px; z-index:0; background: url(<%= asset_pack_path 'media/images/corp/industry/detail_windows/xinjiang-bg.png'%>)" >
+          <div class="row g-0 align-content-center" style="width: 730px; height:370px; margin-top: 290px;">
+            <div class="col-12 text-center" >
+              <%= link_to( points[4][:path] ) do %>
+                <%= image_pack_tag "media/images/corp/industry/detail_windows/tags/xinjiang-tag1.png", class: "", style: points[4][:detail_img_link_style] %>
+              <% end %>
+            </div>
+          </div>
+        </div>
 
 
       </div>
