@@ -175,3 +175,30 @@ a{
     display: block;
   }
 }
+
+#parties-navigator-nnl_lead-page{
+  .detail-content{
+    display: none;
+  }
+  .detail-content.active{
+    display: block;
+  }
+}
+
+#parties-navigator-xcl_excellence-videos-page{
+  .video-bg-dark{
+    background-color: rgba(0, 0, 0, 0.97);
+  }
+  .absolute-video-container{
+    display: none;
+  }
+  .absolute-video-container.active{
+    display: block;
+  }
+  .video-content-container{
+    display: none;
+  }
+  .video-content-container.active{
+    display: block;
+  }
+}

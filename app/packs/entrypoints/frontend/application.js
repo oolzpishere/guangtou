@@ -23,6 +23,9 @@ import "src/my_anime_css.js"
 import "src/advantages/equipment.js"
 import "src/parties/index.js"
 import "src/parties/navigator.js"
+import "src/parties/navigator/xcl_excellence/videos.js"
+
+
 
 
 import {MyTl} from "src/my_tl.js"
@@ -170,6 +173,13 @@ $(document).on("turbolinks:load", function() {
     myTl.addMovements();
   }
 
+  if ( $('#parties-navigator-nnl_lead-page').length ) {
+    $('.tag').on('click', function(){
+      let id = $(this).data('id')
+      $('.detail-content').removeClass('active')
+      filterItemsById( $('.detail-content'), id ).addClass('active')
+    })
+  }
 
 })
 

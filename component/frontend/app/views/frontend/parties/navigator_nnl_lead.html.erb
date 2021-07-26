@@ -1,17 +1,18 @@
 <main class="window-holder position-relative" style="background: url(<%= asset_pack_path 'media/images/corp/strategy/bg.png'%>) "  >
+  <div class="w-100" style="height: 300px;"></div>
 
   <div class="d-flex">
     <!-- left content -->
-    <div class=""  style="width:40%;">
+    <div class=""  style="width:40%; padding-left: 90px;">
       <div class="row">
-        <div class="col-12">
-          <%= image_pack_tag 'media/images/party/nnl/lead/title-1.png', class: "" %>
+        <div class="col-12 text-center">
+          <%= image_pack_tag 'media/images/party/nnl/lead/title.png', class: "" %>
         </div>
-        <div class="col-12">
-          <%= image_pack_tag 'media/images/party/nnl/lead/title-1.png', class: "" %>
+        <div class="col-12 text-center mt-5">
+          <%= image_pack_tag 'media/images/party/nnl/lead/title-1.png', class: "tag", data: {id: 1} %>
         </div>
-        <div class="col-12">
-          <%= image_pack_tag 'media/images/party/nnl/lead/title-2.png', class: "" %>
+        <div class="col-12 text-center mt-5">
+          <%= image_pack_tag 'media/images/party/nnl/lead/title-2.png', class: "tag", data: {id: 2} %>
         </div>
       </div>
     </div>
@@ -19,12 +20,12 @@
     <!-- right content -->
     <div class="" style="width:60%;" >
 
-      <div class="row g-0 mx-auto" style="width:100%; margin-top: 200px;">
+      <div class="row g-0 mx-auto" style="width:100%; margin-top: 100px;">
         <!-- main content -->
         <div class="col-12 text-center position-relative" style=" " >
 
-          <%= image_pack_tag 'media/images/party/nnl/lead/1-detail.png', class: "" %>
-          <%= image_pack_tag 'media/images/party/nnl/lead/2-detail.png', class: "my-5" %>
+          <%= image_pack_tag 'media/images/party/nnl/lead/1-detail.png', class: "detail-content active", data: {id: 1} %>
+          <%= image_pack_tag 'media/images/party/nnl/lead/2-detail.png', class: "detail-content", data: {id: 2} %>
 
         </div>
 
