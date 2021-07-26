@@ -1,5 +1,28 @@
 <main class="window-holder position-relative" style="background: url(<%= asset_pack_path 'media/images/corp/strategy/bg.png'%>) "  >
 
+  <div class="absolute-video-container position-absolute w-100 h-100 video-bg-dark" style="top:0; left:0; z-index:10;">
+    <div class="video-content-container  position-relative" >
+      <div class="w-100" style="height: 260px;"></div>
+      <div class="row g-0">
+        <div class="col-4 d-flex align-items-center justify-content-center" style="">
+          <%= image_pack_tag "media/images/party/xcl/fortress/7branch.png", class: "" %>
+        </div>
+        <div class="col-8 position-relative " style=" " >
+          <!-- <i class="bi bi-x-lg position-absolute close-video" style="font-size: 2rem; color: white; bottom: 0; left: -2em;"></i> -->
+          <!-- data-setup='{"controls": true}'> -->
+          <video
+              id="party-7branch-video"
+              class="video-js my-vjs-skin "
+              width="1550"
+              enableTouchActivity
+              data-setup=''>
+            <source src='<%= "/videos/parties/xcl/fortress/7branch.mp4" %>' type="video/mp4"></source>
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="w-100" style="height:290px;"></div>
   <div class="row g-0" style="width: 90%; margin-left: 8%; ">
 
@@ -19,7 +42,7 @@
       </div>
 
       <div class="col-auto " style="left: 0px;">
-        <%= image_pack_tag 'media/images/party/xcl/fortress/img2.png', class: "" %>
+        <%= image_pack_tag 'media/images/party/xcl/fortress/img2.png', class: "video-tag" %>
       </div>
     </div>
 

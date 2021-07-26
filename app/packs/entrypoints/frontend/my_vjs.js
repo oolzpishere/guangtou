@@ -146,6 +146,43 @@ $(document).on("turbolinks:load", function() {
     });
   }
 
+  if ( $('#parties-navigator-xcl_fortress-page').length ) {
+    var branch_player = videojs('party-7branch-video', {
+      controls: true,
+      autoplay: false,
+      preload: 'auto',
+      controlBar: {
+        'pictureInPictureToggle': false,
+        volumePanel: {
+          inline: true
+        }
+      }
+    });
+
+    $('.video-tag').on('click', function(){
+      $('.absolute-video-container').addClass('active')
+      $('.video-content-container').addClass('active')
+      branch_player.play()
+    })
+
+    addCloseBtns(branch_player)
+    $('.my-video-close-btn').on('click touchstart mouseenter', function(){
+      branch_player.pause()
+      $('.absolute-video-container').removeClass('active')
+      $('.video-content-container').removeClass('active')
+    })
+
+  }
+
+  function addCloseBtns(player) {
+    var mButton = videojs.getComponent('closeButton');
+    var button = new mButton( player, {});
+    button.addClass('my-video-close-btn')
+
+    // strategy_player.controlBar.el().prepend( button.el() )
+    player.controlBar.addChild(button, {}, 0)
+  }
+
 });
 
 

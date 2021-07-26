@@ -187,7 +187,7 @@ a{
 
 #parties-navigator-xcl_excellence-videos-page{
   .video-bg-dark{
-    background-color: rgba(0, 0, 0, 0.97);
+    background-color: rgba(0, 0, 0, 0.96);
   }
   .absolute-video-container{
     display: none;
@@ -200,5 +200,30 @@ a{
   }
   .video-content-container.active{
     display: block;
+  }
+}
+
+#parties-navigator-xcl_fortress-page{
+  .video-bg-dark{
+    background-color: rgba(0, 0, 0, 0.96);
+  }
+}
+
+.absolute-video-container{
+  display: none;
+}
+.absolute-video-container.active{
+  display: block;
+}
+.video-content-container{
+  display: none;
+}
+.video-content-container.active{
+  display: block;
+}
+
+#parties-navigator-nnl_brand-page{
+  .video-bg-dark{
+    background-color: rgba(0, 0, 0, 0.96);
   }
 }

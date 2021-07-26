@@ -4,8 +4,8 @@ import videojs from  "video.js"
 
 $(document).on("turbolinks:load", function() {
 
-  if ( $('#parties-navigator-xcl_excellence-videos-page').length ) {
-    var activitiesVideos = new ActivitiesVideos
+  if ( $('#parties-navigator-nnl_brand-page').length ) {
+    var myVideos = new MyVideos
 
     $('.video-tag').on('click', function(){
       var videoName = $(this).data('name')
@@ -13,7 +13,7 @@ $(document).on("turbolinks:load", function() {
       $('.absolute-video-container').addClass('active')
       filterItemsByKey( $('.video-content-container'), 'name', videoName ).addClass('active')
 
-      activitiesVideos.videos[videoName].play()
+      myVideos.videos[videoName].play()
     })
 
   }
@@ -28,7 +28,7 @@ $(document).on("turbolinks:load", function() {
 
 });
 
-class ActivitiesVideos {
+class MyVideos {
   constructor() {
     this.videos = {}
     this.videoNames = []
@@ -64,19 +64,6 @@ class ActivitiesVideos {
       });
       _self.videos[ videoName ] = player
     });
-
-    // var wj_player = videojs('party-wj-video', {
-    //   controls: true,
-    //   autoplay: false,
-    //   preload: 'auto',
-    //   controlBar: {
-    //     'pictureInPictureToggle': false,
-    //     volumePanel: {
-    //       inline: true
-    //     }
-    //   }
-    // });
-    // _self.videos['wj'] = wj_player
 
   }
 
