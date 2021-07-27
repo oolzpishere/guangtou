@@ -227,3 +227,12 @@ a{
     background-color: rgba(0, 0, 0, 0.96);
   }
 }
+
+#parties-video-page{
+  .video-tag{
+    opacity: 0.6;
+  }
+  .video-tag.active{
+    opacity: 1;
+  }
+}

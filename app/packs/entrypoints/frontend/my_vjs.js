@@ -174,6 +174,7 @@ $(document).on("turbolinks:load", function() {
 
   }
 
+
   function addCloseBtns(player) {
     var mButton = videojs.getComponent('closeButton');
     var button = new mButton( player, {});

@@ -22,6 +22,7 @@ import "src/my_anime_css.js"
 
 import "src/advantages/equipment.js"
 import "src/parties/index.js"
+import "src/parties/video.js"
 import "src/parties/navigator.js"
 import "src/parties/navigator/xcl_excellence/videos.js"
 import "src/parties/navigator/nnl_brand.js"

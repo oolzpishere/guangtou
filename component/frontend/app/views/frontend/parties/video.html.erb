@@ -1,60 +1,34 @@
-<main class="window-holder position-relative" style="background: url(<%= asset_pack_path 'media/images/party/second-bg.png'%>) "  >
+<main class="window-holder position-relative" style="background: url(<%= asset_pack_path 'media/images/corp/strategy/bg.png'%>) "  >
 
-  <%= render 'party_head' %>
+  <% videos = [ {name: 'xcl', video_path: "/videos/parties/activities/wj.mp4" },
+                {name: 'nnl', video_path: "/videos/parties/activities/gqbn.mp4"} ] %>
 
+  <div class="w-100" style="height: 290px;"></div>
 
-  <div class="row g-0">
-    <!-- render left navs -->
-    <div class="col-auto" style="width:20%; margin-left: 160px; margin-top: 200px;">
-      <div class="col text-center">
-        <%= image_pack_tag 'media/images/party/index-gt.png', class: "", style: ""%>
-      </div>
-
-      <div class="col text-center mt-5">
-        <%= image_pack_tag 'media/images/party/index-xcl.png', class: "", style: ""%>
-      </div>
+  <div class="row g-0 mx-auto" style="width:90%;">
+    <div class="col-auto text-end" style="width:30%; padding-right: 80px;">
+      <%= image_pack_tag 'media/images/party/video/xcl.png', class: "video-tag", data: {name: videos[0][:name] } %>
+      <%= image_pack_tag 'media/images/party/video/nnl.png', class: "video-tag mt-5", data: {name: videos[1][:name] } %>
 
     </div>
+    <div class="col-auto" style="width:70%;">
 
-    <!-- right content -->
-    <div class="col" style="" >
-      <div class="row mx-auto" style="width:100%; margin-top: 180px;">
-        <!-- main content -->
-        <div class="col-12 " >
 
-          <div id="" class="mt-3" style="">
-            <!-- <i class="bi bi-x-lg position-absolute close-video" style="font-size: 2rem; color: white; bottom: 0; left: -2em;"></i> -->
-            <!-- data-setup='{"controls": true}'> -->
-            <video
-                id="brand-video"
-                class="video-js my-vjs-skin m-auto"
-                width="1700"
-                enableTouchActivity
-                preload='auto'
-                poster=<%= asset_pack_path 'media/images/party/video/cover.png' %>
-                data-setup=''>
-              <source src="/videos/strategy.mp4" type="video/mp4"></source>
-              <p class="vjs-no-js">
-                To view this video please enable JavaScript, and consider upgrading to a
-                web browser that
-              </p>
-            </video>
-          </div>
-
+      <% videos.each_with_index do |video, i| %>
+        <div class="video-content-container h-100 position-relative" data-name=<%= video[:name] %> >
+          <video
+              id=<%= "party-#{video[:name]}-video" %>
+              class="video-js my-vjs-skin "
+              width="1520"
+              enableTouchActivity
+              data-setup=''>
+            <source src='<%= video[:video_path] %>' type="video/mp4"></source>
+          </video>
         </div>
-
-
-      </div>
+      <% end %>
 
     </div>
-
   </div>
 
-
-
-
-
-
-  <%# render 'profile_bottom', return_path: corp_all_path %>
 
 </main>
