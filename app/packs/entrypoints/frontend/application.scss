@@ -183,6 +183,12 @@ a{
   .detail-content.active{
     display: block;
   }
+  .tag{
+    opacity: 0.6;
+  }
+  .tag.active{
+    opacity: 1;
+  }
 }
 
 #parties-navigator-xcl_excellence-videos-page{

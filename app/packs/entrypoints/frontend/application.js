@@ -30,6 +30,7 @@ import "src/parties/navigator/nnl_brand.js"
 
 
 import {MyTl} from "src/my_tl.js"
+import {HScroll} from "src/h_scroll.js"
 
 
 
@@ -164,6 +165,20 @@ $(document).on("turbolinks:load", function() {
     $('.scroll-down-content').scrollTo("+=" + step + "px", 500)
   })
 
+  // $('.scroll-left-half').on('click', function(){
+  //   var step = $('.scroll-content').width() / 2;
+  //   $('.scroll-content').scrollTo("-=" + step + "px", 500)
+  // })
+  //
+  // $('.scroll-right-half').on('click', function(){
+  //   var step = $('.scroll-content').width() / 2;
+  //   $('.scroll-content').scrollTo("+=" + step + "px", 500)
+  // })
+
+  if ( $('.scroll-wrap').length ) {
+    var hScroll = new HScroll
+  }
+
   if ( $('#corp_infos-strategy-gt-page').length ) {
     var myTl = new MyTl();
     myTl.addMovements();
@@ -176,6 +191,9 @@ $(document).on("turbolinks:load", function() {
 
   if ( $('#parties-navigator-nnl_lead-page').length ) {
     $('.tag').on('click', function(){
+      $('.tag').removeClass('active')
+      $(this).addClass('active')
+
       let id = $(this).data('id')
       $('.detail-content').removeClass('active')
       filterItemsById( $('.detail-content'), id ).addClass('active')

@@ -98,6 +98,15 @@ $center-big-play-button: true; // true default
   }
 
 }
+
+.my-vjs-skin.left-play {
+  .vjs-big-play-button {
+    left: 0.5em;
+    bottom: 0.5em;
+    margin-left: auto;
+    margin-top: auto;
+  }
+}
 // add big-play-button when paused
 // or https://stackoverflow.com/a/45357082/6256690
 // .vjs-has-started.vjs-paused .vjs-big-play-button {
