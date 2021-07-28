@@ -1,33 +1,29 @@
 import 'jquery.scrollto'
 
+import { MyScroll } from './my_scroll'
+
 export {  HScroll };
-
-class HScroll {
+// TODO: add vertical scroll
+class HScroll extends MyScroll {
   constructor( ) {
-    this.scrollWrap = $('.scroll-wrap')
-    this.scrollContent = $('.scroll-content')
-    this.position = 'start'
+    super();
+    // this.direction = 'horizontal'
 
-    this.direction = 'horizontal'
-
-    this.initScroll()
   }
 
   initScroll(){
+    super.initScroll();
     var _self = this
     _self.initLeftHalf()
     _self.initRightHalf()
 
-    _self.addTouchUpdateArrow()
-
-    _self.updateArrow()
   }
 
   initLeftHalf(){
     var _self = this
     $('.scroll-left-half').on('click', function(){
-      var step = $('.scroll-wrap').width() / 2;
-      $('.scroll-wrap').scrollTo("-=" + step + "px", 500, {
+      var step = _self.scrollWrap.width() / 2;
+      _self.scrollWrap.scrollTo("-=" + step + "px", 500, {
         onAfter: function() {
           _self.updateArrow()
         }
@@ -38,8 +34,8 @@ class HScroll {
   initRightHalf(){
     var _self = this
     $('.scroll-right-half').on('click', function(){
-      var step = $('.scroll-wrap').width() / 2;
-      $('.scroll-wrap').scrollTo("+=" + step + "px", 500, {
+      var step = _self.scrollWrap.width() / 2;
+      _self.scrollWrap.scrollTo("+=" + step + "px", 500, {
         onAfter: function() {
           _self.updateArrow()
         }
@@ -91,8 +87,6 @@ class HScroll {
     var _self = this
     return ( _self.scrollWrap.scrollLeft() + _self.scrollWrap.width() ) >= _self.scrollContent.width()
   }
-
-
 
 
 }

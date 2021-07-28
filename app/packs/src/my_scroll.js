@@ -4,50 +4,30 @@ import 'jquery.scrollto'
 export {  MyScroll };
 
 class MyScroll {
-  constructor( opts = {} ) {
+  constructor( ) {
     this.scrollWrap = $('.scroll-wrap')
     this.scrollContent = $('.scroll-content')
     this.position = 'start'
 
-    this.setDirection(opts)
+    this.initScroll()
 
   }
 
-  setDirection(opts){
-    if (opts.direction) {
-      this.direction = opts.direction
-    } else {
-      this.direction = 'horizontal'
-    }
-  }
-
-  scrollPosition(){
+  initScroll(){
     var _self = this
-    if ( _self.direction == 'horizontal' ) {
-      horizontalPosition()
-    } else {
-
-    }
+    this.updateArrow()
+    this.addTouchUpdateArrow()
   }
 
-  horizontalPosition(){
+  updateArrow() {
     var _self = this
-    if ( _self.scrollWrap.scrollLeft() == 0 ) {
-      _self.position = 'start'
-    } else if ( _self.isHorizontalEnd() ) {
-      _self.position = 'end'
-    } else {
-      _self.position = 'scrolling'
-    }
-
   }
 
-  isHorizontalEnd(){
+  addTouchUpdateArrow(){
     var _self = this
-    return ( _self.scrollWrap.scrollLeft() + _self.scrollWrap.width() ) >= _self.scrollContent.width()
+    _self.scrollWrap.on('touchmove touchend', function(){
+      _self.updateArrow()
+    })
   }
-
-
-
 
 }

@@ -1,20 +1,29 @@
 import 'jquery.scrollto'
 
 export {  HScroll };
-
+// TODO: add super class and add vertical scroll
 class HScroll {
-  constructor( opts = {} ) {
+  constructor( ) {
     this.scrollWrap = $('.scroll-wrap')
     this.scrollContent = $('.scroll-content')
     this.position = 'start'
 
-    this.setDirection(opts)
     this.direction = 'horizontal'
 
     this.initScroll()
   }
 
   initScroll(){
+    var _self = this
+    _self.initLeftHalf()
+    _self.initRightHalf()
+
+    _self.addTouchUpdateArrow()
+
+    _self.updateArrow()
+  }
+
+  initLeftHalf(){
     var _self = this
     $('.scroll-left-half').on('click', function(){
       var step = $('.scroll-wrap').width() / 2;
@@ -23,9 +32,11 @@ class HScroll {
           _self.updateArrow()
         }
       });
-
     })
+  }
 
+  initRightHalf(){
+    var _self = this
     $('.scroll-right-half').on('click', function(){
       var step = $('.scroll-wrap').width() / 2;
       $('.scroll-wrap').scrollTo("+=" + step + "px", 500, {
@@ -34,12 +45,13 @@ class HScroll {
         }
       });
     })
+  }
 
+  addTouchUpdateArrow(){
+    var _self = this
     $('.scroll-wrap').on('touchmove touchend', function(){
       _self.updateArrow()
     })
-
-    _self.updateArrow()
   }
 
   updateArrow() {
@@ -52,26 +64,14 @@ class HScroll {
     }
   }
 
-  setDirection(opts){
-    if (opts.direction) {
-      this.direction = opts.direction
-    } else {
-      this.direction = 'horizontal'
-    }
-  }
-
   scrollPosition(){
     var _self = this
-    if ( _self.direction == 'horizontal' ) {
-      return _self.horizontalPosition()
-    } else {
-
-    }
+    return _self.horizontalPosition()
   }
 
   horizontalPosition(){
     var _self = this
-    if ( _self.scrollWrap.scrollLeft() == 0 ) {
+    if ( _self.isHorizontalStart() ) {
       _self.position = 'start'
     } else if ( _self.isHorizontalEnd() ) {
       _self.position = 'end'
@@ -80,6 +80,12 @@ class HScroll {
     }
     return _self.position
   }
+
+  isHorizontalStart(){
+    var _self = this
+    return ( _self.scrollWrap.scrollLeft() == 0 )
+  }
+
 
   isHorizontalEnd(){
     var _self = this
