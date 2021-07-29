@@ -96,12 +96,12 @@
     left: -160px;
     bottom: 0px;
     z-index: 1066;
-    // .my-swiper-button-prev{
-    //   background: center no-repeat url('../../images/buttons/swiper-up-btn.png');
-    // }
-    // .my-swiper-button-next{
-    //   background: center no-repeat url('../../images/buttons/swiper-down-btn.png');
-    // }
+    .my-swiper-button-prev{
+      background: center no-repeat url('../../images/buttons/left-arrow-red.png');
+    }
+    .my-swiper-button-next{
+      background: center no-repeat url('../../images/buttons/right-arrow-red.png');
+    }
   }
 }
 
