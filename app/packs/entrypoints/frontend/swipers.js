@@ -220,7 +220,7 @@ $(document).on("turbolinks:load", function() {
             slidesPerView: "auto",
             freeMode: true,
             autoplay: {
-              delay: 15000,
+              delay: 35000,
             },
             navigation: {
               nextEl: '.my-swiper-button-next',
@@ -240,9 +240,13 @@ $(document).on("turbolinks:load", function() {
     })
 
     var talentsSwiperAutoplayTimeout;
-    talentsSwiper.on('sliderMove', function(){
+    $('.talents-swiper').on('touchstart', function(){
       talentsSwiperRealCountDown()
     })
+
+    // talentsSwiper.on('sliderMove', function(){
+    //   talentsSwiperRealCountDown()
+    // })
 
     talentsSwiper.on('slideChange', function(){
       talentsSwiperRealCountDown()
@@ -253,10 +257,10 @@ $(document).on("turbolinks:load", function() {
       talentsSwiper.autoplay.stop();
 
       clearTimeout(talentsSwiperAutoplayTimeout)
-      // 15 + 15 second to slide next.
+      // 35 + 35 second to slide next.
       talentsSwiperAutoplayTimeout = setTimeout( function() {
         talentsSwiper.autoplay.start();
-      }, 15000);
+      }, 35000);
     }
 
   }
