@@ -29,9 +29,9 @@
 
 
 .my-swiper-navigation-container{
-  $swiper-navigation-size: 98px;
-  width: 300px;
-  height: 100px;
+  $swiper-navigation-size: 74px;
+  width: 225px;
+  height: 75px;
   position: absolute;
   z-index: 1022;
   display: flex;
@@ -79,8 +79,8 @@
 
 #corp_infos-page{
   .my-swiper-navigation-container{
-    left: 60px;
-    bottom: 320px;
+    left: 20px;
+    bottom: 230px;
     z-index: 1066;
     .my-swiper-button-prev{
       background: center no-repeat url('../../images/buttons/swiper-up-btn.png');
