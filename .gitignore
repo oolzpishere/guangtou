@@ -41,6 +41,7 @@ yarn-debug.log*
 
 /public/videos
 /app/packs/images
+/app/packs/images_2560_bu
 
 ER_README.md
 /app/packs/images
