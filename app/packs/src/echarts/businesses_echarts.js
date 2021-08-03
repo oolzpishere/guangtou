@@ -344,8 +344,8 @@ $(document).on("turbolinks:load", function() {
   						show: true,
   						period: 6,
   						trailLength: 0,
-  						// symbol: planePath, // 特效形状，可以用其他svg pathdata路径代替
-  						symbolSize: 5 //org 5
+  						symbol: planePath, // 特效形状，可以用其他svg pathdata路径代替
+  						symbolSize: 20 //org 5
   					},
   					lineStyle: {
   						normal: {
