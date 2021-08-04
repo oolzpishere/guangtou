@@ -13,23 +13,23 @@
       <div class="swiper-wrapper">
         <!-- Slides train slide -->
         <div class="swiper-slide position-relative">
-          <div class="w-100" style="height: 420px;"></div>
+          <div class="w-100" style="height: 315px;"></div>
           <!-- text intro -->
-          <div class="position-absolute" style="top:350px; left: 80px;">
+          <div class="position-absolute" style="top:262px; left: 60px;">
             <%= image_pack_tag 'media/images/businesses/train/text.png', class: '', style: '' %>
           </div>
 
           <!-- product container -->
-          <div class=" position-relative"  style="width: 1784px; height: 571px; margin-left: 660px; background: no-repeat left top url(<%= asset_pack_path 'media/images/businesses/train/train.png'%>) " >
+          <div class=" position-relative"  style="width: 1338px; height: 428px; margin-left: 495px; background: no-repeat left top url(<%= asset_pack_path 'media/images/businesses/train/train.png'%>) " >
             <!-- point 1 -->
             <% points = [
-              { container_style: "top:-70px; left:400px;", arrow_container_style: "top: 370px; left: 110px;" },
-              { container_style: "top:-90px; left:760px;", arrow_container_style: "top: 260px; left: 75px;" },
-              { container_style: "top:-60px; left:1120px; ", arrow_container_style: "top: 340px; left: -10px; z-index:1;" },
-              { container_style: "top: 320px; left:1020px; ", arrow_container_style: "top: -60px; left: 205px; z-index:1;" },
-              { container_style: "top:250px; left:1340px; ", arrow_container_style: "top: -40px; left: -40px;" },
+              { container_style: "top:-52px; left:300px;", arrow_container_style: "top: 277px; left: 82px;" },
+              { container_style: "top:-67px; left:570px;", arrow_container_style: "top: 195px; left: 56px;" },
+              { container_style: "top:-45px; left:840px; ", arrow_container_style: "top: 255px; left: -7px; z-index:1;" },
+              { container_style: "top: 240px; left:765px; ", arrow_container_style: "top: -45px; left: 153px; z-index:1;" },
+              { container_style: "top:187px; left:1005px; ", arrow_container_style: "top: -30px; left: -30px;" },
               # 6
-              { container_style: "top:40px; left:1400px; ", arrow_container_style: "top: 140px; left: 45px;" },
+              { container_style: "top:30px; left:1050px; ", arrow_container_style: "top: 105px; left: 33px;" },
             ] %>
             <% points.each_with_index do |point, i| %>
               <% humanId = i += 1 %>
@@ -56,18 +56,18 @@
         </div>
         <!-- slide 2 oil-truck-slide -->
         <div class="swiper-slide position-relative">
-          <div class="w-100" style="height: 370px;"></div>
+          <div class="w-100" style="height: 277px;"></div>
           <!-- text intro -->
-          <div class="position-absolute" style="top:350px; left: 80px;">
+          <div class="position-absolute" style="top:262px; left: 60px;">
             <%= image_pack_tag 'media/images/businesses/train/text.png', class: '', style: '' %>
           </div>
 
           <!-- product container -->
-          <div class=" position-relative"  style="width: 1699px; height: 544px; margin-left: 740px; background: no-repeat left top url(<%= asset_pack_path 'media/images/businesses/train/metro.png'%>) " >
+          <div class=" position-relative"  style="width: 1274px; height: 408px; margin-left: 555px; background: no-repeat left top url(<%= asset_pack_path 'media/images/businesses/train/metro.png'%>) " >
             <!-- point 1 -->
             <% points = [
-              { container_style: "top:380px; left:1100px;", arrow_container_style: "top: -40px; left: -40px;" },
-              { container_style: "top:-50px; left:1130px;", arrow_container_style: "top: 270px; left: -10px;" },
+              { container_style: "top:285px; left:825px;", arrow_container_style: "top: -30px; left: -30px;" },
+              { container_style: "top:-37px; left:847px;", arrow_container_style: "top: 202px; left: -7px;" },
             ] %>
             <% points.each_with_index do |point, i| %>
               <% humanId = i += 1 %>
@@ -95,18 +95,18 @@
 
         <!-- slide 3 bus-slide -->
         <div class="swiper-slide position-relative">
-          <div class="w-100" style="height: 370px;"></div>
+          <div class="w-100" style="height: 277px;"></div>
           <!-- text intro -->
-          <div class="position-absolute" style="top:350px; left: 80px;">
+          <div class="position-absolute" style="top:262px; left: 60px;">
             <%= image_pack_tag 'media/images/businesses/train/text.png', class: '', style: '' %>
           </div>
 
           <!-- product container -->
-          <div class=" position-relative"  style="width: 1783px; height: 571px; margin-left: 650px; background: no-repeat left top url(<%= asset_pack_path 'media/images/businesses/train/sky-train.png'%>) " >
+          <div class=" position-relative"  style="width: 1337px; height: 428px; margin-left: 487px; background: no-repeat left top url(<%= asset_pack_path 'media/images/businesses/train/sky-train.png'%>) " >
             <!-- point 1 -->
             <% points = [
-              { container_style: "top:-50px; left:940px;", arrow_container_style: "top: 230px; left: -10px;" },
-              { container_style: "top:350px; left:1250px;", arrow_container_style: "top: -40px; left: -40px;" },
+              { container_style: "top:-37px; left:705px;", arrow_container_style: "top: 172px; left: -7px;" },
+              { container_style: "top:262px; left:937px;", arrow_container_style: "top: -30px; left: -30px;" },
             ] %>
             <% points.each_with_index do |point, i| %>
               <% humanId = i += 1 %>
@@ -146,7 +146,7 @@
         </div>
       </div>
       <!-- position absolute, bottom center, a little bit right. -->
-      <div class="title-pagination position-absolute" style="z-index: 1020; left: 1250px; bottom: 70px;">
+      <div class="title-pagination position-absolute" style="z-index: 1020; left: 937px; bottom: 52px;">
         <!-- title 0, data-id="0", on click main swiper move to data-id -->
         <!-- title 1 -->
         <div class="row g-0">

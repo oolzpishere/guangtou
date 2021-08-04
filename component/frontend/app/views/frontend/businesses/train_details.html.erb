@@ -9,19 +9,19 @@
   <div class=" row g-0 position-relative" >
     <!-- left -->
     <div class="position-relative mfadeInLeft"  style="width:47%; z-index: 2;">
-      <div class="w-100" style="height: 300px;"></div>
+      <div class="w-100" style="height: 225px;"></div>
 
       <div class="business-components-container">
         <!-- train-components -->
-        <div class="train-components business-components position-relative" style="width: 1200px; height: 587px; ">
+        <div class="train-components business-components position-relative" style="width: 900px; height: 440px;">
           <% train_num_range = (1..6) %>
-          <div class="position-absolute" style="left: 90px;" >
+          <div class="position-absolute" style="left: 67px;" >
             <% train_num_range.each do |i| %>
               <%= image_pack_tag "media/images/businesses/train/train/details/#{i}.png", class: 'component-info ', style: '' %>
             <% end %>
           </div>
 
-          <div class="component-btns position-absolute" style="top: 510px;left: 140px;">
+          <div class="component-btns position-absolute" style="top: 382px;left: 105px;">
             <div class="row g-0 position-relative">
               <% train_num_range.each do |i| %>
                 <div class="component-btn col position-relative active mx-1" data-type=<%= slide_type[0] %> data-id=<%= i %> >
@@ -34,15 +34,15 @@
           </div>
         </div>
         <!-- metro-components -->
-        <div class="metro-components business-components position-relative" style="width: 1200px; height: 587px; ">
+        <div class="metro-components business-components position-relative" style="width: 900px; height: 440px; ">
           <% metro_num_range = (1..2) %>
-          <div class="position-absolute" style="left: 90px;" >
+          <div class="position-absolute" style="left: 67px;" >
             <% metro_num_range.each do |i| %>
               <%= image_pack_tag "media/images/businesses/train/metro/details/#{i}.png", class: 'component-info', style: '' %>
             <% end %>
           </div>
 
-          <div class="component-btns position-absolute"  style="top: 510px;left: 140px;">
+          <div class="component-btns position-absolute"  style="top: 382px;left: 105px;">
             <div class="row g-0">
               <% metro_num_range.each do |i| %>
                 <div class="component-btn col position-relative active mx-1" data-type=<%= slide_type[1] %> data-id=<%= i %> >
@@ -56,15 +56,15 @@
         </div>
 
         <!-- sky-train-components -->
-        <div class="sky-train-components business-components position-relative" style="width: 1200px; height: 587px; ">
+        <div class="sky-train-components business-components position-relative" style="width: 900px; height: 440px; ">
           <% sky_train_num_range = (1..2) %>
-          <div class="position-absolute" style="left: 90px;" >
+          <div class="position-absolute" style="left: 67px;" >
             <% sky_train_num_range.each do |i| %>
               <%= image_pack_tag "media/images/businesses/train/sky_train/details/#{i}.png", class: 'component-info', style: '' %>
             <% end %>
           </div>
 
-          <div class="component-btns position-absolute"  style="top: 510px;left: 140px;">
+          <div class="component-btns position-absolute"  style="top: 382px;left: 105px;">
             <div class="row g-0">
               <% sky_train_num_range.each do |i| %>
                 <div class="component-btn col position-relative active mx-1" data-type=<%= slide_type[2] %> data-id=<%= i %> >
@@ -88,18 +88,18 @@
         <!-- Slide1 train-slide -->
         <!-- product_list -->
         <%= tag.div class: "swiper-slide #{slide_type[0]}-slide", data: {type: slide_type[0]} do %>
-          <div class="w-100" style="height: 420px;"></div>
+          <div class="w-100" style="height: 315px;"></div>
           <!-- product container -->
-          <div class="position-relative mx-auto" style="width: 1152px; height: 457px; background: no-repeat left top url(<%= asset_pack_path 'media/images/businesses/train/train/train-croped80.png'%>) " >
+          <div class="position-relative mx-auto" style="width: 864px; height: 342px; background: no-repeat left top url(<%= asset_pack_path 'media/images/businesses/train/train/train-croped80.png'%>) " >
             <!-- point 1 -->
             <% points = [
-              { container_style: "top:-130px; left:0px;", arrow_container_style: "top: 370px; left: 110px;" },
-              { container_style: "top:-130px; left:310px;", arrow_container_style: "top: 260px; left: 75px;" },
-              { container_style: "top:-120px; left:620px; ", arrow_container_style: "top: 340px; left: -10px; z-index:1;" },
-              { container_style: "top: 260px; left:490px; ", arrow_container_style: "top: -60px; left: 205px; z-index:1;" },
-              { container_style: "top:200px; left:790px; ", arrow_container_style: "top: -40px; left: -40px;" },
+              { container_style: "top:-97px; left:0px;", arrow_container_style: "top: 277px; left: 82px;" },
+              { container_style: "top:-97px; left:232px;", arrow_container_style: "top: 195px; left: 56px;" },
+              { container_style: "top:-90px; left:465px; ", arrow_container_style: "top: 255px; left: -7px; z-index:1;" },
+              { container_style: "top: 195px; left:367px; ", arrow_container_style: "top: -45px; left: 153px; z-index:1;" },
+              { container_style: "top:150px; left:592px; ", arrow_container_style: "top: -30px; left: -30px;" },
               # 6
-              { container_style: "top:0px; left:830px; ", arrow_container_style: "top: 140px; left: 45px;" },
+              { container_style: "top:0px; left:622px; ", arrow_container_style: "top: 105px; left: 33px;" },
             ] %>
             <% points.each_with_index do |point, i| %>
               <% humanId = i += 1 %>
@@ -124,13 +124,13 @@
 
         <!-- Slide 2 metro-slide -->
         <%= tag.div class: "swiper-slide #{slide_type[1]}-slide", data: {type: slide_type[1]} do %>
-          <div class="w-100" style="height: 420px;"></div>
+          <div class="w-100" style="height: 315px;"></div>
           <!-- product container -->
-          <div class="position-relative mx-auto" style="width:1152px; height: 448px; background: no-repeat left top url(<%= asset_pack_path 'media/images/businesses/train/metro/metro-croped80.png'%>) " >
+          <div class="position-relative mx-auto" style="width:864px; height: 336px; background: no-repeat left top url(<%= asset_pack_path 'media/images/businesses/train/metro/metro-croped80.png'%>) " >
             <!-- point 1 -->
             <% points = [
-              { container_style: "top:300px; left:750px;", arrow_container_style: "top: -40px; left: -40px;" },
-              { container_style: "top:-90px; left:770px;", arrow_container_style: "top: 270px; left: -10px;" },
+              { container_style: "top:225px; left:562px;", arrow_container_style: "top: -30px; left: -30px;" },
+              { container_style: "top:-67px; left:577px;", arrow_container_style: "top: 202px; left: -7px;" },
             ] %>
             <% points.each_with_index do |point, i| %>
               <% humanId = i += 1 %>
@@ -156,13 +156,13 @@
         <!-- Slide3 bus-slide -->
         <!-- product_list -->
         <%= tag.div class: "swiper-slide #{slide_type[2]}-slide", data: {type: slide_type[2]} do %>
-          <div class="w-100" style="height: 420px;"></div>
+          <div class="w-100" style="height: 315px;"></div>
           <!-- product container -->
-          <div class="position-relative mx-auto" style="width: 999px; height: 539px; background: no-repeat left top url(<%= asset_pack_path 'media/images/businesses/train/sky_train/sky-train-croped80.png'%>) " >
+          <div class="position-relative mx-auto" style="width: 749px; height: 404px; background: no-repeat left top url(<%= asset_pack_path 'media/images/businesses/train/sky_train/sky-train-croped80.png'%>) " >
             <!-- point 1 -->
             <% points = [
-              { container_style: "top:-100px; left:440px;", arrow_container_style: "top: 230px; left: -10px;" },
-              { container_style: "top:290px; left:720px;", arrow_container_style: "top: -40px; left: -40px;" },
+              { container_style: "top:-75px; left:330px;", arrow_container_style: "top: 172px; left: -7px;" },
+              { container_style: "top:217px; left:540px;", arrow_container_style: "top: -30px; left: -30px;" },
             ] %>
             <% points.each_with_index do |point, i| %>
               <% humanId = i += 1 %>
@@ -193,7 +193,7 @@
         </div>
       </div>
       <!-- position absolute, bottom center, a little bit right. -->
-      <div class="title-pagination position-absolute" style="z-index: 1020; left: 50px; bottom: 50px;">
+      <div class="title-pagination position-absolute" style="z-index: 1020; left: 37px; bottom: 37px;">
         <!-- title 0, data-id="0", on click main swiper move to data-id -->
         <div class="row g-0">
           <div class="col business-swiper-tag position-relative" data-id="1" >

@@ -11,20 +11,20 @@
       <div class="swiper-wrapper">
         <!-- Slides family car slide -->
         <div class="swiper-slide position-relative">
-          <div class="w-100" style="height: 300px;"></div>
+          <div class="w-100" style="height: 225px;"></div>
           <!-- text intro -->
-          <div class="position-absolute" style="top:330px; left: 80px;">
+          <div class="position-absolute" style="top:247px; left: 60px;">
             <%= image_pack_tag 'media/images/businesses/ship/text.png', class: '', style: '' %>
           </div>
 
           <!-- product container -->
-          <div class=" position-relative"  style="width: 2006px; height: 643px; margin-left: 500px; background: no-repeat left top url(<%= asset_pack_path 'media/images/businesses/ship/ship.png'%>) " >
+          <div class=" position-relative"  style="width: 1485px; height: 475px; margin-left: 375px; background: no-repeat left top url(<%= asset_pack_path 'media/images/businesses/ship/ship.png'%>) " >
             <!-- point 1 -->
             <% points = [
-              { container_style: "top:0px; left:540px;", arrow_container_style: "top: 270px; left: 390px;" },
-              { container_style: "top:-20px; left:910px;", arrow_container_style: "top: 220px; left: 250px; z-index:1;" },
-              { container_style: "top:120px; left:1090px;", arrow_container_style: "top: -50px; left: 400px;" },
-              { container_style: "top:170px; left:1430px; ", arrow_container_style: "top: -60px; left: 185px;" },
+              { container_style: "top:0px; left:405px;", arrow_container_style: "top: 202px; left: 292px;" },
+              { container_style: "top:-15px; left:682px;", arrow_container_style: "top: 165px; left: 187px; z-index:1;" },
+              { container_style: "top:90px; left:817px;", arrow_container_style: "top: -37px; left: 300px;" },
+              { container_style: "top:127px; left:1072px; ", arrow_container_style: "top: -45px; left: 138px;" },
             ] %>
             <% points.each_with_index do |point, i| %>
               <% humanId = i += 1 %>
@@ -64,7 +64,7 @@
         </div>
       </div>
       <!-- position absolute, bottom center, a little bit right. -->
-      <div class="title-pagination position-absolute" style="z-index: 1020;  left: 1250px; bottom: 70px;">
+      <div class="title-pagination position-absolute" style="z-index: 1020; left: 937px; bottom: 52px;">
         <!-- title 0, data-id="0", on click main swiper move to data-id -->
         <!-- title 1 -->
         <div class="row g-0">

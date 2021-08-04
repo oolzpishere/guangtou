@@ -9,19 +9,19 @@
   <div class=" row g-0 position-relative" >
     <!-- left -->
     <div class="position-relative mfadeInLeft"  style="width:47%; z-index: 2;">
-      <div class="w-100" style="height: 300px;"></div>
+      <div class="w-100" style="height: 225px;"></div>
 
       <div class="business-components-container">
         <!-- computer-components -->
-        <div class="computer-components business-components position-relative" style="width: 1200px; height: 587px; ">
+        <div class="computer-components business-components position-relative" style="width: 900px; height: 440px;">
           <% computer_num_range = (1..3) %>
-          <div class="position-absolute" style="left: 90px;" >
+          <div class="position-absolute" style="left: 67px;" >
             <% computer_num_range.each do |i| %>
               <%= image_pack_tag "media/images/businesses/electronic/computer/details/#{i}.png", class: 'component-info ', style: '' %>
             <% end %>
           </div>
 
-          <div class="component-btns position-absolute" style="top: 510px;left: 140px;">
+          <div class="component-btns position-absolute" style="top: 382px;left: 105px;">
             <div class="row g-0 position-relative">
               <% computer_num_range.each do |i| %>
                 <div class="component-btn col position-relative active mx-1" data-type=<%= slide_type[0] %> data-id=<%= i %> >
@@ -34,15 +34,15 @@
           </div>
         </div>
         <!-- phone-components -->
-        <div class="phone-components business-components position-relative" style="width: 1200px; height: 587px; ">
+        <div class="phone-components business-components position-relative" style="width: 900px; height: 440px;">
           <% phone_num_range = (1..4) %>
-          <div class="position-absolute" style="left: 90px;" >
+          <div class="position-absolute" style="left: 67px;" >
             <% phone_num_range.each do |i| %>
               <%= image_pack_tag "media/images/businesses/electronic/phone/details/#{i}.png", class: 'component-info', style: '' %>
             <% end %>
           </div>
 
-          <div class="component-btns position-absolute"  style="top: 510px;left: 140px;">
+          <div class="component-btns position-absolute"  style="top: 382px;left: 105px;">
             <div class="row g-0">
               <% phone_num_range.each do |i| %>
                 <div class="component-btn col position-relative active mx-1" data-type=<%= slide_type[1] %> data-id=<%= i %> >
@@ -58,13 +58,13 @@
         <!-- etc-components -->
         <div class="etc-components business-components position-relative" style="width: 1200px; height: 587px; ">
           <% sky_train_num_range = (1..2) %>
-          <div class="position-absolute" style="left: 90px;" >
+          <div class="position-absolute" style="left: 67px;" >
             <% sky_train_num_range.each do |i| %>
               <%= image_pack_tag "media/images/businesses/electronic/etc/details/#{i}.png", class: 'component-info', style: '' %>
             <% end %>
           </div>
 
-          <div class="component-btns position-absolute"  style="top: 510px;left: 140px;">
+          <div class="component-btns position-absolute"  style="top: 382px;left: 105px;">
             <div class="row g-0">
               <% sky_train_num_range.each do |i| %>
                 <div class="component-btn col position-relative active mx-1" data-type=<%= slide_type[2] %> data-id=<%= i %> >
@@ -85,17 +85,17 @@
     <div class="swiper-container businesses-details-swiper car-details-swiper " style="width:53%; background-color: rgba(0,0,0,0.6); ">
       <!-- Additional required wrapper -->
       <div class="swiper-wrapper mfadeInRight" style=" ">
-        <!-- Slide1 train-slide -->
+        <!-- Slide1 -slide -->
         <!-- product_list -->
         <%= tag.div class: "swiper-slide #{slide_type[0]}-slide", data: {type: slide_type[0]} do %>
-          <div class="w-100" style="height: 420px;"></div>
+          <div class="w-100" style="height: 220px;"></div>
           <!-- product container -->
-          <div class="position-relative mx-auto" style="width: 1044px; height: 608px; background: no-repeat left top url(<%= asset_pack_path 'media/images/businesses/electronic/computer/computer-croped90.png'%>) " >
+          <div class="position-relative mx-auto" style="width: 783px; height: 456px; background: no-repeat left top url(<%= asset_pack_path 'media/images/businesses/electronic/computer/computer-croped90.png'%>) " >
             <!-- point 1 -->
             <% points = [
-              { container_style: "top:100px; left:0px;", arrow_container_style: "top: 330px; left: 270px;" },
-              { container_style: "top:0px; left:510px;", arrow_container_style: "top: 340px; left: 100px;" },
-              { container_style: "top:450px; left:790px; ", arrow_container_style: "top: -40px; left: 110px; z-index:1;" },
+              { container_style: "top:75px; left:0px;", arrow_container_style: "top: 247px; left: 202px;" },
+              { container_style: "top:0px; left:382px;", arrow_container_style: "top: 255px; left: 75px;" },
+              { container_style: "top:337px; left:592px; ", arrow_container_style: "top: -30px; left: 82px; z-index:1;" },
             ] %>
             <% points.each_with_index do |point, i| %>
               <% humanId = i += 1 %>
@@ -120,15 +120,15 @@
 
         <!-- Slide 2 metro-slide -->
         <%= tag.div class: "swiper-slide #{slide_type[1]}-slide", data: {type: slide_type[1]} do %>
-          <div class="w-100" style="height: 420px;"></div>
+          <div class="w-100" style="height: 300px;"></div>
           <!-- product container -->
-          <div class="position-relative mx-auto" style="width:615px; height: 560px; background: no-repeat left top url(<%= asset_pack_path 'media/images/businesses/electronic/phone/phone.png'%>) " >
+          <div class="position-relative mx-auto" style="width:461px; height: 420px; background: no-repeat left top url(<%= asset_pack_path 'media/images/businesses/electronic/phone/phone.png'%>) " >
             <!-- point 1 -->
             <% points = [
-              { container_style: "top:-110px; left:-230px;", arrow_container_style: "top: 340px; left: 305px;" },
-              { container_style: "top:380px; left:-190px;", arrow_container_style: "top: -50px; left: 410px;" },
-              { container_style: "top:-110px; left:350px;", arrow_container_style: "top: 170px; left: -40px;" },
-              { container_style: "top:300px; left:350px;", arrow_container_style: "top: -40px; left: -40px;" },
+              { container_style: "top:-82px; left:-172px;", arrow_container_style: "top: 255px; left: 228px;" },
+              { container_style: "top:285px; left:-142px;", arrow_container_style: "top: -37px; left: 307px;" },
+              { container_style: "top:-82px; left:262px;", arrow_container_style: "top: 127px; left: -30px;" },
+              { container_style: "top:225px; left:262px;", arrow_container_style: "top: -30px; left: -30px;" },
             ] %>
             <% points.each_with_index do |point, i| %>
               <% humanId = i += 1 %>
@@ -154,13 +154,13 @@
         <!-- Slide3 bus-slide -->
         <!-- product_list -->
         <%= tag.div class: "swiper-slide #{slide_type[2]}-slide", data: {type: slide_type[2]} do %>
-          <div class="w-100" style="height: 420px;"></div>
+          <div class="w-100" style="height: 315px;"></div>
           <!-- product container -->
-          <div class="position-relative mx-auto" style="width: 999px; height: 539px; background: no-repeat left top url(<%= asset_pack_path 'media/images/businesses/electronic/etc/etc-croped90.png'%>) " >
+          <div class="position-relative mx-auto" style="width: 749px; height: 404px; background: no-repeat left top url(<%= asset_pack_path 'media/images/businesses/electronic/etc/etc-croped90.png'%>) " >
             <!-- point 1 -->
             <% points = [
-              { container_style: "top:150px; left:0px;", arrow_container_style: "top: 220px; left: 150px;" },
-              { container_style: "top:-30px; left:550px;", arrow_container_style: "top: 290px; left: 30px;" },
+              { container_style: "top:112px; left:0px;", arrow_container_style: "top: 165px; left: 112px;" },
+              { container_style: "top:-22px; left:412px;", arrow_container_style: "top: 217px; left: 22px;" },
             ] %>
             <% points.each_with_index do |point, i| %>
               <% humanId = i += 1 %>
@@ -191,7 +191,7 @@
         </div>
       </div>
       <!-- position absolute, bottom center, a little bit right. -->
-      <div class="title-pagination position-absolute" style="z-index: 1020; left: 50px; bottom: 50px;">
+      <div class="title-pagination position-absolute" style="z-index: 1020; left: 37px; bottom: 37px;">
         <!-- title 0, data-id="0", on click main swiper move to data-id -->
         <div class="row g-0">
           <div class="col business-swiper-tag position-relative" data-id="1" >

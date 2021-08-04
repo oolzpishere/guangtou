@@ -8,18 +8,18 @@
   <div class=" row g-0 position-relative" >
     <!-- left -->
     <div class="position-relative mfadeInLeft"  style="width:47%; z-index: 2;">
-      <div class="w-100" style="height: 300px;"></div>
+      <div class="w-100" style="height: 225px;"></div>
 
       <div class="business-components-container">
         <!-- plane-components -->
-        <div class="plane-components business-components position-relative" style="width: 1200px; height: 587px; ">
-          <div class="position-absolute" style="left: 90px;" >
+        <div class="plane-components business-components position-relative" style="width: 900px; height: 440px; ">
+          <div class="position-absolute" style="left: 67.5px;" >
             <% (1..5).each do |i| %>
               <%= image_pack_tag "media/images/businesses/space/details/plane#{i}.png", class: 'component-info ', style: '' %>
             <% end %>
           </div>
 
-          <div class="component-btns position-absolute" style="top: 510px;left: 140px;">
+          <div class="component-btns position-absolute" style="top: 382.5px;left: 105px;">
             <div class="row g-0 position-relative">
               <% (1..5).each do |i| %>
                 <div class="component-btn col position-relative active mx-1" data-type="plane" data-id=<%= i %> >
@@ -32,14 +32,14 @@
           </div>
         </div>
         <!-- aerospace-components -->
-        <div class="aerospace-components business-components position-relative" style="width: 1200px; height: 587px; ">
+        <div class="aerospace-components business-components position-relative" style="width: 900px; height: 440px; ">
           <div class="position-absolute" style="left: 90px;" >
             <% (1..4).each do |i| %>
               <%= image_pack_tag "media/images/businesses/aerospace/details/aerospace#{i}.png", class: 'component-info', style: '' %>
             <% end %>
           </div>
 
-          <div class="component-btns position-absolute"  style="top: 510px;left: 140px;">
+          <div class="component-btns position-absolute"  style="top: 382.5px;left: 105px;">
             <div class="row g-0">
               <% (1..4).each do |i| %>
                 <div class="component-btn col position-relative active mx-1" data-type="aerospace" data-id=<%= i %> >
@@ -63,16 +63,16 @@
         <!-- Slide1 plane-slide -->
         <!-- product_list -->
         <%= tag.div class: "swiper-slide #{slide_type[0]}-slide", data: {type: slide_type[0]} do %>
-          <div class="w-100" style="height: 400px;"></div>
+          <div class="w-100" style="height: 300px;"></div>
           <!-- product container -->
-          <div class="position-relative mx-auto" style="width: 1060px; height: 415px; background: no-repeat left top url(<%= asset_pack_path 'media/images/businesses/space/plane60.png'%>) " >
+          <div class="position-relative mx-auto" style="width: 795px; height: 311px; background: no-repeat left top url(<%= asset_pack_path 'media/images/businesses/space/plane60.png'%>) " >
             <!-- point 1 -->
             <% points = [
-              { container_style: "top:10px; left:280px;", arrow_container_style: "top: 140px; left: 50px;" },
-              { container_style: "top:15px; left:560px;", arrow_container_style: "top: 155px; left: -50px;" },
-              { container_style: "top:110px; left:630px;", arrow_container_style: "top: 80px; left: -50px;" },
-              { container_style: "top:250px; left:290px; ", arrow_container_style: "top: -60px; left: 165px;" },
-              { container_style: "top:290px; left:690px; ", arrow_container_style: "top: -60px; left: -50px;" },
+              { container_style: "top:7px; left:210px;", arrow_container_style: "top: 105px; left: 37px;" },
+              { container_style: "top:11px; left:420px;", arrow_container_style: "top: 116px; left: -37px;" },
+              { container_style: "top:82px; left:472px;", arrow_container_style: "top: 60px; left: -37px;" },
+              { container_style: "top:187px; left:217px; ", arrow_container_style: "top: -45px; left: 123px;" },
+              { container_style: "top:217px; left:517px; ", arrow_container_style: "top: -45px; left: -37px;" },
             ] %>
             <% points.each_with_index do |point, i| %>
               <% humanId = i += 1 %>
@@ -97,15 +97,15 @@
 
         <!-- Slide 2 aerospace-slide -->
         <%= tag.div class: "swiper-slide #{slide_type[1]}-slide", data: {type: slide_type[1]} do %>
-          <div class="w-100" style="height: 360px;"></div>
+          <div class="w-100" style="height: 270px;"></div>
           <!-- product container -->
-          <div class="position-relative mx-auto" style="width:768px; height: 678px; background: no-repeat left top url(<%= asset_pack_path 'media/images/businesses/aerospace/aerospace80.png'%>) " >
+          <div class="position-relative mx-auto" style="width:576px; height: 509px; background: no-repeat left top url(<%= asset_pack_path 'media/images/businesses/aerospace/aerospace80.png'%>) " >
             <!-- point 1 -->
             <% points = [
-              { container_style: "top:90px; left:-180px; z-index: 1;", arrow_container_style: "top: -50px; left: 250px;" },
-              { container_style: "top:120px; left:-80px;", arrow_container_style: "top: -55px; left: 250px;" },
-              { container_style: "top:500px; left:100px;", arrow_container_style: "top: -40px; left: 350px;" },
-              { container_style: "top:110px; left:310px; ", arrow_container_style: "top: 120px; left: -10px;" },
+              { container_style: "top:67px; left:-135px; z-index: 1;", arrow_container_style: "top: -37px; left: 187px;" },
+              { container_style: "top:90px; left:-60px;", arrow_container_style: "top: -41px; left: 187px;" },
+              { container_style: "top:375px; left:75px;", arrow_container_style: "top: -30px; left: 262px;" },
+              { container_style: "top:82px; left:232px; ", arrow_container_style: "top: 90px; left: -7px;" },
             ] %>
             <% points.each_with_index do |point, i| %>
               <% humanId = i += 1 %>

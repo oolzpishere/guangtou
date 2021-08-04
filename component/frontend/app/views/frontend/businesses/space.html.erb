@@ -12,21 +12,22 @@
       <div class="swiper-wrapper">
         <!-- Slides -->
         <div class="swiper-slide ">
-          <div class="w-100" style="height: 300px;"></div>
+          <div class="w-100" style="height: 225px;"></div>
           <!-- text intro -->
-          <div class="position-absolute" style="top:300px; right: 120px;">
+          <div class="position-absolute" style="top:225px; right: 90px;">
             <%= image_pack_tag 'media/images/businesses/space/text.png', class: '', style: '' %>
           </div>
 
           <!-- product container -->
-          <div class=" mx-auto position-relative"  style="width: 1779px; height: 697px; background: no-repeat left top url(<%= asset_pack_path 'media/images/businesses/space/plane.png'%>) " >
+          <div class=" mx-auto position-relative"  style="width: 1334px; height: 523px; background: no-repeat left top url(<%= asset_pack_path 'media/images/businesses/space/plane.png'%>) " >
             <!-- point 1 -->
+            <% scale = 0.75 %>
             <% points = [
-              { container_style: "top:140px; left:530px;", arrow_container_style: "top: 140px; left: 50px;" },
-              { container_style: "top:150px; left:910px;", arrow_container_style: "top: 155px; left: -50px;" },
-              { container_style: "top:265px; left:1030px;", arrow_container_style: "top: 80px; left: -50px;" },
-              { container_style: "top:410px; left:650px; ", arrow_container_style: "top: -60px; left: 165px;" },
-              { container_style: "top:470px; left:1110px; ", arrow_container_style: "top: -60px; left: -50px;" },
+              { container_style: "top:105px; left:397px;", arrow_container_style: "top: 105px; left: 37px;" },
+              { container_style: "top:112px; left:682px;", arrow_container_style: "top: 116px; left: -37px;" },
+              { container_style: "top:198px; left:772px;", arrow_container_style: "top: 60px; left: -37px;" },
+              { container_style: "top:307px; left:487px; ", arrow_container_style:  "top: -45px; left: 123px;" },
+              { container_style: "top:352px; left:832px; ", arrow_container_style: "top: -45px; left: -37px;" },
             ] %>
             <% points.each_with_index do |point, i| %>
               <% humanId = i += 1 %>
@@ -53,19 +54,19 @@
         </div>
         <!-- slide 2 aerospace-slide -->
         <div class="swiper-slide position-relative">
-          <div class="w-100" style="height: 300px;"></div>
+          <div class="w-100" style="height: 225px;"></div>
           <!-- text intro -->
-          <div class="position-absolute" style="top:300px; right: 120px;">
+          <div class="position-absolute" style="top:225px; right: 90px;">
             <%= image_pack_tag 'media/images/businesses/space/text.png', class: '', style: '' %>
           </div>
           <!-- product container -->
-          <div class=" mx-auto position-relative"  style="width: 959px; height: 846px; background: no-repeat left top url(<%= asset_pack_path 'media/images/businesses/aerospace/aerospace-rotated.png'%>) " >
+          <div class=" mx-auto position-relative"  style="width: 719px; height: 634px; background: no-repeat left top url(<%= asset_pack_path 'media/images/businesses/aerospace/aerospace-rotated.png'%>) " >
             <!-- point 1 -->
             <% points = [
-            { container_style: "top:200px; left:-240px; z-index: 1;", arrow_container_style: "top: -50px; left: 250px;" },
-            { container_style: "top:200px; left:-100px;", arrow_container_style: "top: -55px; left: 250px;" },
-            { container_style: "top:580px; left:230px;", arrow_container_style: "top: -40px; left: 350px;" },
-            { container_style: "top:180px; left:350px; ", arrow_container_style: "top: 120px; left: -10px;" },
+              { container_style: "top:150px; left:-180px; z-index: 1;", arrow_container_style: "top: -37px; left: 187px;" },
+              { container_style: "top:150px; left:-75px;", arrow_container_style: "top: -41px; left: 187px;" },
+              { container_style: "top:435px; left:172px;", arrow_container_style: "top: -30px; left: 262px;" },
+              { container_style: "top:135px; left:262px; ", arrow_container_style: "top: 90px; left: -7px;" },
             ] %>
             <% points.each_with_index do |point, i| %>
               <% humanId = i += 1 %>
@@ -105,7 +106,7 @@
       </div>
 
       <!-- position absolute, bottom center, a little bit right. -->
-      <div class="title-pagination position-absolute" style="z-index: 1020; left: 1250px; bottom: 70px;">
+      <div class="title-pagination position-absolute" style="z-index: 1020; left: 937px; bottom: 52px;">
         <!-- title 0, data-id="0", on click main swiper move to data-id -->
         <!-- title 1 -->
         <div class="row g-0">
