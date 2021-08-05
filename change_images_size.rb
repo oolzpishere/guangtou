@@ -7,7 +7,7 @@ class ChangeImagesSize
 
   def initialize()
     # @change_path = '/Volumes/Cdisk/www/rails/guangtou/app/packs/images'
-    # @change_path = '/Volumes/Cdisk/www/rails/guangtou/app/packs/profile'
+    @change_path = '/Users/leeli/Downloads/change_size_buf'
 
     @scale_image = 0.75
 
