@@ -1,0 +1,121 @@
+<main class="position-relative w-100 h-100">
+
+  <!-- bg video container -->
+  <div class="position-absolute " style="z-index: 0;">
+    <div class="position-relative " style="width: 1920px; height: 1080px; background: rgba(0,0,0, 0.3); overflow: hidden;">
+      <div class="position-absolute w-100 h-100" style="z-index: 1; background: rgba(0,0,0, 0.3); ">
+      </div>
+      <video id="industry-hezhou-video"
+               class="video-js vjs-default-skin industry-bg-video"
+               width=1920
+               style=""
+               loop >
+        <source src="/videos/industry/hezhou.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+  <!-- Slider main container -->
+  <div class="swiper-container industry-hezhou-swiper window-holder">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <!-- Slide 1 -->
+      <div class="swiper-slide">
+        <div class="w-100" style="height: 30%;" ></div>
+
+        <div class="row g-0 w-100 d-flex justify-content-end">
+          <div class="col-auto position-relative" style="width: 1040px; height:56px;">
+            <%= image_pack_tag "media/images/corp/industry/hezhou/swiper1/title.png", class: 'position-absolute', style: 'top:0; left: -90px;' %>
+          </div>
+          <div class="w-100" style="" ></div>
+
+          <div class="d-flex justify-content-center align-items-center" style="width: 955px; height: 267px;background: center no-repeat url(<%= asset_pack_path 'media/images/corp/industry/hezhou/swiper1/text-bg.png'%>); background-size: cover;">
+            <%= image_pack_tag "media/images/corp/industry/hezhou/swiper1/text.png" %>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="swiper-slide">
+        <div class="w-100" style="height: 30%;" ></div>
+
+        <div class="row g-0 w-100 d-flex justify-content-end">
+          <div class="col-auto position-relative" style="width: 1040px; height:56px;">
+            <%= image_pack_tag "media/images/corp/industry/hezhou/swiper2/title.png", class: 'position-absolute', style: 'top:0; left: -90px;' %>
+          </div>
+          <div class="w-100" style="" ></div>
+
+          <div class="d-flex justify-content-center align-items-center" style="width: 1040px; height: 451px;background: center no-repeat url(<%= asset_pack_path 'media/images/corp/industry/hezhou/swiper2/text-bg.png'%>); background-size: cover;">
+            <%= image_pack_tag "media/images/corp/industry/hezhou/swiper2/text.png" %>
+
+          </div>
+        </div>
+
+      </div>
+      <!-- Slide 3 -->
+      <div class="swiper-slide">
+        <div class="w-100" style="height: 30%;" ></div>
+
+        <div class="row g-0 w-100 d-flex justify-content-end">
+          <div class="col-auto position-relative" style="width: 1040px; height:56px;">
+            <%= image_pack_tag "media/images/corp/industry/hezhou/swiper3/title.png", class: 'position-absolute', style: 'top:0; left: -90px;' %>
+          </div>
+          <div class="w-100" style="" ></div>
+
+          <div class="d-flex justify-content-center align-items-center" style="width: 1040px; height: 406px;background: center no-repeat url(<%= asset_pack_path 'media/images/corp/industry/hezhou/swiper3/text-bg.png' %>); background-size: cover;">
+            <%= image_pack_tag "media/images/corp/industry/hezhou/swiper3/text.png" %>
+
+          </div>
+        </div>
+
+      </div>
+      <!-- Slide 4 -->
+      <div class="swiper-slide">
+        <div class="w-100" style="height: 30%;" ></div>
+
+        <div class="row g-0 w-100 d-flex justify-content-end">
+          <div class="col-auto position-relative" style="width: 1040px; height:56px;">
+            <%= image_pack_tag "media/images/corp/industry/hezhou/swiper4/title.png", class: 'position-absolute', style: 'top:0; left: -90px;' %>
+          </div>
+          <div class="w-100" style="" ></div>
+
+          <div class="d-flex justify-content-center align-items-center" style="width: 1040px; height: 396px;background: center no-repeat url(<%= asset_pack_path 'media/images/corp/industry/hezhou/text-bg.png'%>); background-size: cover;">
+            <%= image_pack_tag "media/images/corp/industry/hezhou/swiper4/text.png" %>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- If we need navigation buttons -->
+    <!-- <div class="swiper-button-prev"></div> -->
+    <!-- <div class="swiper-button-next"></div> -->
+
+  </div>
+
+  <!-- swiper pagination  -->
+  <div class="position-absolute" style="top: 400px; left: 80px; width: 600px; z-index: 1020;" >
+    <div class="row g-0">
+      <div class="col-12 mb-3">
+        <%= image_pack_tag 'media/images/corp/industry/hezhou/main-title.png' %>
+      </div>
+      <% (1..4).each do |i| %>
+        <div class="col-12 industry-hezhou-swiper-tag position-relative mt-3" data-id=<%= i %> >
+          <%= image_pack_tag "media/images/corp/industry/hezhou/tags/0#{i}.png", class: 'img' %>
+          <%= image_pack_tag "media/images/corp/industry/hezhou/tags/#{i}.png", class: 'img-active' %>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+
+
+
+  <%= render 'profile_bottom' %>
+
+</main>
