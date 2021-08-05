@@ -1,9 +1,9 @@
 <main class="window-holder position-relative" style="background: url(<%= asset_pack_path 'media/images/party/bg.png'%>) "  >
 
   <div class="w-100" style="height:217px;"></div>
-  <div class="row g-0" style="width: 90%; margin-left: 8%; ">
+  <div class="row g-0 mx-auto" style="width: 90%;  ">
 
-    <div class="col-12">
+    <div class="col-12" style="margin-left: 4%;">
       <%= image_pack_tag 'media/images/party/xcl/alliance/title.png', class: "" %>
 
     </div>
@@ -12,27 +12,18 @@
       <%= image_pack_tag 'media/images/party/xcl/alliance/text.jpg', class: "" %>
     </div>
 
-    <div class="row g-0 " style="margin-top: 60px;">
-      <div class="col">
-        <%= image_pack_tag 'media/images/party/xcl/alliance/1.png', class: "" %>
+    <div class="col-12 mt-5  position-relative" >
+      <div class="scroll-left-dark-arrows scroll-left-half"></div>
+      <div class="scroll-right-dark-arrows scroll-right-half"></div>
+
+      <div class="scroll-wrap" style="overflow: scroll;">
+        <%= image_pack_tag 'media/images/party/xcl/alliance/all-imgs.png', class: "scroll-content" %>
       </div>
 
-      <div class="col " style="">
-        <%= image_pack_tag 'media/images/party/xcl/alliance/2.png', class: "" %>
-      </div>
-
-      <div class="col " style="">
-        <%= image_pack_tag 'media/images/party/xcl/alliance/3.png', class: "" %>
-      </div>
-
-      <div class="col " style="">
-        <%= image_pack_tag 'media/images/party/xcl/alliance/4.png', class: "" %>
-      </div>
-
-      <div class="col " style="">
-        <%= image_pack_tag 'media/images/party/xcl/alliance/5.png', class: "" %>
-      </div>
     </div>
+
+
+
 
   </div>
 
@@ -41,3 +32,26 @@
 
 
 </main>
+
+
+<!-- <div class="row g-0 " style="margin-top: 60px;">
+  <div class="col">
+    <%# image_pack_tag 'media/images/party/xcl/alliance/1.png', class: "" %>
+  </div>
+
+  <div class="col " style="">
+    <%# image_pack_tag 'media/images/party/xcl/alliance/2.png', class: "" %>
+  </div>
+
+  <div class="col " style="">
+    <%# image_pack_tag 'media/images/party/xcl/alliance/3.png', class: "" %>
+  </div>
+
+  <div class="col " style="">
+    <%# image_pack_tag 'media/images/party/xcl/alliance/4.png', class: "" %>
+  </div>
+
+  <div class="col " style="">
+    <%# image_pack_tag 'media/images/party/xcl/alliance/5.png', class: "" %>
+  </div>
+</div> -->
