@@ -3,7 +3,7 @@
   <% videos = [ {name: 'xcl', video_path: "/videos/parties/activities/wj.mp4" },
                 {name: 'nnl', video_path: "/videos/parties/activities/gqbn.mp4"} ] %>
 
-  <div class="w-100" style="height: 290px;"></div>
+  <div class="w-100" style="height: 217px;"></div>
 
   <div class="row g-0 mx-auto" style="width:90%;">
     <div class="col-auto text-end" style="width:30%; padding-right: 80px;">
@@ -19,7 +19,7 @@
           <video
               id=<%= "party-#{video[:name]}-video" %>
               class="video-js my-vjs-skin "
-              width="1520"
+              width="1140"
               enableTouchActivity
               data-setup=''>
             <source src='<%= video[:video_path] %>' type="video/mp4"></source>

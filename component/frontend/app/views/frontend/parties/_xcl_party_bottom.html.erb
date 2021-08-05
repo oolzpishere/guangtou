@@ -1,7 +1,7 @@
-<div class="position-fixed w-100" style="bottom: 0; height: 211px; z-index: 1000; background: no-repeat center url(<%= asset_pack_path 'media/images/party/xcl/bottom-bg.png' %>) ">
+<div class="position-fixed w-100" style="bottom: 0; height: 158px; z-index: 1000; background: no-repeat center url(<%= asset_pack_path 'media/images/party/xcl/bottom-bg.png' %>) ">
   <div class="row h-100 g-0 position-relative">
 
-    <div class="row" style="margin-left: 280px; margin-top: -30px;">
+    <div class="row" style="margin-left: 210px; margin-top: -22px;">
 
       <% @party_xcl_navs.each do |nav| %>
         <div class="col-auto text-center my-2">
@@ -13,7 +13,7 @@
         </div>
       <% end %>
 
-      <div class="col-auto" style="margin-left: 80px;">
+      <div class="col-auto" style="margin-left: 60px;">
         <%= image_pack_tag 'media/images/party/xcl/bottom-title.png', class: '', style: ""%>
       </div>
 
@@ -23,7 +23,7 @@
 
     <!-- go back -->
     <% if @return_path %>
-      <div class="position-absolute"  style="top: 70px; left:20px; z-index: 1020; width:auto;">
+      <div class="position-absolute"  style="top: 52px; left:15px; z-index: 1020; width:auto;">
         <%= link_to( @return_path, html_options = {}) do %>
           <%= image_pack_tag 'media/images/party/go-back.png', class: '', style: ""%>
         <% end %>
