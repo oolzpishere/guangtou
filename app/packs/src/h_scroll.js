@@ -1,14 +1,18 @@
 import 'jquery.scrollto'
 
 import { MyScroll } from './my_scroll'
+// import { HAutoScroll } from './h_auto_scroll'
+
 
 export {  HScroll };
 // TODO: add vertical scroll
 class HScroll extends MyScroll {
-  constructor( ) {
+  constructor( autoScroll = undefined ) {
     super();
     // this.direction = 'horizontal'
-
+    if ( typeof(autoScroll) != 'undefined' ) {
+      this._autoScroll = autoScroll
+    }
   }
 
   initScroll(){
@@ -24,8 +28,15 @@ class HScroll extends MyScroll {
     $('.scroll-left-half').on('click', function(){
       var step = _self.scrollWrap.width() / 2;
       _self.scrollWrap.scrollTo("-=" + step + "px", 500, {
+        start: function(){
+          _self._autoScroll.setScrolling()
+          _self._autoScroll.resetTimer()
+        },
         onAfter: function() {
           _self.updateArrow()
+        },
+        always: function(){
+          _self._autoScroll.setNotScrolling()
         }
       });
     })
@@ -36,8 +47,15 @@ class HScroll extends MyScroll {
     $('.scroll-right-half').on('click', function(){
       var step = _self.scrollWrap.width() / 2;
       _self.scrollWrap.scrollTo("+=" + step + "px", 500, {
+        start: function(){
+          _self._autoScroll.setScrolling()
+          _self._autoScroll.resetTimer()
+        },
         onAfter: function() {
           _self.updateArrow()
+        },
+        always: function(){
+          _self._autoScroll.setNotScrolling()
         }
       });
     })

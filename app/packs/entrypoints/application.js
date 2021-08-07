@@ -21,3 +21,15 @@ require.context('../images', true)
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 //1
+
+// $(document).on("turbolinks:load", function() {
+//   var wHeight = window.innerHeight;
+//   var wWidth = window.innerWidth;
+//
+//   console.log(wHeight)
+//
+//   if ( $('.window-holder').length > 0 ) {
+//     $('.window-holder').css("height", wHeight)
+//     $('.window-holder').css("width", wWidth)
+//   }
+// })
