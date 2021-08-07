@@ -56,6 +56,9 @@ $(document).on("turbolinks:load", function() {
 
     $('.my-video-close-btn').on('click touchstart mouseenter', function(){
       strategy_player.pause();
+      if ( strategy_player.isFullscreen() ) {
+        strategy_player.exitFullscreen()
+      }
       $('#strategy-video-wrap').addClass('d-none');
     })
 

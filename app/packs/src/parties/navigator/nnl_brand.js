@@ -85,6 +85,7 @@ class MyVideos {
     var _self = this;
     $('.my-video-close-btn').on('click touchstart mouseenter', function(){
       _self.pauseAllVideos()
+      // console.log('pause');
       $('.absolute-video-container').removeClass('active')
       $('.video-content-container').removeClass('active')
     })
@@ -95,7 +96,14 @@ class MyVideos {
     $.map( _self.videos, function( value, key ) {
       var player = value;
       player.pause();
+      _self.exitFullScreen(player)
     })
+  }
+
+  exitFullScreen(player){
+    if ( player.isFullscreen() ) {
+      player.exitFullscreen()
+    }
   }
 
 

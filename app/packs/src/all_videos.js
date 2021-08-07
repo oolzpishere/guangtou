@@ -74,8 +74,16 @@ class AllVideos {
     $.map( _self.videos, function( value, key ) {
       var player = value;
       player.pause();
+      _self.exitFullScreen(player)
     })
   }
+
+  exitFullScreen(player){
+    if ( player.isFullscreen() ) {
+      player.exitFullscreen()
+    }
+  }
+
 
 
 }

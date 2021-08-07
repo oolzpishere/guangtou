@@ -48,7 +48,7 @@ import {HAutoScroll} from "src/h_auto_scroll.js"
 $(document).on("turbolinks:load", function() {
   // disable right click except home-page.
   if ( $('#home-page').length == 0 ) {
-    // document.addEventListener('contextmenu', event => event.preventDefault());
+    document.addEventListener('contextmenu', event => event.preventDefault());
   }
 
   var wHeight = window.innerHeight;
