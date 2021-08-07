@@ -32,6 +32,42 @@ $(document).on("turbolinks:load", function() {
       partyIndexSwiper.slideToLoop(id - 1)
     });
 
+    $('.point-container').on('click touchstart', function(){
+      var item = $(this).parents('.industry-point-container')
+      var id = $(this).data('id')
+      // var detail_img = $(this)
+
+      $('.industry-point-container').removeClass('active')
+      $('.industry-detail-img-container').removeClass('active')
+
+      item.addClass('active')
+      filterItemsById( $('.industry-detail-img-container'), id).addClass('active')
+
+      return false
+    })
+
+    $('.detail-tag').on('click touchstart', function(){
+      $('.local-detail-container').removeClass('active')
+      var id = $(this).data('id')
+      filterItemsById( $('.local-detail-container'), id).addClass('active')
+      
+      return false
+    })
+
+    $('.local-detail-container').on('click touchstart', function(){
+      $('.local-detail-container').removeClass('active')
+
+      return false
+    })
+
+    function filterItemsById( items, id ){
+      var item = items.filter(function() {
+        return $(this).data("id") == id;
+      });
+      return item
+    }
+
+
   }
 
 
