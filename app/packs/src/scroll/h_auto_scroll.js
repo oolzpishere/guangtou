@@ -6,10 +6,11 @@ import 'jquery.scrollto'
 export {  HAutoScroll };
 
 class HAutoScroll {
-  constructor( opts = {scrollToMaxTime: 10000} ) {
+  constructor( hScroll, opts = {scrollToMaxTime: 10000} ) {
     // super();
     // this.direction = 'horizontal'
     // this._countDownTimer
+    this._hScroll = hScroll
     this._isEnd = false
     this._isAutoScroll = false
     this._circleTime = 5000
@@ -102,6 +103,7 @@ class HAutoScroll {
     this.setNotScrolling()
     this.stopJqueryScrollTo()
     this.resetTimer()
+    this._hScroll.updateArrow()
   }
 
   resetTimer(){

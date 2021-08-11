@@ -1,18 +1,21 @@
 import 'jquery.scrollto'
 
 import { MyScroll } from './my_scroll'
-// import { HAutoScroll } from './h_auto_scroll'
+import { HAutoScroll } from './h_auto_scroll'
 
 
 export {  HScroll };
 // TODO: add vertical scroll
 class HScroll extends MyScroll {
-  constructor( autoScroll = undefined ) {
+  constructor( opts = { autoScroll: {} } ) {
     super();
-    // this.direction = 'horizontal'
-    if ( typeof(autoScroll) != 'undefined' ) {
-      this._autoScroll = autoScroll
-    }
+
+    this._autoScroll = new HAutoScroll( this, opts.autoScroll )
+
+    // if ( typeof(autoScroll) != 'undefined' ) {
+    //   this._autoScroll = autoScroll
+    //
+    // }
   }
 
   initScroll(){

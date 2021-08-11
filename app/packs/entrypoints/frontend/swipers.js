@@ -8,6 +8,8 @@ import {BusinessDetails} from "./business_details"
 import {BusinessDetailsSwiper} from "./business_details_swiper"
 
 import { MyHelpers } from 'src/my_helpers.js'
+import { TalentsSwiper } from 'src/talents_swiper.js'
+
 
 
 $(document).on("turbolinks:load", function() {
@@ -83,43 +85,6 @@ $(document).on("turbolinks:load", function() {
       });
   }
 
-
-
-
-  // swiper.on('slideResetTransitionEnd', function () {
-  //   // corpLinksSwiper.slideTo(swiper.realIndex, speed, runCallbacks)
-  //
-  //   corp_all_swiper_tls[swiper.realIndex]()
-  // });
-
-
-
-
-  // if ($('.space-main-swiper').length > 0) {
-  //   var swiperHeight = ( wHeight - $('.business-bottom').innerHeight() )
-  //   $(".space-main-swiper").css('height', swiperHeight)
-  //
-  //   var spaceMainSwiper = new Swiper(".space-main-swiper", {
-  //           loop: true,
-  //           pagination: {
-  //             el: ".swiper-pagination",
-  //             type: 'bullets',
-  //             clickable: true,
-  //             bulletClass: 'swiper-pagination-bullet my-swiper-pagination-bullet',
-  //             bulletActiveClass: 'swiper-pagination-bullet-active my-swiper-pagination-bullet-active',
-  //           },
-  //           on: {
-  //             init: function () {
-  //               $('.business-detail-bg-img img').eq( 0 ).addClass('active')
-  //             },
-  //           }
-  //         });
-  //
-  //   spaceMainSwiper.on('slideChange', function () {
-  //     $('.business-detail-bg-img img').removeClass('active')
-  //     $('.business-detail-bg-img img').eq( spaceMainSwiper.realIndex ).addClass('active')
-  //   });
-  // }
 
   if ($('.businesses-main-swiper').length > 0) {
     var swiperHeight = ( wHeight - $('.business-bottom').innerHeight() )
@@ -215,53 +180,8 @@ $(document).on("turbolinks:load", function() {
     });
   }
 
-  if ( $('.talents-swiper').length > 0 ) {
-    var talentsSwiper = new Swiper(".talents-swiper", {
-            slidesPerView: "auto",
-            freeMode: true,
-            autoplay: {
-              delay: 35000,
-            },
-            navigation: {
-              nextEl: '.my-swiper-button-next',
-              prevEl: '.my-swiper-button-prev',
-            },
-            // loop: true,
-          });
-
-    $('.talent-slide-with-detail').find('.talent-img').on('click', function(){
-      var $slide = $(this).parents('.talent-slide-with-detail')
-      if ( $slide.hasClass('expanded') ) {
-        $slide.removeClass('expanded');
-      } else {
-        $slide.addClass('expanded');
-      }
-      talentsSwiper.update();
-    })
-
-    var talentsSwiperAutoplayTimeout;
-    $('.talents-swiper').on('touchstart', function(){
-      talentsSwiperRealCountDown()
-    })
-
-    // talentsSwiper.on('sliderMove', function(){
-    //   talentsSwiperRealCountDown()
-    // })
-
-    talentsSwiper.on('slideChange', function(){
-      talentsSwiperRealCountDown()
-    })
-
-    function talentsSwiperRealCountDown(){
-      // console.log('first:' + talentsSwiper.autoplay.running)
-      talentsSwiper.autoplay.stop();
-
-      clearTimeout(talentsSwiperAutoplayTimeout)
-      // 35 + 35 second to slide next.
-      talentsSwiperAutoplayTimeout = setTimeout( function() {
-        talentsSwiper.autoplay.start();
-      }, 35000);
-    }
+  if ( $('.talents-swiper').length ) {
+    new TalentsSwiper
 
   }
 

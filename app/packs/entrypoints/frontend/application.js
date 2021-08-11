@@ -30,8 +30,9 @@ import "src/parties/navigator/nnl_brand.js"
 
 
 import {MyTl} from "src/my_tl.js"
-import {HScroll} from "src/h_scroll.js"
-import {HAutoScroll} from "src/h_auto_scroll.js"
+import {HScroll} from "src/scroll/h_scroll.js"
+import {HAutoScroll} from "src/scroll/h_auto_scroll.js"
+
 
 
 
@@ -150,13 +151,13 @@ $(document).on("turbolinks:load", function() {
   // })
 
   if ( $('.scroll-wrap.normal-speed').length ) {
-    var hAutoScroll = new HAutoScroll( {scrollToMaxTime: 30000} )
-    var hScroll = new HScroll( hAutoScroll )
+    // var hAutoScroll = new HAutoScroll( {scrollToMaxTime: 30000} )
+    var hScroll = new HScroll( {autoScroll: {scrollToMaxTime: 30000} } )
   }
 
   if ( $('.scroll-wrap.slow-speed').length ) {
-    var hAutoScroll = new HAutoScroll( {scrollToMaxTime: 40000} )
-    var hScroll = new HScroll( hAutoScroll )
+    // var hAutoScroll = new HAutoScroll( {scrollToMaxTime: 40000} )
+    var hScroll = new HScroll(  {autoScroll: {scrollToMaxTime: 40000} } )
   }
 
   if ( $('#corp_infos-strategy-gt-page').length ) {
