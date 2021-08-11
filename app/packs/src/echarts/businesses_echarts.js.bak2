@@ -180,7 +180,7 @@ $(document).on("turbolinks:load", function() {
           [{name: '南宁'}, {name: "印度",value: 30}],
           [{name: '南宁'}, {name: "泰国",value: 30}],
   				[{name: '南宁'}, {name: "马来西亚",value: 30}],
-          // [{name: '南宁'}, {name: "新加坡",value: 30}],
+          [{name: '南宁'}, {name: "新加坡",value: 30}],
           [{name: '南宁'}, {name: "印度尼西亚",value: 30}],
           [{name: '南宁'}, {name: "菲律宾",value: 30}],
           [{name: '南宁'}, {name: "韩国",value: 30}],
@@ -188,7 +188,7 @@ $(document).on("turbolinks:load", function() {
           [{name: '南宁'}, {name: "墨西哥",value: 30}],
           [{name: '南宁'}, {name: "巴西",value: 30}],
           [{name: '南宁'}, {name: "南非",value: 30}],
-          // [{name: '南宁'}, {name: "北京",value: 30}],
+          [{name: '南宁'}, {name: "北京",value: 30}],
           // [{name: '南宁'}, {name: "深圳",value: 30}],
 
           // [{name: '南宁'}, {name: "文莱",value: 30}],
@@ -257,16 +257,16 @@ $(document).on("turbolinks:load", function() {
         var OMData = [ //欧美国家
           [{name: '南宁'}, {name: "西班牙",value: 30}],
           [{name: '南宁'}, {name: "英国",value: 30}],
-          // [{name: '南宁'}, {name: "比利时",value: 30}],
-          // [{name: '南宁'}, {name: "荷兰",value: 30}],
+          [{name: '南宁'}, {name: "比利时",value: 30}],
+          [{name: '南宁'}, {name: "荷兰",value: 30}],
           [{name: '南宁'}, {name: "德国",value: 30}],
           [{name: '南宁'}, {name: "挪威",value: 30}],
           [{name: '南宁'}, {name: "丹麦",value: 30}],
           [{name: '南宁'}, {name: "意大利",value: 30}],
 
           //
-          // [{name: '南宁'}, {name: "波兰",value: 30}],
-          // [{name: '南宁'}, {name: "立陶宛",value: 30}],
+          [{name: '南宁'}, {name: "波兰",value: 30}],
+          [{name: '南宁'}, {name: "立陶宛",value: 30}],
           [{name: '南宁'}, {name: "乌克兰",value: 30}],
           [{name: '南宁'}, {name: "土耳其",value: 30}],
 
@@ -321,7 +321,7 @@ $(document).on("turbolinks:load", function() {
   					type: 'lines',
   					zlevel: 1, // 用于分层，z-index的效果
   					effect: {
-  						show: false, // 动效是否显示 org true
+  						show: true, // 动效是否显示
   						period: 6, // 特效动画时间
   						trailLength: 0.7, // 特效尾迹的长度
   						color: '#ea9999', // 特效颜色
@@ -360,11 +360,9 @@ $(document).on("turbolinks:load", function() {
   					type: 'effectScatter',
   					coordinateSystem: 'geo', // 表示使用的坐标系为地理坐标系
   					zlevel: 3,
-            showEffectOn: 'emphasis', // org comment-it
   					rippleEffect: {
   						brushType: 'stroke' // 波纹绘制效果
   					},
-            // symbol: 'pin',
   					label: {
   						normal: { // 默认的文本标签显示样式
   							show: true,
@@ -381,8 +379,7 @@ $(document).on("turbolinks:load", function() {
   						return {
   							name: dataItem[1].name,
   							value: geoCoordMap[dataItem[1].name], // 起点的位置
-                symbolSize: dataItem[1].value / 4, // 散点的大小，通过之前设置的权重来计算，val的值来自data返回的value
-  							// symbolSize: dataItem[1].value / 8, // 散点的大小，通过之前设置的权重来计算，val的值来自data返回的value
+  							symbolSize: dataItem[1].value / 8, // 散点的大小，通过之前设置的权重来计算，val的值来自data返回的value
   						};
   					})
   				});
