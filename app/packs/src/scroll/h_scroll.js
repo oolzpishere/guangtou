@@ -18,6 +18,18 @@ class HScroll extends MyScroll {
     // }
   }
 
+  isHorizontalStart(){
+    var _self = this
+    return ( _self.scrollWrap.scrollLeft() == 0 )
+  }
+
+  isHorizontalEnd(){
+    var _self = this
+    return ( _self.scrollWrap.scrollLeft() + _self.scrollWrap.width() ) >= _self.scrollContent.width()
+  }
+
+  // private
+
   initScroll(){
     super.initScroll();
     var _self = this
@@ -74,40 +86,24 @@ class HScroll extends MyScroll {
   updateArrow() {
     var _self = this
     $('.scroll-left-half, .scroll-right-half').removeClass('d-none')
-    if ( _self.scrollPosition() == 'start' ) {
+    if ( _self.isHorizontalStart() ) {
       $('.scroll-left-half').addClass('d-none')
-    } else if ( _self.scrollPosition() == 'end' ) {
+    } else if ( _self.isHorizontalEnd() ) {
       $('.scroll-right-half').addClass('d-none')
     }
   }
 
-  scrollPosition(){
-    var _self = this
-    return _self.horizontalPosition()
-  }
-
-  horizontalPosition(){
-    var _self = this
-    if ( _self.isHorizontalStart() ) {
-      _self.position = 'start'
-    } else if ( _self.isHorizontalEnd() ) {
-      _self.position = 'end'
-    } else {
-      _self.position = 'scrolling'
-    }
-    return _self.position
-  }
-
-  isHorizontalStart(){
-    var _self = this
-    return ( _self.scrollWrap.scrollLeft() == 0 )
-  }
-
-
-  isHorizontalEnd(){
-    var _self = this
-    return ( _self.scrollWrap.scrollLeft() + _self.scrollWrap.width() ) >= _self.scrollContent.width()
-  }
-
 
 }
+
+// scrollPosition(){
+//   var _self = this
+//   if ( _self.isHorizontalStart() ) {
+//     return 'start'
+//   } else if ( _self.isHorizontalEnd() ) {
+//     return 'end'
+//   } else {
+//     return 'scrolling'
+//   }
+//
+// }

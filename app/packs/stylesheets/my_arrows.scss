@@ -1,15 +1,31 @@
-$size: 50px;
+$size: 45px;
 $speed: 3s;
 $peakopacity:0.8;
 
+.scroll-content{
+  width: fit-content;
+}
+
 #parties-navigator-nnl_society-page, #parties-navigator-nnl_service-page, #parties-navigator-nnl_honor-page, #parties-navigator-xcl_excellence-honors-page, #parties-navigator-xcl_alliance-page{
   .scroll-left-dark-arrows{
-    bottom:46%;
+    top:48%;
     left: -37px;
   }
   .scroll-right-dark-arrows{
-    bottom:46%;
+    top:48%;
     right: -67px;
+  }
+}
+
+#advantages-innovation_construction-page, #advantages-innovation_achievement-page{
+
+  .scroll-left-dark-arrows{
+    top:48%;
+    left: 55px;
+  }
+  .scroll-right-dark-arrows{
+    top:48%;
+    right: 65px;
   }
 }
 

@@ -11,7 +11,6 @@ class HAutoScroll {
     // this.direction = 'horizontal'
     // this._countDownTimer
     this._hScroll = hScroll
-    this._isEnd = false
     this._isAutoScroll = false
     this._circleTime = 5000
     this._touchStopAutoScrollItems = $('.scroll-wrap, .scroll-left-half, .scroll-right-half')
@@ -25,6 +24,32 @@ class HAutoScroll {
     // init timer
     this.init()
   }
+
+  circleCounter(){
+    console.log('begin circleCounter');
+    var _this = this
+    _this._circleTimer = setInterval( function() {
+      console.log('_isAutoScroll: ' + _this._isAutoScroll + ', _isEnd: ' +  _this._isEnd );
+      if ( _this.isNotScrolling() ) {
+        // begin to scroll
+        _this.autoScrollToMax()
+      } else if ( _this.isStayAtEnd() ) {
+        // scroll back to begin
+        _this.scrollBack()
+      }
+
+      console.log( '_circleCounterNum:' + (_this._circleCounterNum += 1 ) );
+    }, _this._circleTime );
+  }
+
+  stopAutoScroll(){
+    this.setNotScrolling()
+    this.stopJqueryScrollTo()
+    this.resetTimer()
+    this._hScroll.updateArrow()
+  }
+
+  // private
 
   init(){
     var _this = this
@@ -45,26 +70,7 @@ class HAutoScroll {
 
   }
 
-  circleCounter(){
-    console.log('begin circleCounter');
-    var _this = this
-    _this._circleTimer = setInterval( function() {
-      console.log('_isAutoScroll: ' + _this._isAutoScroll + ', _isEnd: ' +  _this._isEnd );
-      if ( _this.isNotScrolling() ) {
-        // begin to scroll
-        _this.startAutoScroll()
-      } else if ( _this.isStayAtEnd() ) {
-        // scroll back to begin
-        _this.scrollBack()
-      }
-
-      console.log( '_circleCounterNum:' + (_this._circleCounterNum += 1 ) );
-    }, _this._circleTime );
-  }
-
-  // scroll back > wait countDown
-
-  startAutoScroll(){
+  autoScrollToMax(){
     var _this = this
     _this.setScrolling()
     // _this._isAutoScroll = true;
@@ -73,7 +79,6 @@ class HAutoScroll {
     _this._scrollWrap.scrollTo("max", _this._scrollToMaxTime , {
       done: function(){
         console.log('done: touch-bottom');
-        _this.setStayAtEnd()
       },
       always: function(){
         _this.setNotScrolling()
@@ -91,19 +96,11 @@ class HAutoScroll {
     _this._scrollWrap.scrollTo("0", 1000, {
       always: function(){
         _this.setNotScrolling()
-        _this.setNotAtEnd()
         console.log('scrollBack always: start circleCounter');
         _this.resetTimer();
       }
     })
 
-  }
-
-  stopAutoScroll(){
-    this.setNotScrolling()
-    this.stopJqueryScrollTo()
-    this.resetTimer()
-    this._hScroll.updateArrow()
   }
 
   resetTimer(){
@@ -118,11 +115,11 @@ class HAutoScroll {
   }
 
   isNotScrolling(){
-    return ( !this._isAutoScroll && !this._isEnd )
+    return ( !this._isAutoScroll && !this._hScroll.isHorizontalEnd() )
   }
 
   isStayAtEnd(){
-    return ( !this._isAutoScroll && this._isEnd )
+    return ( !this._isAutoScroll && this._hScroll.isHorizontalEnd() )
   }
 
   setScrolling(){
@@ -131,14 +128,6 @@ class HAutoScroll {
 
   setNotScrolling(){
     this._isAutoScroll = false;
-  }
-
-  setStayAtEnd(){
-    this._isEnd = true
-  }
-
-  setNotAtEnd(){
-    this._isEnd = false
   }
 
   disposeWhenChangePage(){

@@ -7,23 +7,30 @@
     <!-- main right -->
     <div class=" position-relative" style="width: 70%; ">
 
-      <div class="row g-0" style='margin-top: 225px; width: 1312px; overflow: scroll;'>
 
-        <div class="d-flex">
-          <div class="">
-            <%= image_pack_tag 'media/images/advantages/innovation/construction/1.png', class: '' %>
+      <div class="scroll-container position-relative">
+        <div class=" scroll-wrap normal-speed" style='margin-top: 225px; width: 1312px; overflow: scroll;'>
+          <div class="d-flex scroll-content">
+            <div class="">
+              <%= image_pack_tag 'media/images/advantages/innovation/construction/1.png', class: '' %>
+            </div>
+            <div class="position-relative">
+              <%= image_pack_tag 'media/images/advantages/innovation/construction/2.png', class: '' %>
+            </div>
+            <div class="">
+              <%= link_to( advantages_innovation_construction_more_path, html_options = {}) do %>
+                <%= image_pack_tag 'media/images/advantages/innovation/construction/3.png', class: '' %>
+              <% end %>
+            </div>
           </div>
-          <div class="">
-            <%= image_pack_tag 'media/images/advantages/innovation/construction/2.png', class: '' %>
-          </div>
-          <div class="">
-            <%= link_to( advantages_innovation_construction_more_path, html_options = {}) do %>
-              <%= image_pack_tag 'media/images/advantages/innovation/construction/3.png', class: '' %>
-            <% end %>
-          </div>
+
         </div>
 
+        <div class="scroll-left-dark-arrows scroll-left-half"></div>
+        <div class="scroll-right-dark-arrows scroll-right-half"></div>
       </div>
+
+
 
       <%= render 'innovation_navs', extra_link: {
         path: advantages_innovation_construction_more_path,
