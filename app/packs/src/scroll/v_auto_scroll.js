@@ -3,14 +3,14 @@ import 'jquery.scrollto'
 
 // import { MyScroll } from './my_scroll'
 
-export {  HAutoScroll };
+export {  VAutoScroll };
 
-class HAutoScroll {
-  constructor( hScroll, opts = {scrollToMaxTime: 10000} ) {
+class VAutoScroll {
+  constructor( vScroll, opts = {scrollToMaxTime: 10000} ) {
     // super();
     // this.direction = 'horizontal'
     // this._countDownTimer
-    this._hScroll = hScroll
+    this._vScroll = vScroll
     this._isAutoScroll = false
     this._circleTime = 5000
     this._touchStopAutoScrollItems = $('.scroll-wrap, .scroll-start-half, .scroll-end-half')
@@ -45,7 +45,7 @@ class HAutoScroll {
     this.setNotScrolling()
     this.stopJqueryScrollTo()
     this.resetTimer()
-    this._hScroll.updateArrow()
+    this._vScroll.updateArrow()
   }
 
   // private
@@ -54,7 +54,6 @@ class HAutoScroll {
     var _this = this
     _this.circleCounter()
     _this.initTouchStopAutoScroll()
-    console.log('autoScroll init')
 
     _this.disposeWhenChangePage()
   }
@@ -114,11 +113,11 @@ class HAutoScroll {
   }
 
   isNotScrolling(){
-    return ( !this._isAutoScroll && !this._hScroll.isHorizontalEnd() )
+    return ( !this._isAutoScroll && !this._vScroll.isVerticalEnd() )
   }
 
   isStayAtEnd(){
-    return ( !this._isAutoScroll && this._hScroll.isHorizontalEnd() )
+    return ( !this._isAutoScroll && this._vScroll.isVerticalEnd() )
   }
 
   setScrolling(){

@@ -25,7 +25,7 @@ class HScroll {
 
   initLeftHalf(){
     var _self = this
-    $('.scroll-left-half').on('click', function(){
+    $('.scroll-start-half').on('click', function(){
       var step = $('.scroll-wrap').width() / 2;
       $('.scroll-wrap').scrollTo("-=" + step + "px", 500, {
         onAfter: function() {
@@ -37,7 +37,7 @@ class HScroll {
 
   initRightHalf(){
     var _self = this
-    $('.scroll-right-half').on('click', function(){
+    $('.scroll-end-half').on('click', function(){
       var step = $('.scroll-wrap').width() / 2;
       $('.scroll-wrap').scrollTo("+=" + step + "px", 500, {
         onAfter: function() {
@@ -56,11 +56,11 @@ class HScroll {
 
   updateArrow() {
     var _self = this
-    $('.scroll-left-half, .scroll-right-half').removeClass('d-none')
+    $('.scroll-start-half, .scroll-end-half').removeClass('d-none')
     if ( _self.scrollPosition() == 'start' ) {
-      $('.scroll-left-half').addClass('d-none')
+      $('.scroll-start-half').addClass('d-none')
     } else if ( _self.scrollPosition() == 'end' ) {
-      $('.scroll-right-half').addClass('d-none')
+      $('.scroll-end-half').addClass('d-none')
     }
   }
 

@@ -31,6 +31,7 @@ import "src/parties/navigator/nnl_brand.js"
 
 import {MyTl} from "src/my_tl.js"
 import {HScroll} from "src/scroll/h_scroll.js"
+import {VScroll} from "src/scroll/v_scroll.js"
 import {HAutoScroll} from "src/scroll/h_auto_scroll.js"
 
 
@@ -140,25 +141,36 @@ $(document).on("turbolinks:load", function() {
     $('.scroll-down-content').scrollTo("+=" + step + "px", 500)
   })
 
-  // $('.scroll-left-half').on('click', function(){
+  // $('.scroll-start-half').on('click', function(){
   //   var step = $('.scroll-content').width() / 2;
   //   $('.scroll-content').scrollTo("-=" + step + "px", 500)
   // })
   //
-  // $('.scroll-right-half').on('click', function(){
+  // $('.scroll-end-half').on('click', function(){
   //   var step = $('.scroll-content').width() / 2;
   //   $('.scroll-content').scrollTo("+=" + step + "px", 500)
   // })
 
-  if ( $('.scroll-wrap.normal-speed').length ) {
+  if ( $('.scroll-wrap.h-scroll.normal-speed').length ) {
     // var hAutoScroll = new HAutoScroll( {scrollToMaxTime: 30000} )
     var hScroll = new HScroll( {autoScroll: {scrollToMaxTime: 30000} } )
   }
 
-  if ( $('.scroll-wrap.slow-speed').length ) {
+  if ( $('.scroll-wrap.h-scroll.slow-speed').length ) {
     // var hAutoScroll = new HAutoScroll( {scrollToMaxTime: 40000} )
     var hScroll = new HScroll(  {autoScroll: {scrollToMaxTime: 40000} } )
   }
+
+  if ( $('.scroll-wrap.v-scroll.normal-speed').length ) {
+    // var hAutoScroll = new HAutoScroll( {scrollToMaxTime: 30000} )
+    var vScroll = new VScroll( {autoScroll: {scrollToMaxTime: 30000} } )
+  }
+
+  if ( $('.scroll-wrap.v-scroll.slow-speed').length ) {
+    // var hAutoScroll = new HAutoScroll( {scrollToMaxTime: 40000} )
+    var vScroll = new VScroll(  {autoScroll: {scrollToMaxTime: 40000} } )
+  }
+
 
   if ( $('#corp_infos-strategy-gt-page').length ) {
     var myTl = new MyTl();

@@ -1,31 +1,27 @@
 import 'jquery.scrollto'
 
 import { MyScroll } from './my_scroll'
-import { HAutoScroll } from './h_auto_scroll'
+import { VAutoScroll } from './v_auto_scroll'
 
 
-export {  HScroll };
+export {  VScroll };
 // TODO: add vertical scroll
-class HScroll extends MyScroll {
+class VScroll extends MyScroll {
   constructor( opts = { autoScroll: {} } ) {
     super();
 
-    this._autoScroll = new HAutoScroll( this, opts.autoScroll )
+    this._autoScroll = new VAutoScroll( this, opts.autoScroll )
 
-    // if ( typeof(autoScroll) != 'undefined' ) {
-    //   this._autoScroll = autoScroll
-    //
-    // }
   }
 
-  isHorizontalStart(){
+  isVerticalStart(){
     var _self = this
-    return ( _self.scrollWrap.scrollLeft() == 0 )
+    return ( _self.scrollWrap.scrollTop() == 0 )
   }
 
-  isHorizontalEnd(){
+  isVerticalEnd(){
     var _self = this
-    return ( _self.scrollWrap.scrollLeft() + _self.scrollWrap.width() ) >= _self.scrollContent.width()
+    return ( _self.scrollWrap.scrollTop() + _self.scrollWrap.height() ) >= _self.scrollContent.height()
   }
 
   // private
@@ -33,15 +29,15 @@ class HScroll extends MyScroll {
   initScroll(){
     super.initScroll();
     var _self = this
-    _self.initLeftHalf()
-    _self.initRightHalf()
+    _self.initStartHalf()
+    _self.initEndHalf()
 
   }
 
-  initLeftHalf(){
+  initStartHalf(){
     var _self = this
     $('.scroll-start-half').on('click', function(){
-      var step = _self.scrollWrap.width() / 2;
+      var step = _self.scrollWrap.height() / 2;
       _self.scrollWrap.scrollTo("-=" + step + "px", 500, {
         start: function(){
           _self._autoScroll.setScrolling()
@@ -57,10 +53,10 @@ class HScroll extends MyScroll {
     })
   }
 
-  initRightHalf(){
+  initEndHalf(){
     var _self = this
     $('.scroll-end-half').on('click', function(){
-      var step = _self.scrollWrap.width() / 2;
+      var step = _self.scrollWrap.height() / 2;
       _self.scrollWrap.scrollTo("+=" + step + "px", 500, {
         start: function(){
           _self._autoScroll.setScrolling()
@@ -86,9 +82,9 @@ class HScroll extends MyScroll {
   updateArrow() {
     var _self = this
     $('.scroll-start-half, .scroll-end-half').removeClass('d-none')
-    if ( _self.isHorizontalStart() ) {
+    if ( _self.isVerticalStart() ) {
       $('.scroll-start-half').addClass('d-none')
-    } else if ( _self.isHorizontalEnd() ) {
+    } else if ( _self.isVerticalEnd() ) {
       $('.scroll-end-half').addClass('d-none')
     }
   }
