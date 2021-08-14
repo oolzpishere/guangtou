@@ -32,7 +32,7 @@ import "src/parties/navigator/nnl_brand.js"
 import {MyTl} from "src/my_tl.js"
 import {HScroll} from "src/scroll/h_scroll.js"
 import {VScroll} from "src/scroll/v_scroll.js"
-import {HAutoScroll} from "src/scroll/h_auto_scroll.js"
+// import {HAutoScroll} from "src/scroll/h_auto_scroll.js"
 
 
 
