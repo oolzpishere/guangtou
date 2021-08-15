@@ -52,22 +52,27 @@ module Frontend
           {path: parties_navigator_nnl_lead_path,
             img_path: 'media/images/party/nnl/navs/1.png',
             active_img_path: 'media/images/party/nnl/navs/1-active.png',
+            html_options: {}
           },
           {path: parties_navigator_nnl_brand_path,
             img_path: 'media/images/party/nnl/navs/2.png',
             active_img_path: 'media/images/party/nnl/navs/2-active.png',
+            html_options: {}
           },
           {path: parties_navigator_nnl_society_path,
             img_path: 'media/images/party/nnl/navs/3.png',
             active_img_path: 'media/images/party/nnl/navs/3-active.png',
+            html_options: {}
           },
           {path: parties_navigator_nnl_service_path,
             img_path: 'media/images/party/nnl/navs/4.png',
             active_img_path: 'media/images/party/nnl/navs/4-active.png',
+            html_options: {'data-turbolinks'=> false}
           },
           {path: parties_navigator_nnl_honor_path,
             img_path: 'media/images/party/nnl/navs/5.png',
             active_img_path: 'media/images/party/nnl/navs/5-active.png',
+            html_options: {}
           },
 
         ]
@@ -85,27 +90,32 @@ module Frontend
           {path: parties_navigator_xcl_pilot_path,
             img_path: 'media/images/party/xcl/navs/1.png',
             active_img_path: 'media/images/party/xcl/navs/1-active.png',
-            big_img_path: 'media/images/party/navs/title/1.png'
+            big_img_path: 'media/images/party/navs/title/1.png',
+            html_options: {'data-turbolinks'=> false}
           },
           {path: parties_navigator_xcl_fortress_path,
             img_path: 'media/images/party/xcl/navs/2.png',
             active_img_path: 'media/images/party/xcl/navs/2-active.png',
-            big_img_path: 'media/images/party/navs/title/2.png'
+            big_img_path: 'media/images/party/navs/title/2.png',
+            html_options: {}
           },
           {path: parties_navigator_xcl_pioneer_path,
             img_path: 'media/images/party/xcl/navs/3.png',
             active_img_path: 'media/images/party/xcl/navs/3-active.png',
-            big_img_path: 'media/images/party/navs/title/3.png'
+            big_img_path: 'media/images/party/navs/title/3.png',
+            html_options: {}
           },
           {path: parties_navigator_xcl_excellence_path,
             img_path: 'media/images/party/xcl/navs/4.png',
             active_img_path: 'media/images/party/xcl/navs/4-active.png',
-            big_img_path: 'media/images/party/navs/title/4.png'
+            big_img_path: 'media/images/party/navs/title/4.png',
+            html_options: {}
           },
           {path: parties_navigator_xcl_alliance_path,
             img_path: 'media/images/party/xcl/navs/5.png',
             active_img_path: 'media/images/party/xcl/navs/5-active.png',
-            big_img_path: 'media/images/party/navs/title/5.png'
+            big_img_path: 'media/images/party/navs/title/5.png',
+            html_options: {}
           },
         ]
         @party_xcl_navs.each do |hash|

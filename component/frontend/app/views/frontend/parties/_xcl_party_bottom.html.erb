@@ -5,7 +5,7 @@
 
       <% @party_xcl_navs.each do |nav| %>
         <div class="col-auto text-center my-2">
-          <%= link_to(nav[:path], html_options = {}) do %>
+          <%= link_to(nav[:path], html_options = nav[:html_options]) do %>
             <% nav_class = "" %>
             <% (nav_class += ' active') if nav[:active] %>
             <%= image_pack_tag nav[:img_path], class: nav_class, style: ""%>

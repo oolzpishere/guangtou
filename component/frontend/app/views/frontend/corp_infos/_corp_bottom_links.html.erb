@@ -3,7 +3,7 @@
 <div class="row g-0 w-100 h-100 align-items-center">
   <% @corp_navs.each do |corp_nav| %>
     <div class="col-3 text-center">
-      <%= link_to(corp_nav[:path], html_options = {}) do %>
+      <%= link_to(corp_nav[:path], html_options = corp_nav[:html_options] ) do %>
         <% nav_class = "rounded-pill shadow-dark-xxl" %>
         <% (nav_class += ' active') if corp_nav[:active] %>
         <%= image_pack_tag corp_nav[:img_path], class: nav_class, style: "width: 85%"%>
