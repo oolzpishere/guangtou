@@ -11,18 +11,21 @@ var MyTl = function( options = {'firstDelay': 0.2} ) {
 
 
 MyTl.prototype.addMovements = function() {
-  var _self = this;
+  var _this = this;
 
-  _self.sequenceDivs.sequenceArray.forEach( (sequenceDiv, i) => {
-    let opts = _self.movementOpts()[ sequenceDiv.movement ]
-    var animation_opts = $.extend({}, { duration: sequenceDiv.duration }, opts);
-    _self.addTlFrom( _self, sequenceDiv, animation_opts)
+  _this.sequenceDivs.sequenceArray.forEach( (sequenceDiv, i) => {
+    var animation_opts = $.extend(
+      {},
+      { duration: sequenceDiv.duration },
+      _this.movementOpts()[ sequenceDiv.movement ]
+    );
+
+    _this.addTlFrom( _this, sequenceDiv, animation_opts)
   });
 
 }
 
 MyTl.prototype.movementOpts = function() {
-  var _self = this;
   return {
     slideInLeft:  { x: -600, opacity: 0 },
     slideInRight: { x: 600, opacity: 0 },
@@ -30,8 +33,8 @@ MyTl.prototype.movementOpts = function() {
   }
 }
 
-MyTl.prototype.addTlFrom = function( _self, sequenceDiv, animation_opts) {
-  _self.tl.from( sequenceDiv.el, animation_opts, sequenceDiv.label );
+MyTl.prototype.addTlFrom = function( _this, sequenceDiv, animation_opts) {
+  _this.tl.from( sequenceDiv.el, animation_opts, sequenceDiv.label );
 }
 
 MyTl.prototype.myClearTl = function(tl) {
@@ -50,16 +53,16 @@ class SequenceDivs {
   }
 
   initSequenceArray() {
-    var _self = this;
+    var _this = this;
     $('.my-sequence').each(function( index ) {
-      _self.sequenceArray.push( new SequenceDiv( this ) );
+      _this.sequenceArray.push( new SequenceDiv( this ) );
     });
   }
 
   sortSequence() {
-    var _self = this;
+    var _this = this;
     // sort array
-    _self.sequenceArray.sort( (a, b) => a.sequenceId - b.sequenceId );
+    _this.sequenceArray.sort( (a, b) => a.sequenceId - b.sequenceId );
   }
 
 }
@@ -83,19 +86,20 @@ class SequenceDiv {
   };
 
   getItemDuration() {
-    var _self = this
+    var _this = this
     // add data-duration='5' at item, specify item duration.
-    if ( _self.$item.data('duration') ) {
-      _self.defaultDuration = _self.$item.data('duration')
+    if ( _this.$item.data('duration') ) {
+      // _this.defaultDuration = _this.$item.data('duration')
+      return _this.$item.data('duration')
     }
-    return _self.defaultDuration
+    return _this.defaultDuration
   };
 
 
 }
 
  // var _proto = SequenceDivs.prototype;
-// _self.sequenceArray = $('.my-sequence').toArray()
+// _this.sequenceArray = $('.my-sequence').toArray()
 
 
 // MyTl.prototype.findSequence = function() {

@@ -11,6 +11,9 @@ $(document).on("turbolinks:load", function() {
 
     var partyIndexSwiper = new Swiper(".partyIndexSwiper", {
             // loop: true,
+            autoplay: {
+              delay: 15000,
+            },
             pagination: {
               el: ".swiper-pagination",
               type: 'bullets',
