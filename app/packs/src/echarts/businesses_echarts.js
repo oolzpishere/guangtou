@@ -42,7 +42,7 @@ $(document).on("turbolinks:load", function() {
         series: [{
             name: '年增长率',
             type: 'bar',
-            data: [15, 20, 36, 10, 10, 20],
+            data: [15, 20, 36, 28, 18, 20],
             animationDelay: function (idx) {
               return idx * 200 + 200;
             }

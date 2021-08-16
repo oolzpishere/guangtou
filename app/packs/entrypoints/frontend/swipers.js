@@ -56,6 +56,9 @@ $(document).on("turbolinks:load", function() {
     var corpAllSwiper = new Swiper(".corpAllSwiper", {
             direction: "vertical",
             loop: true,
+            autoplay: {
+              delay: 15000,
+            },
             pagination: {
               el: ".swiper-pagination",
               type: 'bullets',

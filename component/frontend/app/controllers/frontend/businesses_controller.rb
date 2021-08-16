@@ -56,7 +56,7 @@ module Frontend
         @business_navs = [
           {path: businesses_space_path, img_path: 'media/images/businesses/navs/1.jpg', active_img_path: 'media/images/businesses/navs/01.jpg', html_options: {} },
           {path: businesses_car_path, img_path: 'media/images/businesses/navs/2.jpg', active_img_path: 'media/images/businesses/navs/02.jpg', html_options: {} },
-          {path: businesses_ship_path, img_path: 'media/images/businesses/navs/3.jpg', active_img_path: 'media/images/businesses/navs/03.jpg', html_options: {'data-turbolinks'=> false} },
+          {path: businesses_ship_path, img_path: 'media/images/businesses/navs/3.jpg', active_img_path: 'media/images/businesses/navs/03.jpg', html_options: {} },
           {path: businesses_train_path, img_path: 'media/images/businesses/navs/4.jpg', active_img_path: 'media/images/businesses/navs/04.jpg', html_options: {} },
           {path: businesses_electronic_path, img_path: 'media/images/businesses/navs/5.jpg', active_img_path: 'media/images/businesses/navs/05.jpg', html_options: {} },
           # {path: businesses_capacitor_path, img_path: 'media/images/businesses/navs/6.jpg', active_img_path: 'media/images/businesses/navs/06.jpg'},

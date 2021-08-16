@@ -67,7 +67,7 @@ module Frontend
           {path: parties_navigator_nnl_service_path,
             img_path: 'media/images/party/nnl/navs/4.png',
             active_img_path: 'media/images/party/nnl/navs/4-active.png',
-            html_options: {'data-turbolinks'=> false}
+            html_options: {}
           },
           {path: parties_navigator_nnl_honor_path,
             img_path: 'media/images/party/nnl/navs/5.png',
@@ -91,7 +91,7 @@ module Frontend
             img_path: 'media/images/party/xcl/navs/1.png',
             active_img_path: 'media/images/party/xcl/navs/1-active.png',
             big_img_path: 'media/images/party/navs/title/1.png',
-            html_options: {'data-turbolinks'=> false}
+            html_options: {}
           },
           {path: parties_navigator_xcl_fortress_path,
             img_path: 'media/images/party/xcl/navs/2.png',

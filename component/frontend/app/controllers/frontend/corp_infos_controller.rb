@@ -65,7 +65,7 @@ module Frontend
 
       def set_corp_navs
         @corp_navs = [
-          {path: corp_infos_profile_path, img_path: 'media/images/corp/navs/profile-nav-btn.png', active_img_path: 'media/images/corp/navs/profile-nav-btn-active.png', html_options: {'data-turbolinks'=> false} },
+          {path: corp_infos_profile_path, img_path: 'media/images/corp/navs/profile-nav-btn.png', active_img_path: 'media/images/corp/navs/profile-nav-btn-active.png', html_options: {} },
           {path: corp_infos_strategy_path, img_path: 'media/images/corp/navs/strategy-nav-btn.png', active_img_path: 'media/images/corp/navs/strategy-nav-btn-active.png', html_options: {} },
           {path: corp_infos_culture_path, img_path: 'media/images/corp/navs/culture-nav-btn.png', active_img_path: 'media/images/corp/navs/culture-nav-btn-active.png', html_options: {} },
           {path: corp_infos_industry_path, img_path: 'media/images/corp/navs/gx-buss-nav-btn.png', active_img_path: 'media/images/corp/navs/gx-buss-nav-btn-active.png', html_options: {} },

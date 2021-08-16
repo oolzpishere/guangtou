@@ -29,7 +29,7 @@ module Frontend
       def set_advantage_navs
         @advantage_navs = [
           {path: advantages_team_path, img_path: 'media/images/advantages/navs/1.png', active_img_path: 'media/images/advantages/navs/01.png', html_options: {} },
-          {path: advantages_innovation_construction_path, matcher: '/advantages/innovation', img_path: 'media/images/advantages/navs/2.png', active_img_path: 'media/images/advantages/navs/02.png', html_options: {'data-turbolinks'=> false}},
+          {path: advantages_innovation_construction_path, matcher: '/advantages/innovation', img_path: 'media/images/advantages/navs/2.png', active_img_path: 'media/images/advantages/navs/02.png', html_options: {}},
           {path: advantages_equipment_path, img_path: 'media/images/advantages/navs/3.png', active_img_path: 'media/images/advantages/navs/03.png', html_options: {} },
         ]
         @advantage_navs.each do |hash|
