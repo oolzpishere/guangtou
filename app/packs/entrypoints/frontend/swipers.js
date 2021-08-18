@@ -31,12 +31,12 @@ $(document).on("turbolinks:load", function() {
     var corp_all_swiper_tls = [
       function(){
         //  ease: "elastic"
-        corp_all_swiper_tl.from(".corp-index-swiper-title", { opacity: 0, duration: 1 });
-        corp_all_swiper_tl.from(".corp-index-swiper-num", { opacity: 0, duration: 1, onComplete: function(){startCount('.corp_all_counter')} })
+        // corp_all_swiper_tl.from(".corp-index-swiper-title", { opacity: 0, duration: 1 });
+        // corp_all_swiper_tl.from(".corp-index-swiper-num", { opacity: 0, duration: 1, onComplete: function(){startCount('.corp_all_counter')} })
       },
       function(){
-        corp_all_swiper_tl.from(".corp-index-swiper-title", {opacity: 0, duration: 1})
-          .from(".corp-index-swiper-num", {opacity: 0, duration: 1, onComplete: function(){startCount('.corp_all_counter')} })
+        // corp_all_swiper_tl.from(".corp-index-swiper-title", {opacity: 0, duration: 1})
+        //   .from(".corp-index-swiper-num", {opacity: 0, duration: 1, onComplete: function(){startCount('.corp_all_counter')} })
       },
       function(){
         corp_all_swiper_tl.from(".title-slide-in", { opacity: 0, duration: 1})
@@ -79,7 +79,6 @@ $(document).on("turbolinks:load", function() {
 
       corpAllSwiper.on('slideChange', function () {
         // corpLinksSwiper.slideTo(swiper.realIndex)
-        console.log(corpAllSwiper.realIndex);
         // my_clear_tl(corp_all_swiper_tl)
 
         myHelpers.myClearTl(corp_all_swiper_tl)

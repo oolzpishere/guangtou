@@ -50,15 +50,15 @@ import {VScroll} from "src/scroll/v_scroll.js"
 $(document).on("turbolinks:load", function() {
   // disable right click except home-page.
   if ( $('#home-page').length == 0 ) {
-    document.addEventListener('contextmenu', event => event.preventDefault());
+    // document.addEventListener('contextmenu', event => event.preventDefault());
   }
 
   var wHeight = window.innerHeight;
   var wWidth = window.innerWidth;
 
   console.log(wHeight)
-
-  if ( $('.window-holder').length > 0 ) {
+  // TODO: add on window change change height.
+  if ( $('.window-holder').length ) {
     $('.window-holder').css("height", wHeight)
     $('.window-holder').css("width", wWidth)
   }
