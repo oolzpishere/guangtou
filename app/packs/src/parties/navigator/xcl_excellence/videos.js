@@ -22,14 +22,13 @@ $(document).on("turbolinks:load", function() {
 
   if ( $('#parties-navigator-xcl_excellence-videos-page').length ) {
     var activitiesVideos = new ActivitiesVideos
+    var activitiesVideoContents = new ActivitiesVideoContents
 
     $('.video-tag').on('click', function(){
       var videoName = $(this).data('name')
 
       $('.absolute-video-container').addClass('active')
       // filterItemsByKey( $('.video-content-container'), 'name', videoName ).addClass('active')
-
-      var activitiesVideoContents = new ActivitiesVideoContents
       activitiesVideoContents.changeTitle( videoName )
 
       // activitiesVideos.videos[videoName].play()
@@ -153,7 +152,7 @@ class ActivitiesVideos {
     $('.my-video-close-btn').on('click touchstart mouseenter', function(){
       // _this.pauseAllVideos()
       _this._video.pause()
-
+      _this.exitFullScreen( _this._video )
       // let currentVideoName = _this.getVideoName(this)
       $('.absolute-video-container').removeClass('active')
       // $('.video-content-container').removeClass('active')
