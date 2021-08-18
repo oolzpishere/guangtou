@@ -2,24 +2,27 @@
   <% videos = ['wj', 'gqbn', 'yxzg', 'qnll', 'wazg', 'dzwx', 'gxgs', 'xdsd', 'dcmz', 'xyhd'] %>
 
   <div class="absolute-video-container position-absolute w-100 h-100 video-bg-white" style="top:0; left:0; z-index:10;">
-    <div class="video-content-container active h-100  position-relative" data-name="wj" >
-      <div class="w-100" style="height: 195px;"></div>
-      <div class="col-12 text-center" style="">
-        <%= image_pack_tag "media/images/party/xcl/excellence/videos/01.png", class: "video-content-title" %>
+    <% videos.each_with_index do |video_name, i| %>
+      <div class="video-content-container h-100  position-relative" data-name=<%= video_name %> >
+        <div class="w-100" style="height: 195px;"></div>
+        <div class="col-12 text-center" style="">
+          <%= image_pack_tag "media/images/party/xcl/excellence/videos/0#{i + 1}.png", class: "" %>
+        </div>
+        <div class=" col-auto position-relative d-flex justify-content-center mt-4" style="margin-top: 0px; " >
+          <!-- <i class="bi bi-x-lg position-absolute close-video" style="font-size: 2rem; color: white; bottom: 0; left: -2em;"></i> -->
+          <!-- data-setup='{"controls": true}'> -->
+          <!-- vjs-show-big-play-button-on-pause -->
+          <video
+              id=<%= "party-#{video_name}-video" %>
+              class="video-js my-vjs-skin "
+              width="1087"
+              enableTouchActivity
+              data-setup=''>
+            <source src='<%= "/videos/parties/activities/#{video_name}.mp4" %>' type="video/mp4"></source>
+          </video>
+        </div>
       </div>
-      <div class=" col-auto position-relative d-flex justify-content-center mt-4" style="margin-top: 0px; " >
-        <!-- <i class="bi bi-x-lg position-absolute close-video" style="font-size: 2rem; color: white; bottom: 0; left: -2em;"></i> -->
-        <!-- data-setup='{"controls": true}'> -->
-        <!-- vjs-show-big-play-button-on-pause -->
-        <video
-            id=<%= "party-wj-video" %>
-            class="video-js my-vjs-skin "
-            width="1087"
-            enableTouchActivity>
-          <source src='<%= "/videos/parties/activities/wj.mp4" %>' type="video/mp4"></source>
-        </video>
-      </div>
-    </div>
+    <% end %>
 
   </div>
 

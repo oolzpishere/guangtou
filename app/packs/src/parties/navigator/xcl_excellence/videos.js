@@ -1,6 +1,22 @@
 // import Swiper from 'swiper/bundle';
 import videojs from  "video.js"
 
+// for (let i = 1; i <= 10; i++) {
+//   import videoContent1 from "images/party/xcl/excellence/videos/01.png"
+//
+// }
+import videoTitle1 from "images/party/xcl/excellence/videos/01.png"
+import videoTitle2 from "images/party/xcl/excellence/videos/02.png"
+import videoTitle3 from "images/party/xcl/excellence/videos/03.png"
+import videoTitle4 from "images/party/xcl/excellence/videos/04.png"
+import videoTitle5 from "images/party/xcl/excellence/videos/05.png"
+import videoTitle6 from "images/party/xcl/excellence/videos/06.png"
+import videoTitle7 from "images/party/xcl/excellence/videos/07.png"
+import videoTitle8 from "images/party/xcl/excellence/videos/08.png"
+import videoTitle9 from "images/party/xcl/excellence/videos/09.png"
+import videoTitle10 from "images/party/xcl/excellence/videos/010.png"
+
+
 
 $(document).on("turbolinks:load", function() {
 
@@ -11,10 +27,13 @@ $(document).on("turbolinks:load", function() {
       var videoName = $(this).data('name')
 
       $('.absolute-video-container').addClass('active')
-      filterItemsByKey( $('.video-content-container'), 'name', videoName ).addClass('active')
+      // filterItemsByKey( $('.video-content-container'), 'name', videoName ).addClass('active')
+
+      var activitiesVideoContents = new ActivitiesVideoContents
+      activitiesVideoContents.changeTitle( videoName )
 
       // activitiesVideos.videos[videoName].play()
-      activitiesVideos.playVideo( videoName )
+      activitiesVideos.changeVideo( videoName )
 
     })
 
@@ -35,58 +54,55 @@ class ActivitiesVideos {
     this.videos = {}
     // ['wj', 'gqbn', 'yxzg', 'qnll', 'wazg', 'dzwx', 'gxgs', 'xdsd', 'dcmz', 'xyhd']
     this.videoNames = []
-    this.initVideoNames()
+    // this.initVideoNames()
 
-    this.initVideos()
+    // this.initVideos()
+    this.initVideo()
 
-    this.addCloseBtns()
+    this.addCloseBtn()
     this.initVideoCloseBtn()
-  }
 
-  playVideo(videoName){
-    var _this = this
-
-    if ( typeof(_this.videos[videoName]) == 'undefined' ) {
-      _this.initVideoAndPlay( videoName )
-    } else {
-      _this.videos[videoName].play()
+    this._videoSrcList = {
+      wj: "/videos/parties/activities/wj.mp4",
+      gqbn: "/videos/parties/activities/gqbn.mp4",
+      yxzg: "/videos/parties/activities/yxzg.mp4",
+      qnll: "/videos/parties/activities/qnll.mp4",
+      wazg: "/videos/parties/activities/wazg.mp4",
+      dzwx: "/videos/parties/activities/dzwx.mp4",
+      gxgs: "/videos/parties/activities/gxgs.mp4",
+      xdsd: "/videos/parties/activities/xdsd.mp4",
+      dcmz: "/videos/parties/activities/dcmz.mp4",
+      xyhd: "/videos/parties/activities/xyhd.mp4",
     }
   }
 
-  initVideoNames() {
-    var _self = this;
-    $('.video-content-container').each(function( index ) {
-      _self.videoNames.push( $(this).data('name') )
-    });
-  }
+  // playVideo(videoName){
+  //   var _this = this
+  //
+  //   if ( typeof(_this.videos[videoName]) == 'undefined' ) {
+  //     _this.initVideoAndPlay( videoName )
+  //   } else {
+  //     _this.videos[videoName].play()
+  //   }
+  // }
 
-  initVideos() {
-    var _self = this;
-    _self.videoNames.forEach((videoName, i) => {
-      let idName = 'party-' + videoName + '-video'
-      var player = videojs( idName, {
-        controls: true,
-        autoplay: false,
-        preload: 'false',
-        controlBar: {
-          'pictureInPictureToggle': false,
-          volumePanel: {
-            inline: true
-          }
-        }
-      });
-      _self.videos[ videoName ] = player
-    });
-  }
+  // private
 
-  initVideoAndPlay( videoName ) {
-    var _self = this;
-    let idName = 'party-' + videoName + '-video'
+  // initVideoNames() {
+  //   var _self = this;
+  //   $('.video-content-container').each(function( index ) {
+  //     _self.videoNames.push( $(this).data('name') )
+  //   });
+  // }
 
+  initVideo() {
+    var _this = this;
+
+    let idName = 'party-' + 'wj' + '-video'
     var player = videojs( idName, {
       controls: true,
-      autoplay: true,
-      preload: 'false',
+      autoplay: false,
+      preload: 'auto',
       controlBar: {
         'pictureInPictureToggle': false,
         volumePanel: {
@@ -94,35 +110,53 @@ class ActivitiesVideos {
         }
       }
     });
+    _this._video = player
 
-    _self.videos[ videoName ] = player
   }
 
-  addCloseBtns() {
+  changeVideo( videoName ){
+    var _this = this;
+    _this._video.pause();
+    _this._video.reset();
+    _this._video.src([
+        {
+          type: 'video/mp4',
+          src: _this.getVideoSrc(videoName)
+        },
+    ]);
+    _this._video.load()
+    _this._video.play()
+
+  }
+
+  getVideoSrc(videoName) {
+    var _this = this;
+    return _this._videoSrcList[videoName]
+  }
+
+  addCloseBtn() {
     var _self = this;
-    $.map( _self.videos, function( value, key ) {
-      var player = value;
 
-      var mButton = videojs.getComponent('closeButton');
-      var button = new mButton( player, {});
-      button.addClass('my-video-close-btn')
+    var player = _self._video;
 
-      // strategy_player.controlBar.el().prepend( button.el() )
-      player.controlBar.addChild(button, {}, 0)
-    });
+    var mButton = videojs.getComponent('closeButton');
+    var button = new mButton( player, {});
+    button.addClass('my-video-close-btn')
+
+    // strategy_player.controlBar.el().prepend( button.el() )
+    player.controlBar.addChild(button, {}, 0)
+
   }
 
   initVideoCloseBtn(){
     var _this = this;
     $('.my-video-close-btn').on('click touchstart mouseenter', function(){
       // _this.pauseAllVideos()
-      // get videoName
+      _this._video.pause()
 
-      let currentVideoName = _this.getVideoName(this)
-      _this.videoDispose( currentVideoName )
-      // debugger;
+      // let currentVideoName = _this.getVideoName(this)
       $('.absolute-video-container').removeClass('active')
-      $('.video-content-container').removeClass('active')
+      // $('.video-content-container').removeClass('active')
       return false
     })
   }
@@ -132,30 +166,48 @@ class ActivitiesVideos {
    return currentVideoName
   }
 
-  // pauseAllVideos(){
-  //   var _self = this;
-  //   $.map( _self.videos, function( value, key ) {
-  //     var player = value;
-  //     player.pause();
-  //     _self.exitFullScreen(player)
-  //   })
-  // }
-
   exitFullScreen(player){
     if ( player.isFullscreen() ) {
       player.exitFullscreen()
     }
   }
 
-  videoDispose(videoName){
-    var _this = this;
-    var player = _this.videos[ videoName ]
-    if ( typeof( player ) != 'undefined' ) {
-      _this.exitFullScreen(player)
-      player.dispose()
-    }
-    // debugger
 
+
+}
+
+
+// videoDispose(videoName){
+//   var _this = this;
+//   var player = _this.videos[ videoName ]
+//   if ( typeof( player ) != 'undefined' ) {
+//     _this.exitFullScreen(player)
+//     player.dispose()
+//   }
+//   // debugger
+//
+// }
+class ActivitiesVideoContents {
+  constructor() {
+    // ['wj', 'gqbn', 'yxzg', 'qnll', 'wazg', 'dzwx', 'gxgs', 'xdsd', 'dcmz', 'xyhd']
+
+    this._videoTitles = {
+      wj: videoTitle1,
+      gqbn: videoTitle2,
+      yxzg: videoTitle3,
+      qnll: videoTitle4,
+      wazg: videoTitle5,
+      dzwx: videoTitle6,
+      gxgs: videoTitle7,
+      xdsd: videoTitle8,
+      dcmz: videoTitle9,
+      xyhd: videoTitle10,
+    }
+  }
+
+  changeTitle( videoName ){
+    var _this = this
+    $('.video-content-title').attr( 'src', _this._videoTitles[videoName] )
   }
 
 
