@@ -111,44 +111,6 @@ $(document).on("turbolinks:load", function() {
 
   }
 
-  if ( $('#parties-navigator-xcl_excellence-talents-page').length ) {
-    var cxy_player = videojs('party-talent-cxy-video', {
-      controls: true,
-      autoplay: false,
-      preload: 'auto',
-      controlBar: {
-        'pictureInPictureToggle': false,
-        volumePanel: {
-          inline: true
-        }
-      }
-    });
-
-    var ql_player = videojs('party-talent-ql-video', {
-      controls: true,
-      autoplay: false,
-      preload: 'auto',
-      controlBar: {
-        'pictureInPictureToggle': false,
-        volumePanel: {
-          inline: true
-        }
-      }
-    });
-
-    var zx_player = videojs('party-talent-zx-video', {
-      controls: true,
-      autoplay: false,
-      preload: 'auto',
-      controlBar: {
-        'pictureInPictureToggle': false,
-        volumePanel: {
-          inline: true
-        }
-      }
-    });
-  }
-
   if ( $('#parties-navigator-xcl_fortress-page').length ) {
     var branch_player = videojs('party-7branch-video', {
       controls: true,

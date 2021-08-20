@@ -25,6 +25,7 @@ import "src/parties/index.js"
 import "src/parties/video.js"
 import "src/parties/navigator.js"
 import "src/parties/navigator/xcl_excellence/videos.js"
+import "src/parties/navigator/xcl_excellence/talents.js"
 import "src/parties/navigator/nnl_brand.js"
 
 
@@ -50,7 +51,7 @@ import {VScroll} from "src/scroll/v_scroll.js"
 $(document).on("turbolinks:load", function() {
   // disable right click except home-page.
   if ( $('#home-page').length == 0 ) {
-    document.addEventListener('contextmenu', event => event.preventDefault());
+    // document.addEventListener('contextmenu', event => event.preventDefault());
   }
 
   var wHeight = window.innerHeight;

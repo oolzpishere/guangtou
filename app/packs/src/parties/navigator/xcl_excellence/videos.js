@@ -107,12 +107,6 @@ class ActivitiesVideos {
         volumePanel: {
           inline: true
         },
-        // ProgressControl: {
-        //   SeekBar: {
-        //     PlayProgressBar: false
-        //   }
-        // }
-        // DurationDisplay: true
       }
     });
     _this._video = player

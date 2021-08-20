@@ -96,8 +96,17 @@ $center-big-play-button: true; // true default
     position: relative !important;
     top: 0px !important;
   }
-
+  // hide vjs-mouse-display and vjs-time-tooltip
+  .vjs-progress-control:hover .vjs-mouse-display,
+  .vjs-progress-control:hover .vjs-play-progress .vjs-time-tooltip {
+    display: none;
+  }
 }
+
+// .video-js .vjs-progress-control:hover .vjs-mouse-display,
+// .video-js .vjs-progress-control:hover .vjs-play-progress .vjs-time-tooltip {
+//   display: none;
+// }
 
 .my-vjs-skin.left-play {
   .vjs-big-play-button {

@@ -182,7 +182,7 @@ $(document).on("turbolinks:load", function() {
     });
   }
 
-  if ( $('.talents-swiper').length ) {
+  if ( $('#advantages-team-page .talents-swiper').length ) {
     new TalentsSwiper
 
   }

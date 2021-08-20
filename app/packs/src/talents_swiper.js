@@ -4,10 +4,14 @@ import Swiper from 'swiper/bundle';
 export {  TalentsSwiper };
 
 class TalentsSwiper {
-  constructor( ) {
-    this._autoplayDelayTime = 15000
-    this._countdownForRestartTime = 20000
+  constructor( videos = undefined ) {
+    this._autoplayDelayTime = 10000
+    this._intervalForRestartTime = 15000
     this.initSwiper()
+
+    if (videos) {
+      this._videos = videos
+    }
 
   }
 
@@ -30,7 +34,7 @@ class TalentsSwiper {
 
     $('.talents-swiper, .my-swiper-navigation-container').on('touchstart', function(){
 
-      _this.countdownForRestart()
+      _this.intervalForRestart()
       // return false
     })
 
@@ -54,18 +58,51 @@ class TalentsSwiper {
     })
   }
 
-  countdownForRestart(){
-    console.log('countdownForRestart');
+  intervalForRestart(){
+    console.log('intervalForRestart');
+
     var _this = this
     _this.swiper.autoplay.stop();
 
-    if ( _this._autoplayTimeout ) {
-      clearTimeout(_this._autoplayTimeout)
+    if ( _this._interval ) {
+      clearInterval(_this._interval)
     }
 
-    _this._autoplayTimeout = setTimeout( function() {
-      _this.swiper.autoplay.start();
-    }, _this._countdownForRestartTime );
+    _this._interval = setInterval( function() {
+      // video on play
+      console.log( 'playing ' +  _this.videoPlaying() )
+      if ( _this.videoPlaying() ) {
+        // skip
+      } else {
+        // clear interval
+        clearInterval(_this._interval)
+        _this.swiper.autoplay.start();
+
+      }
+    }, _this._intervalForRestartTime )
+
+  }
+
+  videoPlaying(){
+    var _this = this
+    if ( typeof(_this._videos) != 'undefined' && _this.anyVideoPlaying() ) {
+      return true
+    }
+  }
+
+  anyVideoPlaying(){
+    var _this = this
+    for(var key in _this._videos) {
+      if ( !_this._videos[key].paused() ) {
+        return true
+      }
+    }
+    // this._videos.forEach((video, i) => {
+    //   if (video.playing) {
+    //     return true
+    //   }
+    // });
+
   }
 
 
