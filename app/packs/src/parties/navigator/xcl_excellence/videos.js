@@ -106,7 +106,13 @@ class ActivitiesVideos {
         'pictureInPictureToggle': false,
         volumePanel: {
           inline: true
-        }
+        },
+        // ProgressControl: {
+        //   SeekBar: {
+        //     PlayProgressBar: false
+        //   }
+        // }
+        // DurationDisplay: true
       }
     });
     _this._video = player
@@ -149,7 +155,7 @@ class ActivitiesVideos {
 
   initVideoCloseBtn(){
     var _this = this;
-    $('.my-video-close-btn').on('click touchstart mouseenter', function(){
+    $('.my-video-close-btn').on('click touchstart', function(){
       // _this.pauseAllVideos()
       _this._video.pause()
       _this.exitFullScreen( _this._video )
