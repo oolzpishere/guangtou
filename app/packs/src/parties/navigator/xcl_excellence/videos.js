@@ -17,7 +17,6 @@ import videoTitle9 from "images/party/xcl/excellence/videos/09.png"
 import videoTitle10 from "images/party/xcl/excellence/videos/010.png"
 
 
-
 $(document).on("turbolinks:load", function() {
 
   if ( $('#parties-navigator-xcl_excellence-videos-page').length ) {
@@ -51,16 +50,6 @@ $(document).on("turbolinks:load", function() {
 class ActivitiesVideos {
   constructor() {
     this.videos = {}
-    // ['wj', 'gqbn', 'yxzg', 'qnll', 'wazg', 'dzwx', 'gxgs', 'xdsd', 'dcmz', 'xyhd']
-    this.videoNames = []
-    // this.initVideoNames()
-
-    // this.initVideos()
-    this.initVideo()
-
-    this.addCloseBtn()
-    this.initVideoCloseBtn()
-
     this._videoSrcList = {
       wj: "/videos/parties/activities/wj.mp4",
       gqbn: "/videos/parties/activities/gqbn.mp4",
@@ -73,26 +62,15 @@ class ActivitiesVideos {
       dcmz: "/videos/parties/activities/dcmz.mp4",
       xyhd: "/videos/parties/activities/xyhd.mp4",
     }
+    // ['wj', 'gqbn', 'yxzg', 'qnll', 'wazg', 'dzwx', 'gxgs', 'xdsd', 'dcmz', 'xyhd']
+
+    this.initVideo()
+
+    this.addCloseBtn()
+    this.initVideoCloseBtn()
   }
 
-  // playVideo(videoName){
-  //   var _this = this
-  //
-  //   if ( typeof(_this.videos[videoName]) == 'undefined' ) {
-  //     _this.initVideoAndPlay( videoName )
-  //   } else {
-  //     _this.videos[videoName].play()
-  //   }
-  // }
-
   // private
-
-  // initVideoNames() {
-  //   var _self = this;
-  //   $('.video-content-container').each(function( index ) {
-  //     _self.videoNames.push( $(this).data('name') )
-  //   });
-  // }
 
   initVideo() {
     var _this = this;
@@ -109,34 +87,19 @@ class ActivitiesVideos {
         },
       }
     });
-    _this._video = player
+    // _this._video = player
 
+    _this._changeVideoObj = new ChangeVideoObj(player, _this._videoSrcList)
   }
 
   changeVideo( videoName ){
     var _this = this;
-    _this._video.pause();
-    _this._video.reset();
-    _this._video.src([
-        {
-          type: 'video/mp4',
-          src: _this.getVideoSrc(videoName)
-        },
-    ]);
-    _this._video.load()
-    _this._video.play()
-
-  }
-
-  getVideoSrc(videoName) {
-    var _this = this;
-    return _this._videoSrcList[videoName]
+    _this._changeVideoObj.changeVideo( videoName )
   }
 
   addCloseBtn() {
-    var _self = this;
-
-    var player = _self._video;
+    var _this = this;
+    var player = _this._changeVideoObj._player
 
     var mButton = videojs.getComponent('closeButton');
     var button = new mButton( player, {});
@@ -151,18 +114,13 @@ class ActivitiesVideos {
     var _this = this;
     $('.my-video-close-btn').on('click touchstart', function(){
       // _this.pauseAllVideos()
-      _this._video.pause()
-      _this.exitFullScreen( _this._video )
-      // let currentVideoName = _this.getVideoName(this)
+      _this._changeVideoObj._player.pause()
+      _this._changeVideoObj.exitFullScreen()
+
       $('.absolute-video-container').removeClass('active')
       // $('.video-content-container').removeClass('active')
       return false
     })
-  }
-
-  getVideoName(item){
-   let currentVideoName = $(item).parents('.video-content-container').data('name')
-   return currentVideoName
   }
 
   exitFullScreen(player){
@@ -171,21 +129,46 @@ class ActivitiesVideos {
     }
   }
 
+}
 
+class ChangeVideoObj{
+  constructor(player, videoSrcList) {
+    this._player = player
+    this._videoSrcList = videoSrcList
+  }
+
+
+  changeVideo( videoName, type = 'video/mp4' ){
+    var _this = this;
+    _this._player.pause();
+    _this._player.reset();
+    _this._player.src([
+        {
+          type: type,
+          src: _this.getVideoSrc(videoName)
+        },
+    ]);
+    _this._player.load()
+    _this._player.play()
+
+  }
+
+  exitFullScreen(){
+    var _this = this;
+    if ( _this._player.isFullscreen() ) {
+      _this._player.exitFullscreen()
+    }
+  }
+
+  // private
+
+  getVideoSrc(videoName) {
+    var _this = this;
+    return _this._videoSrcList[videoName]
+  }
 
 }
 
-
-// videoDispose(videoName){
-//   var _this = this;
-//   var player = _this.videos[ videoName ]
-//   if ( typeof( player ) != 'undefined' ) {
-//     _this.exitFullScreen(player)
-//     player.dispose()
-//   }
-//   // debugger
-//
-// }
 class ActivitiesVideoContents {
   constructor() {
     // ['wj', 'gqbn', 'yxzg', 'qnll', 'wazg', 'dzwx', 'gxgs', 'xdsd', 'dcmz', 'xyhd']
