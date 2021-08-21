@@ -62,16 +62,12 @@ class TalentsSwiper {
     console.log('intervalForRestart');
 
     var _this = this
-    _this.swiper.autoplay.stop();
-
-    if ( _this._interval ) {
-      clearInterval(_this._interval)
-    }
+    _this.stopSwiper()
 
     _this._interval = setInterval( function() {
       // video on play
-      console.log( 'playing ' +  _this.videoPlaying() )
-      if ( _this.videoPlaying() ) {
+      console.log( 'playing ' +  _this.anyVideoPlaying() )
+      if ( _this.anyVideoPlaying() ) {
         // skip
       } else {
         // clear interval
@@ -83,26 +79,22 @@ class TalentsSwiper {
 
   }
 
-  videoPlaying(){
+  stopSwiper(){
     var _this = this
-    if ( typeof(_this._videos) != 'undefined' && _this.anyVideoPlaying() ) {
-      return true
+    _this.swiper.autoplay.stop();
+
+    if ( _this._interval ) {
+      clearInterval(_this._interval)
     }
   }
 
   anyVideoPlaying(){
     var _this = this
-    for(var key in _this._videos) {
-      if ( !_this._videos[key].paused() ) {
-        return true
-      }
+    if ( _this._videos ) {
+      return _this._videos.anyVideoPlaying()
+    } else {
+      return false
     }
-    // this._videos.forEach((video, i) => {
-    //   if (video.playing) {
-    //     return true
-    //   }
-    // });
-
   }
 
 
