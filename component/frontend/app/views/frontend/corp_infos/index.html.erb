@@ -19,9 +19,9 @@
       <div class="swiper-slide" style="background: center url(<%= asset_pack_path 'media/images/corp/corp_all_swiper/3-bg.png'%>)">
         <div class="row g-0 justify-content-end text-white" style="margin-top: 22%; margin-right: 5%;">
           <div class="title-slide-in col-auto text-center fw-bold" style="">
-            <%= image_pack_tag 'media/images/corp/corp_all_swiper/leader-title.png', class: "", style: "" %>
+            <%= image_pack_tag 'media/images/corp/corp_all_swiper/leader-title.png', class: "my-sequence", data: {movement: 'fadeIn', 'sequence-id' => 1}, style: "" %>
             <div class="w-100"></div>
-            <%= image_pack_tag 'media/images/corp/corp_all_swiper/leader-text.png', class: "flag-flip", style: "" %>
+            <%= image_pack_tag 'media/images/corp/corp_all_swiper/leader-text.png', class: "flag-flip my-sequence", data: {movement: 'fadeIn', 'sequence-id' => 2}, style: "" %>
 
           </div>
 
@@ -34,11 +34,11 @@
         <div class="row g-0 justify-content-end text-white" style="margin-top: 35%;">
           <div class="col-auto text-end " style=" margin-right: 6%;">
             <div class="row g-0 ">
-              <div class="col-auto position-relative">
+              <div class="col-auto position-relative my-sequence" data-movement="fadeIn" data-sequence-id=1>
                 <%= image_pack_tag 'media/images/corp/corp_all_swiper/global-title.png', class: "position-absolute title-slide-in", style: "top: 50%; right: -50px; margin-top: -60px;" %>
               </div>
 
-              <div class="col-auto  position-relative" style="width: 731px; height: 185px; background: center url(<%= asset_pack_path 'media/images/corp/corp_all_swiper/global-flag-bg.png'%>)">
+              <div class="col-auto  position-relative my-sequence" data-movement="fadeIn"  data-sequence-id=2 style="width: 731px; height: 185px; background: center url(<%= asset_pack_path 'media/images/corp/corp_all_swiper/global-flag-bg.png'%>)">
                 <%= image_pack_tag 'media/images/corp/corp_all_swiper/global-flag-text.png', class: "position-absolute title-slide-in", style: "top: 50%; left:60px;  margin-top: -42px;" %>
               </div>
             </div>

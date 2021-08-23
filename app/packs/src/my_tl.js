@@ -6,27 +6,14 @@ var MyTl = function( opts = {'firstDelay': 0.2} ) {
   this.tl = gsap.timeline();
   this.tl.delay( opts['firstDelay'] )
 
-  this._movementOpts = {
-    slideInLeft:  { x: -600, opacity: 0 },
-    slideInRight: { x: 600, opacity: 0 },
-    fadeIn: { opacity: 0 },
-  }
-
-  this.sequenceDivs = new SequenceDivs
 }
 
 
 MyTl.prototype.addMovements = function() {
   var _this = this;
-
+  _this.sequenceDivs = new SequenceDivs
   _this.sequenceDivs.sequenceArray.forEach( (sequenceDiv, i) => {
-    var animation_opts = $.extend(
-      {},
-      { duration: sequenceDiv.duration },
-      _this._movementOpts[ sequenceDiv.movement ]
-    );
-
-    _this.addTlFrom( _this, sequenceDiv, animation_opts)
+    _this.addTlFrom( _this, sequenceDiv, sequenceDiv.animation_opts)
   });
 
 }
@@ -35,12 +22,10 @@ MyTl.prototype.addTlFrom = function( _this, sequenceDiv, animation_opts) {
   _this.tl.from( sequenceDiv.el, animation_opts, sequenceDiv.label );
 }
 
-MyTl.prototype.myClearTl = function(tl) {
-  tl.seek('end');
-  tl.clear();
+MyTl.prototype.clearTl = function() {
+  this.tl.seek('end');
+  this.tl.clear();
 };
-
-
 
 
 class SequenceDivs {
@@ -75,6 +60,14 @@ class SequenceDiv {
     this.sequenceId = this.$item.data('sequence-id')
     this.label = this.getLabel()
     this.duration = this.getItemDuration()
+
+    this._movementOpts = {
+      slideInLeft:  { x: -600, opacity: 0 },
+      slideInRight: { x: 600, opacity: 0 },
+      fadeIn: { opacity: 0 },
+    }
+
+    this.animation_opts = this.getAnimationOpts()
   }
 
   getLabel() {
@@ -92,6 +85,15 @@ class SequenceDiv {
     }
     return _this.defaultDuration
   };
+
+  getAnimationOpts(){
+    var _this = this
+    return $.extend(
+      {},
+      { duration: _this.duration },
+      _this._movementOpts[ _this.movement ]
+    );
+  }
 
 
 }

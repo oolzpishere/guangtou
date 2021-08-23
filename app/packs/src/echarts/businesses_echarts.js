@@ -29,12 +29,13 @@ $(document).on("turbolinks:load", function() {
         tooltip: {
           // formatter: "{a} <br /> {b0} ：&nbsp;&nbsp; {c0}%"
           formatter: (params)=> {
-            var res = "<div><p>"  + params.seriesName + "</p></div>";
+            var res = "<div><p>"  + params.seriesName + "</p>";
             res += "<p>" + params.marker
             // if (params.dataIndex != 0) {
             //   res += "2016 - "
             // }
             res += params.name + "：" + "&nbsp;" + params.value + "%" + "</p>";
+            res += "</div>";
             // for (var i = 0; i < params.length; i++) {
             //   if (params[i].data != undefined) {
             //     res +=

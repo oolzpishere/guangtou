@@ -10,6 +10,7 @@ import {BusinessDetailsSwiper} from "./business_details_swiper"
 import { MyHelpers } from 'src/my_helpers.js'
 import { TalentsSwiper } from 'src/talents_swiper.js'
 
+import {MyTl} from "src/my_tl.js"
 
 
 $(document).on("turbolinks:load", function() {
@@ -26,32 +27,7 @@ $(document).on("turbolinks:load", function() {
   }
 
   if ( $('#corp_infos-page').length ) {
-    var corp_all_swiper_tl = gsap.timeline(); //create the timeline
-
-    var corp_all_swiper_tls = [
-      function(){
-        //  ease: "elastic"
-        // corp_all_swiper_tl.from(".corp-index-swiper-title", { opacity: 0, duration: 1 });
-        // corp_all_swiper_tl.from(".corp-index-swiper-num", { opacity: 0, duration: 1, onComplete: function(){startCount('.corp_all_counter')} })
-      },
-      function(){
-        // corp_all_swiper_tl.from(".corp-index-swiper-title", {opacity: 0, duration: 1})
-        //   .from(".corp-index-swiper-num", {opacity: 0, duration: 1, onComplete: function(){startCount('.corp_all_counter')} })
-      },
-      function(){
-        corp_all_swiper_tl.from(".title-slide-in", { opacity: 0, duration: 1})
-          .from(".flag-flip", {opacity: 0, duration: 1 })
-
-      },
-      function(){
-        corp_all_swiper_tl.from(".title-slide-in", { opacity: 0, duration: 1 })
-      },
-      function(){
-        corp_all_swiper_tl.from(".title-slide-in", { opacity: 0, duration: 1 })
-          .from(".flag-flip", { opacity: 0, duration: 1 })
-      }
-    ]
-
+    var myTl = new MyTl
 
     var corpAllSwiper = new Swiper(".corpAllSwiper", {
             direction: "vertical",
@@ -72,18 +48,15 @@ $(document).on("turbolinks:load", function() {
             },
             on: {
               init: function () {
-                corp_all_swiper_tls[0]();
+                // corp_all_swiper_tls[0]();
               },
             }
           });
 
       corpAllSwiper.on('slideChange', function () {
         // corpLinksSwiper.slideTo(swiper.realIndex)
-        // my_clear_tl(corp_all_swiper_tl)
-
-        myHelpers.myClearTl(corp_all_swiper_tl)
-        // animation have to call at current page.
-        corp_all_swiper_tls[corpAllSwiper.realIndex]();
+        myTl.clearTl()
+        myTl.addMovements()
       });
   }
 
