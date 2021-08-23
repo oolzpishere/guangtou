@@ -2,9 +2,15 @@ import { gsap } from 'gsap/dist/gsap.js'
 
 export { MyTl };
 
-var MyTl = function( options = {'firstDelay': 0.2} ) {
+var MyTl = function( opts = {'firstDelay': 0.2} ) {
   this.tl = gsap.timeline();
-  this.tl.delay( options['firstDelay'] )
+  this.tl.delay( opts['firstDelay'] )
+
+  this._movementOpts = {
+    slideInLeft:  { x: -600, opacity: 0 },
+    slideInRight: { x: 600, opacity: 0 },
+    fadeIn: { opacity: 0 },
+  }
 
   this.sequenceDivs = new SequenceDivs
 }
@@ -17,20 +23,12 @@ MyTl.prototype.addMovements = function() {
     var animation_opts = $.extend(
       {},
       { duration: sequenceDiv.duration },
-      _this.movementOpts()[ sequenceDiv.movement ]
+      _this._movementOpts[ sequenceDiv.movement ]
     );
 
     _this.addTlFrom( _this, sequenceDiv, animation_opts)
   });
 
-}
-
-MyTl.prototype.movementOpts = function() {
-  return {
-    slideInLeft:  { x: -600, opacity: 0 },
-    slideInRight: { x: 600, opacity: 0 },
-    fadeIn: { opacity: 0 },
-  }
 }
 
 MyTl.prototype.addTlFrom = function( _this, sequenceDiv, animation_opts) {

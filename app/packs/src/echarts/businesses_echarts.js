@@ -13,36 +13,57 @@ $(document).on("turbolinks:load", function() {
     // 指定图表的配置项和数据
     var option = {
         title: {
-            text: '年增长率',
+            text: '2016-2021销售额总增长率',
             textStyle: {
-              fontSize: '2rem'
+              fontSize: '1.8rem'
             }
         },
-        tooltip: {},
         legend: {
-            data:['年增长率'],
+            data:['总增长率'],
+            top: 40,
+            left: 80,
             textStyle: {
-              fontSize: '2rem'
+              fontSize: '1.5rem'
             }
+        },
+        tooltip: {
+          // formatter: "{a} <br /> {b0} ：&nbsp;&nbsp; {c0}%"
+          formatter: (params)=> {
+            var res = "<div><p>"  + params.seriesName + "</p></div>";
+            res += "<p>" + params.marker
+            // if (params.dataIndex != 0) {
+            //   res += "2016 - "
+            // }
+            res += params.name + "：" + "&nbsp;" + params.value + "%" + "</p>";
+            // for (var i = 0; i < params.length; i++) {
+            //   if (params[i].data != undefined) {
+            //     res +=
+            //       "<p>" + params[i].marker  + params[i].seriesName + ":" + params[i].data + "</p>";
+            //   }
+            // }
+            return res;
+          }
         },
         xAxis: {
             data: ["2016","2017","2018","2019","2020","2021"],
             axisLabel: {
-              fontSize: '1.5rem',
+              fontSize: '1.3rem',
             }
         },
         yAxis: {
           axisLabel: {
-            fontSize: '1.5rem',
+            fontSize: '1rem',
             formatter: function (value, index) {
               return value + '%';
             }
           }
         },
         series: [{
-            name: '年增长率',
-            type: 'bar',
-            data: [15, 20, 36, 28, 18, 20],
+            name: '总增长率',
+            type: 'line',
+            areaStyle: {},
+            data: [148.11, 167.56, 129.18, 254.04, 219.61, 232.76],
+            symbolSize: 10,
             animationDelay: function (idx) {
               return idx * 200 + 200;
             }
