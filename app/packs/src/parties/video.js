@@ -9,11 +9,12 @@ import {AllVideos} from "src/all_videos.js"
 
 $(document).on("turbolinks:load", function() {
 
-  if ( $('#parties-video-page').length > 0 ) {
+  if ( $('#parties-video-page').length ) {
     var allVideos = new AllVideos
 
-    $('.video-tag').first().addClass('active')
-    $('.video-content-container').first().addClass('active')
+    // $('.video-tag').first().addClass('active')
+    // $('.video-content-container').first().addClass('active')
+    addInitActiveToPage()
 
     $('.video-tag').on('click', function(){
       $('.video-tag').removeClass('active')
@@ -26,6 +27,17 @@ $(document).on("turbolinks:load", function() {
       filterItemsByKey( $('.video-content-container'), 'name', name).addClass('active')
       allVideos.videos[name].play()
     })
+
+    function addInitActiveToPage(){
+      var initVideoName = getInitVideoName();
+      filterItemsByKey( $('.video-tag'), 'name', initVideoName).addClass('active')
+      filterItemsByKey( $('.video-content-container'), 'name', initVideoName).addClass('active')
+    }
+
+    function getInitVideoName(){
+      const url = new URL(window.location.href)
+      return url.searchParams.get('name')
+    }
 
     function filterItemsByKey( items, key, value ){
       var item = items.filter( function() {
