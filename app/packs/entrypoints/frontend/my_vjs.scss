@@ -116,6 +116,13 @@ $center-big-play-button: true; // true default
     margin-top: auto;
   }
 }
+
+#parties-navigator-xcl_excellence-talents-page .my-vjs-skin{
+  .vjs-control{
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+  }
+}
 // add big-play-button when paused
 // or https://stackoverflow.com/a/45357082/6256690
 // .vjs-has-started.vjs-paused .vjs-big-play-button {
