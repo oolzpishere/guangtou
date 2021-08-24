@@ -11,7 +11,13 @@ $(document).on("turbolinks:load", function() {
       var nnl_player = videojs('nnl-video', {
         controls: true,
         autoplay: false,
-        preload: 'auto'
+        preload: 'auto',
+        controlBar: {
+          'pictureInPictureToggle': false,
+          volumePanel: {
+            inline: true
+          }
+        }
       });
   }
 
@@ -19,7 +25,13 @@ $(document).on("turbolinks:load", function() {
       var nnl_player = videojs('gt-profile-video', {
         controls: true,
         autoplay: false,
-        preload: 'auto'
+        preload: 'auto',
+        controlBar: {
+          'pictureInPictureToggle': false,
+          volumePanel: {
+            inline: true
+          }
+        }
       });
   }
 
