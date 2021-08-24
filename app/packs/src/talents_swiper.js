@@ -41,7 +41,7 @@ class TalentsSwiper {
     // talentsSwiper.on('slideChange', function(){
     //   countdownForRestart()
     // })
-
+    _this.disposeWhenChangePage()
   }
 
   initExpandSlideDetail() {
@@ -96,6 +96,15 @@ class TalentsSwiper {
       return false
     }
   }
+
+  disposeWhenChangePage(){
+    var _this = this
+    $(document).one("turbolinks:before-cache", function() {
+      console.log('turbolinks:before-cache stopTimer ');
+      _this.stopSwiper()
+    })
+  }
+
 
 
 

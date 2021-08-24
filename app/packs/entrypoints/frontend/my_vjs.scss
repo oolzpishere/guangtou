@@ -122,6 +122,9 @@ $center-big-play-button: true; // true default
     padding-left: 0.2em;
     padding-right: 0.2em;
   }
+  .vjs-play-control, .vjs-mute-control, .vjs-fullscreen-control{
+    width: 3em;
+  }
 }
 // add big-play-button when paused
 // or https://stackoverflow.com/a/45357082/6256690

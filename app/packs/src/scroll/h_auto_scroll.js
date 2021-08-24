@@ -131,7 +131,7 @@ class HAutoScroll {
 
   disposeWhenChangePage(){
     var _this = this
-    $(document).on("turbolinks:before-cache", function() {
+    $(document).one("turbolinks:before-cache", function() {
       console.log('turbolinks:before-cache stopTimer ');
       _this.dispose()
     })

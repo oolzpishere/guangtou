@@ -99,7 +99,6 @@ class ActivitiesVideos {
     $('.my-video-close-btn').on('click touchstart mouseenter', function(){
       _self.pauseAllVideos()
       // get videoName
-      debugger;
       $('.absolute-video-container').removeClass('active')
       $('.video-content-container').removeClass('active')
     })

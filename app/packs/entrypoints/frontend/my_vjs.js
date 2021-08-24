@@ -54,7 +54,6 @@ $(document).on("turbolinks:load", function() {
     });
     button.addClass('my-video-close-btn')
 
-    // debugger;
     // strategy_player.controlBar.el().prepend( button.el() )
     strategy_player.controlBar.addChild(button, {}, 0)
 
