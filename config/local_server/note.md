@@ -20,12 +20,14 @@ mkdir app_root/shared/tmp/sockets app_root/shared/tmp/pids
 
 puma:nginx_config:
 ```
-sudo mv /tmp/nginx_guangtou_production /etc/nginx/sites-available/guangtou_local_production
+sudo mv /tmp/guangtou_local_production /etc/nginx/sites-available/guangtou_local_production
 sudo ln -fs /etc/nginx/sites-available/guangtou_local_production /etc/nginx/sites-enabled/guangtou_local_production
 ```
 
 puma:systemd:config:
 ```
+sudo mv ~/puma_guangtou_local_production.service /etc/systemd/system/
+sudo /bin/systemctl daemon-reload
 <!-- enable to launch at startup -->
 sudo systemctl enable puma_guangtou_local_production.service
 ```

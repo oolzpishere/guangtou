@@ -42,7 +42,6 @@ $(document).on("turbolinks:load", function() {
 
       item.addClass('active')
       filterItemsById( $('.industry-detail-img-container'), id).addClass('active')
-
       return false
     })
 
@@ -50,7 +49,7 @@ $(document).on("turbolinks:load", function() {
       $('.local-detail-container').removeClass('active')
       var id = $(this).data('id')
       filterItemsById( $('.local-detail-container'), id).addClass('active')
-      
+
       return false
     })
 
