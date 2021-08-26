@@ -13,7 +13,7 @@ $(document).on("turbolinks:load", function() {
     // 指定图表的配置项和数据
     var option = {
         title: {
-            text: '2016-2021销售额总增长率',
+            text: '销售额总增长率',
             textStyle: {
               fontSize: '1.8rem'
             }
