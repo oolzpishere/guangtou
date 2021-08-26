@@ -22,12 +22,12 @@
     <!-- two video navs -->
     <div class="row g-0 justify-content-center  mt-5">
       <div class="col-auto mx-2">
-        <%= link_to( parties_video_path, html_options = {}) do %>
+        <%= link_to( "#{parties_video_path}?name=xcl", html_options = {}) do %>
           <%= image_pack_tag 'media/images/party/navigator/xcl-video-nav.png', class: "", style: ""%>
         <% end %>
       </div>
       <div class="col-auto mx-2">
-        <%= link_to( parties_video_path, html_options = {}) do %>
+        <%= link_to( "#{parties_video_path}?name=nnl", html_options = {}) do %>
           <%= image_pack_tag 'media/images/party/navigator/nnl-video-nav.png', class: "", style: ""%>
         <% end %>
       </div>
