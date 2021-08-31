@@ -8,6 +8,7 @@ $(document).on("turbolinks:load", function() {
 
     var partyIndexSwiper = new Swiper(".parties-navigator-swiper", {
             // loop: true,
+            threshold: 50,
             pagination: {
               el: ".swiper-pagination",
               type: 'bullets',
