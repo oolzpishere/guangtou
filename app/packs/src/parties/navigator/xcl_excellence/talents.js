@@ -31,6 +31,11 @@ $(document).on("turbolinks:load", function() {
 
     new TalentsSwiper( videos )
 
+    $('.video-js').on('click touchstart touchmove', function(){
+      // console.log('stop touch move bubbling');
+      return false
+    })
+
   }
 })
 
