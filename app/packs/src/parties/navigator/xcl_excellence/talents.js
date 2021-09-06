@@ -30,11 +30,18 @@ $(document).on("turbolinks:load", function() {
     });
 
     new TalentsSwiper( videos )
-
-    $('.video-js').on('click touchstart touchmove', function(){
+    // , .vjs-volume-panel, .vjs-play-progress
+    $('.video-js').on('touchmove', function(){
       // console.log('stop touch move bubbling');
       return false
     })
+
+    // $('.vjs-volume-panel ').on('touchmove', function(event){
+    //   console.log(this)
+    //   console.log('stop touch move bubbling');
+    //   event.stopPropagation();
+    //   // return false
+    // })
 
   }
 })
