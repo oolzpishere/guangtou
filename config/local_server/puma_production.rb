@@ -11,7 +11,7 @@ state_path "/data/www/rails/guangtou_local/shared/tmp/pids/puma.state"
 stdout_redirect '/data/www/rails/guangtou_local/shared/log/puma_access.log', '/data/www/rails/guangtou_local/shared/log/puma_error.log', true
 
 
-threads 0,16
+threads 0,25
 
 
 
@@ -19,7 +19,7 @@ bind 'unix:///data/www/rails/guangtou_local/shared/tmp/sockets/puma_production.s
 # bind 'tcp://0.0.0.0:9292'
 
 
-workers 0
+workers 5 
 
 
 
