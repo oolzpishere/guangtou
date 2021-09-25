@@ -14,6 +14,7 @@ BusinessDetailsSwiper.prototype.initSwiper = function( Swiper ){
 
   var detailsSwiper = new Swiper(".businesses-details-swiper", {
           // loop: true,
+          threshold: 40,
           pagination: {
             el: ".swiper-pagination",
             type: 'bullets',

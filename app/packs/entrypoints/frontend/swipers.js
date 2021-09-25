@@ -67,6 +67,7 @@ $(document).on("turbolinks:load", function() {
 
     var businessesMainSwiper = new Swiper(".businesses-main-swiper", {
             // loop: true,
+            threshold: 40,
             pagination: {
               el: ".swiper-pagination",
               type: 'bullets',
