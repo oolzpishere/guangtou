@@ -31,16 +31,11 @@ $(document).on("turbolinks:load", function() {
 
     new TalentsSwiper( videos )
     // , .vjs-volume-panel, .vjs-play-progress
-    $('.video-js').on('mousemove touchmove', function(event){
-      console.log(event)
-      // console.log('stop touch move bubbling');
-      return false
-    })
 
-    // $('.vjs-volume-panel ').on('touchmove', function(event){
-    //   console.log(this)
-    //   console.log('stop touch move bubbling');
+    // $('.vjs-tech, .video-js, .vjs-control-bar, .vjs-progress-control, .vjs-progress-holder').on('touchmove mousemove pointermove touchstart', function(event){
+    //   // event.preventDefault();
     //   event.stopPropagation();
+    //   // console.log(event)
     //   // return false
     // })
 

@@ -20,6 +20,7 @@ class TalentsSwiper {
     _this.swiper = new Swiper(".talents-swiper", {
             slidesPerView: "auto",
             freeMode: true,
+            noSwipingClass: 'video-js',
             autoplay: {
               delay: _this._autoplayDelayTime,
             },
