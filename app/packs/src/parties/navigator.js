@@ -80,9 +80,9 @@ $(document).on("turbolinks:load", function() {
 
 class GxPartyBranches {
   constructor() {
-    // this.sequenceArray = [];
-    // this.initSequenceArray()
-    // this.sortSequence();
+    this.points = $('.point-container')
+    // windows
+    // contents
   }
 
   // getLabel() {

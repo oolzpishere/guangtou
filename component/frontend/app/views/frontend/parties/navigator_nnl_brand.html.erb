@@ -53,9 +53,9 @@
         </div>
 
         <div class="col-12 " style="">
-          <div class="row g-0">
-            <% (5..8).each do |i| %>
-              <div class="col-3 text-center">
+          <div class="row g-0 justify-content-between">
+            <% (5..7).each do |i| %>
+              <div class="col-auto ">
                 <%= image_pack_tag "media/images/party/nnl/brand/btns/#{i}.png", class: "swiper-tag", data: {id: i} %>
               </div>
             <% end %>
@@ -154,11 +154,6 @@
             </div>
 
           </div>
-
-          <div class="swiper-slide">
-            <%= image_pack_tag "media/images/party/nnl/brand/8.png", class: "" %>
-          </div>
-
 
         </div>
         <!-- If we need pagination -->
