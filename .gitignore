@@ -40,6 +40,7 @@ yarn-debug.log*
 .yarn-integrity
 
 /public/videos
+/public/sounds
 /app/packs/images
 /app/packs/images_2560_bu
 
