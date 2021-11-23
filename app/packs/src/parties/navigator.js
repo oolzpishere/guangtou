@@ -1,5 +1,8 @@
 import Swiper from 'swiper/bundle';
 // import videojs from  "video.js"
+import {DivFilter} from "src/supports/div_filter.js";
+import {PointsAndTags} from "src/lib/points_and_tags.js";
+import {PointTagsAndContents} from "src/lib/point_tags_and_contents.js";
 
 
 $(document).on("turbolinks:load", function() {
@@ -35,41 +38,8 @@ $(document).on("turbolinks:load", function() {
 
     // gaungxi branches
 
-    $('.point-container').on('click touchstart', function(){
-      var item = $(this).parents('.industry-point-container')
-      var id = $(this).data('id')
-      // var detail_img = $(this)
-
-      $('.industry-point-container').removeClass('active')
-      $('.industry-detail-img-container').removeClass('active')
-
-      item.addClass('active')
-      filterItems( $('.industry-detail-img-container'), 'id', id).addClass('active')
-      return false
-    })
-
-    $('.detail-tag').on('click touchstart', function(){
-      $('.local-detail-container').removeClass('active')
-      var tag_name = $(this).data('tag-name')
-
-      filterItems( $('.local-detail-container'), "tag-name", tag_name).addClass('active')
-
-      return false
-    })
-
-    $('.local-detail-container').on('click touchstart', function(){
-      $('.local-detail-container').removeClass('active')
-
-      return false
-    })
-
-    function filterItems( items, data_tag, value ){
-      var item = items.filter(function() {
-        return $(this).data( data_tag ) == value;
-      });
-      return item
-    }
-
+    new PointsAndTags();
+    new PointTagsAndContents();
 
 
   }
@@ -78,17 +48,38 @@ $(document).on("turbolinks:load", function() {
 
 });
 
-class GxPartyBranches {
-  constructor() {
-    this.points = $('.point-container')
-    // windows
-    // contents
-  }
 
-  // getLabel() {
-  //   var label = 'sequence' + this.$item.data('sequence-id')
-  //   // var label = 'sequence' + $(item).data('sequence-id')
-  //   return label
-  // };
 
-}
+
+// $('.point-container').on('click touchstart', function(){
+//   $('.point-container').removeClass('active')
+//   $('.point-detail-container').removeClass('active')
+//
+//   $(this).addClass('active')
+//
+//   var id = $(this).data('id')
+//   filterItems( $('.point-detail-container'), 'id', id).addClass('active')
+//   return false
+// })
+//
+// $('.detail-tag').on('click touchstart', function(){
+//   $('.local-detail-container').removeClass('active')
+//   var tag_name = $(this).data('tag-name')
+//
+//   filterItems( $('.local-detail-container'), "tag-name", tag_name).addClass('active')
+//
+//   return false
+// })
+//
+// $('.local-detail-container').on('click touchstart', function(){
+//   $('.local-detail-container').removeClass('active')
+//
+//   return false
+// })
+//
+// function filterItems( items, data_tag, value ){
+//   var item = items.filter(function() {
+//     return $(this).data( data_tag ) == value;
+//   });
+//   return item
+// }

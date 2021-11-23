@@ -122,10 +122,7 @@ a{
   }
 }
 
-.industry-point-container{
-  .detail-img-container{
-    display: none;
-  }
+.points-container{
   .point-container {
     .point-img{
       display: block;
@@ -134,13 +131,7 @@ a{
       display: none;
     }
   }
-}
-
-.industry-point-container.active{
-  .detail-img-container{
-    display: block;
-  }
-  .point-container{
+  .point-container.active{
     .point-img{
       display: none;
     }
@@ -148,21 +139,20 @@ a{
       display: block;
     }
   }
-}
 
-.industry-detail-img-container{
-  display: none;
-}
-
-.industry-detail-img-container.active{
-  display: block;
+  .point-detail-container{
+    display: none;
+  }
+  .point-detail-container.active{
+    display: block;
+  }
 }
 
 #parties-navigator-page{
-  .local-detail-container{
+  .point-content-container{
     display: none;
   }
-  .local-detail-container.active{
+  .point-content-container.active{
     display: block;
   }
 }

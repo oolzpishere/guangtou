@@ -35,6 +35,8 @@ import {HScroll} from "src/scroll/h_scroll.js"
 import {VScroll} from "src/scroll/v_scroll.js"
 // import {HAutoScroll} from "src/scroll/h_auto_scroll.js"
 
+import {PointsAndTags} from "src/lib/points_and_tags.js";
+import {DivFilter} from "src/supports/div_filter.js";
 
 
 
@@ -49,6 +51,7 @@ import {VScroll} from "src/scroll/v_scroll.js"
 
 
 $(document).on("turbolinks:load", function() {
+  const divFilter = new DivFilter;
   // disable right click except home-page.
   if ( $('#home-page').length == 0 ) {
     if ( !isDevEnv() ) {
@@ -82,48 +85,11 @@ $(document).on("turbolinks:load", function() {
   }
 
 
-  // setWrapToFullHeight();
-  // // window.addEventListener('resize', setWindowSize);
-  // $(window).on('resize', setWrapToFullHeight)
-  //
-  // function setWrapToFullHeight() {
-  //   // wWidth = window.innerWidth;
-  //   wHeight = window.innerHeight;
-  //   if ( $('.body-wrap').height() < wHeight ) {
-  //     $('.body-wrap').height(wHeight);
-  //   }
-  // }
-
-
-  // gsap.from(".my-show-up", {rotation: 27, x: 100, duration: 1});
-  // gsap.from(".my-show-down", { y: -600, duration: 1});
-
-  // $('.page-transition').addClass('animate__animated animate__fadeIn');
 
   if ( $('.industry-index-page').length ) {
-    $('.point-container').on('click', function(){
-      var item = $(this).parents('.industry-point-container')
-      var id = $(this).data('id')
-      // var detail_img = $(this)
-
-      $('.industry-point-container').removeClass('active')
-      $('.industry-detail-img-container').removeClass('active')
-
-      item.addClass('active')
-      filterItemsById( $('.industry-detail-img-container'), id).addClass('active')
-
-    })
+    new PointsAndTags();
 
   }
-
-  function filterItemsById( items, id ){
-    var item = items.filter(function() {
-      return $(this).data("id") == id;
-    });
-    return item
-  }
-
-
 
   if ( $('.culture-left').length > 0 ) {
     // delay: 0.2
@@ -208,7 +174,7 @@ $(document).on("turbolinks:load", function() {
 
       let id = $(this).data('id')
       $('.detail-content').removeClass('active')
-      filterItemsById( $('.detail-content'), id ).addClass('active')
+      divFilter.filterItems( $('.detail-content'), 'id', id).addClass('active')
     })
   }
 
