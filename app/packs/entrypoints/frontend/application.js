@@ -36,7 +36,7 @@ import {VScroll} from "src/scroll/v_scroll.js"
 // import {HAutoScroll} from "src/scroll/h_auto_scroll.js"
 
 import {PointsAndTags} from "src/lib/points_and_tags.js";
-import {DivFilter} from "src/supports/div_filter.js";
+import * as DivFilter from "src/supports/div_filter.js";
 
 
 
@@ -51,7 +51,7 @@ import {DivFilter} from "src/supports/div_filter.js";
 
 
 $(document).on("turbolinks:load", function() {
-  const divFilter = new DivFilter;
+  // const divFilter = new DivFilter;
   // disable right click except home-page.
   if ( $('#home-page').length == 0 ) {
     if ( !isDevEnv() ) {
@@ -174,7 +174,7 @@ $(document).on("turbolinks:load", function() {
 
       let id = $(this).data('id')
       $('.detail-content').removeClass('active')
-      divFilter.filterItems( $('.detail-content'), 'id', id).addClass('active')
+      DivFilter.filterDivs( $('.detail-content'), 'id', id).addClass('active')
     })
   }
 

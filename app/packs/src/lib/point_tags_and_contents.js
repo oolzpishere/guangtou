@@ -1,4 +1,5 @@
-import {DivFilter} from "src/supports/div_filter.js";
+// import {DivFilter} from "src/supports/div_filter.js";
+import * as DivFilter from "src/supports/div_filter.js";
 
 export {  PointTagsAndContents };
 
@@ -8,8 +9,6 @@ class PointTagsAndContents {
     this.active_tag;
 
     this.point_content_containers = $('.point-content-container')
-
-    this.div_filter = new DivFilter();
 
     this.initDetailTags();
     this.initPointContentContainers()
@@ -25,7 +24,7 @@ class PointTagsAndContents {
 
       var tag_name = self.active_tag.data('tag-name')
 
-      self.div_filter.filterItems( self.point_content_containers, "tag-name", tag_name).addClass('active')
+      DivFilter.filterDivs( self.point_content_containers, "tag-name", tag_name).addClass('active')
 
       return false
     })
